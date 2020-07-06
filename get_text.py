@@ -1,30 +1,44 @@
 import pdfplumber
 import re
 
-def clean_page(file_path, pg_num):
-    with pdfplumber.open(file_path) as pdf:
-        page = pdf.pages[pg_num]
+def clean_page(file_path):
+    pdf = pdfplumber.open(file_path)
+    final_txt = []
+    for page in pdf.pages:
         left, right = get_left_side(page), get_right_side(page)
-    #right = get_right_side(page)
-    clean_left = clean_text(left)
-    clean_right = clean_text(right)
-    return (clean_left, clean_right)
+        #right = get_right_side(page)
+        clean_left = clean_text(left)
+        clean_right = clean_text(right)
+        final_txt.append(clean_left)
+        final_txt.append(clean_right)
+    return "\n".join(final_txt) # write this to a .txt file
+
+    #with pdfplumber.open(file_path) as pdf:
+        #page = pdf.pages[pg_num]
+        #for page in pdf.pages:
+            #left, right = get_left_side(page), get_right_side(page)
+            #right = get_right_side(page)
+            #clean_left = clean_text(left)
+            #clean_right = clean_text(right)
+    #return (clean_left, clean_right)
 
 def clean_text(text): # make this prettier
-    cleaned = single_word(text)
-    cleaned = two_word(cleaned)
-    cleaned = many_countries(cleaned)
-    return cleaned
+    #cleaned = single_word(text)
+    #cleaned = two_word(cleaned)
+    #cleaned = many_countries(cleaned)
+    #return cleaned
+    return many_countries(two_word(single_word(text))) # is this clean or gross
 
 def get_left_side(page):
     x0 = 0
     x1 = page.width // 2
     bottom = page.height - 80
     top = 0
+    return page.crop((x0, top, x1, bottom)).extract_text()
 
-    rv = page.crop((x0, top, x1, bottom))
-    rv = rv.extract_text()
-    return rv
+    #rv = page.crop((x0, top, x1, bottom))
+    #rv = rv.extract_text()
+    #return rv
 
 def get_right_side(page):
     x0 = page.width // 2
@@ -32,11 +46,10 @@ def get_right_side(page):
     bottom = page.height - 80
     top = 0
 
-
-    rv = page.crop((x0, top, x1, bottom))
-    rv = rv.extract_text()
-    return rv
-    #return page.crop((x0, top, x1, bottom)).extract_text()
+    #rv = page.crop((x0, top, x1, bottom))
+    #rv = rv.extract_text()
+    #return rv
+    return page.crop((x0, top, x1, bottom)).extract_text()
 
 def single_word(text):
     #print("text is: ", text)
