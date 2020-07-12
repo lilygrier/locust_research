@@ -52,7 +52,7 @@ def get_left_side(page, pg_num, old_style):
             x1 = page.width // 2 + 20
     else:
         x1 = page.width // 2
-    bottom = page.height - 80
+    bottom = page.height - 70
     top = 0
     return page.crop((x0, top, x1, bottom)).extract_text()
 
@@ -66,7 +66,7 @@ def get_right_side(page, pg_num, old_style):
     else:
         x0 = page.width // 2
     x1 = page.width
-    bottom = page.height - 80
+    bottom = page.height - 70
     top = 0
 
     return page.crop((x0, top, x1, bottom)).extract_text()
@@ -141,7 +141,7 @@ def many_countries(text):
                 #elif not char and not first_line_list[i - 1]: # not repeated empty string
                 elif not char: # not repeated empty string
                     #if first_line_list[i - 1]:
-                    if not rv.endswith(" "):
+                    if not rv.endswith(" ") and not rv.endswith(","): # accounts for inconsistent oxford commas
                         rv += " "
                         #print("empty space not repeated")
                     else:
@@ -157,7 +157,7 @@ def many_countries(text):
         to_replace = '\n'.join(to_replace)
         #if to_replace and rv:
             #print("to_replace", to_replace)
-            #print(rv)
+            #print("replace with", rv)
         text = text.replace(to_replace, rv)
         # replace the text
     #print("cleaned_text looks like:")
