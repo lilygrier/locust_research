@@ -5,11 +5,25 @@ from get_text import clean_page
 import pandas as pd
 import re
 
-def new_df():
-    cols = ["YEAR", 'MONTH', 'COUNTRY', 'SITUATION', 'FORECAST']
-    df = pd.DataFrame(columns=cols)
+def make_csv():
+    '''
+    Goes through all files, adds data to a pandas dataframe, exports as csv
+    '''
+    df = new_df()
 
-def parse_text(file_path):
+    
+
+
+def new_df():
+    '''
+    Makes a new Pandas dataframe with appropriate columns
+    '''
+    cols = ['YEAR', 'MONTH', 'COUNTRY', 'SITUATION', 'FORECAST']
+    df = pd.DataFrame(columns=cols)
+    return df
+
+
+def parse_text(file_path, df):
     '''
     Takes a single file and adds its contents to an existing Pandas dataframe.
     '''
@@ -19,14 +33,26 @@ def parse_text(file_path):
     df = pd.DataFrame(columns=cols)
     rel_text = get_relevant_text(text)
     countries = get_countries(rel_text)
+    year = int(file_path[-4:])
+    month = re.match(r'\\(.+)_\d+')
+    print("month is: ", month)
+    
     for country, sit, forecast in countries:
         #print(country)
-        if re.search(r',|, ?and ', country, re.IGNORECASE):
-            print("country: ", country)
+        country_list = re.split(r",? AND|, ?", country.upper())
+        for cty in country_list:
+            df.append({'YEAR': year, 'MONTH': month, 'COUNTRY': cty, 
+                        'SITUATION': situation, 'FORECAST': forecast})
+            #df['COUNTRY'] = cty
+            #df['SITUATION'] = sit
+            #df['FORECAST'] = forecast
+        #if re.search(r',|, ?and ', country, re.IGNORECASE):
+            #print("country: ", country)
             #print(re.split(r", ?|,? AND ", country.upper()))
-            print(re.split(r",? AND|, ?", country.upper()))
+            #print(re.split(r",? AND|, ?", country.upper()))
 
-            print("match")
+            #print("match")
+    return df
         
 
 
