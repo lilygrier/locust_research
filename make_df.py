@@ -11,8 +11,6 @@ def make_csv():
     '''
     df = new_df()
 
-    
-
 
 def new_df():
     '''
@@ -29,20 +27,31 @@ def parse_text(file_path, df):
     '''
     text = clean_page(file_path)
     # find all situation and forecast
-    cols = ["YEAR", 'MONTH', 'COUNTRY', 'SITUATION', 'FORECAST']
+    cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
+    regions = ["WEST AFRICA", 'NORTH-WEST AFRICA', 'EASTERN AFRICA', 'NEAR EAST', 'SOUTH-WEST ASIA']
     df = pd.DataFrame(columns=cols)
     rel_text = get_relevant_text(text)
     countries = get_countries(rel_text)
     year = int(file_path[-4:])
-    month = re.match(r'\\(.+)_\d+')
-    print("month is: ", month)
+    month = re.findall(r'.+/(.+)_\d+', file_path)[0]
+    print("month is: ", month[0])
     
-    for country, sit, forecast in countries:
+    for country, situation, forecast in countries:
         #print(country)
         country_list = re.split(r",? AND|, ?", country.upper())
         for cty in country_list:
-            df.append({'YEAR': year, 'MONTH': month, 'COUNTRY': cty, 
-                        'SITUATION': situation, 'FORECAST': forecast})
+            cty = cty.lstrip()
+            if any(region in cty for region in regions): # if the string contains a region
+                region_list = cty.split('\n')
+                region = region_list[0]
+                cty = region_list[1]
+            #print("cty is: ", cty)
+            #if re.match(r'.+\n.+', cty):
+
+            cty = re.sub('\n', " ", cty)
+            df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': cty, 
+                        'SITUATION': situation, 'FORECAST': forecast}, ignore_index=True)
+            
             #df['COUNTRY'] = cty
             #df['SITUATION'] = sit
             #df['FORECAST'] = forecast
