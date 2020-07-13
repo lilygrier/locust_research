@@ -5,7 +5,14 @@ from get_text import clean_page
 import pandas as pd
 import re
 
+def new_df():
+    cols = ["YEAR", 'MONTH', 'COUNTRY', 'SITUATION', 'FORECAST']
+    df = pd.DataFrame(columns=cols)
+
 def parse_text(file_path):
+    '''
+    Takes a single file and adds its contents to an existing Pandas dataframe.
+    '''
     text = clean_page(file_path)
     # find all situation and forecast
     cols = ["YEAR", 'MONTH', 'COUNTRY', 'SITUATION', 'FORECAST']
@@ -20,9 +27,13 @@ def parse_text(file_path):
             print(re.split(r",? AND|, ?", country.upper()))
 
             print("match")
+        
 
 
 def get_countries(text):
+    '''
+    Parses country names, situation, and forecast out of text file.
+    '''
     #countries = re.split(r'(?:• )?SITUATION', text)
     #country_name = countries[0]
     #for country in countries[1:]:
