@@ -41,7 +41,7 @@ def parse_text(file_path, df):
     # find all situation and forecast
     cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
     regions = ["WESTERN REGION", "WEST AFRICA", 'NORTH-WEST AFRICA', 'EASTERN AFRICA', 
-    'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION"]
+    'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION", 'MEDITERRANEAN']
     df = pd.DataFrame(columns=cols)
     rel_text = get_relevant_text(text)
     #print("rel_text is: ", rel_text)
@@ -59,7 +59,7 @@ def parse_text(file_path, df):
         for cty in country_list:
             cty = cty.lstrip()
             #print("cty is: ", cty)
-            if any(region in cty.upper() for region in regions): # if the string contains a region
+            if any(region in cty.upper() for region in regions) and "MEDITERRANEAN SEA" not in cty.upper(): # if the string contains a region
                 region_list = cty.split('\n')
                 region = region_list[0]
                 cty = region_list[1]
@@ -75,9 +75,18 @@ def parse_text(file_path, df):
             if not forecast:
                 print("no forecast!!")
                 print('file is: ', file_path)
-            bad_words = ['SITUATION', 'FORECAST']
+            #bad_words = ['SITUATION', 'FORECAST']
             #if 'SITUATION' in (cty, situation, forecast) or 'FORECAST' in (cty, situation, forecast):
+            med_sea_split = re.split(r'\nMEDITERRANEAN SEA\n', forecast) # weird bit with no situation or forecast
+            if len(med_sea_split) > 1:
+                forecast = med_sea_split[0]
+                df = df.append({'YEAR': year, 'MONTH': month, 'REGION': 'MEDITERRANEAN SEA', 'COUNTRY': 'MEDITERRANEAN SEA', 
+                        'SITUATION': med_sea_split[1], 'FORECAST': None}, ignore_index=True)
+            # funky formats where situation not labeled + forecast has no bullet
+            dif_format_countries(forecast, cty, situation, region, month, year, df) # updates dataframe in place
+
             for item in [cty, situation, forecast]:
+
                 if 'FORECAST' in item or 'SITUATION' in item:
                     print("something's up")
                     print(file_path)
@@ -96,9 +105,48 @@ def parse_text(file_path, df):
             #print(re.split(r",? AND|, ?", country.upper()))
 
             #print("match")
+    #print("dataframe updated")
     return df
         
+def dif_format_countries(og_text, old_country, old_situation, region, month, year, df):
+    '''
+    Finds countries that don't have labeled situations or bullets before 'FORECAST'.
+    This mostly occurs in 2004.
+    Returns a dictionary of entries
+    '''
+    # forecast of first country
+    #re.findall(r'.+?')
+    #re.findall(r'\.\n(\w+?)\n(.+?)\n(?: +)?FORECAST\n(.+?)(?=$|[^\.]\n(?:.+?)\n(?:.+?)\n(?: +)?FORECAST\n)', text, re.DOTALL)
+    # check for a new region
+    by_country = re.split(r'\n(?: +)?FORECAST\n', og_text)
+    if len(by_country) == 1:
+        print("no hidden countries found! returning...")
+        return
+    print('entering function on country: ', old_country)
+    for country in by_country[:-1]:
+        info = re.findall(r'(.+\.)\n(.+?)\n(.+)', country)[0]
+        old_forecast = info[0]
+        df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': old_country, 
+                    'SITUATION': old_situation, 'FORECAST': old_forecast}, ignore_index=True) # append old forecast with old country and situation
+        print("added to df: ", old_country)
+        # update old country and situation
+        old_country = info[1]
+        old_situation = info[2]
+    old_forecast = by_country[-1]
+    df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': old_country, 
+                    'SITUATION': old_situation, 'FORECAST': old_forecast}, ignore_index=True) # append the stuff again
 
+        #old_forecast = re.findall(r'(.+\.)\n(.+?)\n(.+)', country)[0][0]
+
+        #old_forecast, new_name, new_sit = re.findall(r'(.+\.)\n(.+?)\n(.+)', country)[0]
+        #print(re.findall(r'(.+\.)\n(.+?)\n(.+)', country, re.DOTALL))
+    #forecast = old_forecast
+    #df = df.append()
+
+
+    #re.split(r'\.\n\w\n', text)
+    print("dataframe updated")
+    return None
 
 def get_countries(text):
     '''
