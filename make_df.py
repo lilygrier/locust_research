@@ -47,17 +47,18 @@ def parse_text(file_path, df):
     'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION"]
     df = pd.DataFrame(columns=cols)
     rel_text = get_relevant_text(text)
-    print("rel_text is: ", rel_text)
+    #print("rel_text is: ", rel_text)
     countries = get_countries(rel_text)
-    print("countries is: ", countries)
+    #for country in countries:
+        #print(country)
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
-    region = None
+    region = "WESTERN REGION"
     #print("month is: ", month)
     
     for country, situation, forecast in countries:
         #print(country)
-        country_list = re.split(r",? AND|, ?", country.upper())
+        country_list = re.split(r",? \n?AND|, ?", country.upper())
         for cty in country_list:
             cty = cty.lstrip()
             #print("cty is: ", cty)
@@ -70,13 +71,19 @@ def parse_text(file_path, df):
 
             cty = re.sub('\n', " ", cty)
             cty = re.sub(r'AND |and ', "", cty)
-            if not region: # for debugging
-                print("no region!")
-                print('cty is: ', cty)
-                print('file is: ', file_path)
+            #if not region: # for debugging
+                #print("no region!")
+                #print('cty is: ', cty)
+                #print('file is: ', file_path)
             if not forecast:
                 print("no forecast!!")
                 print('file is: ', file_path)
+            if ('SITUATION' in situation or 'SITUATION' in forecast) or ('FORECAST' in situation or 'FORECAST' in forecast):
+                print("something's up")
+                print(file_path)
+                print(situation)
+                print(forecast)
+                
             df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': cty, 
                         'SITUATION': situation, 'FORECAST': forecast}, ignore_index=True)
             
@@ -108,22 +115,24 @@ def get_countries(text):
     #countries = re.findall(r'(.+?)\n• SITUATION ?\n(.+?)\n• FORECAST\n(.+?)(?=$|[^.]+\n• SITUATION ?\n)', 
                             #text, re.DOTALL|re.IGNORECASE)
     # also need to deal with lists of countries that have forecasts but not situations
-    countries = re.findall(r'(.+?)(?:\n• SITUATION ?\n(.+?))?\n• FORECAST\n(.+?)(?=$|[^.]+(?:\n• SITUATION ?\n.+)?• FORECAST)', 
+    countries = re.findall(r'(.+?)(?:\n• SITUATION ? ?\n(.+?))?\n ?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n• SITUATION ? ?\n.+)?• FORECAST)', 
                             text, re.DOTALL|re.IGNORECASE)
     #print("countries: ", countries)
     return countries
 
 def get_relevant_text(text):
-    result = re.findall(r'(?:Situation and Forecast)(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
+    result = re.findall(r'(?:Situation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
                         text, flags = re.DOTALL|re.IGNORECASE)[0]
     #print(result)
     #
-    #print("type of result: ", type(result))
+    #print("type of result: ", type(result))ß
     # get rid of headers and footers
     to_keep = []
     for line in result.split('\n'):
-        if line and not re.match(r'D E S E R T  L O C U S T  B U L L E T I N|No. \d+|\( see also the summary', line, re.IGNORECASE):
+        #print("line is: ", line)
+        if line and not re.match(r'Desert Locust Situation and Forecast|D E S E R T  L O C U S T  B U L L E T I N|No. \d+|\( ?see also the summary', line, re.IGNORECASE):
             to_keep.append(line)
+            #print("appended")
     return '\n'.join(to_keep)
     #return re.sub(r'(.+)D E S E R T  L O C U S T  B U L L E T I N|No. \d+(.+)', r'\1\2', result, re.IGNORECASE|re.DOTALL)
 
