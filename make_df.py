@@ -19,12 +19,9 @@ def make_csv():
         for f in files:
             file_path = os.path.join(subdir, f)
             df = parse_text(file_path, df)
-    csv = df.to_csv(path='../../dataCSV/FAO_Reports/report_text.csv')
+    df.to_csv(path='../../dataCSV/FAO_Reports/report_text.csv')
     print("csv added")
     return df
-
-
-
 
 
 def new_df():
@@ -49,8 +46,8 @@ def parse_text(file_path, df):
     rel_text = get_relevant_text(text)
     #print("rel_text is: ", rel_text)
     countries = get_countries(rel_text)
-    #for country in countries:
-        #print(country)
+    for country in countries:
+        print(country)
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
     region = "WESTERN REGION"
@@ -78,11 +75,14 @@ def parse_text(file_path, df):
             if not forecast:
                 print("no forecast!!")
                 print('file is: ', file_path)
-            if ('SITUATION' in situation or 'SITUATION' in forecast) or ('FORECAST' in situation or 'FORECAST' in forecast):
-                print("something's up")
-                print(file_path)
-                print(situation)
-                print(forecast)
+            bad_words = ['SITUATION', 'FORECAST']
+            #if 'SITUATION' in (cty, situation, forecast) or 'FORECAST' in (cty, situation, forecast):
+            for item in [cty, situation, forecast]:
+                if 'FORECAST' in item or 'SITUATION' in item:
+                    print("something's up")
+                    print(file_path)
+                    print(item)
+                    #print(forecast)
                 
             df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': cty, 
                         'SITUATION': situation, 'FORECAST': forecast}, ignore_index=True)
@@ -115,7 +115,7 @@ def get_countries(text):
     #countries = re.findall(r'(.+?)\n• SITUATION ?\n(.+?)\n• FORECAST\n(.+?)(?=$|[^.]+\n• SITUATION ?\n)', 
                             #text, re.DOTALL|re.IGNORECASE)
     # also need to deal with lists of countries that have forecasts but not situations
-    countries = re.findall(r'(.+?)(?:\n• SITUATION ? ?\n(.+?))?\n ?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n• SITUATION ? ?\n.+)?• FORECAST)', 
+    countries = re.findall(r'(.+?)(?:\n(?:  )?• SITUATION ? ?\n(.+?))?\n ?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n(?:  )?• SITUATION ? ?\n.+)?• FORECAST)', 
                             text, re.DOTALL|re.IGNORECASE)
     #print("countries: ", countries)
     return countries

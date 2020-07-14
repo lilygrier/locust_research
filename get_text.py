@@ -6,7 +6,7 @@ def clean_page(file_path):
     final_txt = []
     # determine if old style
     year = int(file_path[-4:])
-    old_style = (1997 <= year <= 2017)
+    old_style = (1996 <= year <= 2017)
     #if year == 1996:
         # JULY TO DECEMBER 1996 IS OLD STYLE!!!
         # or don't  even feed anything older to this...
