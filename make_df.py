@@ -46,18 +46,18 @@ def parse_text(file_path, df):
     rel_text = get_relevant_text(text)
     #print("rel_text is: ", rel_text)
     countries = get_countries(rel_text)
-    for country in countries:
-        print(country)
+    
+    #for country in countries:
+        #print(country)
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
     region = "WESTERN REGION"
     #print("month is: ", month)
     
     for country, situation, forecast in countries:
+        dif_formatting = False
         #print(country)
         country_list = re.split(r",? \n?AND|, ?", country.upper())
-        forecast = dif_format_countries(forecast, cty, situation, region, month, year, df) # updates dataframe in place
-
         for cty in country_list:
             cty = cty.lstrip()
             #print("cty is: ", cty)
@@ -85,7 +85,9 @@ def parse_text(file_path, df):
                 df = df.append({'YEAR': year, 'MONTH': month, 'REGION': 'MEDITERRANEAN SEA', 'COUNTRY': 'MEDITERRANEAN SEA', 
                         'SITUATION': med_sea_split[1], 'FORECAST': None}, ignore_index=True)
             # funky formats where situation not labeled + forecast has no bullet
-
+            if len(re.split(r'\n(?: +)?FORECAST\n', forecast)) > 1: 
+                forecast, to_enter = dif_format_countries(forecast)
+                dif_formatting = True 
             for item in [cty, situation, forecast]:
 
                 if 'FORECAST' in item or 'SITUATION' in item:
@@ -93,10 +95,38 @@ def parse_text(file_path, df):
                     print(file_path)
                     print(item)
                     #print(forecast)
+
                 
             df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': cty, 
                         'SITUATION': situation, 'FORECAST': forecast}, ignore_index=True)
-            
+
+        #if len(re.split(r'\n(?: +)?FORECAST\n', forecast)) > 1: 
+        if dif_formatting:
+            #forecast, to_enter = dif_format_countries(forecast) # updates dataframe in place
+            print("to_enter: ", to_enter)
+            for name, info in to_enter.items():
+                sit = to_enter[name]['SITUATION']
+                fcast = to_enter[name]['FORECAST']
+                if any(region in name.upper() for region in regions) and "MEDITERRANEAN SEA" not in name.upper(): # if the string contains a region
+                    #print("name is", name)
+                    name = name.lstrip()
+                    region_list = name.split('\n')
+                    #region = region_list[0]
+                    region = region_list[0].lstrip()
+                    name = region_list[1].lstrip()
+                    #print("region is: ", region)
+                    #print("name is: ", name)
+                    #name = re.sub('\n', " ", name)
+                #name = region_list[1]
+            #print("cty is: ", cty)
+            #if re.match(r'.+\n.+', cty):
+
+                name = re.sub('\n', " ", name)
+                df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': name, 
+                'SITUATION': sit, 'FORECAST': fcast}, ignore_index=True)
+
+
+
             #df['COUNTRY'] = cty
             #df['SITUATION'] = sit
             #df['FORECAST'] = forecast
@@ -124,12 +154,18 @@ def dif_format_countries(og_text):
         print("no hidden countries found! returning...")
         return
     #print('entering function on country: ', old_country)
-    print('by country looks like: ', by_country)
+    #
+    # print('by country looks like: ', by_country)
     new_countries = []
     for country in by_country[:-1]:
         #info = re.findall(r'(.+\.)\n(.+?)\n(.+)', country, re.DOTALL)[0]
         # AMEND FOLLOWING LINE FOR REGION
-        for item in re.findall(r'(.+\.)\n(.+?)\n(.+)', country, re.DOTALL)[0]:
+        #for item in re.findall(r'(.+\.)\n(.+?)\n(.+)', country, re.DOTALL)[0]:
+        # try to capture regions:
+        #for item in re.findall(r'(.+\.)((?:\n.+?)?\n(?:.+?))\n(.+)', country, re.DOTALL)[0]:
+        for item in re.findall(r'(.+\.)((?:\n[A-Z]+?)?\n(?:.+?))\n(.+)', country, re.DOTALL)[0]:
+
+
             new_countries.append(item)
         #print(info)
         #old_forecast = info[0]
