@@ -129,17 +129,19 @@ def many_countries(text):
             first_line_list = re.split(" ", line)
             #first_line_list = [sub.replace('', '') for sub in first_line_list]
             #first_line_list = line.split("  ")
-            #print("first_line_list", first_line_list)
+            print("first_line_list", first_line_list)
             next_line = line_list[i + 1]
             to_replace.append(next_line)
             #print(next_line)
             next_line_list = next_line.split(" ")
-            #print("next_line_list", next_line_list)
+            print("next_line_list", next_line_list)
             suffix_cnt = 0
             for i, char in enumerate(first_line_list):
-                #print("char is: ", char)
-                if char == "UAE":
+                print("char is: ", char)
+                if char == "UAE" or char == "D.R.":
                     rv += char + " "
+                #elif char == "D.R":
+                
                 elif re.search(r'[A-Z]', char):
                     rv += char + next_line_list[suffix_cnt]
                     suffix_cnt += 1
@@ -158,11 +160,11 @@ def many_countries(text):
                         #print(" repeated empty space")
                 else:
                     rv += char
-                #print(rv)    
+                print(rv)    
         to_replace = '\n'.join(to_replace)
-        #if to_replace and rv:
-            #print("to_replace", to_replace)
-            #print("replace with", rv)
+        if to_replace and rv:
+            print("to_replace", to_replace)
+            print("replace with", rv)
         text = text.replace(to_replace, rv)
         # replace the text
     #print("cleaned_text looks like:")
@@ -183,6 +185,7 @@ def get_relevant_text(text):
             to_keep.append(line)
             #print("appended")
     final_text = '\n'.join(to_keep)
-    final_text = re.sub(r'\n• F\norecaSt\n', r'\n• FORECAST\n', final_text)
-    final_text = re.sub(r'\n• S\nituation\n', r'\n• SITUATION\n', final_text)
+    final_text = re.sub(r'\n•( +)?F( +)?(\n)?orecaSt\n', r'\n• FORECAST\n', final_text, flags = re.IGNORECASE)
+    #final_text = re.sub(r'\n•( +)?F( +)?ORECAST\n', r'\n• FORECAST\n', final_text, flags=re.IGNORECASE)
+    final_text = re.sub(r'\n• S( +)?\nituation\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
     return final_text

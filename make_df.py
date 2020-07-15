@@ -38,6 +38,7 @@ def parse_text(file_path, df):
     Takes a single file and adds its contents to an existing Pandas dataframe.
     '''
     rel_text = clean_page(file_path)
+    #print(rel_text)
     # find all situation and forecast
     cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
     regions = ["WESTERN REGION", "WEST AFRICA", 'NORTH-WEST AFRICA', 'EASTERN AFRICA', 
