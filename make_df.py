@@ -47,8 +47,8 @@ def parse_text(file_path, df):
     countries = get_countries(rel_text)
     
     # country debugging statement:
-    for country in countries:
-        print(country)
+    #for country in countries:
+        #print(country)
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
     region = "WESTERN REGION"
@@ -105,7 +105,7 @@ def parse_text(file_path, df):
         #if len(re.split(r'\n(?: +)?FORECAST\n', forecast)) > 1: 
         if dif_formatting:
             #forecast, to_enter = dif_format_countries(forecast) # updates dataframe in place
-            print("to_enter: ", to_enter)
+            #print("to_enter: ", to_enter)
             for name, info in to_enter.items():
                 sit = to_enter[name]['SITUATION']
                 fcast = to_enter[name]['FORECAST']

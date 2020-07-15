@@ -185,7 +185,8 @@ def get_relevant_text(text):
             to_keep.append(line)
             #print("appended")
     final_text = '\n'.join(to_keep)
-    final_text = re.sub(r'\n•( +)?F( +)?(\n)?orecaSt\n', r'\n• FORECAST\n', final_text, flags = re.IGNORECASE)
+    final_text = re.sub(r'\n( +)?•( +)?F( +)?(\n)?orecaSt\n', r'\n• FORECAST\n', final_text, flags = re.IGNORECASE)
     #final_text = re.sub(r'\n•( +)?F( +)?ORECAST\n', r'\n• FORECAST\n', final_text, flags=re.IGNORECASE)
+    final_text = re.sub(r'\n- SITUATION\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
     final_text = re.sub(r'\n• S( +)?\nituation\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
     return final_text
