@@ -47,8 +47,8 @@ def parse_text(file_path, df):
     countries = get_countries(rel_text)
     
     # country debugging statement:
-    #for country in countries:
-        #print(country)
+    for country in countries:
+        print(country)
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
     region = "WESTERN REGION"
@@ -85,7 +85,9 @@ def parse_text(file_path, df):
                 df = df.append({'YEAR': year, 'MONTH': month, 'REGION': 'MEDITERRANEAN SEA', 'COUNTRY': 'MEDITERRANEAN SEA', 
                         'SITUATION': med_sea_split[1], 'FORECAST': None}, ignore_index=True)
             # funky formats where situation not labeled + forecast has no bullet
-            if len(re.split(r'\n(?: +)?FORECAST\n', forecast)) > 1: 
+            # this one isn't working now...
+            if len(re.split(r'\n•?(?: +)?FORECAST\n', forecast)) > 1: 
+            #if len(re.split(r'\n• FORECAST\n', forecast)) > 1:
                 forecast, to_enter = dif_format_countries(forecast)
                 dif_formatting = True 
             for item in [cty, situation, forecast]:
@@ -149,7 +151,8 @@ def dif_format_countries(og_text):
     #re.findall(r'.+?')
     #re.findall(r'\.\n(\w+?)\n(.+?)\n(?: +)?FORECAST\n(.+?)(?=$|[^\.]\n(?:.+?)\n(?:.+?)\n(?: +)?FORECAST\n)', text, re.DOTALL)
     # check for a new region
-    by_country = re.split(r'\n(?: +)?FORECAST\n', og_text)
+  
+    by_country = re.split(r'\n•?(?: +)?FORECAST\n', og_text)
     if len(by_country) == 1:
         print("no hidden countries found! returning...")
         return
@@ -216,6 +219,13 @@ def get_countries(text):
                             #text, re.DOTALL|re.IGNORECASE)
     # also need to deal with lists of countries that have forecasts but not situations
     countries = re.findall(r'(.+?)(?:\n(?:  )?• SITUATION ? ?\n(.+?))?\n(?: +)?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n(?:  )?• SITUATION ? ?\n.+)?• FORECAST)', 
+                            text, re.DOTALL|re.IGNORECASE)
+
+    # above is reading forecasts as country names... need to rewrite
+    #countries = re.findall(r'(.+?)(?:\n(?:  )?• SITUATION ? ?\n(.+?))?\n(?: +)?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n(?:  )?• SITUATION ? ?\n.+)?• FORECAST)', 
+                            #text, re.DOTALL|re.IGNORECASE)
+        # try again:
+    countries = re.findall(r'(.+?)(?:\n(?:  )?• SITUATION ? ?\n(.+?))?\n(?: +)?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n(?:  )?• SITUATION ? ?\n.+)?\n(?: +)?• FORECAST)', 
                             text, re.DOTALL|re.IGNORECASE)
     #print("countries: ", countries)
     return countries
