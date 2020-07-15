@@ -92,7 +92,7 @@ def two_word(text):
         country = []
         to_replace = []
         #elif line == "D.R. C":
-        if re.match(r'[A-Z]  [A-Z]', line):
+        if re.match(r'[A-Z]  [A-Z]$', line):
             first_line = line
             first_line_list = line.split("  ")
             #print(first_line)
@@ -121,7 +121,7 @@ def many_countries(text):
     for i, line in enumerate(line_list):
         to_replace = []
         rv = ""
-        if re.match(r'[A-Z] ( [A-Z]|  .[A-Z] )?,', line):
+        if re.match(r'[A-Z] ( [A-Z]|  .[A-Z] )? ?,', line):
             #print(line)
             #first_line = line
             to_replace.append(line)
@@ -129,15 +129,15 @@ def many_countries(text):
             first_line_list = re.split(" ", line)
             #first_line_list = [sub.replace('', '') for sub in first_line_list]
             #first_line_list = line.split("  ")
-            print("first_line_list", first_line_list)
+            #print("first_line_list", first_line_list)
             next_line = line_list[i + 1]
             to_replace.append(next_line)
             #print(next_line)
             next_line_list = next_line.split(" ")
-            print("next_line_list", next_line_list)
+            #print("next_line_list", next_line_list)
             suffix_cnt = 0
             for i, char in enumerate(first_line_list):
-                print("char is: ", char)
+                #print("char is: ", char)
                 if char == "UAE" or char == "D.R.":
                     rv += char + " "
                 #elif char == "D.R":
@@ -160,11 +160,11 @@ def many_countries(text):
                         #print(" repeated empty space")
                 else:
                     rv += char
-                print(rv)    
+                #print(rv)    
         to_replace = '\n'.join(to_replace)
-        if to_replace and rv:
-            print("to_replace", to_replace)
-            print("replace with", rv)
+        #if to_replace and rv:
+            #print("to_replace", to_replace)
+            #print("replace with", rv)
         text = text.replace(to_replace, rv)
         # replace the text
     #print("cleaned_text looks like:")
