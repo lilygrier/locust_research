@@ -56,6 +56,8 @@ def parse_text(file_path, df):
     for country, situation, forecast in countries:
         #print(country)
         country_list = re.split(r",? \n?AND|, ?", country.upper())
+        forecast = dif_format_countries(forecast, cty, situation, region, month, year, df) # updates dataframe in place
+
         for cty in country_list:
             cty = cty.lstrip()
             #print("cty is: ", cty)
@@ -83,7 +85,6 @@ def parse_text(file_path, df):
                 df = df.append({'YEAR': year, 'MONTH': month, 'REGION': 'MEDITERRANEAN SEA', 'COUNTRY': 'MEDITERRANEAN SEA', 
                         'SITUATION': med_sea_split[1], 'FORECAST': None}, ignore_index=True)
             # funky formats where situation not labeled + forecast has no bullet
-            dif_format_countries(forecast, cty, situation, region, month, year, df) # updates dataframe in place
 
             for item in [cty, situation, forecast]:
 
@@ -108,7 +109,7 @@ def parse_text(file_path, df):
     #print("dataframe updated")
     return df
         
-def dif_format_countries(og_text, old_country, old_situation, region, month, year, df):
+def dif_format_countries(og_text):
     '''
     Finds countries that don't have labeled situations or bullets before 'FORECAST'.
     This mostly occurs in 2004.
@@ -122,19 +123,33 @@ def dif_format_countries(og_text, old_country, old_situation, region, month, yea
     if len(by_country) == 1:
         print("no hidden countries found! returning...")
         return
-    print('entering function on country: ', old_country)
+    #print('entering function on country: ', old_country)
+    print('by country looks like: ', by_country)
+    new_countries = []
     for country in by_country[:-1]:
-        info = re.findall(r'(.+\.)\n(.+?)\n(.+)', country)[0]
-        old_forecast = info[0]
-        df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': old_country, 
-                    'SITUATION': old_situation, 'FORECAST': old_forecast}, ignore_index=True) # append old forecast with old country and situation
-        print("added to df: ", old_country)
+        #info = re.findall(r'(.+\.)\n(.+?)\n(.+)', country, re.DOTALL)[0]
+        # AMEND FOLLOWING LINE FOR REGION
+        for item in re.findall(r'(.+\.)\n(.+?)\n(.+)', country, re.DOTALL)[0]:
+            new_countries.append(item)
+        #print(info)
+        #old_forecast = info[0]
+        #df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': old_country, 
+                    #'SITUATION': old_situation, 'FORECAST': old_forecast}, ignore_index=True) # append old forecast with old country and situation
+        #print("added to df: ", old_country)
         # update old country and situation
-        old_country = info[1]
-        old_situation = info[2]
-    old_forecast = by_country[-1]
-    df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': old_country, 
-                    'SITUATION': old_situation, 'FORECAST': old_forecast}, ignore_index=True) # append the stuff again
+        #old_country = info[1]
+        #old_situation = info[2]
+    old_forecast = new_countries[0]
+    to_enter = {}
+    # store as tuples of country, sit, forecast
+    final_list = new_countries[1:]
+    final_list.append(by_country[-1])
+    sorted_tuples = [(final_list[i], final_list[i + 1], final_list[i + 2]) for i in range(0, len(final_list), 3)]
+    for country, situation, forecast in sorted_tuples:
+        to_enter[country] = {"SITUATION": situation, 'FORECAST': forecast}
+    #old_forecast = by_country[-1]
+    #df = df.append({'YEAR': year, 'MONTH': month, 'REGION': region, 'COUNTRY': old_country, 
+                    #'SITUATION': old_situation, 'FORECAST': old_forecast}, ignore_index=True) # append the stuff again
 
         #old_forecast = re.findall(r'(.+\.)\n(.+?)\n(.+)', country)[0][0]
 
@@ -145,8 +160,9 @@ def dif_format_countries(og_text, old_country, old_situation, region, month, yea
 
 
     #re.split(r'\.\n\w\n', text)
-    print("dataframe updated")
-    return None
+    #print("dataframe updated")
+    # old forecast and dictionary of new entries
+    return old_forecast, to_enter
 
 def get_countries(text):
     '''
