@@ -12,7 +12,7 @@ def clean_page(file_path):
         # or don't  even feed anything older to this...
     #print("old style? ", old_style)
     for i, page in enumerate(pdf.pages):
-        left, right = get_left_side(page, i, old_style), get_right_side(page, i, old_style)
+        left, right = get_left_side(page, i, old_style, file_path), get_right_side(page, i, old_style, file_path)
         #right = get_right_side(page)
         clean_left = clean_text(left)
         #print("page number is: ", i)
@@ -23,7 +23,8 @@ def clean_page(file_path):
             clean_right = ""
         final_txt.append(clean_left)
         final_txt.append(clean_right)
-    return "\n".join(final_txt) # write this to a .txt file
+    final_txt = "\n".join(final_txt)
+    return get_relevant_text(final_txt)
 
     #with pdfplumber.open(file_path) as pdf:
         #page = pdf.pages[pg_num]
@@ -41,13 +42,15 @@ def clean_text(text): # make this prettier
     #return cleaned
     return many_countries(two_word(single_word(text))) # is this clean or gross
 
-def get_left_side(page, pg_num, old_style):
+def get_left_side(page, pg_num, old_style, file_path):
     x0 = 0
     #print("old_style", old_style)
     #print("page num: ", pg_num)
     if old_style: 
         if pg_num % 2 == 0:
-            x1 = page.width // 2 - 20
+            x1 = page.width // 2 - 20  
+        elif file_path.endswith('SEPT_2006') and pg_num == 3:
+            x1 = page.width // 2 + 10
         else:
             x1 = page.width // 2 + 20
     else:
@@ -57,10 +60,12 @@ def get_left_side(page, pg_num, old_style):
     return page.crop((x0, top, x1, bottom)).extract_text()
 
 
-def get_right_side(page, pg_num, old_style):
+def get_right_side(page, pg_num, old_style, file_path):
     if old_style:
         if pg_num % 2 == 0:
             x0 = page.width // 2 - 18
+        elif file_path.endswith('SEPT_2006') and pg_num == 3:
+            x0 = page.width // 2 + 10
         else:
             x0 = page.width // 2 + 20
     else:
@@ -163,3 +168,21 @@ def many_countries(text):
     #print("cleaned_text looks like:")
     #print(text)
     return text
+
+def get_relevant_text(text):
+    result = re.findall(r'(?:Situation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
+                        text, flags = re.DOTALL|re.IGNORECASE)[0]
+    #print(result)
+    #
+    #print("type of result: ", type(result))ß
+    # get rid of headers and footers
+    to_keep = []
+    for line in result.split('\n'):
+        #print("line is: ", line)
+        if line and not re.match(r'Desert Locust Situation and Forecast|D E S E R T  L O C U S T  B U L L E T I N|No. \d+|\( ?see also the summary|^\w ?$', line, re.IGNORECASE):
+            to_keep.append(line)
+            #print("appended")
+    final_text = '\n'.join(to_keep)
+    final_text = re.sub(r'\n• F\norecaSt\n', r'\n• FORECAST\n', final_text)
+    final_text = re.sub(r'\n• S\nituation\n', r'\n• SITUATION\n', final_text)
+    return final_text

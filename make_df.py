@@ -37,16 +37,15 @@ def parse_text(file_path, df):
     '''
     Takes a single file and adds its contents to an existing Pandas dataframe.
     '''
-    text = clean_page(file_path)
+    rel_text = clean_page(file_path)
     # find all situation and forecast
     cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
     regions = ["WESTERN REGION", "WEST AFRICA", 'NORTH-WEST AFRICA', 'EASTERN AFRICA', 
     'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION", 'MEDITERRANEAN']
     df = pd.DataFrame(columns=cols)
-    rel_text = get_relevant_text(text)
-    #print("rel_text is: ", rel_text)
     countries = get_countries(rel_text)
     
+    # country debugging statement:
     #for country in countries:
         #print(country)
     year = int(file_path[-4:])
@@ -215,25 +214,7 @@ def get_countries(text):
     #countries = re.findall(r'(.+?)\n• SITUATION ?\n(.+?)\n• FORECAST\n(.+?)(?=$|[^.]+\n• SITUATION ?\n)', 
                             #text, re.DOTALL|re.IGNORECASE)
     # also need to deal with lists of countries that have forecasts but not situations
-    countries = re.findall(r'(.+?)(?:\n(?:  )?• SITUATION ? ?\n(.+?))?\n ?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n(?:  )?• SITUATION ? ?\n.+)?• FORECAST)', 
+    countries = re.findall(r'(.+?)(?:\n(?:  )?• SITUATION ? ?\n(.+?))?\n(?: +)?• FORECAST ?\n(.+?)(?=$|[^.]+(?:\n(?:  )?• SITUATION ? ?\n.+)?• FORECAST)', 
                             text, re.DOTALL|re.IGNORECASE)
     #print("countries: ", countries)
     return countries
-
-def get_relevant_text(text):
-    result = re.findall(r'(?:Situation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
-                        text, flags = re.DOTALL|re.IGNORECASE)[0]
-    #print(result)
-    #
-    #print("type of result: ", type(result))ß
-    # get rid of headers and footers
-    to_keep = []
-    for line in result.split('\n'):
-        #print("line is: ", line)
-        if line and not re.match(r'Desert Locust Situation and Forecast|D E S E R T  L O C U S T  B U L L E T I N|No. \d+|\( ?see also the summary', line, re.IGNORECASE):
-            to_keep.append(line)
-            #print("appended")
-    return '\n'.join(to_keep)
-    #return re.sub(r'(.+)D E S E R T  L O C U S T  B U L L E T I N|No. \d+(.+)', r'\1\2', result, re.IGNORECASE|re.DOTALL)
-
-    #return re.sub(r'(.+)D E S E R T  L O C U S T  B U L L E T I N|No. \d+(.+)', r'\1\2', result, re.IGNORECASE|re.DOTALL)
