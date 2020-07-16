@@ -121,7 +121,7 @@ def many_countries(text):
     for i, line in enumerate(line_list):
         to_replace = []
         rv = ""
-        if re.match(r'[A-Z] ( [A-Z]|  .[A-Z] )? ?,', line):
+        if re.match(r'[A-Z](.[A-Z]. [A-Z])? ( [A-Z]|  .[A-Z] )? ?,', line):
             #print(line)
             #first_line = line
             to_replace.append(line)
@@ -129,12 +129,12 @@ def many_countries(text):
             first_line_list = re.split(" ", line)
             #first_line_list = [sub.replace('', '') for sub in first_line_list]
             #first_line_list = line.split("  ")
-            #print("first_line_list", first_line_list)
+            print("first_line_list", first_line_list)
             next_line = line_list[i + 1]
             to_replace.append(next_line)
             #print(next_line)
             next_line_list = next_line.split(" ")
-            #print("next_line_list", next_line_list)
+            print("next_line_list", next_line_list)
             suffix_cnt = 0
             for i, char in enumerate(first_line_list):
                 #print("char is: ", char)
@@ -162,9 +162,9 @@ def many_countries(text):
                     rv += char
                 #print(rv)    
         to_replace = '\n'.join(to_replace)
-        #if to_replace and rv:
-            #print("to_replace", to_replace)
-            #print("replace with", rv)
+        if to_replace and rv:
+            print("to_replace", to_replace)
+            print("replace with", rv)
         text = text.replace(to_replace, rv)
         # replace the text
     #print("cleaned_text looks like:")
@@ -172,7 +172,7 @@ def many_countries(text):
     return text
 
 def get_relevant_text(text):
-    result = re.findall(r'(?:Situation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
+    result = re.findall(r'(?:\nSituation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
                         text, flags = re.DOTALL|re.IGNORECASE)[0]
     #print(result)
     #
@@ -181,7 +181,7 @@ def get_relevant_text(text):
     to_keep = []
     for line in result.split('\n'):
         #print("line is: ", line)
-        if line and not re.match(r'Desert Locust Situation and Forecast|D E S E R T  L O C U S T  B U L L E T I N|No. \d+|\( ?see also the summary|^\w ?$', line, re.IGNORECASE):
+        if line and not re.match(r'(Desert Locust )?Situation and Forecast|D E S E R T  L O C U S T  B U L L E T I N|No. \d+|\( ?see also the summary|^\w ?$', line, re.IGNORECASE):
             to_keep.append(line)
             #print("appended")
     final_text = '\n'.join(to_keep)
