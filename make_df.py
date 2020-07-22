@@ -19,7 +19,8 @@ def make_csv():
         for f in files:
             file_path = os.path.join(subdir, f)
             df = parse_text(file_path, df)
-    df.to_csv(path='../../dataCSV/FAO_Reports/report_text.csv')
+            print("added to df: ", file_path)
+    df.to_csv(path_or_buf='../../dataCSV/FAO_Reports/report_text.csv')
     print("csv added")
     return df
 
@@ -40,10 +41,10 @@ def parse_text(file_path, df):
     rel_text = clean_page(file_path)
     #print(rel_text)
     # find all situation and forecast
-    cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
+    #cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
     regions = ["WESTERN REGION", "WEST AFRICA", 'NORTH-WEST AFRICA', 'EASTERN AFRICA', 
     'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION", 'MEDITERRANEAN']
-    df = pd.DataFrame(columns=cols)
+    #df = pd.DataFrame(columns=cols)
     countries = get_countries(rel_text)
     
     # country debugging statement:
