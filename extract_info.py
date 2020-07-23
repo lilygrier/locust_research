@@ -1,12 +1,15 @@
 import spacy
 from spacy.matcher import Matcher
+from itertools import *
 import re
 
 nlp = spacy.load("en_core_web_sm")
 #matcher = Matcher(nlp.vocab)
-LOCUST_VERBS = ['form', 'mature', 'lay', 'fledge', 'breed', 'hatch', 'copulate'] # can look for lemma of verb
+LOCUST_VERBS = ['form', 'mature', 'lay', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 'decline'] # can look for lemma of verb
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
-LOCUST_TYPES = ["locust", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'swarmlet']
+LOCUST_TYPES = ["locust", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'swarmlet', 'infestation', 'population']
+MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', "November", "December"]
+
 #LOCUST_ADJ = ["immature", 'mature', 'solitarious', 'gregarious', 'isolated']
 
 def prep_text(text):
@@ -14,7 +17,8 @@ def prep_text(text):
     Prepares text for processing.
     '''
     text = re.sub(r'\n', "", text)
-    text = re.sub(r'J ask', r'Jask', text)
+    #text = re.sub(r'J ask', r'Jask', text)
+    # REWRITE LINE BELOW WITH BACK REFERENCING
     text = re.sub(r'[B-Z] [a-z]+', r'[B-Z][a-z]+', text) # should handle the above case
     text = re.sub(r'no reports of [a-z]+', r'no [a-z]+', text)
 
@@ -35,9 +39,19 @@ def get_snippets(text):
     for sent in text.split('.'):
         sent = nlp(sent)
         keywords = sent_matches(sent)
+        add_dates(sent, keywords)
         if keywords:
             snippets.append(keywords)
     return snippets
+
+def add_dates(nlp_sent, keywords_list):
+    '''
+    Adds dates to list of keywords for the sentence
+    '''
+    for ent in nlp_sent.ents:
+        if ent.label_ == 'DATE':
+            keywords_list.append(ent.text)
+    return None
 
 def sent_matches(sent):
     '''
@@ -53,16 +67,31 @@ def sent_matches(sent):
         #print("SPAN IS: ", span)
         #if ranges:
             #print(ranges[-1], (start, end))
+            #prev_range = ranges[-1]
+            #new_range = range(start, end)
+        # new logic: if any two intersect, take the longer one
+
         if ranges and set(range(start, end)).issubset((ranges[-1])):
+            #print('longer one already there; skipping')
             # if longer match is already in there, skip it
             continue
-        if ranges and set(ranges[-1]).issubset(range(start, end)):
+        elif ranges and set(ranges[-1]).issubset(range(start, end)):
+            #print('replacing shorter match with longer one')
             # if shorter match was added, replace the shorter match with a longer one
             rv[-1] = span
             ranges[-1] = range(start, end)
+        elif ranges and set(range(start, end)).intersection((ranges[-1])): # if intersect but not subset, don't worry bout it
+            continue
         else:
             rv.append(span)
             ranges.append(range(start, end))
+        # need to add code that takes care of duplicates (if same start, take longer one)
+        #print("ranges: ", ranges)
+        #ranges_to_keep = [max(list(group),key=lambda x: x[1]) for key, group in groupby(ranges, lambda prop: prop[0])]
+        #for ran in ranges_to_keep:
+            #start, end[]
+            #rv.append(str(sent[ran[0]:ran[1]]))    
+
     return rv
 
 def make_matcher():
@@ -74,15 +103,36 @@ def make_matcher():
     actions = [[{'LEMMA': {'IN': LOCUST_VERBS}}]]
     locust_groups = [[{'POS': 'ADJ', 'OP': '?'},
     {'LOWER': 'and', 'OP': '?'},
-    {'POS': 'ADJ', 'OP': '*'},
+    {'LOWER': 'isolated', 'OP': '?'},
+    {'POS': {'IN': ['ADJ', 'PROPN']}, 'OP': '*'},
     {'LEMMA': {'IN': LOCUST_TYPES}},
                  {'LOWER': 'AND', 'OP': '?'},
                  {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}],
                  [{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LOWER': 'locusts'}]]
-    locust_gerunds = [[{'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'NOT IN': 'VERB'}}]]
+    locust_gerunds = [[{'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'NOT IN': 'VERB'}},
+                        {'LOWER': 'areas', 'OP': '!'}]]
+    specific_loc = [[{'POS': 'PROPN', 'OP': '+'},
+                    {'ORTH': '('},
+                    {'LOWER': {'REGEX': r'\d{4}\w/\d{4}\w'}},
+                    {'ORTH': ')'}]]
+    gen_loc = [[{'POS': 'PROPN', 'OP': '+', 'ORTH': {'NOT_IN': MONTHS}}]]
+    borders =  [[{'IS_TITLE': True, 'OP': '*'},
+                {'LOWER': 'and', 'OP': '?'},
+                {'IS_TITLE': True, 'OP': '+'},
+                {'LEMMA': 'border'}]]
+    #dates = [[{'LOWER': {'REGEX': r'\d+-?(\d+)?'}},
+                #{'ORTH': {'IN': MONTHS}}]]
+    situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
+                        [{'LOWER': 'calm'}],
+                        [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]]
     matcher.add("actions", actions)
     matcher.add("loc_group", locust_groups)
     matcher.add("gerunds", locust_gerunds)
+    matcher.add("specific_loc", specific_loc)
+    matcher.add("gen_loc", gen_loc)
+    matcher.add("border", borders)
+    #matcher.add("dates", dates)
+    matcher.add("situation_status", situation_status)
     return matcher
 
 def parse_info(text):
