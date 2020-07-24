@@ -1,9 +1,11 @@
 import spacy
 from spacy.matcher import Matcher
+from spacy.pipeline import Sentencizer
 from itertools import *
 import re
 
 nlp = spacy.load("en_core_web_sm")
+
 #matcher = Matcher(nlp.vocab)
 LOCUST_VERBS = ['form', 'mature', 'lay', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 'decline'] # can look for lemma of verb
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
@@ -35,9 +37,11 @@ def get_specific_locations():
 def get_snippets(text):
     snippets = []
     nlp = spacy.load("en_core_web_sm")
-    text = prep_text(text)
-    for sent in text.split('.'):
-        sent = nlp(sent)
+    sentencizer = Sentencizer(punct_chars=['.'])
+    text = prep_text(text) # re-write this as pipeline function?
+    nlp.add_pipe(sentencizer)
+    for sent in nlp(text).sents:
+        #sent = nlp(sent)
         keywords = sent_matches(sent)
         add_dates(sent, keywords)
         if keywords:
@@ -115,7 +119,7 @@ def make_matcher():
                     {'ORTH': '('},
                     {'LOWER': {'REGEX': r'\d{4}\w/\d{4}\w'}},
                     {'ORTH': ')'}]]
-    gen_loc = [[{'POS': 'PROPN', 'OP': '+', 'ORTH': {'NOT_IN': MONTHS}}]]
+    gen_loc = [[{'POS': 'PROPN', 'OP': '+', 'ORTH': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control']}}]]
     borders =  [[{'IS_TITLE': True, 'OP': '*'},
                 {'LOWER': 'and', 'OP': '?'},
                 {'IS_TITLE': True, 'OP': '+'},
@@ -125,12 +129,19 @@ def make_matcher():
     situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
                         [{'LOWER': 'calm'}],
                         [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]]
+    treatment = [[{'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
+                    {'LOWER': 'and', 'OP': '?'},
+                    {'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
+                    {'LOWER': 'control'},
+                    {'LOWER': 'operations'}],
+                    [{'LEMMA': 'treat'}]]
     matcher.add("actions", actions)
     matcher.add("loc_group", locust_groups)
     matcher.add("gerunds", locust_gerunds)
     matcher.add("specific_loc", specific_loc)
     matcher.add("gen_loc", gen_loc)
     matcher.add("border", borders)
+    matcher.add("treatment", treatment)
     #matcher.add("dates", dates)
     matcher.add("situation_status", situation_status)
     return matcher
