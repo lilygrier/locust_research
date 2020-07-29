@@ -1,28 +1,35 @@
 import spacy
 from spacy.matcher import Matcher
-from spacy.pipeline import Sentencizer
+from spacy.pipeline import Sentencizer, EntityRuler
+#import contextualSpellCheck
 from itertools import *
 import re
 
 nlp = spacy.load("en_core_web_sm")
 
 #matcher = Matcher(nlp.vocab)
-LOCUST_VERBS = ['form', 'mature', 'lay', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 'decline'] # can look for lemma of verb
+LOCUST_VERBS = ['form', 'mature', 'lay', 'lie', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 
+                'decline', 'scatter', 'isolate'] # can look for lemma of verb
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
-LOCUST_TYPES = ["locust", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'swarmlet', 'infestation', 'population']
+LOCUST_TYPES = ["locust", "locusts", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'mature', 'swarmlet', 
+                'infestation', 'population', 'scatter', 'isolate']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', "November", "December"]
-
+DIRECTIONS = ['north', 'south', 'east', 'west', 'southwest', 'southeast', 'northwest', 'northeast']
 #LOCUST_ADJ = ["immature", 'mature', 'solitarious', 'gregarious', 'isolated']
 
-def prep_text(text):
+def prep_text(year, month, text):
     '''
     Prepares text for processing.
     '''
-    text = re.sub(r'\n', "", text)
+    if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
+        text = re.sub(r'-\n', "", text)
+        text = re.sub(r'\n', " ", text)
+    else:
+        text = re.sub(r'\n', "", text)
     #text = re.sub(r'J ask', r'Jask', text)
     # REWRITE LINE BELOW WITH BACK REFERENCING
-    text = re.sub(r'[B-Z] [a-z]+', r'[B-Z][a-z]+', text) # should handle the above case
-    text = re.sub(r'no reports of [a-z]+', r'no [a-z]+', text)
+    text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
+    text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
 
     return text
 
@@ -38,15 +45,29 @@ def get_snippets(text):
     snippets = []
     nlp = spacy.load("en_core_web_sm")
     sentencizer = Sentencizer(punct_chars=['.'])
-    text = prep_text(text) # re-write this as pipeline function?
+    ruler = make_entity_ruler(nlp)
+
+    #text = prep_text(text) # re-write this as pipeline function?
     nlp.add_pipe(sentencizer)
+    nlp.add_pipe(ruler, overwrite=True)
+    #contextualSpellCheck.add_to_pipe(nlp)
+
     for sent in nlp(text).sents:
+        new_ents = []
+        for ent in ent.sents:
+            if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
+                new_ents.append(ent)
         #sent = nlp(sent)
-        keywords = sent_matches(sent)
-        add_dates(sent, keywords)
-        if keywords:
-            snippets.append(keywords)
+        #keywords = sent_matches(sent)
+        #add_dates(sent, keywords)
+        #if keywords:
+            #snippets.append(keywords)
+        sent.ents = new_ents
+        if new_ents:
+            snippets.append([ent.text for ent in sent.ents])
     return snippets
+    
+    return [ent for ent in sent.ents]
 
 def add_dates(nlp_sent, keywords_list):
     '''
@@ -98,6 +119,72 @@ def sent_matches(sent):
 
     return rv
 
+def refine_entities():
+    return None
+
+def add_entity(ent_label):
+    return doc.ents.append()
+
+def make_entity_ruler(nlp):
+    ruler = EntityRuler(nlp, validate=True)
+    patterns = [] # list of dictionaries
+    patterns.append({'label': 'LOC_TYPE', 'pattern': [{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LEMMA': {'IN': ['Locusts', 'locust', 'swarm']}}]})
+    patterns.append({'label': 'LOC_TYPE', 'pattern':[{'POS': 'ADJ', 'OP': '?'},
+    {'LOWER': 'and', 'OP': '?'},
+    {'LOWER': 'isolated', 'OP': '?'},
+    {'POS': {'IN': ['ADJ', 'PROPN']}, 'OP': '*'},
+    {'LEMMA': {'IN': LOCUST_TYPES}},
+                 {'LOWER': 'AND', 'OP': '?'},
+                 {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}]})
+    pat_locust_gerunds = [{'LOWER': 'no', 'OP': '?'},
+                        {'POS': 'ADJ', 'OP': '?'},
+                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}]
+    patterns.append({'label': 'ACTION', 'pattern': pat_locust_gerunds})
+    pat_specific_loc = [[{'POS': 'PROPN', 'OP': '+'},
+                    {'TEXT': '('},
+                    {'LOWER': {'REGEX': r'\d{4}\w/\d{4}\w'}},
+                    {'TEXT': ')'}]]
+    patterns.append({'label': 'SPEC_LOC', 'pattern': pat_specific_loc})
+    pat_gen_loc = [{'POS': 'PROPN', 'OP': '*', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}},
+                {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'}, # add 'des' here
+                {'POS': 'PROPN', 'OP': '+', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}}],
+    pat_lowlands = [{'POS': 'ADJ'}, {'LOWER': 'lowlands'}]
+    patterns.append({'label': 'GEN_LOC', 'pattern': pat_gen_loc})
+    patterns.append({'label': 'GEN_LOC', 'pattern': pat_lowlands})
+    pat_directions = [#{'POS': 'ADP', 'OP': '?'},
+                    {'LOWER': 'the', 'OP': '?'},
+                    {'LOWER': {'IN': DIRECTIONS}}]
+    pat_south_of = [{'LOWER': {'IN': DIRECTIONS}},
+                    {'LOWER': 'of'},
+                    {'LOWER': {'REGEX': r'\d\d[NSEW]'}}]
+    patterns.append({'label': 'GEN_LOC', 'pattern': pat_directions})
+    patterns.append({'label': 'GEN_LOC', 'pattern': pat_south_of})
+    borders =  [{'IS_TITLE': True, 'OP': '*'},
+                {'LOWER': 'and', 'OP': '?'},
+                {'IS_TITLE': True, 'OP': '+'},
+                {'LEMMA': 'border'}]
+    patterns.append({'label': 'GEN_LOC', 'pattern': borders})
+    situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
+                        [{'LOWER': 'calm'}],
+                        [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]]
+    for pattern in situation_status:
+        patterns.append({'label': 'ACTION', 'pattern': pattern})
+    treatment = [[{'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
+                    {'LOWER': 'and', 'OP': '?'},
+                    {'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
+                    {'LOWER': 'control'},
+                    {'LOWER': 'operations'}],
+                    [{'LEMMA': 'treat'}]]
+    for pattern in treatment:
+        patterns.append({'label': 'TREATMENT', 'pattern': pattern})
+    risk = [[{'POS': 'ADJ'}, {'LOWER': 'risk'}],
+            [{'lower': 'unlikely'}]]
+    for pattern in risk:
+        patterns.append({'label': 'RISK', 'pattern': pattern})
+    ruler.add_patterns(patterns)
+    #nlp.add_pipe(ruler, overwrite=True)
+    return ruler
+
 def make_matcher():
     '''
     creates the matcher object with specified patterns
@@ -105,21 +192,31 @@ def make_matcher():
     # maybe move relevant global vars into this function
     matcher = Matcher(nlp.vocab)
     actions = [[{'LEMMA': {'IN': LOCUST_VERBS}}]]
-    locust_groups = [[{'POS': 'ADJ', 'OP': '?'},
+    locust_groups = [[{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LEMMA': {'IN': ['Locusts', 'locust', 'swarm']}}],
+        [{'POS': 'ADJ', 'OP': '?'},
     {'LOWER': 'and', 'OP': '?'},
     {'LOWER': 'isolated', 'OP': '?'},
     {'POS': {'IN': ['ADJ', 'PROPN']}, 'OP': '*'},
     {'LEMMA': {'IN': LOCUST_TYPES}},
                  {'LOWER': 'AND', 'OP': '?'},
-                 {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}],
-                 [{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LOWER': 'locusts'}]]
-    locust_gerunds = [[{'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'NOT IN': 'VERB'}},
-                        {'LOWER': 'areas', 'OP': '!'}]]
+                 {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}]]
+    locust_gerunds = [[{'LOWER': 'no', 'OP': '?'},
+                        {'POS': 'ADJ', 'OP': '?'},
+                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'NOT IN': ['VERB']}}]] # add logic to later remove breeding areas
     specific_loc = [[{'POS': 'PROPN', 'OP': '+'},
                     {'ORTH': '('},
                     {'LOWER': {'REGEX': r'\d{4}\w/\d{4}\w'}},
                     {'ORTH': ')'}]]
-    gen_loc = [[{'POS': 'PROPN', 'OP': '+', 'ORTH': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control']}}]]
+    gen_loc = [[{'POS': 'PROPN', 'OP': '*', 'ORTH': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}},
+                {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'}, # add 'des' here
+                {'POS': 'PROPN', 'OP': '+', 'ORTH': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}}],
+                [{'POS': 'ADJ'}, {'LOWER': 'lowlands'}]]
+    directions = [[#{'POS': 'ADP', 'OP': '?'},
+                    {'LOWER': 'the', 'OP': '?'},
+                    {'LOWER': {'IN': DIRECTIONS}}],
+                    [{'LOWER': {'IN': DIRECTIONS}},
+                    {'LOWER': 'of'},
+                    {'LOWER': {'REGEX': r'\d\d[NSEW]'}}]]
     borders =  [[{'IS_TITLE': True, 'OP': '*'},
                 {'LOWER': 'and', 'OP': '?'},
                 {'IS_TITLE': True, 'OP': '+'},
@@ -135,13 +232,17 @@ def make_matcher():
                     {'LOWER': 'control'},
                     {'LOWER': 'operations'}],
                     [{'LEMMA': 'treat'}]]
+    risk = [[{'POS': 'ADJ'}, {'LOWER': 'risk'}],
+            [{'lower': 'unlikely'}]]
     matcher.add("actions", actions)
     matcher.add("loc_group", locust_groups)
     matcher.add("gerunds", locust_gerunds)
     matcher.add("specific_loc", specific_loc)
     matcher.add("gen_loc", gen_loc)
+    matcher.add("directions", directions)
     matcher.add("border", borders)
     matcher.add("treatment", treatment)
+    matcher.add("risk", risk)
     #matcher.add("dates", dates)
     matcher.add("situation_status", situation_status)
     return matcher

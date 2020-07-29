@@ -174,7 +174,7 @@ def many_countries(text):
     return text
 
 def get_relevant_text(text):
-    result = re.findall(r'(?:\nSituation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species)', 
+    result = re.findall(r'(?:\nSituation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species|Other Migratory Pests)', 
                         text, flags = re.DOTALL|re.IGNORECASE)[0]
     #print(result)
     #
@@ -187,8 +187,23 @@ def get_relevant_text(text):
             to_keep.append(line)
             #print("appended")
     final_text = '\n'.join(to_keep)
+    final_text = re.sub(r'\(cid:127\)', r'• ', final_text)
     final_text = re.sub(r'\n( +)?•( +)?F( +)?(\n)?orecaSt\n', r'\n• FORECAST\n', final_text, flags = re.IGNORECASE)
     #final_text = re.sub(r'\n•( +)?F( +)?ORECAST\n', r'\n• FORECAST\n', final_text, flags=re.IGNORECASE)
     final_text = re.sub(r'\n- SITUATION\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
-    final_text = re.sub(r'\n• S( +)?\nituation\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
+    final_text = re.sub(r'\n( +)?•( +)?S( +)?\n?ituation\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
+    final_text = re.sub(r'\n( +)?• S( +)?\n?ituation\n', r'\n• SITUATION\n', final_text, flags = re.IGNORECASE)
+    final_text = re.sub(r'dekad', r'decade', final_text)
+    final_text = re.sub(r' sq.', r' sq', final_text)
+    final_text = re.sub(r' m.', r' m', final_text)
+    final_text = re.sub(r' Sh.', r' Sh', final_text)
+    final_text = re.sub(r' mtur', r' matur', final_text)
+    final_text = re.sub(r' md-', r'mid-', final_text)
+    final_text = re.sub(r'mderate', r'moderate', final_text)
+    final_text = re.sub(r'\bmnth\b', r' month', final_text)
+    final_text = re.sub(r'(\b)mre(\b)', r'(\1)more(\2)', final_text)
+    final_text = re.sub(r'(\b)mde(\b)', r'\1made\2', final_text)
+    final_text = re.sub(r' (mve)(s?) ', r' move\2', final_text)
+    #final_text = re.sub(r'\bmnitor\b', r'\bmonitor\b', final_text)
+    final_text = re.sub(r'(signifi) +(cant)', r'\1\2', final_text)
     return final_text

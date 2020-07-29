@@ -87,6 +87,7 @@ def parse_text(file_path, df):
                         'SITUATION': med_sea_split[1], 'FORECAST': None}, ignore_index=True)
             # funky formats where situation not labeled + forecast has no bullet
             # this one isn't working now...
+            #print("forecast is: ", forecast)
             if len(re.split(r'\n•?(?: +)?FORECAST\n', forecast)) > 1: 
             #if len(re.split(r'\n• FORECAST\n', forecast)) > 1:
                 forecast, to_enter = dif_format_countries(forecast)
@@ -114,6 +115,7 @@ def parse_text(file_path, df):
                     #print("name is", name)
                     name = name.lstrip()
                     region_list = name.split('\n')
+                    #print("region list is: ", region_list)
                     #region = region_list[0]
                     region = region_list[0].lstrip()
                     name = region_list[1].lstrip()
