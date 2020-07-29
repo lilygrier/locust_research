@@ -49,12 +49,13 @@ def get_snippets(text):
 
     #text = prep_text(text) # re-write this as pipeline function?
     nlp.add_pipe(sentencizer)
-    nlp.add_pipe(ruler, overwrite=True)
+    nlp.add_pipe(ruler)
     #contextualSpellCheck.add_to_pipe(nlp)
-
-    for sent in nlp(text).sents:
+    doc = nlp(text)
+    doc_ents = []
+    for sent in doc.sents:
         new_ents = []
-        for ent in ent.sents:
+        for ent in sent.ents:
             if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
                 new_ents.append(ent)
         #sent = nlp(sent)
@@ -62,9 +63,11 @@ def get_snippets(text):
         #add_dates(sent, keywords)
         #if keywords:
             #snippets.append(keywords)
-        sent.ents = new_ents
+        #sent.ents = new_ents
         if new_ents:
-            snippets.append([ent.text for ent in sent.ents])
+            snippets.append([ent.text for ent in new_ents])
+            doc_ents.extend(new_ents)
+    doc.ents = doc_ents # rewrite entities
     return snippets
     
     return [ent for ent in sent.ents]
@@ -126,7 +129,7 @@ def add_entity(ent_label):
     return doc.ents.append()
 
 def make_entity_ruler(nlp):
-    ruler = EntityRuler(nlp, validate=True)
+    ruler = EntityRuler(nlp, validate=True, overwrite=True)
     patterns = [] # list of dictionaries
     patterns.append({'label': 'LOC_TYPE', 'pattern': [{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LEMMA': {'IN': ['Locusts', 'locust', 'swarm']}}]})
     patterns.append({'label': 'LOC_TYPE', 'pattern':[{'POS': 'ADJ', 'OP': '?'},
@@ -138,12 +141,12 @@ def make_entity_ruler(nlp):
                  {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}]})
     pat_locust_gerunds = [{'LOWER': 'no', 'OP': '?'},
                         {'POS': 'ADJ', 'OP': '?'},
-                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}]
+                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}] # should be not in 'verb' but not working
     patterns.append({'label': 'ACTION', 'pattern': pat_locust_gerunds})
-    pat_specific_loc = [[{'POS': 'PROPN', 'OP': '+'},
+    pat_specific_loc = [{'POS': 'PROPN', 'OP': '+'},
                     {'TEXT': '('},
-                    {'LOWER': {'REGEX': r'\d{4}\w/\d{4}\w'}},
-                    {'TEXT': ')'}]]
+                    {'TEXT': {'REGEX': r'\d{4}\w/\d{4}\w'}},
+                    {'TEXT': ')'}]
     patterns.append({'label': 'SPEC_LOC', 'pattern': pat_specific_loc})
     pat_gen_loc = [{'POS': 'PROPN', 'OP': '*', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}},
                 {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'}, # add 'des' here
@@ -178,7 +181,7 @@ def make_entity_ruler(nlp):
     for pattern in treatment:
         patterns.append({'label': 'TREATMENT', 'pattern': pattern})
     risk = [[{'POS': 'ADJ'}, {'LOWER': 'risk'}],
-            [{'lower': 'unlikely'}]]
+            [{'LOWER': 'unlikely'}]]
     for pattern in risk:
         patterns.append({'label': 'RISK', 'pattern': pattern})
     ruler.add_patterns(patterns)
