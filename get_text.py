@@ -206,4 +206,5 @@ def get_relevant_text(text):
     final_text = re.sub(r' (mve)(s?) ', r' move\2', final_text)
     #final_text = re.sub(r'\bmnitor\b', r'\bmonitor\b', final_text)
     final_text = re.sub(r'(signifi) +(cant)', r'\1\2', final_text)
+    final_text = re.sub(r'signiﬁ +cant', r'significant', final_text)
     return final_text
