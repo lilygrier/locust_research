@@ -1,5 +1,6 @@
 import spacy
 from spacy.matcher import Matcher
+from spacy.tokens import Span
 from spacy.pipeline import Sentencizer, EntityRuler
 #import contextualSpellCheck
 from itertools import *
@@ -8,7 +9,7 @@ import re
 nlp = spacy.load("en_core_web_sm")
 
 #matcher = Matcher(nlp.vocab)
-LOCUST_VERBS = ['form', 'mature', 'lay', 'lie', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 
+LOCUST_VERBS = ['mature', 'lay', 'lie', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 
                 'decline', 'scatter', 'isolate'] # can look for lemma of verb
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
 LOCUST_TYPES = ["locust", "locusts", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'mature', 'swarmlet', 
@@ -30,6 +31,8 @@ def prep_text(year, month, text):
     # REWRITE LINE BELOW WITH BACK REFERENCING
     text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
     text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
+    text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
+
 
     return text
 
@@ -49,28 +52,57 @@ def get_snippets(text):
 
     #text = prep_text(text) # re-write this as pipeline function?
     nlp.add_pipe(sentencizer)
-    nlp.add_pipe(ruler)
+    nlp.add_pipe(ruler, before='ner')
+    nlp.add_pipe(refine_entities)
     #contextualSpellCheck.add_to_pipe(nlp)
     doc = nlp(text)
     doc_ents = []
     for sent in doc.sents:
-        new_ents = []
-        for ent in sent.ents:
-            if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
-                new_ents.append(ent)
-        #sent = nlp(sent)
-        #keywords = sent_matches(sent)
-        #add_dates(sent, keywords)
-        #if keywords:
-            #snippets.append(keywords)
-        #sent.ents = new_ents
-        if new_ents:
-            snippets.append([ent.text for ent in new_ents])
-            doc_ents.extend(new_ents)
-    doc.ents = doc_ents # rewrite entities
-    return snippets
+        doc_ents.append([ent.text for ent in sent.ents])
+    #doc_ents = []
+
+    # for sent in doc.sents:
+    #     new_ents = []
+    #     for ent in sent.ents:
+    #         if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
+    #             # if entity followed by breeding areas or areas, skip
+    #             if ent.end != len(doc) - 1:
+    #                 next_token = doc[ent.end + 1]
+    #                 if next_token.text in ('breeding', 'areas'):
+    #                     continue
+    #             new_ents.append(ent)
+    #     #sent = nlp(sent)
+    #     #keywords = sent_matches(sent)
+    #     #add_dates(sent, keywords)
+    #     #if keywords:
+    #         #snippets.append(keywords)
+    #     #sent.ents = new_ents
+    #     if new_ents:
+    #         snippets.append([ent.text for ent in new_ents])
+    #         doc_ents.extend(new_ents)
+    # doc.ents = doc_ents # rewrite entities
+    #return snippets
     
-    return [ent for ent in sent.ents]
+    return doc_ents
+
+def corroborate(pred, forecast1, forecast2):
+    '''
+    First pass at corroborating predictions.
+    Simply checks if any locust groups/predictions/behaviors end up in forecasted locations.
+    '''
+    return None
+
+def get_data(text):
+    '''
+    Pulls out locations, locust types, and behaviors from text.
+    Inputs:
+        text: an nlp object of text
+    '''
+    for sent in text:
+        locations = [ent for ent in sent.ents if ent.label_ in ('GEN_LOC', 'SPEC_LOC')]
+        behaviors = [ent for ent in sent.ents if ent.label_ == 'ACTION']
+        locust_groups = [ent for ent in sent.ents if ent.label_=='LOC_TYPE']
+    
 
 def add_dates(nlp_sent, keywords_list):
     '''
@@ -122,8 +154,37 @@ def sent_matches(sent):
 
     return rv
 
-def refine_entities():
-    return None
+def refine_entities(doc):
+    doc_ents = []
+    for sent in doc.sents:
+        new_ents = []
+        for ent in sent.ents:
+            #print('ent is: ', ent.text, '-->', ent.label_)
+            if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
+                # if entity followed by breeding areas or areas, skip
+                # get rid of 'and'
+                if doc[ent.start].text == 'and':
+                    new_ent = Span(doc, ent.start + 1, ent.end, label=ent.label)
+                    new_ents.append(new_ent)
+                    continue
+                if ent.label_ in ('DATE', 'ACTION') and ent.end != len(doc):
+                    next_token = doc[ent.end]
+                    #print('potential breeding is ', ent.text)
+                    #print('next token is: ', next_token.text)
+                    if next_token.text in ('breeding', 'areas'):
+                        #print("removing ent", ent.text)
+                        continue
+                if ent.label_ in ('GEN_LOC', 'SPEC_LOC') and ent.start != 0: # take out 'from' locations
+                    prev_token = doc[ent.start - 1]
+                    if prev_token.text in ('from'):
+                        continue
+                #print(ent.text, '-->', ent.label_)
+                new_ents.append(ent)
+        if new_ents:
+            #snippets.append([ent.text for ent in new_ents])
+            doc_ents.extend(new_ents)
+    doc.ents = doc_ents # rewrite entities
+    return doc
 
 def add_entity(ent_label):
     return doc.ents.append()
@@ -142,6 +203,8 @@ def make_entity_ruler(nlp):
     pat_locust_gerunds = [{'LOWER': 'no', 'OP': '?'},
                         {'POS': 'ADJ', 'OP': '?'},
                         {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}] # should be not in 'verb' but not working
+    pat_actions = [{'LEMMA': {'IN': LOCUST_VERBS}}]
+    patterns.append({'label': 'ACTION', 'pattern': pat_actions})
     patterns.append({'label': 'ACTION', 'pattern': pat_locust_gerunds})
     pat_specific_loc = [{'POS': 'PROPN', 'OP': '+'},
                     {'TEXT': '('},
@@ -150,7 +213,7 @@ def make_entity_ruler(nlp):
     patterns.append({'label': 'SPEC_LOC', 'pattern': pat_specific_loc})
     pat_gen_loc = [{'POS': 'PROPN', 'OP': '*', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}},
                 {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'}, # add 'des' here
-                {'POS': 'PROPN', 'OP': '+', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}}],
+                {'POS': 'PROPN', 'OP': '+', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}}]
     pat_lowlands = [{'POS': 'ADJ'}, {'LOWER': 'lowlands'}]
     patterns.append({'label': 'GEN_LOC', 'pattern': pat_gen_loc})
     patterns.append({'label': 'GEN_LOC', 'pattern': pat_lowlands})
@@ -169,7 +232,8 @@ def make_entity_ruler(nlp):
     patterns.append({'label': 'GEN_LOC', 'pattern': borders})
     situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
                         [{'LOWER': 'calm'}],
-                        [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]]
+                        [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}],
+                        [{'LOWER': 'no'}, {'LOWER': {'REGEX': r'signiﬁ *cant'}}, {'LOWER': 'developments'}]]
     for pattern in situation_status:
         patterns.append({'label': 'ACTION', 'pattern': pattern})
     treatment = [[{'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
