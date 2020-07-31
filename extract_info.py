@@ -13,10 +13,11 @@ LOCUST_VERBS = ['mature', 'lay', 'lie', 'fledge', 'breed', 'hatch', 'copulate', 
                 'decline', 'scatter', 'isolate'] # can look for lemma of verb
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
 LOCUST_TYPES = ["locust", "locusts", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'mature', 'swarmlet', 
-                'infestation', 'population', 'scatter', 'isolate']
+                'infestation', 'population', 'scatter', 'isolate'] # took out scatter, isolate and moved to verbs (moved back tho)
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', "November", "December"]
 DIRECTIONS = ['north', 'south', 'east', 'west', 'southwest', 'southeast', 'northwest', 'northeast']
 #LOCUST_ADJ = ["immature", 'mature', 'solitarious', 'gregarious', 'isolated']
+
 
 def prep_text(year, month, text):
     '''
@@ -44,46 +45,49 @@ def get_specific_locations():
     #re.findall(r'[A-Z][a-z]+ \(.+?\)', text)
     re.findall(r'(([A-Z][a-z]+ ?)+ \(.+?\))', text) # take just first entry of each tuple
 
-def get_snippets(text):
-    snippets = []
+def make_nlp():
+    '''
+    generates nlp object and adds pipelines
+    '''
     nlp = spacy.load("en_core_web_sm")
     sentencizer = Sentencizer(punct_chars=['.'])
     ruler = make_entity_ruler(nlp)
+    Span.set_extension('is_solitarious', default=None, force=True)
 
     #text = prep_text(text) # re-write this as pipeline function?
     nlp.add_pipe(sentencizer)
     nlp.add_pipe(ruler, before='ner')
     nlp.add_pipe(refine_entities)
-    #contextualSpellCheck.add_to_pipe(nlp)
-    doc = nlp(text)
-    doc_ents = []
-    for sent in doc.sents:
-        doc_ents.append([ent.text for ent in sent.ents])
-    #doc_ents = []
+    nlp.add_pipe(is_solitarious)
 
-    # for sent in doc.sents:
-    #     new_ents = []
-    #     for ent in sent.ents:
-    #         if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
-    #             # if entity followed by breeding areas or areas, skip
-    #             if ent.end != len(doc) - 1:
-    #                 next_token = doc[ent.end + 1]
-    #                 if next_token.text in ('breeding', 'areas'):
-    #                     continue
-    #             new_ents.append(ent)
-    #     #sent = nlp(sent)
-    #     #keywords = sent_matches(sent)
-    #     #add_dates(sent, keywords)
-    #     #if keywords:
-    #         #snippets.append(keywords)
-    #     #sent.ents = new_ents
-    #     if new_ents:
-    #         snippets.append([ent.text for ent in new_ents])
-    #         doc_ents.extend(new_ents)
-    # doc.ents = doc_ents # rewrite entities
-    #return snippets
-    
-    return doc_ents
+    return nlp
+
+def get_snippets(df, col_name, new_col_name):
+    '''
+    Makes column in df for snippets.
+    Input:
+        df: a Pandas dataframe
+        col_name: either 'SITUATION' or 'FORECAST'
+        new_col_name (string): the name of the column containing the snippets
+    Note: modifies the df in place to add the column
+    '''
+    #snippets = []
+    nlp = make_nlp()
+    df[new_col_name] = None
+    #for doc in 
+    for i, doc in enumerate(nlp.pipe(iter(df[col_name]), batch_size = 1000, n_threads=-1)):
+
+        #doc = nlp(text)
+        doc_ents = []
+        for sent in doc.sents:
+            doc_ents.append([ent.text for ent in sent.ents])
+        #doc_ents = []
+        df.loc[i][new_col_name] = doc_ents
+        #snippets.append(doc_ents)
+    #print('len snippets is')
+    #df[new_col_name] = snippets
+        #return doc_ents
+    return None
 
 def corroborate(pred, forecast1, forecast2):
     '''
@@ -102,7 +106,21 @@ def get_data(text):
         locations = [ent for ent in sent.ents if ent.label_ in ('GEN_LOC', 'SPEC_LOC')]
         behaviors = [ent for ent in sent.ents if ent.label_ == 'ACTION']
         locust_groups = [ent for ent in sent.ents if ent.label_=='LOC_TYPE']
-    
+    tuples = []
+    for group in locust_groups:
+        for place in locations:
+            tuples.append(group, place)
+    for behavior in behaviors:
+        for place in locations:
+            tuples.append(behavior, place)
+        
+def is_solitarious(doc):
+    for ent in doc.ents:
+        if ent.label_ == 'LOC_TYPE':
+            #is_solitarious = any()
+            #print(ent.text.split())
+            ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
+    return doc
 
 def add_dates(nlp_sent, keywords_list):
     '''
@@ -169,8 +187,6 @@ def refine_entities(doc):
                     continue
                 if ent.label_ in ('DATE', 'ACTION') and ent.end != len(doc):
                     next_token = doc[ent.end]
-                    #print('potential breeding is ', ent.text)
-                    #print('next token is: ', next_token.text)
                     if next_token.text in ('breeding', 'areas'):
                         #print("removing ent", ent.text)
                         continue
