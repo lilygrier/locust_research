@@ -119,7 +119,11 @@ def is_solitarious(doc):
         if ent.label_ == 'LOC_TYPE':
             #is_solitarious = any()
             #print(ent.text.split())
-            ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
+            has_sol_words = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
+            # pick up on adults were scattered
+            scattered_head = ent.root.head.text in ('scattered', 'isolated', 'solitarious')
+            ent._.is_solitarious = has_sol_words or scattered_head
+            #ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
     return doc
 
 def add_dates(nlp_sent, keywords_list):
