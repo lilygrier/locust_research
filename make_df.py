@@ -142,6 +142,8 @@ def parse_text(file_path, df):
 
             #print("match")
     #print("dataframe updated")
+    df['SITUATION'] = df.apply(lambda x: prep_text(year, month, x.SITUATION), axis=1)
+    df['FORECAST'] = df.apply(lambda x: prep_text(year, month, x.FORECAST), axis=1)
     return df
         
 def dif_format_countries(og_text):
@@ -232,3 +234,19 @@ def get_countries(text):
                             text, re.DOTALL|re.IGNORECASE)
     #print("countries: ", countries)
     return countries
+
+def prep_text(year, month, text):
+    '''
+    Prepares text for processing.
+    '''
+    if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
+        text = re.sub(r'-\n', "", text)
+        text = re.sub(r'\n', " ", text)
+    else:
+        text = re.sub(r'\n', "", text)
+    #text = re.sub(r'J ask', r'Jask', text)
+    text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
+    text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
+    text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
+
+    return text

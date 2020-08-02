@@ -53,12 +53,15 @@ def make_nlp():
     sentencizer = Sentencizer(punct_chars=['.'])
     ruler = make_entity_ruler(nlp)
     Span.set_extension('is_solitarious', default=None, force=True)
+    Span.set_extension('get_name_only', default=None, force=True)
+
 
     #text = prep_text(text) # re-write this as pipeline function?
-    nlp.add_pipe(sentencizer)
+    nlp.add_pipe(sentencizer, first=True)
     nlp.add_pipe(ruler, before='ner')
     nlp.add_pipe(refine_entities)
     nlp.add_pipe(is_solitarious)
+    nlp.add_pipe(get_name_only)
 
     return nlp
 
@@ -76,7 +79,10 @@ def get_snippets(df, col_name, new_col_name):
     df[new_col_name] = None
     #for doc in 
     for i, doc in enumerate(nlp.pipe(iter(df[col_name]), batch_size = 1000, n_threads=-1)):
-
+        #print("doc is: ", doc)
+        #print('type of doc is: ', type(doc))
+        if not doc: # situation is missing
+            continue
         #doc = nlp(text)
         doc_ents = []
         for sent in doc.sents:
@@ -94,34 +100,57 @@ def corroborate(pred, forecast1, forecast2):
     First pass at corroborating predictions.
     Simply checks if any locust groups/predictions/behaviors end up in forecasted locations.
     '''
+    prediction = [get_data(sent) for sent in pred.sents]
+    situation = [get_data(sent) for sent in forecast1.sents].extend([get_data(sent) for sent in forecast2.sents])
+
     return None
 
-def get_data(text):
+def get_data(sent, granular=False):
     '''
     Pulls out locations, locust types, and behaviors from text.
     Inputs:
-        text: an nlp object of text
+        sent: a sentence of an nlp object of text
+        granular (bool): whether the data should be extracted at location-level rather than sentence-level
     '''
-    for sent in text:
-        locations = [ent for ent in sent.ents if ent.label_ in ('GEN_LOC', 'SPEC_LOC')]
-        behaviors = [ent for ent in sent.ents if ent.label_ == 'ACTION']
-        locust_groups = [ent for ent in sent.ents if ent.label_=='LOC_TYPE']
-    tuples = []
-    for group in locust_groups:
-        for place in locations:
-            tuples.append(group, place)
-    for behavior in behaviors:
-        for place in locations:
-            tuples.append(behavior, place)
-        
+    #for sent in text.sents:
+    locations = [ent for ent in sent.ents if ent.label_ in ('GEN_LOC', 'SPEC_LOC')]
+    behaviors = [ent for ent in sent.ents if (ent.label_ == 'ACTION' and ent.text not in ('scattered', 'isolated'))]
+    locust_groups = [ent for ent in sent.ents if ent.label_=='LOC_TYPE']
+    #granular version:
+    if granular:
+        tuples = []
+        for group in locust_groups:
+            for place in locations:
+                tuples.append((group, place))
+        for behavior in behaviors:
+            for place in locations:
+                tuples.append((behavior, place))
+        return tuples
+    # non granular version
+    return (locations, behaviors, locust_groups)
+
+def get_name_only(doc):
+
+    for ent in doc.ents:
+        name = ""
+        if ent.label_ == 'SPEC_LOC':
+            for word in ent:
+                if word.text.startswith('('):
+                    ent._.get_name_only = name
+                name += word.text
+        if ent.label_ == 'GEN_LOC':
+            ent._.get_name_only = ent.text
+    return doc
+                
+
 def is_solitarious(doc):
     for ent in doc.ents:
         if ent.label_ == 'LOC_TYPE':
             #is_solitarious = any()
             #print(ent.text.split())
-            has_sol_words = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
+            has_sol_words = bool(set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(ent.text).split()))
             # pick up on adults were scattered
-            scattered_head = ent.root.head.text in ('scattered', 'isolated', 'solitarious')
+            scattered_head = ent.root.head.head.text in ('scattered', 'isolated', 'solitarious') # added 2nd .head, could be bad
             ent._.is_solitarious = has_sol_words or scattered_head
             #ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
     return doc

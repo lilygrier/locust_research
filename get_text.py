@@ -6,6 +6,8 @@ def clean_page(file_path):
     final_txt = []
     # determine if old style
     year = int(file_path[-4:])
+    #print('file_path: ', file_path)
+    month = re.findall(r'.+/([A-Z]+)_', file_path)[0]
     old_style = (1996 <= year <= 2017)
     #if year == 1996:
         # JULY TO DECEMBER 1996 IS OLD STYLE!!!
@@ -24,7 +26,12 @@ def clean_page(file_path):
         final_txt.append(clean_left)
         final_txt.append(clean_right)
     final_txt = "\n".join(final_txt)
-    return get_relevant_text(final_txt)
+    final_txt = get_relevant_text(final_txt)
+    return final_txt
+    #print("final text: ", final_txt)
+    #return prep_text(year, month, final_txt)
+
+    #return get_relevant_text(final_txt)
 
     #with pdfplumber.open(file_path) as pdf:
         #page = pdf.pages[pg_num]
@@ -208,3 +215,19 @@ def get_relevant_text(text):
     final_text = re.sub(r'(signifi) +(cant)', r'\1\2', final_text)
     final_text = re.sub(r'signiﬁ +cant', r'significant', final_text)
     return final_text
+
+def prep_text(year, month, text):
+    '''
+    Prepares text for processing.
+    '''
+    if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
+        text = re.sub(r'-\n', "", text)
+        text = re.sub(r'\n', " ", text)
+    else:
+        text = re.sub(r'\n', "", text)
+    #text = re.sub(r'J ask', r'Jask', text)
+    text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
+    text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
+    text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
+
+    return text
