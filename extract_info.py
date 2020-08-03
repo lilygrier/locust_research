@@ -90,50 +90,89 @@ def get_snippets(df, col_name, new_col_name):
             doc_ents.append([ent for ent in sent.ents]) # changed ent.text to ent
         #doc_ents = []
         df.loc[i][new_col_name] = doc_ents
+        df.loc[i][col_name] = doc # update text to nlp object
         #snippets.append(doc_ents)
     #print('len snippets is')
     #df[new_col_name] = snippets
         #return doc_ents
     return df
 
-def corroborate(pred, forecast1, forecast2):
+def corroborate(pred, sit_1, sit_2):
     '''
     First pass at corroborating predictions.
     Simply checks if any locust groups/predictions/behaviors end up in forecasted locations.
     '''
-    prediction = [get_data(sent) for sent in pred.sents]
-    situation = [get_data(sent) for sent in forecast1.sents].extend([get_data(sent) for sent in forecast2.sents])
-    for pred_locs, pred_behaviors, pred_groups in prediction:
-        for s_locs, s_behaviors, s_groups in situation:
-                if compare_locs(pred_locs, s_locs) or not (pred_locs and s_locs):
-                    # compare behaviors/groups
-                    return compare_groups(pred_groups, s_groups)
+    results = []
+    predictions = [get_data(sent) for sent in pred.sents]
+    print('sit 1 is: ', sit_1)
+    print('type of sit1 is: ', type(sit_1))
+    if sit_1:
+        situations = [get_data(sent) for sent in sit_1.sents]
+    else:
+        situations = []
+    if sit_2:
+        situations.extend([get_data(sent) for sent in sit_2.sents if sit_2])
+    if not situations:
+        #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
+        if predictions[0][2][0][0].text.lower() == 'no':
+            return [True]
+    for pred in predictions:
+        results.append(check_one_pred(pred, situations))
+        #print('pred: ', pred)
+        #print('result: ', check_one_pred(pred, situations))
+    return results
 
-def compare_behaviors(bevs):
-    return None
 
-def compare_groups(groups_1, groups_2):
+def check_one_pred(pred_list, sits):
+    '''
+    Validates a single sentence of a prediction against ALL situations.
+    '''
+    #for pred_list in preds:
+    if sits:
+        for sit_list in sits:
+            #print('locs compared: ', compare_locs(pred_list, sit_list))
+            if compare_locs(pred_list, sit_list) or not (pred_list[0] and sit_list[0]):
+                if compare_groups(pred_list, sit_list) or compare_behaviors(pred_list, sit_list):
+                    return True
+    #else:
+        #print('no sits')
+    return False
+
+
+def compare_behaviors(pred_list, sit_list):
+    for pred_bx in pred_list[1]:
+        for sit_bx in sit_list[1]:
+            if fuzz.partial_ratio(pred_bx.root.lemma_, sit_bx.root.lemma_) == 100:
+                return True
+    #elif 'no significant developments' in []
+    
+    return False
+
+def compare_groups(pred_list, sit_list):
     '''
     Takes in two lists of locust groups.
     Compares them based on whether or not they're solitarious or gregarious 
     as well as life stage (based on ent.lemma_ for now).
     Checks if entities have the same lemma, then checks if they're solitarious.
     '''
-    for group_1 in groups_1:
-        for group_2 in groups_2:
-            if group_1.root.lemma_ == group_2.root.lemma_:
+    for group_1 in pred_list[2]:
+        for group_2 in sit_list[2]:
+            if group_1[0].text.lower() == 'no' or 'decline' in [word.text for word in sit_list[1]]: # match no significant devs to no locusts
+                if group_2[0].text.lower() == 'no': # match 'decline' to 'no locusts'
+                    return True
+            elif group_1.root.lemma_ == group_2.root.lemma_:
                 if group_1._.is_solitarious == group_2._.is_solitarious:
                     return True
     return False
 
-def compare_locs(locs_1, locs_2):
+def compare_locs(pred_list, sit_list):
     '''
     Takes in two lists of locations. Returns true if the lists contain at least one matching location.
     ADD IN FUNCTIONALITY FOR COMPARING GENERAL TO SPECIFIC 
     '''
     #match = False
-    for loc_1 in locs_1:
-        for loc_2 in locs_2:
+    for loc_1 in pred_list[0]:
+        for loc_2 in sit_list[0]:
             if fuzz.token_set_ratio(loc_1, loc_2) == 100:
                 return True
     return False
@@ -281,6 +320,8 @@ def make_entity_ruler(nlp):
     {'LEMMA': {'IN': LOCUST_TYPES}},
                  {'LOWER': 'AND', 'OP': '?'},
                  {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}]})
+    pat_no_devs = [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]
+    patterns.append({'label': 'LOC_TYPE', 'pattern': pat_no_devs})
     pat_locust_gerunds = [{'LOWER': 'no', 'OP': '?'},
                         {'POS': 'ADJ', 'OP': '?'},
                         {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}] # should be not in 'verb' but not working
@@ -313,7 +354,7 @@ def make_entity_ruler(nlp):
     patterns.append({'label': 'GEN_LOC', 'pattern': borders})
     situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
                         [{'LOWER': 'calm'}],
-                        [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}],
+                        #[{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}],
                         [{'LOWER': 'no'}, {'LOWER': {'REGEX': r'signiﬁ *cant'}}, {'LOWER': 'developments'}]]
     for pattern in situation_status:
         patterns.append({'label': 'ACTION', 'pattern': pattern})
