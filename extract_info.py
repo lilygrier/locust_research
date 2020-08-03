@@ -1,6 +1,7 @@
 import spacy
 from spacy.matcher import Matcher
 from spacy.tokens import Span
+from fuzzywuzzy import fuzz
 from spacy.pipeline import Sentencizer, EntityRuler
 #import contextualSpellCheck
 from itertools import *
@@ -86,14 +87,14 @@ def get_snippets(df, col_name, new_col_name):
         #doc = nlp(text)
         doc_ents = []
         for sent in doc.sents:
-            doc_ents.append([ent.text for ent in sent.ents])
+            doc_ents.append([ent for ent in sent.ents]) # changed ent.text to ent
         #doc_ents = []
         df.loc[i][new_col_name] = doc_ents
         #snippets.append(doc_ents)
     #print('len snippets is')
     #df[new_col_name] = snippets
         #return doc_ents
-    return None
+    return df
 
 def corroborate(pred, forecast1, forecast2):
     '''
@@ -102,8 +103,41 @@ def corroborate(pred, forecast1, forecast2):
     '''
     prediction = [get_data(sent) for sent in pred.sents]
     situation = [get_data(sent) for sent in forecast1.sents].extend([get_data(sent) for sent in forecast2.sents])
+    for pred_locs, pred_behaviors, pred_groups in prediction:
+        for s_locs, s_behaviors, s_groups in situation:
+                if compare_locs(pred_locs, s_locs) or not (pred_locs and s_locs):
+                    # compare behaviors/groups
+                    return compare_groups(pred_groups, s_groups)
 
+def compare_behaviors(bevs):
     return None
+
+def compare_groups(groups_1, groups_2):
+    '''
+    Takes in two lists of locust groups.
+    Compares them based on whether or not they're solitarious or gregarious 
+    as well as life stage (based on ent.lemma_ for now).
+    Checks if entities have the same lemma, then checks if they're solitarious.
+    '''
+    for group_1 in groups_1:
+        for group_2 in groups_2:
+            if group_1.root.lemma_ == group_2.root.lemma_:
+                if group_1._.is_solitarious == group_2._.is_solitarious:
+                    return True
+    return False
+
+def compare_locs(locs_1, locs_2):
+    '''
+    Takes in two lists of locations. Returns true if the lists contain at least one matching location.
+    ADD IN FUNCTIONALITY FOR COMPARING GENERAL TO SPECIFIC 
+    '''
+    #match = False
+    for loc_1 in locs_1:
+        for loc_2 in locs_2:
+            if fuzz.token_set_ratio(loc_1, loc_2) == 100:
+                return True
+    return False
+
 
 def get_data(sent, granular=False):
     '''
@@ -235,8 +269,6 @@ def refine_entities(doc):
     doc.ents = doc_ents # rewrite entities
     return doc
 
-def add_entity(ent_label):
-    return doc.ents.append()
 
 def make_entity_ruler(nlp):
     ruler = EntityRuler(nlp, validate=True, overwrite=True)
