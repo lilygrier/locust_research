@@ -55,6 +55,7 @@ def make_nlp():
     ruler = make_entity_ruler(nlp)
     Span.set_extension('is_solitarious', default=None, force=True)
     Span.set_extension('get_name_only', default=None, force=True)
+    Span.set_extension('subject_decline', default=False, force=True)
 
 
     #text = prep_text(text) # re-write this as pipeline function?
@@ -63,6 +64,7 @@ def make_nlp():
     nlp.add_pipe(refine_entities)
     nlp.add_pipe(is_solitarious)
     nlp.add_pipe(get_name_only)
+    
 
     return nlp
 
@@ -198,7 +200,10 @@ def check_one_pred(pred_list, sits):
     return False
 
 
-def compare_behaviors(pred_list, sit_list):
+def compare_behaviors(pred_list, sit_list, granular=False):
+    if granular:
+        return fuzz.partial_ratio(pred_bx.root.lemma_, sit_bx.root.lemma_) == 100
+    # sentence level:
     for pred_bx in pred_list[1]:
         for sit_bx in sit_list[1]:
             if fuzz.partial_ratio(pred_bx.root.lemma_, sit_bx.root.lemma_) == 100:
@@ -224,17 +229,21 @@ def compare_groups(pred_list, sit_list):
                     return True
     return False
 
-def compare_locs(pred_list, sit_list):
+def compare_locs(pred_list, sit_list, granular=False):
     '''
     Takes in two lists of locations. Returns true if the lists contain at least one matching location.
     ADD IN FUNCTIONALITY FOR COMPARING GENERAL TO SPECIFIC 
     '''
     #match = False
+    if granular:
+        return fuzz.token_set_ratio(loc_1, loc_2) == 100
+    
     for loc_1 in pred_list[0]:
         for loc_2 in sit_list[0]:
             if fuzz.token_set_ratio(loc_1, loc_2) == 100:
                 return True
     return False
+
 
 
 def get_data(sent, granular=False):
@@ -276,7 +285,13 @@ def get_name_only(doc):
         if ent.label_ == 'GEN_LOC':
             ent._.get_name_only = ent.text
     return doc
-                
+
+def subject_decline(doc):
+    for i, ent in enumerate(doc.ents):
+        if ent.label_ in ('ACTION', 'LOC_TYPE') and i < len(doc.ents) - 1:
+            if doc.ents[i + 1].root.lemma_ == 'decline':
+                ent._.subject_decline = True
+    return doc               
 
 def is_solitarious(doc):
     for ent in doc.ents:
@@ -353,6 +368,12 @@ def refine_entities(doc):
                     new_ent = Span(doc, ent.start + 1, ent.end, label=ent.label)
                     new_ents.append(new_ent)
                     continue
+                if ent.label_ in ('GEN_LOC', 'SPEC_LOC') and ent.end != len(doc):
+                    next_token = doc[ent.end]
+                    if next_token.text in ('coast'):
+                        new_ent = Span(doc, ent.start, ent.end + 1, label=ent.label)
+                        new_ents.append(new_ent)
+                        continue
                 if ent.label_ in ('DATE', 'ACTION') and ent.end != len(doc):
                     next_token = doc[ent.end]
                     if next_token.text in ('breeding', 'areas'):
@@ -362,6 +383,10 @@ def refine_entities(doc):
                     prev_token = doc[ent.start - 1]
                     if prev_token.text in ('from'):
                         continue
+                    if ent.start != 1:
+                        prev_prev_token = doc[ent.start - 2]
+                        if prev_prev_token.text == 'from' and prev_token.text == 'the': # takes out from the
+                            continue
                 #print(ent.text, '-->', ent.label_)
                 new_ents.append(ent)
         if new_ents:
