@@ -97,6 +97,65 @@ def get_snippets(df, col_name, new_col_name):
         #return doc_ents
     return df
 
+def granular_corroborate(pred, sit_1, sit_2):
+    '''
+    Breaks each prediction into granular tuples. Sees if those
+    specific tuples occur later.
+    '''
+    results = []
+    predictions = []
+    for sent in pred.sents:
+        predictions.extend(get_data(sent, granular=True))
+    #predictions = [get_data(sent, granular=True) for sent in pred.sents]
+    #print('sit 1 is: ', sit_1)
+    #print('type of sit1 is: ', type(sit_1))
+    situations = []
+    if sit_1:
+        for sent in sit_1.sents:
+            situations.extend(get_data(sent, granular=True))
+        #situations = [get_data(sent, granular=True) for sent in sit_1.sents]
+    #else:
+        #situations = []
+    if sit_2:
+        for sent in sit_2.sents:
+            situations.extend(get_data(sent, granular=True))
+        #situations.extend([get_data(sent, granular=True) for sent in sit_2.sents if sit_2])
+    if predictions and not situations:
+        #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
+        if predictions[0][0].text.lower() == 'no':
+            return [True]
+    for pred in predictions:
+        results.append(compare_one_granular(pred, situations))
+        #print('pred: ', pred)
+        #print('result: ', check_one_pred(pred, situations))
+    return results
+
+    
+                
+def compare_one_granular(pred, situations):
+    '''
+    compares one granular tuple against another.
+    '''
+    for sit in situations:
+        if not sit and pred:
+            continue
+        print('situations: ', situations)
+        print('situation', sit)
+        print('pred: ', pred)
+        if not pred[1] and sit[1] or fuzz.token_set_ratio(pred[1], sit[1]) == 100: # generalize to locations
+            if pred[0].label_ == 'ACTION' and sit[0].label_ == 'ACTION':
+                return fuzz.partial_ratio(pred[0].root.lemma_, sit[0].root.lemma_) == 100
+            elif pred[0].label_ == 'LOC_TYPE' and sit[0].label_ == 'LOC_TYPE':
+                if pred[0].root.lemma_ == sit[0].root.lemma_:
+                    return pred[0]._.is_solitarious == sit[0]._.is_solitarious
+                else:
+                    return pred[0][0].text.lower() and sit[0][0].text.lower() == 'no'
+            elif pred[0].root.lemma_ == 'decline':
+                return sit[0][0].text.lower() == 'no'
+    return False
+
+
+
 def corroborate(pred, sit_1, sit_2):
     '''
     First pass at corroborating predictions.
@@ -198,9 +257,12 @@ def get_data(sent, granular=False):
         for behavior in behaviors:
             for place in locations:
                 tuples.append((behavior, place))
+        print('tuples: ', tuples)
         return tuples
     # non granular version
     return (locations, behaviors, locust_groups)
+
+
 
 def get_name_only(doc):
 
