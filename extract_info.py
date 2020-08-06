@@ -56,6 +56,8 @@ def make_nlp():
     Span.set_extension('is_solitarious', default=None, force=True)
     Span.set_extension('get_name_only', default=None, force=True)
     Span.set_extension('subject_decline', default=False, force=True)
+    merge_ents = nlp.create_pipe("merge_entities")
+    combine_ents_ruler = combine_entities_ruler(nlp)
 
 
     #text = prep_text(text) # re-write this as pipeline function?
@@ -64,7 +66,11 @@ def make_nlp():
     nlp.add_pipe(refine_entities)
     nlp.add_pipe(is_solitarious)
     nlp.add_pipe(get_name_only)
-    
+    nlp.add_pipe(subject_decline)
+    nlp.add_pipe(merge_ents)
+    nlp.add_pipe(combine_ents_ruler)
+    #nlp.add_pipe(remove_decline)
+
 
     return nlp
 
@@ -99,179 +105,6 @@ def get_snippets(df, col_name, new_col_name):
         #return doc_ents
     return df
 
-def granular_corroborate(pred, sit_1, sit_2):
-    '''
-    Breaks each prediction into granular tuples. Sees if those
-    specific tuples occur later.
-    '''
-    results = []
-    predictions = []
-    for sent in pred.sents:
-        predictions.extend(get_data(sent, granular=True))
-    #predictions = [get_data(sent, granular=True) for sent in pred.sents]
-    #print('sit 1 is: ', sit_1)
-    #print('type of sit1 is: ', type(sit_1))
-    situations = []
-    if sit_1:
-        for sent in sit_1.sents:
-            situations.extend(get_data(sent, granular=True))
-        #situations = [get_data(sent, granular=True) for sent in sit_1.sents]
-    #else:
-        #situations = []
-    if sit_2:
-        for sent in sit_2.sents:
-            situations.extend(get_data(sent, granular=True))
-        #situations.extend([get_data(sent, granular=True) for sent in sit_2.sents if sit_2])
-    if predictions and not situations:
-        #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
-        if predictions[0][0].text.lower() == 'no':
-            return [True]
-    for pred in predictions:
-        results.append(compare_one_granular(pred, situations))
-        #print('pred: ', pred)
-        #print('result: ', check_one_pred(pred, situations))
-    return results
-
-    
-                
-def compare_one_granular(pred, situations):
-    '''
-    compares one granular tuple against another.
-    '''
-    for sit in situations:
-        if not sit and pred:
-            continue
-        print('situations: ', situations)
-        print('situation', sit)
-        print('pred: ', pred)
-        if not pred[1] and sit[1] or fuzz.token_set_ratio(pred[1], sit[1]) == 100: # generalize to locations
-            if pred[0].label_ == 'ACTION' and sit[0].label_ == 'ACTION':
-                return fuzz.partial_ratio(pred[0].root.lemma_, sit[0].root.lemma_) == 100
-            elif pred[0].label_ == 'LOC_TYPE' and sit[0].label_ == 'LOC_TYPE':
-                if pred[0].root.lemma_ == sit[0].root.lemma_:
-                    return pred[0]._.is_solitarious == sit[0]._.is_solitarious
-                else:
-                    return pred[0][0].text.lower() and sit[0][0].text.lower() == 'no'
-            elif pred[0].root.lemma_ == 'decline':
-                return sit[0][0].text.lower() == 'no'
-    return False
-
-
-
-def corroborate(pred, sit_1, sit_2):
-    '''
-    First pass at corroborating predictions.
-    Simply checks if any locust groups/predictions/behaviors end up in forecasted locations.
-    '''
-    results = []
-    predictions = [get_data(sent) for sent in pred.sents]
-    print('sit 1 is: ', sit_1)
-    print('type of sit1 is: ', type(sit_1))
-    if sit_1:
-        situations = [get_data(sent) for sent in sit_1.sents]
-    else:
-        situations = []
-    if sit_2:
-        situations.extend([get_data(sent) for sent in sit_2.sents if sit_2])
-    if not situations:
-        #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
-        if predictions[0][2][0][0].text.lower() == 'no':
-            return [True]
-    for pred in predictions:
-        results.append(check_one_pred(pred, situations))
-        #print('pred: ', pred)
-        #print('result: ', check_one_pred(pred, situations))
-    return results
-
-
-def check_one_pred(pred_list, sits):
-    '''
-    Validates a single sentence of a prediction against ALL situations.
-    '''
-    #for pred_list in preds:
-    if sits:
-        for sit_list in sits:
-            #print('locs compared: ', compare_locs(pred_list, sit_list))
-            if compare_locs(pred_list, sit_list) or not (pred_list[0] and sit_list[0]):
-                if compare_groups(pred_list, sit_list) or compare_behaviors(pred_list, sit_list):
-                    return True
-    #else:
-        #print('no sits')
-    return False
-
-
-def compare_behaviors(pred_list, sit_list, granular=False):
-    if granular:
-        return fuzz.partial_ratio(pred_bx.root.lemma_, sit_bx.root.lemma_) == 100
-    # sentence level:
-    for pred_bx in pred_list[1]:
-        for sit_bx in sit_list[1]:
-            if fuzz.partial_ratio(pred_bx.root.lemma_, sit_bx.root.lemma_) == 100:
-                return True
-    #elif 'no significant developments' in []
-    
-    return False
-
-def compare_groups(pred_list, sit_list):
-    '''
-    Takes in two lists of locust groups.
-    Compares them based on whether or not they're solitarious or gregarious 
-    as well as life stage (based on ent.lemma_ for now).
-    Checks if entities have the same lemma, then checks if they're solitarious.
-    '''
-    for group_1 in pred_list[2]:
-        for group_2 in sit_list[2]:
-            if group_1[0].text.lower() == 'no' or 'decline' in [word.text for word in sit_list[1]]: # match no significant devs to no locusts
-                if group_2[0].text.lower() == 'no': # match 'decline' to 'no locusts'
-                    return True
-            elif group_1.root.lemma_ == group_2.root.lemma_:
-                if group_1._.is_solitarious == group_2._.is_solitarious:
-                    return True
-    return False
-
-def compare_locs(pred_list, sit_list, granular=False):
-    '''
-    Takes in two lists of locations. Returns true if the lists contain at least one matching location.
-    ADD IN FUNCTIONALITY FOR COMPARING GENERAL TO SPECIFIC 
-    '''
-    #match = False
-    if granular:
-        return fuzz.token_set_ratio(loc_1, loc_2) == 100
-    
-    for loc_1 in pred_list[0]:
-        for loc_2 in sit_list[0]:
-            if fuzz.token_set_ratio(loc_1, loc_2) == 100:
-                return True
-    return False
-
-
-
-def get_data(sent, granular=False):
-    '''
-    Pulls out locations, locust types, and behaviors from text.
-    Inputs:
-        sent: a sentence of an nlp object of text
-        granular (bool): whether the data should be extracted at location-level rather than sentence-level
-    '''
-    #for sent in text.sents:
-    locations = [ent for ent in sent.ents if ent.label_ in ('GEN_LOC', 'SPEC_LOC')]
-    behaviors = [ent for ent in sent.ents if (ent.label_ == 'ACTION' and ent.text not in ('scattered', 'isolated'))]
-    locust_groups = [ent for ent in sent.ents if ent.label_=='LOC_TYPE']
-    #granular version:
-    if granular:
-        tuples = []
-        for group in locust_groups:
-            for place in locations:
-                tuples.append((group, place))
-        for behavior in behaviors:
-            for place in locations:
-                tuples.append((behavior, place))
-        print('tuples: ', tuples)
-        return tuples
-    # non granular version
-    return (locations, behaviors, locust_groups)
-
-
 
 def get_name_only(doc):
 
@@ -302,17 +135,10 @@ def is_solitarious(doc):
             # pick up on adults were scattered
             scattered_head = ent.root.head.head.text in ('scattered', 'isolated', 'solitarious') # added 2nd .head, could be bad
             ent._.is_solitarious = has_sol_words or scattered_head
+            #print(ent.text, 'sol: ', ent._.is_solitarious)
             #ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
     return doc
 
-def add_dates(nlp_sent, keywords_list):
-    '''
-    Adds dates to list of keywords for the sentence
-    '''
-    for ent in nlp_sent.ents:
-        if ent.label_ == 'DATE':
-            keywords_list.append(ent.text)
-    return None
 
 def sent_matches(sent):
     '''
@@ -357,13 +183,19 @@ def sent_matches(sent):
 
 def refine_entities(doc):
     doc_ents = []
+    #for ent in d
+    #print("original entities:")
+    #for ent in doc.ents:
+        #print(ent, '-->', ent.label_)
     for sent in doc.sents:
         new_ents = []
-        for ent in sent.ents:
+        for i, ent in enumerate(list(sent.ents)):
             #print('ent is: ', ent.text, '-->', ent.label_)
+            #doc.ents = [ent for ent in doc.ents if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']]
+            #print("doc.ents", doc.ents)
             if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
-                # if entity followed by breeding areas or areas, skip
-                # get rid of 'and'
+            # if entity followed by breeding areas or areas, skip
+            # get rid of 'and'
                 if doc[ent.start].text == 'and':
                     new_ent = Span(doc, ent.start + 1, ent.end, label=ent.label)
                     new_ents.append(new_ent)
@@ -373,6 +205,8 @@ def refine_entities(doc):
                     if next_token.text in ('coast'):
                         new_ent = Span(doc, ent.start, ent.end + 1, label=ent.label)
                         new_ents.append(new_ent)
+                        continue
+                    if next_token.text in ('of'): # remove 'north of' place, just keep place
                         continue
                 if ent.label_ in ('DATE', 'ACTION') and ent.end != len(doc):
                     next_token = doc[ent.end]
@@ -393,8 +227,59 @@ def refine_entities(doc):
             #snippets.append([ent.text for ent in new_ents])
             doc_ents.extend(new_ents)
     doc.ents = doc_ents # rewrite entities
+    #print('new ents after first round: ', doc.ents)
     return doc
 
+def combine_entities_ruler(nlp):
+    '''
+    Looks for patterns of multiple entites (i.e., LOC near LOC) and combines into single entity
+    '''
+    patterns = []
+    combine_ruler = EntityRuler(nlp, validate=True, overwrite_ents=True)
+    place_near_place = [{'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}},
+                        {'LOWER': 'near'},
+                        {'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}}]
+    patterns.append({'label': 'SPEC_LOC', 'pattern': place_near_place})
+    isolated_scattered = [{'LOWER': {'IN': ['isolated', 'scattered']}, 'OP': '?'},
+                         {'ENT_TYPE': 'LOC_TYPE', 'OP': '+'}]
+    patterns.append({'label': 'LOC_TYPE', 'pattern': isolated_scattered})
+    
+    combine_ruler.add_patterns(patterns)
+    combine_ruler.name = 'combine_ruler' # change name to avoid confusion
+    return combine_ruler
+
+
+
+def old_combine_entities(doc):
+    '''
+    Looks for patterns such as LOC near LOC and combines into single entity
+    '''
+    spans_to_merge = []
+    #for i, ent in enumerate(doc.ents):
+    for token in doc:
+        if token.ent_type_ in ('GEN_LOC', 'SPEC_LOC') and token.i < len(doc) - 2:
+            next_token = token.nbor()
+            next_next_token = token.nbor(2)
+            if next_token.text == 'near' and next_next_token.ent_type_ in ('GEN_LOC', 'SPEC_LOC'):
+                merged_ent = Span(doc, token.i, token.i + 3, label='SPEC_LOC')
+                spans_to_merge.append(merged_ent)
+                doc.ents += (merged_ent,)
+                #doc.ents = list(doc.ents).append(merged_ent)
+
+    print("spans to merge: ", spans_to_merge)
+    list(doc.ents).extend(spans_to_merge)
+    with doc.retokenize() as retokenizer:
+        for span in spans_to_merge:
+            retokenizer.merge(span)
+    return doc
+
+def remove_decline(doc):
+    doc_ents = [ent for ent in doc.ents if not (ent.label_ == 'ACTION' and ent.root.lemma_ == 'decline')]
+    doc.ents = doc_ents
+    return doc
+    #for ent in doc.ents:
+        #if ent.label_ == 'ACTION' and ent.root.lemma_ == 'decline':
+            
 
 def make_entity_ruler(nlp):
     ruler = EntityRuler(nlp, validate=True, overwrite=True)
@@ -522,50 +407,3 @@ def make_matcher():
     #matcher.add("dates", dates)
     matcher.add("situation_status", situation_status)
     return matcher
-
-def parse_info(text):
-    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', "November", "December"]
-    d = {'locs': [],
-        #'spec_locs': [],
-        'stage': [],
-        'action': []}
-    for i, chunk in enumerate(text.noun_chunks):
-        if chunk.root.dep_.startswith('nsubj'):
-            #print(chunk)
-            #who = []
-            #what = []
-            # subject and verb pair
-            #who.append(chunk.text)
-            #what.append(chunk.root.head.text)
-            d['stage'].append((chunk.text, chunk.root.head.text))
-            #d['action'].append(chunk.root.head.text)
-        #if chunk.root.dep_ in ['pobj', 'conj', 'dobj']:
-            if chunk.root.head.text == 'form': # form and mature and the like
-                #print("we got a form")
-                #print("here's the thing")
-                #print([word.text for word in chunk.root.head.subtree if word.dep_ == 'conj' and word.pos_ == 'VERB'])
-                d['action'].extend([word.text for word in chunk.root.head.subtree if word.dep_ == 'conj' and word.pos_ == 'VERB'])
-                #verb = [child for child in chunk.root.head.children if child.dep_ == 'conj' and child.text in LOCUST_VERBS]
-                #print(verb)
-                #if verb:
-                    #d['stage'].append(('previous', str(verb)))
-                #what.extend([child for child in chunk.root.head.children if child.dep_ == 'conj' and child in LOCUST_VERBS])
-            #d['stage'].append((who, what))
-        #elif chunk.root.head.text == 'groups' and chunk.root.dep_ == 'conj':
-            #d['stage'].append((chunk.text, 'previous'))
-        # handle hopper groups and bands, etc. as one chunk
-        elif chunk.root.text == 'groups':
-            #print("here's the other thing" ,list(chunk.root.subtree))
-            d['stage'].append((' '.join([word.text for word in chunk.root.subtree]), None))
-            #d['stage'].extend(' '.join(list(chunk.root.subtree)))
-            # also want to skip the next noun chunk
-        elif set(LOCUST_TYPES).intersection(chunk.text.split()):
-            d['stage'].append((chunk.text, None))
-        else:
-            #print(chunk)
-            if not set(months).intersection(chunk.text.split()) and not re.search(r'\d', chunk.text): # doesn't have a month in it
-                d['locs'].append(chunk.text)
-        #for word in text:
-            #if word.pos_ == 'VERB' and word.text in LOCUST_VERBS:
-                #d['action'].append(word)
-    return d
