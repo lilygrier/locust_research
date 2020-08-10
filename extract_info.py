@@ -81,7 +81,7 @@ def make_nlp():
 
     return nlp
 
-def get_snippets(df, col_name, new_col_name):
+def get_snippets(df, col_name, new_col_name=None):
     '''
     Makes column in df for snippets.
     Input:
@@ -92,7 +92,8 @@ def get_snippets(df, col_name, new_col_name):
     '''
     #snippets = []
     nlp = make_nlp()
-    df[new_col_name] = None
+    if new_col_name:
+        df[new_col_name] = None
     #for doc in 
     for i, doc in enumerate(nlp.pipe(iter(df[col_name]), batch_size = 1000, n_threads=-1)):
         #print("doc is: ", doc)
@@ -104,7 +105,8 @@ def get_snippets(df, col_name, new_col_name):
         for sent in doc.sents:
             doc_ents.append([ent for ent in sent.ents]) # changed ent.text to ent
         #doc_ents = []
-        df.loc[i][new_col_name] = doc_ents
+        if new_col_name:
+            df.loc[i][new_col_name] = doc_ents
         df.loc[i][col_name] = doc # update text to nlp object
         #snippets.append(doc_ents)
     #print('len snippets is')
