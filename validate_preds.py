@@ -2,7 +2,7 @@ import spacy
 from fuzzywuzzy import fuzz
 
 
-def granular_corroborate(pred, sit_1, sit_2):
+def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
     '''
     Breaks each prediction into granular tuples. Sees if those
     specific tuples occur later.
@@ -26,18 +26,27 @@ def granular_corroborate(pred, sit_1, sit_2):
     #print('situations: ', situations)
     if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
         #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
-        if predictions[0][0].text.lower() == 'no':
+        if predictions[0][0].text.lower().startswith('no significant'):
             return [True]
     for pred in predictions:
         print('pred: ', pred)
-        results.append(compare_one_granular(pred, situations))
-        print('result: ', compare_one_granular(pred, situations))
+        results.append(compare_one_granular(pred, situations, match_type=match_type))
+        print('result: ', compare_one_granular(pred, situations, match_type=match_type))
     return results
 
 
-def compare_one_granular(pred, situations):
+def compare_one_granular(pred, situations, match_type='general_type'):
     '''
     compares one granular prediction tuple against all situations.
+    Inputs:
+        pred: an nlp object of a single prediction
+        situations: a list of nlp object of situation statements
+        match_type (string):
+            'any_locusts': matches based on being able to predict any locusts
+            'general_type': matches on adult vs. hopper, solitarious vs. gregarious,
+                            and immature vs. mature
+            'exact': matches on exact wording (e.g., 'few small groups' will only 
+                                                match to 'few small groups')
     '''
     for sit in situations:
         if not sit and pred:
@@ -45,28 +54,50 @@ def compare_one_granular(pred, situations):
         #print('situations: ', situations)
         #print('situation', sit)
         #print('pred: ', pred)
-        if not (pred[1] and sit[1]) or fuzz.token_set_ratio(pred[1], sit[1]) == 100: # generalize to locations
+        if not (pred[1] and sit[1]) or fuzz.token_set_ratio(pred[1], sit[1]) == 100: # deal with not sit[1] separately
+            print('pred: ', pred)
             print('situation: ', sit)
             if pred[0]._.subject_decline: # matches locusts will decline to no locusts
-                print('pred subject decline', pred[0]._.subject_decline)
+                #print('pred subject decline', pred[0]._.subject_decline)
                 if sit[0]._.subject_decline or is_negated(sit[0]):
-                    print('negated?', is_negated(sit[0]))
+                    #print('negated?', is_negated(sit[0]))
                     return True
+                else:
+                    continue
             #if is_negated(pred[0]) != is_negated(sit[0]): # one is negated and one is not, not a match
                 #continue
+            if pred[1] and not sit[1]: # pred has a location but sit doesn't... deal with this later
+                continue
             if is_negated(pred[0]) and is_negated(sit[0]): # match no devs to no locusts
                 return True
+            if is_negated(pred[0]) != is_negated(sit[0]): # make sure 'no locusts' won't match to 'locusts'
+                continue
             if fuzz.token_set_ratio(pred[0], sit[0]) == 100: # matches mature as verb to mature locusts
                 return True
             if pred[0].label_ == 'ACTION' and sit[0].label_ == 'ACTION':
-                if fuzz.partial_ratio(pred[0].root.lemma_, sit[0].root.lemma_) == 100:
+                if fuzz.token_set_ratio(pred[0].lemma_, sit[0].lemma_) == 100 or set([pred[0], sit[0]]) == set(['laying', 'lay']): # NEED TO ADDRESS LAYING VS LAY
                     return True
             elif pred[0].label_ == 'LOC_TYPE' and sit[0].label_ == 'LOC_TYPE':
-                if pred[0].root.lemma_ == sit[0].root.lemma_:
-                    if pred[0]._.is_solitarious == sit[0]._.is_solitarious:
-                        return True
+                #print('two locust types')
+                #print('match_type: ', match_type)
+                if match_type == 'any_locusts':
+                    return True
+                if pred[0].text.lower() == 'locusts' or pred[0].text.lower() == 'populations': # if just locusts is predicted, will match to anything
+                    return True
+                elif match_type == 'general_type':
+                    if pred[0]._.contains_adults == sit[0]._.contains_adults:
+                        if pred[0]._.ent_solitarious == sit[0]._.ent_solitarious:
+                            return True
+                elif match_type == 'exact':
+                    return fuzz.partial_ratio(pred[0], sit[0]) == 100
 
     return False
+
+def general_type_match(pred, sit):
+    if pred[0]._.contains_adults == sit[0]._.contains_adults:
+        if pred[0]._.is_solitarious == sit[0]._.is_solitarious:
+            return True
+
 
 def is_negated(ent):
     '''
@@ -139,6 +170,7 @@ def compare_groups(pred_list, sit_list):
     as well as life stage (based on ent.lemma_ for now).
     Checks if entities have the same lemma, then checks if they're solitarious.
     '''
+    print(pred_list, sit_list)
     for group_1 in pred_list[2]:
         for group_2 in sit_list[2]:
             if group_1[0].text.lower() == 'no' or 'decline' in [word.text for word in sit_list[1]]: # match no significant devs to no locusts
@@ -175,9 +207,10 @@ def get_data(sent, granular=False):
     '''
     #for sent in text.sents:
     locations = [ent for ent in sent.ents if ent.label_ in ('GEN_LOC', 'SPEC_LOC')]
-    behaviors = [ent for ent in sent.ents if (ent.label_ == 'ACTION' and ent.text not in ('scattered', 'isolated', 'decline'))]
+    behaviors = [ent for ent in sent.ents if (ent.label_ == 'ACTION' and ent.text not in ('scattered', 'isolated', 'decline', 'decrease'))]
     locust_groups = [ent for ent in sent.ents if ent.label_=='LOC_TYPE']
     #granular version:
+    #print('locations: ', locations)
     if granular:
         tuples = []
         for group in locust_groups:
@@ -185,13 +218,14 @@ def get_data(sent, granular=False):
                 for place in locations:
                     tuples.append((group, place))
             else:
+                #print('no locations: ', locations)
                 tuples.append((group, ''))
         for behavior in behaviors:
             if locations:
                 for place in locations:
                     tuples.append((behavior, place))
-                else:
-                    tuples.append((behavior, ''))
+            else:
+                tuples.append((behavior, ''))
         #print('tuples: ', tuples)
         return tuples
     # non granular version

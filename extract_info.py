@@ -1,6 +1,7 @@
 import spacy
+#import contextualSpellCheck
 from spacy.matcher import Matcher
-from spacy.tokens import Span
+from spacy.tokens import Span, Token
 from fuzzywuzzy import fuzz
 from spacy.pipeline import Sentencizer, EntityRuler
 #import contextualSpellCheck
@@ -11,7 +12,7 @@ nlp = spacy.load("en_core_web_sm")
 
 #matcher = Matcher(nlp.vocab)
 LOCUST_VERBS = ['mature', 'lay', 'lie', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 
-                'decline', 'scatter', 'isolate'] # can look for lemma of verb
+                'decline', 'decrease', 'scatter', 'isolate'] # can look for lemma of verb
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
 LOCUST_TYPES = ["locust", "locusts", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'mature', 'swarmlet', 
                 'infestation', 'population', 'scatter', 'isolate'] # took out scatter, isolate and moved to verbs (moved back tho)
@@ -53,22 +54,28 @@ def make_nlp():
     nlp = spacy.load("en_core_web_sm")
     sentencizer = Sentencizer(punct_chars=['.'])
     ruler = make_entity_ruler(nlp)
-    Span.set_extension('is_solitarious', default=None, force=True)
+    Token.set_extension('is_solitarious', default=None, force=True)
     Span.set_extension('get_name_only', default=None, force=True)
     Span.set_extension('subject_decline', default=False, force=True)
+    Span.set_extension('contains_adults', default=None, force=True)
+    Span.set_extension('ent_solitarious', default=None, force=True)
     merge_ents = nlp.create_pipe("merge_entities")
     combine_ents_ruler = combine_entities_ruler(nlp)
 
 
     #text = prep_text(text) # re-write this as pipeline function?
     nlp.add_pipe(sentencizer, first=True)
+    #contextualSpellCheck.add_to_pipe(nlp)
     nlp.add_pipe(ruler, before='ner')
     nlp.add_pipe(refine_entities)
-    nlp.add_pipe(is_solitarious)
     nlp.add_pipe(get_name_only)
     nlp.add_pipe(subject_decline)
     nlp.add_pipe(merge_ents)
     nlp.add_pipe(combine_ents_ruler)
+    nlp.add_pipe(is_solitarious)
+    nlp.add_pipe(contains_adults)
+    nlp.add_pipe(ent_solitarious)
+
     #nlp.add_pipe(remove_decline)
 
 
@@ -122,21 +129,62 @@ def get_name_only(doc):
 def subject_decline(doc):
     for i, ent in enumerate(doc.ents):
         if ent.label_ in ('ACTION', 'LOC_TYPE') and i < len(doc.ents) - 1:
-            if doc.ents[i + 1].root.lemma_ == 'decline':
+            if doc.ents[i + 1].root.lemma_ == 'decline' or doc.ents[i + 1].root.lemma_ == 'decrease':
                 ent._.subject_decline = True
     return doc               
 
 def is_solitarious(doc):
-    for ent in doc.ents:
-        if ent.label_ == 'LOC_TYPE':
+    for token in doc:
+        if token.ent_type_ == 'LOC_TYPE':
             #is_solitarious = any()
             #print(ent.text.split())
-            has_sol_words = bool(set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(ent.text).split()))
+            if contains_sol_word(token):
+            #if set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(token.text.split())):
+                token._.is_solitarious = True
+                continue
             # pick up on adults were scattered
-            scattered_head = ent.root.head.head.text in ('scattered', 'isolated', 'solitarious') # added 2nd .head, could be bad
-            ent._.is_solitarious = has_sol_words or scattered_head
+            #if not token._.is_solitarious:
+            for child in token.children:
+                if contains_sol_word(child):
+                    token._.is_solitarious = True
+                    continue
+            for conj in token.conjuncts:
+                for child in conj.children:
+                    if contains_sol_word(child):
+                        token._.is_solitarious = True
+            if not token._.is_solitarious:
+                token._.is_solitarious = False
+
+                #if set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(token.text.split()))
+            #scattered_head = ent.root.head.head.text in ('scattered', 'isolated', 'solitarious') # added 2nd .head, could be bad
+            #ent._.is_solitarious = has_sol_words or scattered_head
             #print(ent.text, 'sol: ', ent._.is_solitarious)
             #ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
+    return doc
+
+def ent_solitarious(doc):
+    for ent in doc.ents:
+        for token in ent:
+            if token._.is_solitarious:
+                ent._.ent_solitarious = True
+        ent._.ent_solitarious = False
+
+    return doc
+
+def contains_sol_word(token):
+    '''
+    Determines whether a token contains a solitarious-referencing word.
+    '''
+    return bool(set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(token.text).split()))
+
+def contains_adults(doc):
+    '''
+    Extension that determines whether a LOC_TYPE entity refers to adults
+    '''
+    for ent in doc.ents:
+        if ent.label_ == 'LOC_TYPE':
+            ent._.contains_adults = 'adult' in ent.text
+
     return doc
 
 
@@ -240,10 +288,18 @@ def combine_entities_ruler(nlp):
                         {'LOWER': 'near'},
                         {'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}}]
     patterns.append({'label': 'SPEC_LOC', 'pattern': place_near_place})
+    place_between_place = [{'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}},
+                        {'LOWER': 'between'},
+                        {'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}},
+                        {'LOWER': 'and'},
+                        {'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}}]
+    patterns.append({'label': 'SPEC_LOC', 'pattern': place_between_place})
+    direction_place = [{'ENT_TYPE': 'GEN_LOC'},
+                        {'ENT_TYPE': 'SPEC_LOC'}]
+    patterns.append({'label': 'SPEC_LOC', 'pattern': direction_place})
     isolated_scattered = [{'LOWER': {'IN': ['isolated', 'scattered']}, 'OP': '?'},
                          {'ENT_TYPE': 'LOC_TYPE', 'OP': '+'}]
     patterns.append({'label': 'LOC_TYPE', 'pattern': isolated_scattered})
-    
     combine_ruler.add_patterns(patterns)
     combine_ruler.name = 'combine_ruler' # change name to avoid confusion
     return combine_ruler

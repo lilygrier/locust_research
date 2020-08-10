@@ -143,6 +143,7 @@ def parse_text(file_path, df):
             #print("match")
     #print("dataframe updated")
     df['SITUATION'] = df.apply(lambda x: prep_text(year, month, x.SITUATION), axis=1)
+    #print('df looks like ', df)
     df['FORECAST'] = df.apply(lambda x: prep_text(year, month, x.FORECAST), axis=1)
     return df
         
@@ -242,6 +243,8 @@ def prep_text(year, month, text):
     if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
         text = re.sub(r'-\n', "", text)
         text = re.sub(r'\n', " ", text)
+    if not text:
+        text = ""
     else:
         text = re.sub(r'\n', "", text)
     #text = re.sub(r'J ask', r'Jask', text)
