@@ -1,6 +1,31 @@
 import spacy
+import pandas as pd
 from fuzzywuzzy import fuzz
+from dateutil.relativedelta import relativedelta
 
+
+def make_merged_df(df):
+    '''
+    Creates a dataframe with forecast and situations aligned.
+    '''
+
+    df.loc[:, 'DATE'] = pd.to_datetime(df['DATE'], format='%b_%Y')
+    df['ONE_MONTH_OUT'] = df['DATE'].apply(lambda x: x + relativedelta(months=+1))
+    df['TWO_MONTHS_OUT'] = df['DATE'].apply(lambda x: x + relativedelta(months=+2))
+    one_month = df[['COUNTRY', 'SITUATION', 'ONE_MONTH_OUT']].copy()
+    one_month.rename(columns={'SITUATION': 'SIT_1'}, inplace=True)
+    two_months = df[['COUNTRY', 'SITUATION', 'TWO_MONTHS_OUT']].copy()
+    two_months.rename(columns={'SITUATION': 'SIT_2'}, inplace=True)
+    df.drop(columns=['ONE_MONTH_OUT', 'TWO_MONTHS_OUT'], inplace=True)
+    df = df.merge(one_month,
+                left_on = ['COUNTRY', 'DATE'],
+                right_on = ['COUNTRY', 'ONE_MONTH_OUT'],
+                 how='left')
+    df = df.merge(two_months,
+                     left_on=['COUNTRY', 'DATE'],
+                     right_on = ['COUNTRY', 'TWO_MONTHS_OUT'],
+                     how='left')
+    return df
 
 def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
     '''
