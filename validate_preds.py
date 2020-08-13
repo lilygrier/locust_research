@@ -4,6 +4,7 @@ from fuzzywuzzy import fuzz
 from dateutil.relativedelta import relativedelta
 
 
+
 def make_merged_df(df):
     '''
     Creates a dataframe with forecast and situations aligned.
@@ -27,6 +28,51 @@ def make_merged_df(df):
                      how='left')
     return df
 
+def locusts_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
+    '''
+    First pass at accuracy. For each location in which locusts were predicted,
+    did locusts appear?
+    '''
+    predictions, situations = get_tuple_list(pred, sit_1, sit_2)
+    if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
+        if predictions[0][0].text.lower().startswith('no sign'):
+            return [True]
+    pred_locs = {}
+    for group, place in predictions:
+        if place in pred_locs:
+            pred_locs[place].append(group)
+        else:
+            pred_locs[place] = [group]
+    sit_locs = {}
+    for group, place in situations:
+        if place in sit_locs:
+            sit_locs[place].append(group)
+        else:
+            sit_locs[place] = [group]
+    results = []
+    for place, pred in pred_locs.items():
+        result = False
+        if place in sit_locs:
+            for sit in sit_locs[place]:
+                compare_one_granular()
+
+
+    return None
+
+def get_tuple_list(pred, sit_1, sit_2):
+    '''
+    Creates list of tuples from predictions and situations.
+    '''
+    predictions = []
+    situations = []
+    for sent in pred.sents:
+        predictions.extend(get_data(sent, granular=True))
+    for sit in [sit_1, sit_2]:
+        if type(sit) == spacy.tokens.doc.Doc:
+            for sent in sit.sents:
+                situations.extend(get_data(sent, granular=True))
+    return (predictions, situations)
+
 def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
     '''
     Breaks each prediction into granular tuples. Sees if those
@@ -34,30 +80,72 @@ def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
     '''
     results = []
     predictions = []
+    if all((type(item) != spacy.tokens.doc.Doc) for item in [pred, sit_1, sit_2]):
+        return []
     for sent in pred.sents:
         predictions.extend(get_data(sent, granular=True))
     #print('sit 1 is: ', sit_1)
     #print('type of sit1 is: ', type(sit_1))
     situations = []
-    if sit_1:
-        for sent in sit_1.sents:
-            situations.extend(get_data(sent, granular=True))
+    for sit in [sit_1, sit_2]:
+        if type(sit) == spacy.tokens.doc.Doc:
+            for sent in sit.sents:
+                situations.extend(get_data(sent, granular=True))
         #situations = [get_data(sent, granular=True) for sent in sit_1.sents]
     #else:
         #situations = []
-    if sit_2:
-        for sent in sit_2.sents:
-            situations.extend(get_data(sent, granular=True))
+    #if type(sit_2) == spacy.tokens.doc.Doc:
+        #for sent in sit_2.sents:
+            #situations.extend(get_data(sent, granular=True))
     #print('situations: ', situations)
     if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
         #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
-        if predictions[0][0].text.lower().startswith('no significant'):
+        if predictions[0][0].text.lower().startswith('no signi'):
             return [True]
     for pred in predictions:
-        print('pred: ', pred)
+        #print('pred: ', pred)
         results.append(compare_one_granular(pred, situations, match_type=match_type))
-        print('result: ', compare_one_granular(pred, situations, match_type=match_type))
+        #print('result: ', compare_one_granular(pred, situations, match_type=match_type))
     return results
+
+
+def compare_groups(pred_group, sit_group, match_type='general_type'):
+    '''
+    Compares two locust groups or actions and returns whether or not they're a match.
+    '''
+                #print('situation: ', sit)
+    if pred_group._.subject_decline: # matches locusts will decline to no locusts
+        #print('pred subject decline', pred[0]._.subject_decline)
+        if sit_group._.subject_decline or is_negated(sit_group):
+            #print('negated?', is_negated(sit[0]))
+            return True
+        else:
+            return False
+    #if is_negated(pred[0]) != is_negated(sit[0]): # one is negated and one is not, not a match
+        #continue
+    if is_negated(pred_group) and is_negated(sit_group): # match no devs to no locusts
+        return True
+    if is_negated(pred_group) != is_negated(sit_group): # make sure 'no locusts' won't match to 'locusts'
+        return False
+    if fuzz.token_set_ratio(pred_group, sit_group) == 100: # matches mature as verb to mature locusts
+        return True
+    if pred_group.label_ == 'ACTION' and sit_group.label_ == 'ACTION':
+        if fuzz.token_set_ratio(pred_group.lemma_, sit_group.lemma_) == 100 or set([pred_group, sit_group]) == set(['laying', 'lay']): # NEED TO ADDRESS LAYING VS LAY
+            return True
+    elif pred_group.label_ == 'LOC_TYPE' and sit_group.label_ == 'LOC_TYPE':
+        #print('two locust types')
+        #print('match_type: ', match_type)
+        if match_type == 'any_locusts':
+            return True
+        if pred_group.text.lower() == 'locusts' or pred_group.text.lower() == 'populations': # if just locusts is predicted, will match to anything
+            return True
+        elif match_type == 'general_type':
+            if pred_group._.contains_adults == sit_group._.contains_adults:
+                if pred_group._.ent_solitarious == sit_group._.ent_solitarious:
+                    return True
+        elif match_type == 'exact':
+            return fuzz.partial_ratio(pred_group, sit_group) == 100
+
 
 
 def compare_one_granular(pred, situations, match_type='general_type'):
@@ -79,9 +167,12 @@ def compare_one_granular(pred, situations, match_type='general_type'):
         #print('situations: ', situations)
         #print('situation', sit)
         #print('pred: ', pred)
+        if pred[1] and not sit[1]: # pred has a location but sit doesn't... deal with this later
+            continue
         if not (pred[1] and sit[1]) or fuzz.token_set_ratio(pred[1], sit[1]) == 100: # deal with not sit[1] separately
-            print('pred: ', pred)
-            print('situation: ', sit)
+            #print('pred: ', pred)
+            #print('situation: ', sit)
+
             if pred[0]._.subject_decline: # matches locusts will decline to no locusts
                 #print('pred subject decline', pred[0]._.subject_decline)
                 if sit[0]._.subject_decline or is_negated(sit[0]):
@@ -91,8 +182,7 @@ def compare_one_granular(pred, situations, match_type='general_type'):
                     continue
             #if is_negated(pred[0]) != is_negated(sit[0]): # one is negated and one is not, not a match
                 #continue
-            if pred[1] and not sit[1]: # pred has a location but sit doesn't... deal with this later
-                continue
+
             if is_negated(pred[0]) and is_negated(sit[0]): # match no devs to no locusts
                 return True
             if is_negated(pred[0]) != is_negated(sit[0]): # make sure 'no locusts' won't match to 'locusts'
