@@ -39,46 +39,57 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
             return [True]
     pred_locs = {}
     for group, place in predictions:
-        #if not place:
-            #place = 'Not Specified'
-        if place.text in pred_locs:
-            pred_locs[place.text].append(group)
+        #print('place', place)
+        #print('type of place', type(place))
+        if not place:
+            place_name = ''
         else:
-            pred_locs[place.text] = [group]
+            place_name = place.text
+        if place_name in pred_locs:
+            pred_locs[place_name].append(group)
+        else:
+            pred_locs[place_name] = [group]
     sit_locs = {}
     for group, place in situations:
-        if place.text in sit_locs:
-            sit_locs[place.text].append(group)
+        if not place:
+            place_name = ''
         else:
-            sit_locs[place.text] = [group]
+            place_name = place.text
+        if place_name in sit_locs:
+            sit_locs[place_name].append(group)
+        else:
+            sit_locs[place_name] = [group]
     results = []
-    print('pred dict: ', pred_locs)
-    print('sit dict: ', sit_locs)
+    #print('pred dict: ', pred_locs)
+    #print('sit dict: ', sit_locs)
     for place, pred_list in pred_locs.items():
-        print('place is: ', place)
+        #print('place is: ', place)
         result = False
         if not place:
             #print("not place is: ", place)
             for pred in pred_list:
                 for sit_list in sit_locs.values():
-                    print('pred is: ', pred)
-                    print('sit is: ', sit_list)
+                    #print('pred is: ', pred)
+                    #print('sit is: ', sit_list)
                     if any(compare_predictions(pred, sit, match_type) for sit in sit_list):
-                        print('in common!')
+                        #print('in common!')
                         result = True
                         break
                 else:
                     continue
                 break
         elif place in sit_locs:
-            print('place is in sit_locs. Entering loop')
+            #print('place is in sit_locs. Entering loop')
             for pred in pred_locs[place]:
-                if any(compare_predictions(pred, sit, match_type) for sit in sit_locs[place]):
+                poss_sits = sit_locs[place]
+                if '' in sit_locs:
+                    poss_sits.extend(sit_locs[''])
+                if any(compare_predictions(pred, sit, match_type) for sit in poss_sits):
                     result = True
                     break
         results.append(result)
-        print('results', results)
-    
+        #print('results', result)
+    #print(results)
     return results
 
 def get_tuple_list(pred, sit_1, sit_2):
@@ -135,8 +146,8 @@ def compare_predictions(pred_group, sit_group, match_type='general_type'):
     '''
     Compares two locust groups or actions and returns whether or not they're a match.
     '''
-    print('pred_group', pred_group)
-    print('sit_group', sit_group)
+    #print('pred_group', pred_group)
+    #print('sit_group', sit_group)
                 #print('situation: ', sit)
     if pred_group._.subject_decline: # matches locusts will decline to no locusts
         #print('pred subject decline', pred[0]._.subject_decline)

@@ -20,6 +20,8 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 DIRECTIONS = ['north', 'south', 'east', 'west', 'southwest', 'southeast', 'northwest', 'northeast']
 #LOCUST_ADJ = ["immature", 'mature', 'solitarious', 'gregarious', 'isolated']
 
+#if __name__ == "__main__":
+    
 
 def prep_text(year, month, text):
     '''
@@ -91,14 +93,19 @@ def get_snippets(df, col_name, new_col_name=None):
     Note: modifies the df in place to add the column
     '''
     #snippets = []
+    df.loc[:, col_name] = df[col_name].apply(str)
     nlp = make_nlp()
     if new_col_name:
         df[new_col_name] = None
-    #for doc in 
-    for i, doc in enumerate(nlp.pipe(iter(df[col_name]), batch_size = 1000, n_threads=-1)):
+    #for i, doc in enumerate(nlp.pipe(iter(df[col_name].astype('str')), batch_size = 1000, n_threads=-1)):
+    nlp_col = []
+    for i, doc in enumerate(nlp.pipe(iter(df[col_name].astype('str')), batch_size = 1000, n_threads=-1)):
+        #print('df[col] is : ', df[col_name])
         #print("doc is: ", doc)
         #print('type of doc is: ', type(doc))
         if not doc: # situation is missing
+            #print('no doc, moving on')
+            nlp_col.append(None)
             continue
         #doc = nlp(text)
         doc_ents = []
@@ -107,12 +114,31 @@ def get_snippets(df, col_name, new_col_name=None):
         #doc_ents = []
         if new_col_name:
             df.loc[i][new_col_name] = doc_ents
-        df.loc[i][col_name] = doc # update text to nlp object
+        
+        nlp_col.append(doc)
+        #df[col_name][i] = doc
+        #df.loc[i, col_name] = doc # update text to nlp object
         #snippets.append(doc_ents)
     #print('len snippets is')
     #df[new_col_name] = snippets
         #return doc_ents
+    df.loc[:, col_name] = nlp_col
     return df
+
+def prelim_cleaning(df):
+    '''
+    Some preliminary cleaning of the dataframe to extract information.
+    '''
+    df['COUNTRY'] = df['COUNTRY'].str.strip()
+    df['COUNTRY'] = df['COUNTRY'].str.upper()
+    df['COUNTRY'].replace(r'(\w)  +(\w)', r'\1 \2', regex=True, inplace=True)
+    df['DATE'].replace(r'JULY_', r'JUL_', regex=True, inplace=True)
+    df['DATE'].replace(r'JUNE_', r'JUN_', regex=True, inplace=True)
+    df['DATE'].replace(r'SEPT_', r'SEP_', regex=True, inplace=True)
+
+
+    return df
+
 
 
 def get_name_only(doc):
@@ -371,7 +397,9 @@ def make_entity_ruler(nlp):
     patterns.append({'label': 'GEN_LOC', 'pattern': pat_lowlands})
     pat_directions = [#{'POS': 'ADP', 'OP': '?'},
                     {'LOWER': 'the', 'OP': '?'},
-                    {'LOWER': {'IN': DIRECTIONS}}]
+                    {'LOWER': {'IN': DIRECTIONS}},
+                    {'LOWER': '-', 'OP': '?'},
+                    {'LOWER': {'IN': DIRECTIONS}, 'OP': '?'}]
     pat_south_of = [{'LOWER': {'IN': DIRECTIONS}},
                     {'LOWER': 'of'},
                     {'LOWER': {'REGEX': r'\d\d[NSEW]'}}]
