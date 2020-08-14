@@ -28,7 +28,7 @@ def make_merged_df(df):
                      how='left')
     return df
 
-def locusts_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
+def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
     '''
     First pass at accuracy. For each location in which locusts were predicted,
     did locusts appear?
@@ -39,25 +39,47 @@ def locusts_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
             return [True]
     pred_locs = {}
     for group, place in predictions:
-        if place in pred_locs:
-            pred_locs[place].append(group)
+        #if not place:
+            #place = 'Not Specified'
+        if place.text in pred_locs:
+            pred_locs[place.text].append(group)
         else:
-            pred_locs[place] = [group]
+            pred_locs[place.text] = [group]
     sit_locs = {}
     for group, place in situations:
-        if place in sit_locs:
-            sit_locs[place].append(group)
+        if place.text in sit_locs:
+            sit_locs[place.text].append(group)
         else:
-            sit_locs[place] = [group]
+            sit_locs[place.text] = [group]
     results = []
-    for place, pred in pred_locs.items():
+    print('pred dict: ', pred_locs)
+    print('sit dict: ', sit_locs)
+    for place, pred_list in pred_locs.items():
+        print('place is: ', place)
         result = False
-        if place in sit_locs:
-            for sit in sit_locs[place]:
-                compare_one_granular()
-
-
-    return None
+        if not place:
+            #print("not place is: ", place)
+            for pred in pred_list:
+                for sit_list in sit_locs.values():
+                    print('pred is: ', pred)
+                    print('sit is: ', sit_list)
+                    if any(compare_predictions(pred, sit, match_type) for sit in sit_list):
+                        print('in common!')
+                        result = True
+                        break
+                else:
+                    continue
+                break
+        elif place in sit_locs:
+            print('place is in sit_locs. Entering loop')
+            for pred in pred_locs[place]:
+                if any(compare_predictions(pred, sit, match_type) for sit in sit_locs[place]):
+                    result = True
+                    break
+        results.append(result)
+        print('results', results)
+    
+    return results
 
 def get_tuple_list(pred, sit_1, sit_2):
     '''
@@ -109,10 +131,12 @@ def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
     return results
 
 
-def compare_groups(pred_group, sit_group, match_type='general_type'):
+def compare_predictions(pred_group, sit_group, match_type='general_type'):
     '''
     Compares two locust groups or actions and returns whether or not they're a match.
     '''
+    print('pred_group', pred_group)
+    print('sit_group', sit_group)
                 #print('situation: ', sit)
     if pred_group._.subject_decline: # matches locusts will decline to no locusts
         #print('pred subject decline', pred[0]._.subject_decline)
@@ -132,7 +156,7 @@ def compare_groups(pred_group, sit_group, match_type='general_type'):
     if pred_group.label_ == 'ACTION' and sit_group.label_ == 'ACTION':
         if fuzz.token_set_ratio(pred_group.lemma_, sit_group.lemma_) == 100 or set([pred_group, sit_group]) == set(['laying', 'lay']): # NEED TO ADDRESS LAYING VS LAY
             return True
-    elif pred_group.label_ == 'LOC_TYPE' and sit_group.label_ == 'LOC_TYPE':
+    elif pred_group.label_ == 'LOC_TYPE' and sit_group.label_ == 'LOC_TYPE': # already filtered out negations
         #print('two locust types')
         #print('match_type: ', match_type)
         if match_type == 'any_locusts':
