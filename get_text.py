@@ -8,6 +8,7 @@ def clean_page(file_path):
     year = int(file_path[-4:])
     #print('file_path: ', file_path)
     month = re.findall(r'.+/([A-Z]+)_', file_path)[0]
+    #print('month is: ', month)
     old_style = (1996 <= year <= 2017)
     #if year == 1996:
         # JULY TO DECEMBER 1996 IS OLD STYLE!!!
@@ -26,7 +27,7 @@ def clean_page(file_path):
         final_txt.append(clean_left)
         final_txt.append(clean_right)
     final_txt = "\n".join(final_txt)
-    final_txt = get_relevant_text(final_txt)
+    final_txt = get_relevant_text(final_txt, year, month)
     return final_txt
     #print("final text: ", final_txt)
     #return prep_text(year, month, final_txt)
@@ -180,7 +181,10 @@ def many_countries(text):
     #print(text)
     return text
 
-def get_relevant_text(text):
+def get_relevant_text(text, year, month):
+    '''
+    Cleans up relevant text so it can be parsed into a dataframe.
+    '''
     result = re.findall(r'(?:\nSituation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species|Other Migratory Pests)', 
                         text, flags = re.DOTALL|re.IGNORECASE)[0]
     #print(result)
@@ -215,20 +219,33 @@ def get_relevant_text(text):
     final_text = re.sub(r'(signifi) +(cant)', r'\1\2', final_text)
     final_text = re.sub(r'signiﬁ +cant', r'significant', final_text)
     final_text = re.sub(r'N +o significant', r'No significant', final_text)
+    if year == 1996 and month == 'AUG':
+        final_text = re.sub(r'\nNiger\n(?<!• SITUATION)$', r'\nNiger\n• SITUATION\n', final_text) # manually fix AUG 1996 issue
+    if year == 2007 and month == 'OCT':
+        final_text = re.sub(r'\ncoastal plains\n', r'\ncoastal plains.\n', final_text) # manually fix OCT 2007 issue
+    if year == 1996 and month in ['SEPT', 'OCT']:
+        final_text = re.sub(r'the east\nSomalia\n', r'the east.\nSomalia\n', final_text)
+    if year == 1999 and month == 'JUNE':
+        final_text = re.sub(r'commence\nChad\n', r'commence.\nChad\n', final_text)
+    if year == 2008 and month == 'JUNE':
+        final_text = re.sub(r'summer\nAfghanistan\n', r'summer.\nAfghanistan\n', final_text)
+
+
     return final_text
 
-def prep_text(year, month, text):
-    '''
-    Prepares text for processing.
-    '''
-    if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
-        text = re.sub(r'-\n', "", text)
-        text = re.sub(r'\n', " ", text)
-    else:
-        text = re.sub(r'\n', "", text)
-    #text = re.sub(r'J ask', r'Jask', text)
-    text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
-    text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
-    text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
+# def prep_text(year, month, text):
+#     '''
+#     Prepares text for processing.
+#     '''
+#     if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
+#         text = re.sub(r'-\n', "", text)
+#         text = re.sub(r'\n', " ", text)
+#     else:
+#         text = re.sub(r'\n', "", text)
+#     #text = re.sub(r'J ask', r'Jask', text)
+#     text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
+#     text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
+#     text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
+#     text = re.sub(r'\nNiger\n', r'\nNiger\n• SITUATION\n', text) # manually fix AUG 1996 error
 
-    return text
+#     return text

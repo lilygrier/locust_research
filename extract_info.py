@@ -132,6 +132,10 @@ def prelim_cleaning(df):
     df['COUNTRY'] = df['COUNTRY'].str.strip()
     df['COUNTRY'] = df['COUNTRY'].str.upper()
     df['COUNTRY'].replace(r'(\w)  +(\w)', r'\1 \2', regex=True, inplace=True)
+    df['COUNTRY'].replace(r'GUINEA BIS- SAU', r'GUINEA BISSAU', regex=True, inplace=True)
+    df['COUNTRY'].replace(r'CÔTE D’IVOIRE', r'COTE D’IVOIRE', regex=True, inplace=True)
+    df['COUNTRY'].replace(r'UNITED ARAB EMIRATES', r'UAE', regex=True, inplace=True)
+    df['COUNTRY'].replace(r'CAPE VERDE ISLANDS', r'CAPE VERDE', regex=True, inplace=True)
     df['DATE'].replace(r'JULY_', r'JUL_', regex=True, inplace=True)
     df['DATE'].replace(r'JUNE_', r'JUN_', regex=True, inplace=True)
     df['DATE'].replace(r'SEPT_', r'SEP_', regex=True, inplace=True)
@@ -272,11 +276,18 @@ def refine_entities(doc):
             if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
             # if entity followed by breeding areas or areas, skip
             # get rid of 'and'
+                if doc[ent.start:ent.end].text.lower() == 'nan':
+                    continue
+                if doc[ent.start:ent.end].text == 'May.':
+                    continue
                 if doc[ent.start].text == 'and':
                     new_ent = Span(doc, ent.start + 1, ent.end, label=ent.label)
                     new_ents.append(new_ent)
                     continue
                 if ent.label_ in ('GEN_LOC', 'SPEC_LOC') and ent.end != len(doc):
+                    if doc[ent.end - 1].text == 'as':
+                        new_ent = Span(doc, ent.start, ent.end - 1, label=ent.label)
+                        continue
                     next_token = doc[ent.end]
                     if next_token.text in ('coast'):
                         new_ent = Span(doc, ent.start, ent.end + 1, label=ent.label)
@@ -312,7 +323,10 @@ def combine_entities_ruler(nlp):
     '''
     patterns = []
     combine_ruler = EntityRuler(nlp, validate=True, overwrite_ents=True)
-    place_near_place = [{'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}},
+    place_near_place = [{'LOWER': {'IN': DIRECTIONS}, 'OP': '?'},
+                        {'LOWER': 'of', 'OP': '?'},
+                        {'LOWER': 'the', 'OP': '?'},
+                        {'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}},
                         {'LOWER': 'near'},
                         {'ENT_TYPE': {'IN': ['GEN_LOC', 'SPEC_LOC']}}]
     patterns.append({'label': 'SPEC_LOC', 'pattern': place_near_place})
@@ -377,7 +391,13 @@ def make_entity_ruler(nlp):
                  {'LOWER': 'AND', 'OP': '?'},
                  {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}]})
     pat_no_devs = [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]
+    pat_no_devs_variation = [{'LOWER': {'IN': ['no', ' no']}}, 
+                {'LOWER': 'signiﬁ'},
+                {'LOWER': 'ca'},
+                {'LOWER': 'nt'},
+                {'LOWER': 'developments'}]
     patterns.append({'label': 'LOC_TYPE', 'pattern': pat_no_devs})
+    patterns.append({'label': 'LOC_TYPE', 'pattern': pat_no_devs_variation})
     pat_locust_gerunds = [{'LOWER': 'no', 'OP': '?'},
                         {'POS': 'ADJ', 'OP': '?'},
                         {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}] # should be not in 'verb' but not working
@@ -432,64 +452,3 @@ def make_entity_ruler(nlp):
     #nlp.add_pipe(ruler, overwrite=True)
     return ruler
 
-def make_matcher():
-    '''
-    creates the matcher object with specified patterns
-    '''
-    # maybe move relevant global vars into this function
-    matcher = Matcher(nlp.vocab)
-    actions = [[{'LEMMA': {'IN': LOCUST_VERBS}}]]
-    locust_groups = [[{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LEMMA': {'IN': ['Locusts', 'locust', 'swarm']}}],
-        [{'POS': 'ADJ', 'OP': '?'},
-    {'LOWER': 'and', 'OP': '?'},
-    {'LOWER': 'isolated', 'OP': '?'},
-    {'POS': {'IN': ['ADJ', 'PROPN']}, 'OP': '*'},
-    {'LEMMA': {'IN': LOCUST_TYPES}},
-                 {'LOWER': 'AND', 'OP': '?'},
-                 {'LEMMA': {'IN': LOCUST_TYPES}, 'OP': '?'}]]
-    locust_gerunds = [[{'LOWER': 'no', 'OP': '?'},
-                        {'POS': 'ADJ', 'OP': '?'},
-                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'NOT IN': ['VERB']}}]] # add logic to later remove breeding areas
-    specific_loc = [[{'POS': 'PROPN', 'OP': '+'},
-                    {'ORTH': '('},
-                    {'LOWER': {'REGEX': r'\d{4}\w/\d{4}\w'}},
-                    {'ORTH': ')'}]]
-    gen_loc = [[{'POS': 'PROPN', 'OP': '*', 'ORTH': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}},
-                {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'}, # add 'des' here
-                {'POS': 'PROPN', 'OP': '+', 'ORTH': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}}],
-                [{'POS': 'ADJ'}, {'LOWER': 'lowlands'}]]
-    directions = [[#{'POS': 'ADP', 'OP': '?'},
-                    {'LOWER': 'the', 'OP': '?'},
-                    {'LOWER': {'IN': DIRECTIONS}}],
-                    [{'LOWER': {'IN': DIRECTIONS}},
-                    {'LOWER': 'of'},
-                    {'LOWER': {'REGEX': r'\d\d[NSEW]'}}]]
-    borders =  [[{'IS_TITLE': True, 'OP': '*'},
-                {'LOWER': 'and', 'OP': '?'},
-                {'IS_TITLE': True, 'OP': '+'},
-                {'LEMMA': 'border'}]]
-    #dates = [[{'LOWER': {'REGEX': r'\d+-?(\d+)?'}},
-                #{'ORTH': {'IN': MONTHS}}]]
-    situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
-                        [{'LOWER': 'calm'}],
-                        [{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}]]
-    treatment = [[{'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
-                    {'LOWER': 'and', 'OP': '?'},
-                    {'LOWER': {'IN': ['ground', 'aerial']}, 'OP': '?'},
-                    {'LOWER': 'control'},
-                    {'LOWER': 'operations'}],
-                    [{'LEMMA': 'treat'}]]
-    risk = [[{'POS': 'ADJ'}, {'LOWER': 'risk'}],
-            [{'lower': 'unlikely'}]]
-    matcher.add("actions", actions)
-    matcher.add("loc_group", locust_groups)
-    matcher.add("gerunds", locust_gerunds)
-    matcher.add("specific_loc", specific_loc)
-    matcher.add("gen_loc", gen_loc)
-    matcher.add("directions", directions)
-    matcher.add("border", borders)
-    matcher.add("treatment", treatment)
-    matcher.add("risk", risk)
-    #matcher.add("dates", dates)
-    matcher.add("situation_status", situation_status)
-    return matcher

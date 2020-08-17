@@ -43,7 +43,7 @@ def parse_text(file_path, df):
     # find all situation and forecast
     #cols = ["YEAR", 'MONTH', 'REGION', 'COUNTRY', 'SITUATION', 'FORECAST']
     regions = ["WESTERN REGION", "WEST AFRICA", 'NORTH-WEST AFRICA', 'EASTERN AFRICA', 
-    'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION", 'MEDITERRANEAN']
+    'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION", 'MEDITERRANEAN', 'EUROPE']
     #df = pd.DataFrame(columns=cols)
     countries = get_countries(rel_text)
     
@@ -59,6 +59,13 @@ def parse_text(file_path, df):
         dif_formatting = False
         #print(country)
         country_list = re.split(r",? \n?AND|, ?", country.upper())
+        print('country list is: ', country_list)
+        if re.match(r'SYRIA\nAND TURKEY', country_list[-1]):
+            country_list[-1] = 'SYRIA'
+            country_list.append('TURKEY')
+        elif re.match(r'TURKEY\nAND UAE', country_list[-1]):
+            country_list[-1] = 'TURKEY'
+            country_list.append('UAE')
         for cty in country_list:
             cty = cty.lstrip()
             #print("cty is: ", cty)
@@ -71,6 +78,10 @@ def parse_text(file_path, df):
 
             cty = re.sub('\n', " ", cty)
             cty = re.sub(r'AND |and ', "", cty)
+            #if cty == 'SYRIA TURKEY':
+                #cty = 'SYRIA'
+
+            #print('cty is : ', cty)
             #if not region: # for debugging
                 #print("no region!")
                 #print('cty is: ', cty)
@@ -251,5 +262,6 @@ def prep_text(year, month, text):
     text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
     text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
     text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
+    #text = re.sub(r'\nNiger\n', r'\nNiger\n• SITUATION\n', text) # manually fix AUG 1996 issue
 
     return text

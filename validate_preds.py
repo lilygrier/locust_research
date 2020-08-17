@@ -28,6 +28,23 @@ def make_merged_df(df):
                      how='left')
     return df
 
+def results_by_sentence(pred, sit_1, sit_2, match_type='general_type'):
+    '''
+    If anything in the prediction sentence is correct, returns true.
+    '''
+    results = []
+    for sent in pred.sents:
+        prediction, situations = get_tuple_list(sent, sit_1, sit_2)
+        if prediction and not situations: # case where there is no situation report and pred is nothing significant will happen
+        #print('preds and not sits!!')
+        #print(predictions)
+            if prediction[0][0].text.lower().startswith('no sign') or (prediction[0][0].text.lower() == 'no' and prediction[0][1].text.lower.startswith('sign')):
+                results.append(True)
+        else:
+            return None # COME BACK TO THIS!!
+
+        
+
 def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
     '''
     First pass at accuracy. For each location in which locusts were predicted,
@@ -35,7 +52,9 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
     '''
     predictions, situations = get_tuple_list(pred, sit_1, sit_2)
     if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
-        if predictions[0][0].text.lower().startswith('no sign'):
+        #print('preds and not sits!!')
+        #print(predictions)
+        if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
             return [True]
     pred_locs = {}
     for group, place in predictions:

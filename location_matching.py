@@ -2,6 +2,7 @@
 Matches referenced locations.
 '''
 import pandas as pd
+import numpy as np
 import spacy
 import datetime
 from dateutil.relativedelta import relativedelta
@@ -27,7 +28,7 @@ def locations_to_match(nlp_df):
     nlp_df['unmatched_sit'] = nlp_df.apply(lambda x: get_unmatched_sit(x.forecast_locs, x.sit_locs_1, x.sit_locs_2), axis=1)
     nlp_df.loc[:, 'unmatched_forecast'] = nlp_df.apply(lambda x: remove_common_locs_forecast(x.unmatched_forecast, x.unmatched_sit), axis=1)
     nlp_df.loc[:, 'unmatched_sit'] = nlp_df.apply(lambda x: remove_common_locs_sit(x['unmatched_forecast'], x['unmatched_sit']), axis=1)
-
+    nlp_df.drop(columns=['forecast_locs', 'sit_locs_1', 'sit_locs_2'], inplace=True)
     return nlp_df
 
 def remove_common_locs_forecast(unmatched_forecast, unmatched_sit):
@@ -85,8 +86,12 @@ def get_locations(doc):
 
     return locations
 
-
-
-
-    
-
+def summarize_unmatched(df):
+    for country in df['COUNTRY'].unique():
+        count_df = df[df['COUNTRY'] == country]
+        forecast = pd.Series(np.concatenate(count_df['unmatched_forecast'].reset_index(drop=True)))
+        sit = pd.Series(np.concatenate(count_df['unmatched_sit'].reset_index(drop=True)))
+        print('country: ', country)
+        print('most common unmatched forecast', forecast.value_counts()[:5])
+        print('most common unmatched situation', sit.value_counts()[:5])
+    return None
