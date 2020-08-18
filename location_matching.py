@@ -54,27 +54,6 @@ def get_unmatched_forecast(forecast_locs, sit_locs_1, sit_locs_2):
 def get_unmatched_sit(forecast_locs, sit_locs_1, sit_locs_2):
     return set(sit_locs_1).union(set(sit_locs_2)) - set(forecast_locs)
 
-def old_locations_to_match(nlp_df, country):
-    '''
-    Generates a list of locations to match for a single country.
-    Inputs:
-        nlp_df: a Pandas dataframe of nlp objects
-    '''
-
-    country_df = nlp_df[nlp_df['COUNTRY'] == country]
-    country_df['DATE'] = pd.to_datetime(country_df['DATE'], format='%b_%Y')
-    #country_df['DATE'] = pd.to_datetime(country_df['DATE'], infer_datetime_format=True)
-    #next_month = STARTING_DATE.
-    for start_month in rrule.rrule(rrule.MONTHLY, dtstart=STARTING_DATE, until=ENDING_DATE):
-
-        forecast = country_df['FORECAST'].where(country_df['DATE'] == start_month)
-        sit_1 = country_df['SITUATION'].where(country_df['DATE'] == start_month + relativedelta(months=+1))
-        sit_2 = country_df['SITUATION'].where(country_df['DATE'] == start_month + relativedelta(months=+2))
-
-        country_df['fore_locs'] = set(get_locations(forecast)) - set(get_locations(sit_1)).union(get_locations(sit_2))
-        country_df['sit_locs'] = set(get_locations(sit_1)).union(get_locations(sit_2)) - set(get_locations(forecast))
-
-    return country_df
 
 def get_locations(doc):
     '''
@@ -91,6 +70,7 @@ def summarize_unmatched(df):
     Creates a table summarizing unmatched locations and their frequencies.
     '''
     #loc_summaries = pd.DataFrame(columns=['COUNTRY', 'UNMATCHED_FORECAST', 'UNMATCHED_SIT'])
+    df = locations_to_match(df)
     rv = pd.DataFrame()
     for country in df['COUNTRY'].unique():
         count_df = df[df['COUNTRY'] == country]

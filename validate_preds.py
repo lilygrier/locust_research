@@ -9,7 +9,8 @@ def make_merged_df(df):
     '''
     Creates a dataframe with forecast and situations aligned.
     '''
-
+    #
+    # df['DATE'] = str(df['MONTH'])+'_'+str(df['YEAR'])
     df.loc[:, 'DATE'] = pd.to_datetime(df['DATE'], format='%b_%Y')
     df['ONE_MONTH_OUT'] = df['DATE'].apply(lambda x: x + relativedelta(months=+1))
     df['TWO_MONTHS_OUT'] = df['DATE'].apply(lambda x: x + relativedelta(months=+2))
@@ -134,6 +135,15 @@ def get_tuple_list(pred, sit_1, sit_2):
             for sent in sit.sents:
                 situations.extend(get_data(sent, granular=True))
     return (predictions, situations)
+
+def percent_true(results_list):
+    '''
+    Given a results list of true and false, returns percent of true predictions.
+    '''
+    if not results_list:
+        return 0
+
+    return sum(results_list)/len(results_list)
 
 def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
     '''

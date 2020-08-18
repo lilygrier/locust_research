@@ -129,6 +129,7 @@ def prelim_cleaning(df):
     '''
     Some preliminary cleaning of the dataframe to extract information.
     '''
+    df['MONTH'].replace(r'(.+)\\(.+)', r'\2', regex=True, inplace=True) # works with newer one
     df['COUNTRY'] = df['COUNTRY'].str.strip()
     df['COUNTRY'] = df['COUNTRY'].str.upper()
     df['COUNTRY'].replace(r'(\w)  +(\w)', r'\1 \2', regex=True, inplace=True)
@@ -136,6 +137,7 @@ def prelim_cleaning(df):
     df['COUNTRY'].replace(r'CÔTE D’IVOIRE', r'COTE D’IVOIRE', regex=True, inplace=True)
     df['COUNTRY'].replace(r'UNITED ARAB EMIRATES', r'UAE', regex=True, inplace=True)
     df['COUNTRY'].replace(r'CAPE VERDE ISLANDS', r'CAPE VERDE', regex=True, inplace=True)
+    df['DATE'] = df.apply(lambda x: make_date_col(x.MONTH, x.YEAR), axis=1)
     df['DATE'].replace(r'JULY_', r'JUL_', regex=True, inplace=True)
     df['DATE'].replace(r'JUNE_', r'JUN_', regex=True, inplace=True)
     df['DATE'].replace(r'SEPT_', r'SEP_', regex=True, inplace=True)
@@ -143,7 +145,9 @@ def prelim_cleaning(df):
 
     return df
 
-
+def make_date_col(month, year):
+    
+    return str(month)+'_'+str(year)
 
 def get_name_only(doc):
 
