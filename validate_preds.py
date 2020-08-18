@@ -33,15 +33,24 @@ def results_by_sentence(pred, sit_1, sit_2, match_type='general_type'):
     If anything in the prediction sentence is correct, returns true.
     '''
     results = []
+    situations = []
+    for sit in [sit_1, sit_2]:
+        if type(sit) == spacy.tokens.doc.Doc:
+            for sent in sit.sents:
+                situations.extend(get_data(sent, granular=True))
     for sent in pred.sents:
-        prediction, situations = get_tuple_list(sent, sit_1, sit_2)
-        if prediction and not situations: # case where there is no situation report and pred is nothing significant will happen
+        predictions = get_data(sent, granular=True)
+        if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
         #print('preds and not sits!!')
         #print(predictions)
-            if prediction[0][0].text.lower().startswith('no sign') or (prediction[0][0].text.lower() == 'no' and prediction[0][1].text.lower.startswith('sign')):
+            if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
                 results.append(True)
         else:
-            return None # COME BACK TO THIS!!
+            results.append(any(compare_one_granular(prediction, situations, match_type=match_type) for prediction in predictions))
+            #for prediction in predictions:
+                #results.append(compare_one_granular(prediction, situations, match_type=match_type))
+
+    return results
 
         
 
@@ -50,6 +59,7 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
     First pass at accuracy. For each location in which locusts were predicted,
     did locusts appear?
     '''
+    
     predictions, situations = get_tuple_list(pred, sit_1, sit_2)
     if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
         #print('preds and not sits!!')
