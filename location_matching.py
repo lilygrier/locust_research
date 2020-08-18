@@ -87,11 +87,20 @@ def get_locations(doc):
     return locations
 
 def summarize_unmatched(df):
+    '''
+    Creates a table summarizing unmatched locations and their frequencies.
+    '''
+    #loc_summaries = pd.DataFrame(columns=['COUNTRY', 'UNMATCHED_FORECAST', 'UNMATCHED_SIT'])
+    rv = pd.DataFrame()
     for country in df['COUNTRY'].unique():
         count_df = df[df['COUNTRY'] == country]
         forecast = pd.Series(np.concatenate(count_df['unmatched_forecast'].reset_index(drop=True)))
         sit = pd.Series(np.concatenate(count_df['unmatched_sit'].reset_index(drop=True)))
-        print('country: ', country)
-        print('most common unmatched forecast', forecast.value_counts()[:5])
-        print('most common unmatched situation', sit.value_counts()[:5])
-    return None
+        forecast_locs = pd.DataFrame(forecast.value_counts()[:5].reset_index())
+        forecast_locs.columns = ['unmatched_forecast', 'forecast_freq']
+        forecast_locs['country'] = country
+        sit_locs = pd.DataFrame(sit.value_counts()[:5].reset_index())
+        sit_locs.columns = ['unmatched_sit', 'sit_freq']
+        loc_freqs = pd.concat([forecast_locs, sit_locs], axis=1)
+        rv = pd.concat([rv, loc_freqs])
+    return rv[['country', 'unmatched_forecast', 'forecast_freq', 'unmatched_sit', 'sit_freq']].reset_index(drop=True)
