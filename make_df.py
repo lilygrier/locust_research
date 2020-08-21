@@ -53,7 +53,7 @@ def parse_text(file_path, df):
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
     region = "WESTERN REGION"
-    #print("month is: ", month)
+    print("month is: ", month)
     
     for country, situation, forecast in countries:
         dif_formatting = False

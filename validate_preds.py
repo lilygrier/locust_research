@@ -1,6 +1,7 @@
 import spacy
 import pandas as pd
 from fuzzywuzzy import fuzz
+from location_matching import match_places
 from dateutil.relativedelta import relativedelta
 
 
@@ -29,7 +30,7 @@ def make_merged_df(df):
                      how='left')
     return df
 
-def results_by_sentence(pred, sit_1, sit_2, match_type='general_type'):
+def results_by_sentence(pred, sit_1, sit_2, match_type='general_type', loc_matching=False, country_tree=None):
     '''
     If anything in the prediction sentence is correct, returns true.
     '''
@@ -47,15 +48,47 @@ def results_by_sentence(pred, sit_1, sit_2, match_type='general_type'):
             if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
                 results.append(True)
         else:
-            results.append(any(compare_one_granular(prediction, situations, match_type=match_type) for prediction in predictions))
+            results.append(any(compare_one_granular(prediction, situations, match_type=match_type, 
+                            loc_matching=loc_matching, country_tree=country_tree) for prediction in predictions))
             #for prediction in predictions:
                 #results.append(compare_one_granular(prediction, situations, match_type=match_type))
 
     return results
 
-        
+def results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=False, country_tree=None):
+    '''
+    Most lenient pass at accuracy. For each location in which locusts were predicted,
+    did locusts appear?
+    All predictions for a single place are combined, and if any are true, returns true.
+    '''
+    predictions, situations = get_tuple_list(pred, sit_1, sit_2)
+    if predictions and not situations:
+        if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
+            return [True]
+        else:
+            return [False]
+    pred_locs = generate_by_place_dict(predictions)
+    sit_locs = generate_by_place_dict(situations)
+    results = []
+    print('pred_locs: ', pred_locs)
+    print('sit_locs: ', sit_locs)
+    for pred_loc, pred_list in pred_locs.items():
+        matching_locs = [sit_loc for sit_loc in sit_locs.keys() if match_places(pred_loc, sit_loc, loc_matching, country_tree)]
+        print('pred_loc', pred_loc)
+        print('matching locs: ' , matching_locs)
+        if matching_locs:
+            #for pred in pred_list:
+            results.append(any(compare_preds_by_place(pred_list, sit_group, match_type) for sit_group in sit_locs.values()))
+        else:
+            #for pred in pred_list:
+            results.append(False)
+    print('results: ', results)
+    return results
 
-def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
+            
+
+
+def old_results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=False, country_tree=None):
     '''
     First pass at accuracy. For each location in which locusts were predicted,
     did locusts appear?
@@ -67,31 +100,12 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
         #print(predictions)
         if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
             return [True]
-    pred_locs = {}
-    for group, place in predictions:
-        #print('place', place)
-        #print('type of place', type(place))
-        if not place:
-            place_name = ''
-        else:
-            place_name = place.text
-        if place_name in pred_locs:
-            pred_locs[place_name].append(group)
-        else:
-            pred_locs[place_name] = [group]
-    sit_locs = {}
-    for group, place in situations:
-        if not place:
-            place_name = ''
-        else:
-            place_name = place.text
-        if place_name in sit_locs:
-            sit_locs[place_name].append(group)
-        else:
-            sit_locs[place_name] = [group]
+    pred_locs = generate_by_place_dict(predictions)
+    sit_locs = generate_by_place_dict(situations)
     results = []
-    #print('pred dict: ', pred_locs)
-    #print('sit dict: ', sit_locs)
+    matches = []
+    print('pred dict: ', pred_locs)
+    print('sit dict: ', sit_locs)
     for place, pred_list in pred_locs.items():
         #print('place is: ', place)
         result = False
@@ -108,19 +122,64 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts'):
                 else:
                     continue
                 break
-        elif place in sit_locs:
+        #print(sit_locs)
+        #elif place in sit_locs: # update this to match general places
+        elif loc_matching:
+            #matches = any(match_places(place, sit_loc, country_tree) for sit_loc in sit_locs.keys())
+            matches = [sit_loc for sit_loc in sit_locs.keys() if match_places(place, sit_loc, country_tree)]
+            #print(matches)
+
+        else:
+            matches = [sit_loc for sit_loc in sit_locs.keys() if fuzz.token_set_ratio(place, sit_loc) == 100]
+            #if place in sit_locs:
+                #print('setting matches to [place]', place)
+                #matches = [place]
+            #else:
+                #matches = []
+        if '' in sit_locs:
+            matches.extend('')
+        #elif loc_matching and any(match_places(place, sit_loc) for sit_loc in sit_locs.keys()):
+        if matches:
+            #print('place: ', place)
+            #print('matches: ', matches)
+            for match in matches:
             #print('place is in sit_locs. Entering loop')
-            for pred in pred_locs[place]:
-                poss_sits = sit_locs[place]
-                if '' in sit_locs:
-                    poss_sits.extend(sit_locs[''])
-                if any(compare_predictions(pred, sit, match_type) for sit in poss_sits):
-                    result = True
-                    break
-        results.append(result)
-        #print('results', result)
+                for pred in pred_locs[place]:
+                    poss_sits = sit_locs[match]
+                    #if '' in sit_locs:
+                        #poss_sits.extend(sit_locs[''])
+                    if any(compare_predictions(pred, sit, match_type) for sit in poss_sits):
+                        result = True
+                        break
+            #print('prediction')
+            results.append(result)
+        print('prediction', place, pred_locs[place])
+        print('matches', matches)
+        print('result', result)
     #print(results)
     return results
+
+def generate_by_place_dict(tuple_list):
+    '''
+    Takes in list of tuples and generates a dictionary clustering predictions/reports of locust 
+    groups or activity into associated locations.
+    '''
+    by_locs = {}
+    for group, place in tuple_list:
+        #print('place', place)
+        #print('type of place', type(place))
+        if not place:
+            place_name = ''
+        else:
+            place_name = place.text
+        if place_name in by_locs:
+            by_locs[place_name].append(group)
+        else:
+            by_locs[place_name] = [group]
+
+    return by_locs
+
+
 
 def get_tuple_list(pred, sit_1, sit_2):
     '''
@@ -145,7 +204,7 @@ def percent_true(results_list):
 
     return sum(results_list)/len(results_list)
 
-def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
+def granular_corroborate(pred, sit_1, sit_2, match_type='general_type', loc_matching=False, country_tree=None):
     '''
     Breaks each prediction into granular tuples. Sees if those
     specific tuples occur later.
@@ -180,6 +239,19 @@ def granular_corroborate(pred, sit_1, sit_2, match_type='general_type'):
         #print('result: ', compare_one_granular(pred, situations, match_type=match_type))
     return results
 
+def compare_preds_by_place(pred_groups, sit_groups, match_type='general_type'):
+    '''
+    Compares a list of predictions to a list of situations. If any of them are in common, 
+    returns true.
+    '''
+    for pred in pred_groups:
+        for sit in sit_groups:
+            if (compare_predictions(pred, sit, match_type)):
+                return True
+    return False
+
+
+
 
 def compare_predictions(pred_group, sit_group, match_type='general_type'):
     '''
@@ -188,6 +260,7 @@ def compare_predictions(pred_group, sit_group, match_type='general_type'):
     #print('pred_group', pred_group)
     #print('sit_group', sit_group)
                 #print('situation: ', sit)
+
     if pred_group._.subject_decline: # matches locusts will decline to no locusts
         #print('pred subject decline', pred[0]._.subject_decline)
         if sit_group._.subject_decline or is_negated(sit_group):
@@ -222,7 +295,7 @@ def compare_predictions(pred_group, sit_group, match_type='general_type'):
 
 
 
-def compare_one_granular(pred, situations, match_type='general_type'):
+def compare_one_granular(pred, situations, match_type='general_type', loc_matching=False, country_tree=None):
     '''
     compares one granular prediction tuple against all situations.
     Inputs:
@@ -243,7 +316,11 @@ def compare_one_granular(pred, situations, match_type='general_type'):
         #print('pred: ', pred)
         if pred[1] and not sit[1]: # pred has a location but sit doesn't... deal with this later
             continue
-        if not (pred[1] and sit[1]) or fuzz.token_set_ratio(pred[1], sit[1]) == 100: # deal with not sit[1] separately
+        if loc_matching:
+            locs_match = not(pred[1] and sit[1]) or match_places(pred[1], sit[1], country_tree)
+        else:
+            locs_match = not (pred[1] and sit[1]) or fuzz.token_set_ratio(pred[1], sit[1]) == 100 # deal with not sit[1] separately
+        if locs_match:
             #print('pred: ', pred)
             #print('situation: ', sit)
 

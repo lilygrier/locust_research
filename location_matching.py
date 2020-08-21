@@ -6,6 +6,7 @@ import numpy as np
 import spacy
 import datetime
 from dateutil.relativedelta import relativedelta
+from treelib import Node, Tree
 from fuzzywuzzy import fuzz
 
 
@@ -84,3 +85,48 @@ def summarize_unmatched(df):
         loc_freqs = pd.concat([forecast_locs, sit_locs], axis=1)
         rv = pd.concat([rv, loc_freqs])
     return rv[['country', 'unmatched_forecast', 'forecast_freq', 'unmatched_sit', 'sit_freq']].reset_index(drop=True)
+
+def has_common_loc(country, forecast_locs, sit_locs, summary_df):
+    summary_locs = set(summary_df['unmatched_forecast']).union(set(summary_df['unmatched_sit']))
+    return bool(set(forecast_locs).union(set(sit_locs)).intersection(summary_locs))
+    
+def pull_out_common(country_name, df, summary_df=None):
+    '''
+    Given a specified country name, pulls out rows that contain commonly unmatched locations for manual verification.
+    '''
+    if summary_df is None:
+        summary_df = summarize_unmatched(df)
+    crit_1 = df.apply(lambda x: has_common_loc(country_name, x.unmatched_forecast, x.unmatched_sit, summary_df), axis=1)
+    crit_2 = df['COUNTRY'] == country_name
+
+    return df[crit_1 & crit_2]
+
+def get_matching_node(unmatched_place, country_tree):
+    for node in country_tree.nodes:
+        if fuzz.token_set_ratio(node, unmatched_place) == 100:
+            return node
+    return None
+
+def match_places(place_1, place_2, loc_matching=False, country_tree=None):
+    '''
+    Determine if two places match.
+    '''
+    #print('og place 1: ', place_1)
+    #print('og place 2: ', place_2)
+    if (place_1 == '' or place_2 == '') or (fuzz.token_set_ratio(place_1, place_2) == 100):
+        #print('they match!')
+        return True
+    if not loc_matching:
+        return False
+    place_1 = get_matching_node(place_1, country_tree)
+    place_2 = get_matching_node(place_2, country_tree)
+    #print('place_1 ', place_1)
+    #print('place_2 ', place_2)
+    if place_1 and place_2:
+        #place_1 = country_tree.get_node(place_1)
+        #place_2 = country_tree.get_node(place_2)
+        #if place_1 == place_2:
+            #return True
+        #print('node 1: ', place_1)
+        #print('node 2: ', place_2)
+        return country_tree.is_ancestor(place_1, place_2)

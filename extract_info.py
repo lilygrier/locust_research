@@ -289,6 +289,9 @@ def refine_entities(doc):
                     new_ents.append(new_ent)
                     continue
                 if ent.label_ in ('GEN_LOC', 'SPEC_LOC') and ent.end != len(doc):
+                    if doc[ent.start].text == 'the':
+                        new_ent = Span(doc, ent.start + 1, ent.end, label=ent.label)
+                        continue
                     if doc[ent.end - 1].text == 'as':
                         new_ent = Span(doc, ent.start, ent.end - 1, label=ent.label)
                         continue

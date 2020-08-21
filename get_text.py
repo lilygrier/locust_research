@@ -17,7 +17,8 @@ def clean_page(file_path):
     for i, page in enumerate(pdf.pages):
         left, right = get_left_side(page, i, old_style, file_path), get_right_side(page, i, old_style, file_path)
         #right = get_right_side(page)
-        clean_left = clean_text(left)
+        if left:
+            clean_left = clean_text(left)
         #print("page number is: ", i)
         #print("right is: ", right)
         if right:
