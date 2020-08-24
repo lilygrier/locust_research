@@ -81,7 +81,8 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=
             results.append(any(compare_preds_by_place(pred_list, sit_group, match_type) for sit_group in sit_locs.values()))
         else:
             #for pred in pred_list:
-            results.append(False)
+            #results.append(False)
+            results.append('False - No match')
     print('results: ', results)
     return results
 
@@ -195,14 +196,27 @@ def get_tuple_list(pred, sit_1, sit_2):
                 situations.extend(get_data(sent, granular=True))
     return (predictions, situations)
 
-def percent_true(results_list):
+def percent_true(results_list, distinguish_false=False):
     '''
     Given a results list of true and false, returns percent of true predictions.
+    Inputs:
+        results_list: a list of results
+        distinguish_false: if True, will exclude falses labeled "no match" or 
+        "no report received" from the calculation of the final score
     '''
     if not results_list:
         return 0
-
-    return sum(results_list)/len(results_list)
+    
+    if distinguish_false:
+        valid_results = [result for result in results_list if result in [True, False]]
+        if not valid_results:
+            return 0
+    else:
+        valid_results = results_list
+    return sum([result for result in results_list if result==True])/len(valid_results)
+    #else:
+        #true_results = [result for result in results_list if result==True]
+        #return sum(results_list)/len(results_list)
 
 def granular_corroborate(pred, sit_1, sit_2, match_type='general_type', loc_matching=False, country_tree=None):
     '''

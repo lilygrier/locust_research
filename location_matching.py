@@ -129,4 +129,4 @@ def match_places(place_1, place_2, loc_matching=False, country_tree=None):
             #return True
         #print('node 1: ', place_1)
         #print('node 2: ', place_2)
-        return country_tree.is_ancestor(place_1, place_2)
+        return country_tree.is_ancestor(place_1, place_2) or country_tree.is_ancestor(place_2, place_1)
