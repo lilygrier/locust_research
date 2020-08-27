@@ -48,8 +48,14 @@ def results_by_sentence(pred, sit_1, sit_2, match_type='general_type', loc_match
             if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
                 results.append(True)
         else:
-            results.append(any(compare_one_granular(prediction, situations, match_type=match_type, 
-                            loc_matching=loc_matching, country_tree=country_tree) for prediction in predictions))
+            #print('test', all((compare_one_granular(prediction, situations, match_type=match_type, 
+            #loc_matching=loc_matching, country_tree=country_tree) == "False - No match") for prediction in predictions))
+            if all((compare_one_granular(prediction, situations, match_type=match_type, 
+            loc_matching=loc_matching, country_tree=country_tree) == "False - No match") for prediction in predictions):
+                        results.append('False - No match')
+            else:
+                results.append(any((compare_one_granular(prediction, situations, match_type=match_type, 
+                            loc_matching=loc_matching, country_tree=country_tree) == True) for prediction in predictions))
             #for prediction in predictions:
                 #results.append(compare_one_granular(prediction, situations, match_type=match_type))
 
@@ -86,79 +92,6 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=
     print('results: ', results)
     return results
 
-            
-
-
-def old_results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=False, country_tree=None):
-    '''
-    First pass at accuracy. For each location in which locusts were predicted,
-    did locusts appear?
-    '''
-    
-    predictions, situations = get_tuple_list(pred, sit_1, sit_2)
-    if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
-        #print('preds and not sits!!')
-        #print(predictions)
-        if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
-            return [True]
-    pred_locs = generate_by_place_dict(predictions)
-    sit_locs = generate_by_place_dict(situations)
-    results = []
-    matches = []
-    print('pred dict: ', pred_locs)
-    print('sit dict: ', sit_locs)
-    for place, pred_list in pred_locs.items():
-        #print('place is: ', place)
-        result = False
-        if not place:
-            #print("not place is: ", place)
-            for pred in pred_list:
-                for sit_list in sit_locs.values():
-                    #print('pred is: ', pred)
-                    #print('sit is: ', sit_list)
-                    if any(compare_predictions(pred, sit, match_type) for sit in sit_list):
-                        #print('in common!')
-                        result = True
-                        break
-                else:
-                    continue
-                break
-        #print(sit_locs)
-        #elif place in sit_locs: # update this to match general places
-        elif loc_matching:
-            #matches = any(match_places(place, sit_loc, country_tree) for sit_loc in sit_locs.keys())
-            matches = [sit_loc for sit_loc in sit_locs.keys() if match_places(place, sit_loc, country_tree)]
-            #print(matches)
-
-        else:
-            matches = [sit_loc for sit_loc in sit_locs.keys() if fuzz.token_set_ratio(place, sit_loc) == 100]
-            #if place in sit_locs:
-                #print('setting matches to [place]', place)
-                #matches = [place]
-            #else:
-                #matches = []
-        if '' in sit_locs:
-            matches.extend('')
-        #elif loc_matching and any(match_places(place, sit_loc) for sit_loc in sit_locs.keys()):
-        if matches:
-            #print('place: ', place)
-            #print('matches: ', matches)
-            for match in matches:
-            #print('place is in sit_locs. Entering loop')
-                for pred in pred_locs[place]:
-                    poss_sits = sit_locs[match]
-                    #if '' in sit_locs:
-                        #poss_sits.extend(sit_locs[''])
-                    if any(compare_predictions(pred, sit, match_type) for sit in poss_sits):
-                        result = True
-                        break
-            #print('prediction')
-            results.append(result)
-        print('prediction', place, pred_locs[place])
-        print('matches', matches)
-        print('result', result)
-    #print(results)
-    return results
 
 def generate_by_place_dict(tuple_list):
     '''
@@ -251,6 +184,7 @@ def granular_corroborate(pred, sit_1, sit_2, match_type='general_type', loc_matc
         #print('pred: ', pred)
         results.append(compare_one_granular(pred, situations, match_type=match_type))
         #print('result: ', compare_one_granular(pred, situations, match_type=match_type))
+    
     return results
 
 def compare_preds_by_place(pred_groups, sit_groups, match_type='general_type'):
@@ -370,6 +304,8 @@ def compare_one_granular(pred, situations, match_type='general_type', loc_matchi
                             return True
                 elif match_type == 'exact':
                     return fuzz.partial_ratio(pred[0], sit[0]) == 100
+        else:
+            return "False - No match"
 
     return False
 
@@ -386,49 +322,6 @@ def is_negated(ent):
     #print(ent[0].text.lower())
     return ent[0].text.lower().startswith('no ')
 
-
-
-def corroborate(pred, sit_1, sit_2):
-    '''
-    First pass at corroborating predictions.
-    Simply checks if any locust groups/predictions/behaviors end up in forecasted locations.
-    '''
-    results = []
-    predictions = [get_data(sent) for sent in pred.sents]
-    print('sit 1 is: ', sit_1)
-    print('type of sit1 is: ', type(sit_1))
-    if sit_1:
-        situations = [get_data(sent) for sent in sit_1.sents]
-    else:
-        situations = []
-    if sit_2:
-        situations.extend([get_data(sent) for sent in sit_2.sents if sit_2])
-    if not situations:
-        #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
-        if predictions[0][2][0][0].text.lower() == 'no':
-            return [True]
-    for pred in predictions:
-        results.append(check_one_pred(pred, situations))
-        #print('pred: ', pred)
-        #print('result: ', check_one_pred(pred, situations))
-    return results
-
-
-
-def check_one_pred(pred_list, sits):
-    '''
-    Validates a single sentence of a prediction against ALL situations.
-    '''
-    #for pred_list in preds:
-    if sits:
-        for sit_list in sits:
-            #print('locs compared: ', compare_locs(pred_list, sit_list))
-            if compare_locs(pred_list, sit_list) or not (pred_list[0] and sit_list[0]):
-                if compare_groups(pred_list, sit_list) or compare_behaviors(pred_list, sit_list):
-                    return True
-    #else:
-        #print('no sits')
-    return False
 
 
 def compare_behaviors(pred_list, sit_list, granular=False):
@@ -510,3 +403,16 @@ def get_data(sent, granular=False):
         return tuples
     # non granular version
     return (locations, behaviors, locust_groups)
+
+def positive_prediction(preds_list):
+    '''
+    Creates a list of booleans indicating whether a prediction indicates something other than
+    "no significant developments."
+    Inputs:
+        preds_list: a list of tuples containing predictions
+    '''
+    rv = []
+    for pred in preds_list:
+        no_sig = pred[0].text.lower().startswith('no sign') or (pred[0].text.lower() == 'no' and pred[1].text.lower.startswith('sign'))
+        rv.append(not no_sig)
+    return rv
