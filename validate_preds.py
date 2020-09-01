@@ -40,13 +40,24 @@ def results_by_sentence(pred, sit_1, sit_2, match_type='general_type', loc_match
         if type(sit) == spacy.tokens.doc.Doc:
             for sent in sit.sents:
                 situations.extend(get_data(sent, granular=True))
+    pos_preds = []
     for sent in pred.sents:
         predictions = get_data(sent, granular=True)
+        no_sig = False
+        for pred in predictions:
+            if pred[0].text.lower().startswith('no sign'):
+                no_sig = True
+        pos_preds.append(no_sig)
+        #no_sig = predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign'))
+        #pos_preds.append(no_sig)
         if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
         #print('preds and not sits!!')
         #print(predictions)
-            if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
+            if no_sig:
                 results.append(True)
+            else:
+                results.append(False)
+        
         else:
             #print('test', all((compare_one_granular(prediction, situations, match_type=match_type, 
             #loc_matching=loc_matching, country_tree=country_tree) == "False - No match") for prediction in predictions))
@@ -58,8 +69,15 @@ def results_by_sentence(pred, sit_1, sit_2, match_type='general_type', loc_match
                             loc_matching=loc_matching, country_tree=country_tree) == True) for prediction in predictions))
             #for prediction in predictions:
                 #results.append(compare_one_granular(prediction, situations, match_type=match_type))
-
-    return results
+    #for pred, loc in predictions:
+        #if pred.text.lower().startswith('no sign') or pred.text
+    #print('predictions is: ', predictions)
+    # if not predictions:
+    #     pos_preds = [False]
+    # else:
+    #     no_sig = predictions[0][0].text.lower().startswith('no sign')
+    #     pos_preds = [not no_sig * len(list(pred.sents))]
+    return results, pos_preds
 
 def results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=False, country_tree=None):
     '''
@@ -70,14 +88,15 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=
     predictions, situations = get_tuple_list(pred, sit_1, sit_2)
     if predictions and not situations:
         if predictions[0][0].text.lower().startswith('no sign') or (predictions[0][0].text.lower() == 'no' and predictions[0][1].text.lower.startswith('sign')):
-            return [True]
+            return ([True], [False])
         else:
-            return [False]
+            return ([False], [True])
     pred_locs = generate_by_place_dict(predictions)
     sit_locs = generate_by_place_dict(situations)
     results = []
     print('pred_locs: ', pred_locs)
     print('sit_locs: ', sit_locs)
+    pos_preds = []
     for pred_loc, pred_list in pred_locs.items():
         matching_locs = [sit_loc for sit_loc in sit_locs.keys() if match_places(pred_loc, sit_loc, loc_matching, country_tree)]
         print('pred_loc', pred_loc)
@@ -89,8 +108,21 @@ def results_by_place(pred, sit_1, sit_2, match_type='any_locusts', loc_matching=
             #for pred in pred_list:
             #results.append(False)
             results.append('False - No match')
-    print('results: ', results)
-    return results
+        print('pred_list is: ', pred_list)
+        has_sig = True
+        for pred in pred_list:
+            if pred.text.lower().startswith('no sign'):
+                has_sig = False
+        pos_preds.append(has_sig)
+        #pos_preds.append(pred_list[0].text.lower().startswith('no sign') or (len(pred_list) >= 2 and pred_list[0].text.lower() == 'no' and pred_list[1].text.lower.startswith('sign'))
+        
+        #pos_preds.append(any(pred.text.lower().startswith('no sign') or (pred.text.lower() == 'no' and pred[1].text.lower.startswith('sign'))))
+    #print('results: ', results)
+    #print('pred_locs is: ', pred_locs)
+    #for pred_loc, pred_list
+    #no_sig = pred_locs[0][0].text.lower().startswith('no sign') or (pred_locs[0][0].text.lower() == 'no' and pred_locs[0][1].text.lower.startswith('sign'))
+    #pos_preds = [not no_sig * len(pred_locs)]
+    return results, pos_preds
 
 
 def generate_by_place_dict(tuple_list):
@@ -129,14 +161,16 @@ def get_tuple_list(pred, sit_1, sit_2):
                 situations.extend(get_data(sent, granular=True))
     return (predictions, situations)
 
-def percent_true(results_list, distinguish_false=False):
+def percent_result_type(results_list, result_type, distinguish_false=False):
     '''
     Given a results list of true and false, returns percent of true predictions.
     Inputs:
         results_list: a list of results
+        result_type: the type of result (either True, False, or 'False - No match')
         distinguish_false: if True, will exclude falses labeled "no match" or 
         "no report received" from the calculation of the final score
     '''
+    #print('results list is: ', results_list)
     if not results_list:
         return 0
     
@@ -146,7 +180,7 @@ def percent_true(results_list, distinguish_false=False):
             return 0
     else:
         valid_results = results_list
-    return sum([result for result in results_list if result==True])/len(valid_results)
+    return len([result for result in results_list if result==result_type])/len(valid_results)
     #else:
         #true_results = [result for result in results_list if result==True]
         #return sum(results_list)/len(results_list)
@@ -179,13 +213,15 @@ def granular_corroborate(pred, sit_1, sit_2, match_type='general_type', loc_matc
     if predictions and not situations: # case where there is no situation report and pred is nothing significant will happen
         #print('no sits, pred is: ', predictions[0][2][0][0].text.lower())
         if predictions[0][0].text.lower().startswith('no signi'):
-            return [True]
+            return ([True], [False])
     for pred in predictions:
         #print('pred: ', pred)
         results.append(compare_one_granular(pred, situations, match_type=match_type))
         #print('result: ', compare_one_granular(pred, situations, match_type=match_type))
-    
-    return results
+    pos_preds = positive_prediction(predictions)
+    #print('results', results)
+    #print('pos_preds', pos_preds)
+    return (results, pos_preds)
 
 def compare_preds_by_place(pred_groups, sit_groups, match_type='general_type'):
     '''
