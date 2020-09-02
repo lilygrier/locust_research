@@ -12,6 +12,15 @@ Analyze results of predictions.
 df = pd.read_csv("report_text_2.csv")
 
 def gen_merged_df(df):
+    '''
+    Takes a dataframe and creates a merged dataframe through self-joins
+    such that a forecast is matched up to its two corresponding situations.
+    Inputs:
+        df: a Pandas dataframe where each row represents a country 
+            in a particular month
+    Returns:
+        a merged dataframe!
+    '''
     df = extract_info.get_snippets(df, 'SITUATION')
     df = extract_info.get_snippets(df, 'FORECAST')
     df = extract_info.prelim_cleaning(df)
@@ -20,6 +29,15 @@ def gen_merged_df(df):
 
 
 def gen_results_df(df, loc_matching=False):
+    '''
+    Creates a dataframe with a columns containing results corresponding to 
+    the different prediction methods.
+    Inputs:
+        df: a Pandas dataframe where forecasts are paired with corresponding situations
+        loc_matching (bool): whether or not to use location-matching trees
+    Returns:
+        a dataframe with columns containing results
+    '''
     
     #df['most_gran_data'] = df.apply(lambda x: validate_preds.granular_corroborate(x.FORECAST, x.SIT_1, x.SIT_2, match_type='exact'), axis=1)
     #print('col is', df['most_gran_data'])
@@ -75,6 +93,13 @@ def analyze_results(df, loc_matching=False):
 def confusion_matrix(df, results_col, sig_preds_col):
     '''
     Analyzes false and true positives and negatives.
+    Inputs:
+        df: a Pandas dataframe where forecasts are paired with corresponding situations
+        results_col (str): name of column containing results of interest
+        sig_preds_col (str): name of column indicating whether significant 
+            events were predicted
+        Returns:
+            None, but displays a confusion matrix heat map analyzing results
     '''
     pred_correct = np.concatenate(df[results_col].reset_index(drop=True))
     pred_sig_pred = np.concatenate(df[sig_preds_col].reset_index(drop=True)) 
