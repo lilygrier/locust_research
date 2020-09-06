@@ -46,20 +46,20 @@ def parse_text(file_path, df):
     'NEAR EAST', 'SOUTH-WEST ASIA', "CENTRAL REGION", "EASTERN REGION", 'MEDITERRANEAN', 'EUROPE']
     #df = pd.DataFrame(columns=cols)
     countries = get_countries(rel_text)
-    
+    #print("countries: ", countries)
     # country debugging statement:
     #for country in countries:
         #print(country)
     year = int(file_path[-4:])
     month = re.findall(r'.+/(.+)_\d+', file_path)[0]
     region = "WESTERN REGION"
-    print("month is: ", month)
+    #print("month is: ", month)
     
     for country, situation, forecast in countries:
         dif_formatting = False
         #print(country)
         country_list = re.split(r",? \n?AND|, ?", country.upper())
-        print('country list is: ', country_list)
+        #print('country list is: ', country_list)
         if re.match(r'SYRIA\nAND TURKEY', country_list[-1]):
             country_list[-1] = 'SYRIA'
             country_list.append('TURKEY')
@@ -171,7 +171,7 @@ def dif_format_countries(og_text):
   
     by_country = re.split(r'\n•?(?: +)?FORECAST\n', og_text)
     if len(by_country) == 1:
-        print("no hidden countries found! returning...")
+        #print("no hidden countries found! returning...")
         return
     #print('entering function on country: ', old_country)
     #
