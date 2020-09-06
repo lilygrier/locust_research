@@ -30,19 +30,7 @@ def clean_page(file_path):
     final_txt = "\n".join(final_txt)
     final_txt = get_relevant_text(final_txt, year, month)
     return final_txt
-    #print("final text: ", final_txt)
-    #return prep_text(year, month, final_txt)
 
-    #return get_relevant_text(final_txt)
-
-    #with pdfplumber.open(file_path) as pdf:
-        #page = pdf.pages[pg_num]
-        #for page in pdf.pages:
-            #left, right = get_left_side(page), get_right_side(page)
-            #right = get_right_side(page)
-            #clean_left = clean_text(left)
-            #clean_right = clean_text(right)
-    #return (clean_left, clean_right)
 
 def clean_text(text): # make this prettier
     #cleaned = single_word(text)
@@ -228,6 +216,8 @@ def get_relevant_text(text, year, month):
         final_text = re.sub(r'the east\nSomalia\n', r'the east.\nSomalia\n', final_text)
     if year == 1999 and month == 'JUNE':
         final_text = re.sub(r'commence\nChad\n', r'commence.\nChad\n', final_text)
+    if year == 1999 and month == 'NOV':
+        final_text = re.sub(r'Morocco\nNiger\n', r'Morocco.\nNiger\n', final_text)
     if year == 2008 and month == 'JUNE':
         final_text = re.sub(r'summer\nAfghanistan\n', r'summer.\nAfghanistan\n', final_text)
 
