@@ -6,9 +6,9 @@ def clean_page(file_path):
     final_txt = []
     # determine if old style
     year = int(file_path[-4:])
-    #print('file_path: ', file_path)
-    month = re.findall(r'.+/([A-Z]+)_', file_path)[0]
-    #print('month is: ', month)
+    print('file_path: ', file_path)
+    month = re.findall(r'.+\\([A-Z]+)_', file_path)[0]
+    print('month is: ', month)
     old_style = (1996 <= year <= 2017)
     #if year == 1996:
         # JULY TO DECEMBER 1996 IS OLD STYLE!!!
@@ -177,9 +177,11 @@ def get_relevant_text(text, year, month):
     result = re.findall(r'(?:\nSituation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species|Other Migratory Pests)', 
                         text, flags = re.DOTALL|re.IGNORECASE)[0]
     #print(result)
-    #
+    #ipy
     #print("type of result: ", type(result))ß
     # get rid of headers and footers
+    print("month is: ", month)
+    #print('year is ', year, type(year))
     to_keep = []
     for line in result.split('\n'):
         #print("line is: ", line)
