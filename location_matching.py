@@ -10,8 +10,6 @@ from treelib import Node, Tree
 from fuzzywuzzy import fuzz
 
 
-#from monthdelta import MonthDelta
-
 
 STARTING_DATE = datetime.date(1996, 8, 1)
 ENDING_DATE = datetime.date(2020, 3, 1)

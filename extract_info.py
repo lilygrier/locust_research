@@ -1,21 +1,18 @@
 import spacy
-#import contextualSpellCheck
 from spacy.matcher import Matcher
 from spacy.tokens import Span, Token
 from fuzzywuzzy import fuzz
 from spacy.pipeline import Sentencizer, EntityRuler
-#import contextualSpellCheck
 from itertools import *
 import re
 
 nlp = spacy.load("en_core_web_sm")
 
-#matcher = Matcher(nlp.vocab)
 LOCUST_VERBS = ['mature', 'lay', 'lie', 'fledge', 'breed', 'hatch', 'copulate', 'fly', 
-                'decline', 'decrease', 'scatter', 'isolate'] # can look for lemma of verb
+                'decline', 'decrease', 'scatter', 'isolate']
 LOCUST_GERUNDS = ['breeding', 'hatching', 'laying']
 LOCUST_TYPES = ["locust", "locusts", "fledgling", "hopper", "adult", "group", "swarm", 'band', 'mature', 'swarmlet', 
-                'infestation', 'population', 'scatter', 'isolate'] # took out scatter, isolate and moved to verbs (moved back tho)
+                'infestation', 'population', 'scatter', 'isolate']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', "November", "December"]
 DIRECTIONS = ['north', 'south', 'east', 'west', 'southwest', 'southeast', 'northwest', 'northeast']
 #LOCUST_ADJ = ["immature", 'mature', 'solitarious', 'gregarious', 'isolated']
@@ -32,22 +29,12 @@ def prep_text(year, month, text):
         text = re.sub(r'\n', " ", text)
     else:
         text = re.sub(r'\n', "", text)
-    #text = re.sub(r'J ask', r'Jask', text)
-    # REWRITE LINE BELOW WITH BACK REFERENCING
-    text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text) # should handle the above case
+    text = re.sub(r' ([B-Z]) ([a-z]+)', r' \1\2', text)
     text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
     text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
 
 
     return text
-
-def get_specific_locations():
-    '''
-    Extracts locations with lat/long specified
-    '''
-    pattern = {}
-    #re.findall(r'[A-Z][a-z]+ \(.+?\)', text)
-    re.findall(r'(([A-Z][a-z]+ ?)+ \(.+?\))', text) # take just first entry of each tuple
 
 def make_nlp():
     '''
@@ -57,20 +44,14 @@ def make_nlp():
     sentencizer = Sentencizer(punct_chars=['.'])
     ruler = make_entity_ruler(nlp)
     Token.set_extension('is_solitarious', default=None, force=True)
-    Span.set_extension('get_name_only', default=None, force=True)
     Span.set_extension('subject_decline', default=False, force=True)
     Span.set_extension('contains_adults', default=None, force=True)
     Span.set_extension('ent_solitarious', default=None, force=True)
     merge_ents = nlp.create_pipe("merge_entities")
     combine_ents_ruler = combine_entities_ruler(nlp)
-
-
-    #text = prep_text(text) # re-write this as pipeline function?
     nlp.add_pipe(sentencizer, first=True)
-    #contextualSpellCheck.add_to_pipe(nlp)
     nlp.add_pipe(ruler, before='ner')
     nlp.add_pipe(refine_entities)
-    nlp.add_pipe(get_name_only)
     nlp.add_pipe(subject_decline)
     nlp.add_pipe(merge_ents)
     nlp.add_pipe(combine_ents_ruler)
@@ -78,56 +59,46 @@ def make_nlp():
     nlp.add_pipe(contains_adults)
     nlp.add_pipe(ent_solitarious)
 
-    #nlp.add_pipe(remove_decline)
-
-
     return nlp
+
 
 def get_snippets(df, col_name, new_col_name=None):
     '''
-    Makes column in df for snippets.
+    Converts to column of text to column of nlp objects.
     Input:
         df: a Pandas dataframe
         col_name: either 'SITUATION' or 'FORECAST'
         new_col_name (string): the name of the column containing the snippets
-    Note: modifies the df in place to add the column
+    Returns:
+        dataframe with specified col converted to nlp object
     '''
-    #snippets = []
     df.loc[:, col_name] = df[col_name].apply(str)
     nlp = make_nlp()
     if new_col_name:
         df[new_col_name] = None
-    #for i, doc in enumerate(nlp.pipe(iter(df[col_name].astype('str')), batch_size = 1000, n_threads=-1)):
     nlp_col = []
     for i, doc in enumerate(nlp.pipe(iter(df[col_name].astype('str')), batch_size = 1000, n_threads=-1)):
-        #print('df[col] is : ', df[col_name])
-        #print("doc is: ", doc)
-        #print('type of doc is: ', type(doc))
-        if not doc: # situation is missing
-            #print('no doc, moving on')
+        if not doc:
             nlp_col.append(None)
             continue
-        #doc = nlp(text)
         doc_ents = []
         for sent in doc.sents:
-            doc_ents.append([ent for ent in sent.ents]) # changed ent.text to ent
-        #doc_ents = []
+            doc_ents.append([ent for ent in sent.ents])
         if new_col_name:
-            df.loc[i][new_col_name] = doc_ents
-        
+            df.loc[i][new_col_name] = doc_ents       
         nlp_col.append(doc)
-        #df[col_name][i] = doc
-        #df.loc[i, col_name] = doc # update text to nlp object
-        #snippets.append(doc_ents)
-    #print('len snippets is')
-    #df[new_col_name] = snippets
-        #return doc_ents
     df.loc[:, col_name] = nlp_col
+    
     return df
+
 
 def prelim_cleaning(df):
     '''
     Some preliminary cleaning of the dataframe to extract information.
+    Inputs:
+        df: a Pandas dataframe
+    Returns:
+        a cleaned Pandas dataframe
     '''
     df['MONTH'].replace(r'(.+)\\(.+)', r'\2', regex=True, inplace=True) # works with newer one
     df['COUNTRY'] = df['COUNTRY'].str.strip()
@@ -142,27 +113,27 @@ def prelim_cleaning(df):
     df['DATE'].replace(r'JUNE_', r'JUN_', regex=True, inplace=True)
     df['DATE'].replace(r'SEPT_', r'SEP_', regex=True, inplace=True)
 
-
     return df
 
 def make_date_col(month, year):
-    
+    '''
+    Makes a date column from month and year.
+    Inputs:
+        month: the name of the month
+        year (int): the year
+    Returns:
+        a string in the format month_year
+    '''
     return str(month)+'_'+str(year)
 
-def get_name_only(doc):
-
-    for ent in doc.ents:
-        name = ""
-        if ent.label_ == 'SPEC_LOC':
-            for word in ent:
-                if word.text.startswith('('):
-                    ent._.get_name_only = name
-                name += word.text
-        if ent.label_ == 'GEN_LOC':
-            ent._.get_name_only = ent.text
-    return doc
-
 def subject_decline(doc):
+    '''
+    Indicates whether a locust group is predicted to decrease.
+    Inputs:
+        doc: an nlp doc object
+    Returns:
+        the doc with entities having subject_decline attribute marked
+    '''
     for i, ent in enumerate(doc.ents):
         if ent.label_ in ('ACTION', 'LOC_TYPE') and i < len(doc.ents) - 1:
             if doc.ents[i + 1].root.lemma_ == 'decline' or doc.ents[i + 1].root.lemma_ == 'decrease':
@@ -170,16 +141,19 @@ def subject_decline(doc):
     return doc               
 
 def is_solitarious(doc):
+    '''
+    A token attribute. Indicates whether token references solitarious locusts.
+    Inputs:
+        doc: an nlp doc object
+    Returns:
+        doc with tokens having is_solitarious attribute marked
+    '''
+
     for token in doc:
         if token.ent_type_ == 'LOC_TYPE':
-            #is_solitarious = any()
-            #print(ent.text.split())
             if contains_sol_word(token):
-            #if set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(token.text.split())):
                 token._.is_solitarious = True
                 continue
-            # pick up on adults were scattered
-            #if not token._.is_solitarious:
             for child in token.children:
                 if contains_sol_word(child):
                     token._.is_solitarious = True
@@ -190,15 +164,17 @@ def is_solitarious(doc):
                         token._.is_solitarious = True
             if not token._.is_solitarious:
                 token._.is_solitarious = False
-
-                #if set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(token.text.split()))
-            #scattered_head = ent.root.head.head.text in ('scattered', 'isolated', 'solitarious') # added 2nd .head, could be bad
-            #ent._.is_solitarious = has_sol_words or scattered_head
-            #print(ent.text, 'sol: ', ent._.is_solitarious)
-            #ent._.is_solitarious = bool(set(['isolated', 'scattered', 'solitarious', 'groups']).intersection(str.lower(ent.text).split()))
     return doc
 
+
 def ent_solitarious(doc):
+    '''
+    Indicates whether an entity contains solitarious locusts.
+    Inputs:
+        doc: an nlp doc object
+    Returns:
+        doc with entities having is_solitarious attribute marked
+    '''
     for ent in doc.ents:
         for token in ent:
             if token._.is_solitarious:
@@ -210,12 +186,20 @@ def ent_solitarious(doc):
 def contains_sol_word(token):
     '''
     Determines whether a token contains a solitarious-referencing word.
+    Inputs:
+        token: an nlp token
+    Returns:
+        boolean of whether token contains solitarious-referencing word
     '''
     return bool(set(['isolated', 'scattered', 'solitarious', 'groups', 'few']).intersection(str.lower(token.text).split()))
 
 def contains_adults(doc):
     '''
     Extension that determines whether a LOC_TYPE entity refers to adults
+    Inputs:
+        doc: an nlp doc object
+    Returns:
+        doc with entities having contains_adults attribute marked
     '''
     for ent in doc.ents:
         if ent.label_ == 'LOC_TYPE':
@@ -224,62 +208,21 @@ def contains_adults(doc):
     return doc
 
 
-def sent_matches(sent):
-    '''
-    Note: this function works on a single sentence
-    '''
-    rv = []
-    ranges = []
-    matcher = make_matcher()
-    matches = matcher(sent)
-    for i in range(0, len(matches)):
-        start, end = matches[i][1], matches[i][2]
-        span = str(sent[start:end])
-        #print("SPAN IS: ", span)
-        #if ranges:
-            #print(ranges[-1], (start, end))
-            #prev_range = ranges[-1]
-            #new_range = range(start, end)
-        # new logic: if any two intersect, take the longer one
-
-        if ranges and set(range(start, end)).issubset((ranges[-1])):
-            #print('longer one already there; skipping')
-            # if longer match is already in there, skip it
-            continue
-        elif ranges and set(ranges[-1]).issubset(range(start, end)):
-            #print('replacing shorter match with longer one')
-            # if shorter match was added, replace the shorter match with a longer one
-            rv[-1] = span
-            ranges[-1] = range(start, end)
-        elif ranges and set(range(start, end)).intersection((ranges[-1])): # if intersect but not subset, don't worry bout it
-            continue
-        else:
-            rv.append(span)
-            ranges.append(range(start, end))
-        # need to add code that takes care of duplicates (if same start, take longer one)
-        #print("ranges: ", ranges)
-        #ranges_to_keep = [max(list(group),key=lambda x: x[1]) for key, group in groupby(ranges, lambda prop: prop[0])]
-        #for ran in ranges_to_keep:
-            #start, end[]
-            #rv.append(str(sent[ran[0]:ran[1]]))    
-
-    return rv
-
 def refine_entities(doc):
+    '''
+    Edits the doc entities. Removes entities that shouldn't be there.
+    Removes locations referenced in the context of locusts being from a place.
+    Adds coastal locations, adds "east/west/etc. of PLACE" locations.
+    Inputs:
+        doc: an nlp doc object
+    Returns:
+        the doc object with entities edited
+    '''
     doc_ents = []
-    #for ent in d
-    #print("original entities:")
-    #for ent in doc.ents:
-        #print(ent, '-->', ent.label_)
     for sent in doc.sents:
         new_ents = []
         for i, ent in enumerate(list(sent.ents)):
-            #print('ent is: ', ent.text, '-->', ent.label_)
-            #doc.ents = [ent for ent in doc.ents if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']]
-            #print("doc.ents", doc.ents)
             if ent.label_ in ['DATE', 'ACTION', 'LOC_TYPE', 'GEN_LOC', 'SPEC_LOC', 'TREATMENT', 'RISK']:
-            # if entity followed by breeding areas or areas, skip
-            # get rid of 'and'
                 if doc[ent.start:ent.end].text.lower() == 'nan':
                     continue
                 if doc[ent.start:ent.end].text == 'May.':
@@ -305,7 +248,6 @@ def refine_entities(doc):
                 if ent.label_ in ('DATE', 'ACTION') and ent.end != len(doc):
                     next_token = doc[ent.end]
                     if next_token.text in ('breeding', 'areas'):
-                        #print("removing ent", ent.text)
                         continue
                 if ent.label_ in ('GEN_LOC', 'SPEC_LOC') and ent.start != 0: # take out 'from' locations
                     prev_token = doc[ent.start - 1]
@@ -315,18 +257,19 @@ def refine_entities(doc):
                         prev_prev_token = doc[ent.start - 2]
                         if prev_prev_token.text == 'from' and prev_token.text == 'the': # takes out from the
                             continue
-                #print(ent.text, '-->', ent.label_)
                 new_ents.append(ent)
         if new_ents:
-            #snippets.append([ent.text for ent in new_ents])
             doc_ents.extend(new_ents)
     doc.ents = doc_ents # rewrite entities
-    #print('new ents after first round: ', doc.ents)
     return doc
 
 def combine_entities_ruler(nlp):
     '''
-    Looks for patterns of multiple entites (i.e., LOC near LOC) and combines into single entity
+    Looks for patterns of multiple entites (i.e., LOC near LOC) and combines into single entity.
+    Inputs:
+        nlp: an nlp object
+    Returns:
+        combine_ruler: a spaCy EntityRuler object
     '''
     patterns = []
     combine_ruler = EntityRuler(nlp, validate=True, overwrite_ents=True)
@@ -350,45 +293,14 @@ def combine_entities_ruler(nlp):
                          {'ENT_TYPE': 'LOC_TYPE', 'OP': '+'}]
     patterns.append({'label': 'LOC_TYPE', 'pattern': isolated_scattered})
     combine_ruler.add_patterns(patterns)
-    combine_ruler.name = 'combine_ruler' # change name to avoid confusion
+    combine_ruler.name = 'combine_ruler'
+
     return combine_ruler
-
-
-
-def old_combine_entities(doc):
-    '''
-    Looks for patterns such as LOC near LOC and combines into single entity
-    '''
-    spans_to_merge = []
-    #for i, ent in enumerate(doc.ents):
-    for token in doc:
-        if token.ent_type_ in ('GEN_LOC', 'SPEC_LOC') and token.i < len(doc) - 2:
-            next_token = token.nbor()
-            next_next_token = token.nbor(2)
-            if next_token.text == 'near' and next_next_token.ent_type_ in ('GEN_LOC', 'SPEC_LOC'):
-                merged_ent = Span(doc, token.i, token.i + 3, label='SPEC_LOC')
-                spans_to_merge.append(merged_ent)
-                doc.ents += (merged_ent,)
-                #doc.ents = list(doc.ents).append(merged_ent)
-
-    print("spans to merge: ", spans_to_merge)
-    list(doc.ents).extend(spans_to_merge)
-    with doc.retokenize() as retokenizer:
-        for span in spans_to_merge:
-            retokenizer.merge(span)
-    return doc
-
-def remove_decline(doc):
-    doc_ents = [ent for ent in doc.ents if not (ent.label_ == 'ACTION' and ent.root.lemma_ == 'decline')]
-    doc.ents = doc_ents
-    return doc
-    #for ent in doc.ents:
-        #if ent.label_ == 'ACTION' and ent.root.lemma_ == 'decline':
             
 
 def make_entity_ruler(nlp):
     ruler = EntityRuler(nlp, validate=True, overwrite=True)
-    patterns = [] # list of dictionaries
+    patterns = []
     patterns.append({'label': 'LOC_TYPE', 'pattern': [{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LEMMA': {'IN': ['Locusts', 'locust', 'swarm']}}]})
     patterns.append({'label': 'LOC_TYPE', 'pattern':[{'POS': 'ADJ', 'OP': '?'},
     {'LOWER': 'and', 'OP': '?'},
@@ -407,7 +319,7 @@ def make_entity_ruler(nlp):
     patterns.append({'label': 'LOC_TYPE', 'pattern': pat_no_devs_variation})
     pat_locust_gerunds = [{'LOWER': 'no', 'OP': '?'},
                         {'POS': 'ADJ', 'OP': '?'},
-                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}] # should be not in 'verb' but not working
+                        {'LOWER': {'IN': LOCUST_GERUNDS}, 'POS': {'IN': ['ADJ', 'NOUN']}}]
     pat_actions = [{'LEMMA': {'IN': LOCUST_VERBS}}]
     patterns.append({'label': 'ACTION', 'pattern': pat_actions})
     patterns.append({'label': 'ACTION', 'pattern': pat_locust_gerunds})
@@ -417,7 +329,7 @@ def make_entity_ruler(nlp):
                     {'TEXT': ')'}]
     patterns.append({'label': 'SPEC_LOC', 'pattern': pat_specific_loc})
     pat_gen_loc = [{'POS': 'PROPN', 'OP': '*', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}},
-                {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'}, # add 'des' here
+                {'LOWER': {'IN': ['-', 'el', 'des']}, 'OP': '?'},
                 {'POS': 'PROPN', 'OP': '+', 'TEXT': {'NOT_IN': MONTHS}, 'LOWER': {'NOT_IN': ['ground', 'control', 'mid', '-', '.']}}]
     pat_lowlands = [{'POS': 'ADJ'}, {'LOWER': 'lowlands'}]
     patterns.append({'label': 'GEN_LOC', 'pattern': pat_gen_loc})
@@ -451,11 +363,16 @@ def make_entity_ruler(nlp):
                     [{'LEMMA': 'treat'}]]
     for pattern in treatment:
         patterns.append({'label': 'TREATMENT', 'pattern': pattern})
+
+    no_reports_received = [{'LOWER': 'no'},
+                            {'LOWER': 'reports'},
+                            {'LOWER': 'were', 'OP': '?'},
+                            {'LOWER': 'received'}]
+    patterns.append({'label': 'NOREPORTS', 'pattern': no_reports_received})
     risk = [[{'POS': 'ADJ'}, {'LOWER': 'risk'}],
             [{'LOWER': 'unlikely'}]]
     for pattern in risk:
         patterns.append({'label': 'RISK', 'pattern': pattern})
     ruler.add_patterns(patterns)
-    #nlp.add_pipe(ruler, overwrite=True)
-    return ruler
 
+    return ruler
