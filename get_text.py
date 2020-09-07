@@ -211,7 +211,7 @@ def get_relevant_text(text, year, month):
     final_text = re.sub(r'signiﬁ +cant', r'significant', final_text)
     final_text = re.sub(r'N +o significant', r'No significant', final_text)
     if year == 1996 and month == 'AUG':
-        final_text = re.sub(r'\nNiger\n(?<!• SITUATION)$', r'\nNiger\n• SITUATION\n', final_text) # manually fix AUG 1996 issue
+        final_text = re.sub(r'\nNiger\n', r'\nNiger\n• SITUATION\n', final_text) # manually fix AUG 1996 issue
     if year == 2007 and month == 'OCT':
         final_text = re.sub(r'\ncoastal plains\n', r'\ncoastal plains.\n', final_text) # manually fix OCT 2007 issue
     if year == 1996 and month in ['SEPT', 'OCT']:
