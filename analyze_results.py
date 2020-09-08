@@ -123,8 +123,11 @@ def raw_counts_graph(df):
     df.groupby('YEAR').total_no_match_exact.sum().plot(ax=axes[2])
     plt.setp(axes, ylim=(0, 1450))
     axes[0].set(ylabel='any locusts by location')
+    axes[0].legend()
     axes[1].set(ylabel='general stage by sentence')
+    axes[1].legend()
     axes[2].set(ylabel='exact match - granular')
+    axes[2].legend()
     plt.suptitle('Total Prediction Counts by Type')
 
 def percent_type_graph(df):
