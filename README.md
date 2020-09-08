@@ -29,6 +29,7 @@ If you were starting from scratch, running scraping.py in the command line will 
 you would run run make_df.py in the command line. However, I saved the resulting CSV from these steps as report_text.csv.  
 
 Running analyze_results.df_with_validated_results() will call files needed to extract information and validate predictions through natural language processing. To generate the graphs used in my report, I ran the following functions where df was the result of calling analyze_results.df_with_validated_results():  
+  
 analyze_results.confusion_matrix(df, 'any_by_place', 'any_by_place_sig_preds')  
 analyze_results.confusion_matrix(df, 'most_gran_results', 'most_gran_results_sig_preds')  
 analyze_results.confusion_matrix(df, 'sentence_by_gen_stage', 'sentence_by_gen_stage_sig_preds')  
