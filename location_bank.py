@@ -2,6 +2,9 @@ import treelib
 from treelib import Node, Tree
 
 def create_mali_tree():
+    '''
+    Returns an example matching tree of locations in Mali.
+    '''
     mali = Tree()
     mali.create_node('Mali', 'Mali')
     mali.create_node('the north', 'the north', parent='Mali')

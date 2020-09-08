@@ -31,7 +31,6 @@ def clean_page(file_path):
     return final_txt
 
 
-
 def get_left_side(page, pg_num, old_style, file_path):
     '''
     Formats the left side of the page and returns text.
@@ -125,6 +124,8 @@ def many_countries(text):
     Cleans names of lists of countries.
     Inputs:
         text (str): text from PDF
+    Returns:
+        text with country name lists cleaned up
     '''
     line_list = text.split('\n')
     to_replace = []
@@ -174,6 +175,12 @@ def clean_text(text):
 def get_relevant_text(text, year, month):
     '''
     Cleans up relevant text so it can be parsed into a dataframe.
+    Inputs:
+        text (str): text extracted from bulletin
+        year (int): year bulletin is from
+        month (str): month bulletin is from
+    Returns:
+        relevant text with some cleaning done
     '''
     result = re.findall(r'(?:\nSituation and Forecast)+(.+?)(?:Announcements?|Other Locusts\n|Glossary of Terms|Other Species|Other Migratory Pests)', 
                         text, flags = re.DOTALL|re.IGNORECASE)[0]

@@ -15,14 +15,15 @@ LOCUST_TYPES = ["locust", "locusts", "fledgling", "hopper", "adult", "group", "s
                 'infestation', 'population', 'scatter', 'isolate']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', "November", "December"]
 DIRECTIONS = ['north', 'south', 'east', 'west', 'southwest', 'southeast', 'northwest', 'northeast']
-#LOCUST_ADJ = ["immature", 'mature', 'solitarious', 'gregarious', 'isolated']
-
-#if __name__ == "__main__":
     
 
 def prep_text(year, month, text):
     '''
     Prepares text for processing.
+    Inputs:
+        year (str): the year the text corresponds to
+        month (str): the month the text corresponds to
+        text (str): the text in the dataframe
     '''
     if int(year) < 2002 or (int(year) == 2002 and month in ['JAN', 'FEB', 'MAR', 'APR']):
         text = re.sub(r'-\n', "", text)
@@ -33,12 +34,13 @@ def prep_text(year, month, text):
     text = re.sub(r'no reports of ([a-z]+)', r'no \1', text)
     text = re.sub(r'(signifi) +(cant)', r'\1\2', text)
 
-
     return text
 
 def make_nlp():
     '''
-    generates nlp object and adds pipelines
+    Generates spaCy nlp object and adds pipelines.
+    Returns:
+        an nlp object
     '''
     nlp = spacy.load("en_core_web_sm")
     sentencizer = Sentencizer(punct_chars=['.'])
@@ -299,6 +301,14 @@ def combine_entities_ruler(nlp):
             
 
 def make_entity_ruler(nlp):
+    '''
+    Creates initial spaCy EntityRuler object used to identify locust-related 
+    words for textual analysis.
+    Inputs:
+        nlp: a spaCy nlp object
+    Returns:
+        ruler: a spaCy EntityRuler object
+    '''
     ruler = EntityRuler(nlp, validate=True, overwrite=True)
     patterns = []
     patterns.append({'label': 'LOC_TYPE', 'pattern': [{'LOWER': 'no'}, {'LOWER': 'desert', 'OP': '?'}, {'LEMMA': {'IN': ['Locusts', 'locust', 'swarm']}}]})
@@ -334,8 +344,7 @@ def make_entity_ruler(nlp):
     pat_lowlands = [{'POS': 'ADJ'}, {'LOWER': 'lowlands'}]
     patterns.append({'label': 'GEN_LOC', 'pattern': pat_gen_loc})
     patterns.append({'label': 'GEN_LOC', 'pattern': pat_lowlands})
-    pat_directions = [#{'POS': 'ADP', 'OP': '?'},
-                    {'LOWER': 'the', 'OP': '?'},
+    pat_directions = [{'LOWER': 'the', 'OP': '?'},
                     {'LOWER': {'IN': DIRECTIONS}},
                     {'LOWER': '-', 'OP': '?'},
                     {'LOWER': {'IN': DIRECTIONS}, 'OP': '?'}]
@@ -351,7 +360,6 @@ def make_entity_ruler(nlp):
     patterns.append({'label': 'GEN_LOC', 'pattern': borders})
     situation_status = [[{'LOWER': 'situation'}, {'OP': '*'}, {'LEMMA': 'improve'}],
                         [{'LOWER': 'calm'}],
-                        #[{'LOWER': 'no'}, {'LOWER': 'significant'}, {'LOWER': 'developments'}],
                         [{'LOWER': 'no'}, {'LOWER': {'REGEX': r'signiﬁ *cant'}}, {'LOWER': 'developments'}]]
     for pattern in situation_status:
         patterns.append({'label': 'ACTION', 'pattern': pattern})
