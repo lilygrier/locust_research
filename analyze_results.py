@@ -9,6 +9,20 @@ import matplotlib.pyplot as plt
 Analyze results of predictions.
 '''
 
+def df_with_validated_results(csv_path="report_text.csv"):
+    '''
+    Produces dataframe with validated results from a csv.
+    If csv isn't provided, uses report_text.csv.
+    Inputs:
+        csv_path (str): filepath for csv
+    '''
+    df = pd.read_csv(csv_path)
+    df = gen_merged_df(df)
+    df = gen_results_df(df)
+
+    return add_totals(df)
+
+
 def gen_merged_df(df):
     '''
     Takes a dataframe and creates a merged dataframe through self-joins
@@ -86,7 +100,7 @@ def add_totals(df, loc_matching=False):
 
     return df
 
-def confusion_matrix(df, results_col, sig_preds_col):
+def confusion_matrix(df, results_col, sig_preds_col, title):
     '''
     Analyzes false and true positives and negatives.
     Inputs:
@@ -94,14 +108,19 @@ def confusion_matrix(df, results_col, sig_preds_col):
         results_col (str): name of column containing results of interest
         sig_preds_col (str): name of column indicating whether significant 
             events were predicted
+        title (str): title for resulting matrix
         Returns:
             None, but displays a confusion matrix heat map analyzing results
     '''
+    ax = plt.axes()
     pred_correct = np.concatenate(df[results_col].reset_index(drop=True))
     pred_sig_pred = np.concatenate(df[sig_preds_col].reset_index(drop=True)) 
     conf_matrix = pd.crosstab(pred_sig_pred, pred_correct, rownames=['sig. event predicted'], 
                                 colnames=['pred result'])
-    sns.heatmap(conf_matrix, annot=True, fmt='d')
+    sns.heatmap(conf_matrix, annot=True, fmt='d', ax=ax)
+    ax.set_title(title)
+    plt.show()
+
 
 def raw_counts_graph(df):
     '''
@@ -152,7 +171,9 @@ def percent_type_graph(df):
     axes[0].set(ylabel='any locusts by location')
     axes[1].set(ylabel='general stage by sentence')
     axes[2].set(ylabel='exact match - granular')
-    axes.legend()
+    axes[0].legend()
+    axes[1].legend()
+    axes[2].legend()
     plt.suptitle('Percent of Total Predictions by Type')
 
 
