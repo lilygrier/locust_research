@@ -116,10 +116,10 @@ def summarize_unmatched(df):
         count_df = df[df['COUNTRY'] == country]
         forecast = pd.Series(np.concatenate(count_df['unmatched_forecast'].reset_index(drop=True)))
         sit = pd.Series(np.concatenate(count_df['unmatched_sit'].reset_index(drop=True)))
-        forecast_locs = pd.DataFrame(forecast.value_counts()[:5].reset_index())
+        forecast_locs = pd.DataFrame(forecast.value_counts().reset_index())
         forecast_locs.columns = ['unmatched_forecast', 'forecast_freq']
         forecast_locs['country'] = country
-        sit_locs = pd.DataFrame(sit.value_counts()[:5].reset_index())
+        sit_locs = pd.DataFrame(sit.value_counts().reset_index())
         sit_locs.columns = ['unmatched_sit', 'sit_freq']
         loc_freqs = pd.concat([forecast_locs, sit_locs], axis=1)
         rv = pd.concat([rv, loc_freqs])
