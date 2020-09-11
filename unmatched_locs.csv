@@ -1,0 +1,4819 @@
+,country,unmatched_forecast,forecast_freq,unmatched_sit,sit_freq
+0,MAURITANIA,Inchiri,53.0,Akjoujt (1945N/1421W),84.0
+1,MAURITANIA,Adrar,40.0,Zouerate (2244N/1221W),80.0
+2,MAURITANIA,Trarza,34.0,Atar (2032N/1308W),73.0
+3,MAURITANIA,Tiris-Zemmour,33.0,Bir Moghrein (2510N/1135W),58.0
+4,MAURITANIA,north,26.0,Oujeft (2003N/1301W),53.0
+5,MAURITANIA,Tagant,23.0,Nema (1636N/0715W),53.0
+6,MAURITANIA,Hodhs,22.0,Tidjikja (1833N/1126W),51.0
+7,MAURITANIA,Tiris Zemmour,20.0,Nouakchott,47.0
+8,MAURITANIA,Brakna,18.0,Aioun El Atrous (1639N/0936W),46.0
+9,MAURITANIA,northwest,15.0,Adrar,45.0
+10,MAURITANIA,southwest,14.0,north,45.0
+11,MAURITANIA,southeast,13.0,Akjoujt,41.0
+12,MAURITANIA,Zouerate,13.0,Trarza,41.0
+13,MAURITANIA,southwest Adrar,10.0,Aguilal Faye (1827N/1444W),39.0
+14,MAURITANIA,Akjoujt,9.0,Brakna,38.0
+15,MAURITANIA,south,9.0,Zouerate,36.0
+16,MAURITANIA,Mali,9.0,Tagant,35.0
+17,MAURITANIA,Assaba,9.0,Inchiri,34.0
+18,MAURITANIA,Dakhlet Nouadhibou,8.0,Nouakchott (1809N/1558W),30.0
+19,MAURITANIA,El Hank,8.0,Moudjeria (1752N/1219W),30.0
+20,MAURITANIA,Algeria,7.0,Atar,28.0
+21,MAURITANIA,Bir Moghrein,7.0,Kiffa (1638N/1124W),27.0
+22,MAURITANIA,Morocco,7.0,south,26.0
+23,MAURITANIA,Atar,5.0,Oualata (1717N/0701W),26.0
+24,MAURITANIA,Nema,4.0,northwest,25.0
+25,MAURITANIA,movesouth,4.0,Tidjikja,25.0
+26,MAURITANIA,Tidjikja,4.0,southwest,24.0
+27,MAURITANIA,west,4.0,Boutilimit (1732N/1441W),24.0
+28,MAURITANIA,Aioun El Atrous,3.0,Chinguetti (2027N/1221W),23.0
+29,MAURITANIA,Oujeft,3.0,Tiris Zemmour,23.0
+30,MAURITANIA,md,3.0,Nema,22.0
+31,MAURITANIA,Senegal River Valley,3.0,Moudjeria,21.0
+32,MAURITANIA,Sahel,3.0,md,21.0
+33,MAURITANIA,northwest as,2.0,Assaba,19.0
+34,MAURITANIA,Hodh Ech Chargui,2.0,Dakhlet Nouadhibou,19.0
+35,MAURITANIA,Tidjikja as,2.0,Ouadane (2056N/1137W),19.0
+36,MAURITANIA,northeast,2.0,Tamchekket (1714N/1040W),19.0
+37,MAURITANIA,south-,2.0,Magta Lahjar (1730N/1305W),18.0
+38,MAURITANIA,mst,2.0,west,18.0
+39,MAURITANIA,Hodh El Gharbi,2.0,Malian border,17.0
+40,MAURITANIA,R’Kiz,2.0,southeast,17.0
+41,MAURITANIA,Hohds,2.0,Rkiz (1658N/1514W),17.0
+42,MAURITANIA,Atlas Mountains,2.0,Hodhs,17.0
+43,MAURITANIA,Tagant between Aguilal Faye and Tidjikja,2.0,Tidjikja (1829N/1131W),15.0
+44,MAURITANIA,Aguilal Faye,2.0,Bennichab (1932N/1512W),15.0
+45,MAURITANIA,Western Sahara,2.0,Moudjeria (1751N/1228W),15.0
+46,MAURITANIA,Adrar as,2.0,ﬁ,14.0
+47,MAURITANIA,Nouakchott,2.0,Timbedra (1614N/0809W),14.0
+48,MAURITANIA,Mauritania,2.0,Aioun,14.0
+49,MAURITANIA,east,2.0,N’Beika (1758N/1215W),14.0
+50,MAURITANIA,Mediterranean,2.0,Mauritania,13.0
+51,MAURITANIA,Locust,2.0,Hodh El Gharbi,13.0
+52,MAURITANIA,bymid,1.0,Moroccan border,13.0
+53,MAURITANIA,Moroccan border as,1.0,Locust,12.0
+54,MAURITANIA,moveto,1.0,Hodh Ech Chargui,12.0
+55,MAURITANIA,egg development,1.0,Oujeft,12.0
+56,MAURITANIA,south as,1.0,Nema (1632N/0712W),11.0
+57,MAURITANIA,of Inchiri near Akjoujt,1.0,Aioun El Atrous (1702N/0941W),11.0
+58,MAURITANIA,rst,1.0,Tiris-Zemmour,11.0
+59,MAURITANIA,Tichit,1.0,Bir Moghrein,11.0
+60,MAURITANIA,Hodh Chargui,1.0,Akjoujt (1944N/1420W),11.0
+61,MAURITANIA,Aftout Fai,1.0,south-,11.0
+62,MAURITANIA,Aouker Aioun,1.0,Boutilimit,10.0
+63,MAURITANIA,Agane,1.0,Aioun El Atrous,10.0
+64,MAURITANIA,Tiris-Zemmour as,1.0,Tijirat (1929N/1557W),10.0
+65,MAURITANIA,Tijirit,1.0,Nouadhibou,10.0
+66,MAURITANIA,Aïoun as,1.0,Senegal River Valley,10.0
+67,MAURITANIA,Malian border,1.0,Mali,9.0
+68,MAURITANIA,Tamkarkart as,1.0,Kiffa,9.0
+69,MAURITANIA,Moudjeria as,1.0,Ghallaman (2410N/0952W),9.0
+70,MAURITANIA,south-east,1.0,m2,9.0
+71,MAURITANIA,Breeding,1.0,Rkiz,8.0
+72,MAURITANIA,Aftout Faye,1.0,east,8.0
+73,MAURITANIA,Tiris Zemmour between Akjoujt and Oued El Ma,1.0,Egg,8.0
+74,MAURITANIA,locust,1.0,Tasiast (2034N/1531W),8.0
+75,MAURITANIA,Northwest Africa,1.0,southwest Adrar,8.0
+76,MAURITANIA,aboutmid,1.0,Aguilal Faye,8.0
+77,MAURITANIA,Aouker as,1.0,Tmeimichat (2119N/1420W),7.0
+78,MAURITANIA,Zgueimir,1.0,Western Sahara border,7.0
+79,MAURITANIA,Hodh El Chargui,1.0,Gorgol,7.0
+80,MAURITANIA,f rst,1.0,Boutilimit (1740N/1446E),7.0
+81,MAURITANIA,Tichitt,1.0,Kiffa (1638N/1128W),7.0
+82,MAURITANIA,Sahara,1.0,El Hank,7.0
+83,MAURITANIA,inmid,1.0,mst,6.0
+84,MAURITANIA,El Khatt,1.0,north near Bir Moghrein (2510N/1135W),6.0
+85,MAURITANIA,Taziazet,1.0,Nouadhibou (2056N/1702W),6.0
+86,MAURITANIA,Tiris Zemmour as,1.0,bush,6.0
+87,MAURITANIA,locust maturation,1.0,Ouadane,6.0
+88,MAURITANIA,Brakna as,1.0,rst,6.0
+89,MAURITANIA,northeast Tiris-Zemmour,1.0,Kaedi (1612N/1332W),6.0
+90,,,,ﬁ rst,6.0
+91,,,,1421W,6.0
+92,,,,0712W,6.0
+93,,,,sq m,5.0
+94,,,,Kediet Imert,5.0
+95,,,,sq,5.0
+96,,,,north-east,5.0
+97,,,,Atar (2031N/1303W),4.0
+98,,,,Tiris-Zemmour near Zouerate (2244N/1221W),4.0
+99,,,,Adrar between Akjoujt (1945N/1421W) and Atar (2032N/1308W),4.0
+100,,,,inmid,4.0
+101,,,,sq mwere,4.0
+102,,,,Aftout Fai (1834N/1424W),4.0
+103,,,,Hodh El Gharbi near Aioun El Atrous (1639N/0936W),4.0
+104,,,,Tiris-Zemmour near Bir Moghrein (2510N/1135W),4.0
+105,,,,1308W,4.0
+106,,,,Hodh Gharbi,4.0
+107,,,,instar hoppers,4.0
+108,,,,Benichab,4.0
+109,,,,Aioun El Atrouss,4.0
+110,,,,Aioun El Atrous (1640N/0937W),4.0
+111,,,,Inchiri near Tasiast (2034N/1531W),4.0
+112,,,,Aleg (1702N/1358W),4.0
+113,,,,Aleg (1703N/1355W),4.0
+114,,,,Senegal River,4.0
+115,,,,Aouker,4.0
+116,,,,south-west,4.0
+117,,,,R’Kiz,4.0
+118,,,,Guelb,4.0
+119,,,,Hodh El Chargui,4.0
+120,,,,Guidimaka,4.0
+121,,,,Nouadhibou (2054N/1701W),4.0
+122,,,,north near Zouerate (2244N/1221W),4.0
+123,,,,south-east,4.0
+124,,,,Banc d’Arguin,4.0
+125,,,,hoppers,4.0
+126,,,,Western Sahara,4.0
+127,,,,Beirat Tourassine,3.0
+128,,,,1228W,3.0
+129,,,,National Park,3.0
+130,,,,Parc National du Banc d’Arguin,3.0
+131,,,,Senegal,3.0
+132,,,,Banc,3.0
+133,,,,Taziaset,3.0
+134,,,,Bennichab (1928N/1525W),3.0
+135,,,,Aoukar,3.0
+136,,,,Tamreiket,3.0
+137,,,,Oualata (1715N/0655W),3.0
+138,,,,17N,3.0
+139,,,,Richat (2107N/1124W),3.0
+140,,,,m,3.0
+141,,,,Aioun el Atrous,3.0
+142,,,,north-,3.0
+143,,,,Ghallaman,3.0
+144,,,,Aftout Faye,3.0
+145,,,,Ghalamane (2456N/1124W),3.0
+146,,,,1221W,3.0
+147,,,,Atlantic coast,3.0
+148,,,,Mʼhaoudatt (2255N/1200W),3.0
+149,,,,Nouakchott between Aguilal Faye (1827N/1444W) and Akjoujt (1945N/1421W),3.0
+150,,,,Tasiast,3.0
+151,,,,Inchiri near Bennichab (1932N/1512W),2.0
+152,,,,Brakna (1802N/1230W),2.0
+153,,,,the Senegal River Valley near Kaedi (1612N/1332W),2.0
+154,,,,of Tiris-Zemmour near Bir Moghrein (2510N/1135W),2.0
+155,,,,Erch El Guibli,2.0
+156,,,,Bir Moghrein between W. Zouania (2535N/1116W) and W. El Mrhader,2.0
+157,,,,Bir Amrane,2.0
+158,,,,North Trarza,2.0
+159,,,,Tidjikja (1829N/1139W),2.0
+160,,,,ailés,2.0
+161,,,,Grara de Tenemrourt (1945N/1325W),2.0
+162,,,,Chinguetti (2025N/1224W),2.0
+163,,,,1131W,2.0
+164,,,,0940W,2.0
+165,,,,Sahel,2.0
+166,,,,southwest Adrar near Tmeimichat (2119N/1420W),2.0
+167,,,,Mali border,2.0
+168,,,,Morocco border,2.0
+169,,,,Hodh Ech Chargui near Timbedra (1614N/0809W),2.0
+170,,,,Tiris Zemmour between Zouerate (2244N/1221W) and Bir Moghrein (2510N/1135W),2.0
+171,,,,Banc dʼArguin National Park,2.0
+172,,,,Hodh El Charghi,2.0
+173,,,,Akjoujt (1945N/1424W),2.0
+174,,,,Trarza near Lac,2.0
+175,,,,Hodh El Garbi near Aioun El Atrous,2.0
+176,,,,Ban d’Arguin National Park,2.0
+177,,,,Aoukar between Boutilimit (1740N/1446E) and Akjoujt,2.0
+178,,,,Inmid,2.0
+179,,,,mny,2.0
+180,,,,Moudjeria (1746N/1231W),2.0
+181,,,,Oudane (2055N/1125W),2.0
+182,,,,Bir Mogrein (2510N/1135W),2.0
+183,,,,Tree Locust,2.0
+184,,,,Trarza near Rkiz,2.0
+185,,,,Agane,2.0
+186,,,,0756W,2.0
+187,,,,1702N/ 0941W,2.0
+188,,,,Takhça,2.0
+189,,,,Agane (1818N/1231W),2.0
+190,,,,sq m Fledging,2.0
+191,,,,the Senegal River Valley near Rosso (1629N/1553W),2.0
+192,,,,northeast Trarza,2.0
+193,,,,Aftout,2.0
+194,,,,Hodh Ech Chargui near Oualata (1715N/0700W),2.0
+195,,,,north as Tidjikja (1833N/1126W),2.0
+196,,,,Breeding,2.0
+197,,,,Tidjikja (1832N/1125W),2.0
+198,,,,Desert Locust,2.0
+199,,,,Tagant between Magta Lahjar (1730N/1305W) and N’Beika (1758N/1215W),2.0
+200,,,,Oudane,2.0
+201,,,,Tamchekket (1714N/1040W) as,2.0
+202,,,,of Tiris-Zemmour near Zouerate (2244N/1221W),2.0
+203,,,,Trarza between Nouakchott and Moudjeria (1752N/1219W),2.0
+204,,,,Adrar between Tidjikja (1829N/1131W) and Akjoujt (1945N/1421W),2.0
+205,,,,1420W,2.0
+206,,,,southwest Adrar near Oujeft (2003N/1301W),2.0
+207,,,,N’Beika,2.0
+208,,,,Tidjikjia,2.0
+209,,,,instar,2.0
+210,,,,Boumdeid,2.0
+211,,,,Adrar near Tidjikja (1833N/1126W),2.0
+212,,,,southeast between Timbedra (1614N/0809W) and Kiffa (1638N/1124W),2.0
+213,,,,Takhca,2.0
+214,,,,0842W,2.0
+215,,,,El Atiyat (2530N/1110W),2.0
+216,,,,Tenyemoumat as,2.0
+217,,,,Magta Lahjar (1730N/1308W),2.0
+218,,,,Richat,2.0
+219,,,,-13W,2.0
+220,,,,Adrar near Ouadane (2056N/1137W),2.0
+221,,,,north between Guelb Er Richat and Zouerate (2244N/1221W),2.0
+222,,,,moveinto,2.0
+223,,,,Hodh Ech Chargui between Nema (1636N/0715W) and Oualata (1717N/0701W),2.0
+224,,,,Rosso (1629N/1553W),2.0
+225,,,,Oujeft (2003N/1301W) as,2.0
+226,,,,southwest of Nema near Timbedra (1614N/0810W),2.0
+227,,,,Moudjera (1750N/1250W),2.0
+228,,,,Hodh Charghi,2.0
+229,,,,Tintane (1623N/1009W),2.0
+230,,,,Moudjera,2.0
+231,,,,Tamassoumit,2.0
+232,,,,1830N,2.0
+233,,,,ﬁfth,2.0
+234,,,,Tagant Plateau,2.0
+235,,,,swarm,2.0
+236,,,,Aioun el Atrouss (1640N/0937W),2.0
+237,,,,rst instar hopper,2.0
+238,,,,adults/,2.0
+239,,,,Chinguetti,2.0
+240,,,,Tiris-Zemmour near Zouerate,2.0
+241,,,,southwest Adrar near Choum (2118N/1304W),2.0
+242,,,,Inchiri between Akjoujt (1945N/1421W) and Bennichab (1932N/1512W),2.0
+243,,,,Inchiri as,2.0
+244,,,,Brakna inmid,2.0
+245,,,,Kiffa (1635N/1125W),2.0
+246,,,,Inchiri near Ouadane (2056N/1137W),2.0
+247,,,,Agulal Faye,2.0
+248,,,,Mauritania near Guelb Er Richat (2107N/1124W),2.0
+249,,,,Tiris-Zemmour between Zouerate (2244N/1221W) and Bir Moghrein (2510N/1135W),2.0
+250,,,,-12W,2.0
+251,,,,Fderik (2240N/1241W),2.0
+252,,,,Trarza near Rkiz (1658N/1514W),2.0
+253,,,,Adrar between Akjoujt (1945N/1421W) and Oujeft (2003N/1301W),2.0
+254,,,,mwere,2.0
+255,,,,Tagant between Aguilal Faye (1827N/1444W) and Tidjikja (1833N/1126W),2.0
+256,,,,Moroccan and Algerian borders,2.0
+257,,,,Morocco,2.0
+258,,,,Boumdeid (1726N/0950W),2.0
+259,,,,Faye,2.0
+260,,,,outbreak,2.0
+261,,,,Mederdra (1655N/1540W),2.0
+262,,,,Aioun El Atrous (1642N/0936E),2.0
+263,,,,intensiﬁ ed,2.0
+264,,,,Timbedra (1615N/0810W),2.0
+265,,,,Tiris-Zemmour near Ghallaman (2410N/0952W),2.0
+266,,,,east of Akjoujt near Grara de Tenemrourt (1945N/1325W),2.0
+267,,,,Letvatar (1745N/1231W),2.0
+268,,,,Oualata,2.0
+269,,,,2534N/1054-1109W,2.0
+270,,,,Aoukar Boutilimit,2.0
+271,,,,Green Muscle,2.0
+272,,,,east Trarza,2.0
+273,,,,Trarza coast,2.0
+274,,,,Oualata (1718N/0702W),2.0
+275,,,,Afojjar,2.0
+276,,,,Aioun el Atrous (1700N/0940W),2.0
+277,,,,Oued El Ma,2.0
+278,,,,16N,2.0
+279,,,,southeast as,2.0
+280,,,,Tagant near Tidjikja (1829N/1131W),2.0
+281,,,,R’Kiz (1655N/1516W),2.0
+282,,,,Bymid,2.0
+283,,,,Tamreiket (2518N/1102W),2.0
+284,,,,DL Bulletin No,2.0
+285,,,,Tamchakett,2.0
+286,,,,Morocco near Bir Guendouz (2124N/1634W),2.0
+287,,,,Jbeilat (2235N/1113W),2.0
+288,,,,Aouker Boutilimit,2.0
+289,,,,Trarza between Aguilal Faye (1827N/1444W) and Moudjeria (1752N/1219W),2.0
+290,,,,Tourassine,2.0
+291,,,,Magta Lahjar,2.0
+292,,,,1916N/1605W. Hatching,2.0
+293,,,,Boumdeid (1726N/1120W),2.0
+294,,,,1250W,2.0
+295,,,,El Khatt,2.0
+296,,,,Adrar near Guelb,2.0
+297,,,,northeast,2.0
+298,,,,northeast Brakna,2.0
+299,,,,Hodh el Gharbi,2.0
+300,,,,northwest Brakna,2.0
+301,,,,Tiris Zemmour near Bir Moghrein (2510N/1135W),2.0
+302,,,,Hodhs between Tintane (1623N/1009W) and Nema (1636N/0715W),2.0
+303,,,,Aguilal Faye (1827N/1444W) as,2.0
+304,,,,0937W,2.0
+305,,,,-0949W,2.0
+306,,,,Aleg (1703N/1356W),2.0
+307,,,,2031N/,2.0
+308,,,,Moudjeria (1750N/1250W),2.0
+309,,,,south-east near Aioun El Atrous,2.0
+310,,,,km,2.0
+311,,,,Faye near Aguilal Faye (1827N/1444W),2.0
+312,,,,northwest between Moudjeria (1751N/1228W) and Akjoujt (1945N/1421W),2.0
+313,,,,18N,2.0
+314,,,,Aoukar between Boutilimit (1740N/1446E) and Akjoujt (1945N/1421W),2.0
+315,,,,Tagant near Tichit (1821N/0929W),2.0
+316,,,,13W. Hopper,2.0
+317,,,,Taziazet,2.0
+318,,,,Zgueimir,2.0
+319,,,,north between Zouerate (2244N/1221W) and Bir Moghrein (2510N/1135W),2.0
+320,,,,north-west,2.0
+321,,,,Inchiri coast,2.0
+322,,,,Adrar between Tidjikja (1833N/1126W) and Atar (2032N/1308W),2.0
+323,,,,Tamkarkart,2.0
+324,,,,Amatlich,2.0
+325,,,,Lebheir (1936N/1235W),2.0
+326,,,,1932N/ 1259E,2.0
+327,,,,the Dakhlet near Bou Lanouar (2116N/1630W),2.0
+328,,,,Foum Gleita (1627N/1206W),2.0
+329,,,,Frommid,2.0
+330,,,,sq metre,2.0
+331,,,,Timbedra (1614N/0810W),2.0
+332,,,,km2,2.0
+333,,,,Bir Moghrein (2510N/1135W) between W. Zouania (2535N/1116W) and W. El Mrhader (2535N/1105W),2.0
+334,,,,northwest near Tmeimichat (2119N/1420W),2.0
+335,,,,Akchar,2.0
+336,,,,Band,2.0
+337,,,,Aftout Fai,1.0
+338,SENEGAL,Convergence Zone,4.0,Senegal River Valley,11.0
+339,SENEGAL,Senegal River Valley,3.0,Richard Toll (1626N/1541W),8.0
+340,SENEGAL,ITCZ,3.0,Saint Louis (1601N/1629W),7.0
+341,SENEGAL,Casamance,2.0,Mauritania,7.0
+342,SENEGAL,Mali,2.0,Sedihou (1251N/1535W),5.0
+343,SENEGAL,Tambacounda,2.0,north,4.0
+344,SENEGAL,Senegal River,2.0,Dakar,4.0
+345,SENEGAL,Mauritania,2.0,Dagana (1631N/1530W),4.0
+346,SENEGAL,southeast,2.0,Tambacounda,3.0
+347,SENEGAL,movesouth,1.0,ﬁ,3.0
+348,SENEGAL,movefurther,1.0,Ndioum (1630N/1438W),3.0
+349,SENEGAL,Inter,1.0,Sahel,3.0
+350,SENEGAL,south,1.0,Kaolack,2.0
+351,SENEGAL,Mali as,1.0,Niokoloba National Park,2.0
+352,SENEGAL,drift,1.0,south as Ndebele (1421N/1610W),2.0
+353,,,,km2,2.0
+354,,,,Casamance,2.0
+355,,,,south as Tataguine (1427N/1638W),2.0
+356,,,,ha,2.0
+357,,,,1358W,2.0
+358,,,,east near Bakel (1454N/1226W),2.0
+359,,,,Diourbel (1439N/1612W),2.0
+360,,,,Lac de Guiers,2.0
+361,,,,the Senegal River Valley near Richard Toll (1626N/1541W),2.0
+362,,,,Keur Momar Sarr (1555N/1558W),2.0
+363,,,,Guinea Bissau border,2.0
+364,,,,swarm,2.0
+365,,,,the Senegal River Valley near Matam (1540N/1318W),2.0
+366,,,,Bakel (1454N/1226W),2.0
+367,,,,south as,2.0
+368,,,,Bignona (1248N/1618W),2.0
+369,,,,Thikite,2.0
+370,,,,Senegal,2.0
+371,,,,md,2.0
+372,,,,Senegal River Valley between Matam and Bakel,2.0
+373,,,,Louga,2.0
+374,,,,Senegal River Valley between Mauritania and Senegal,2.0
+375,,,,Guinea,2.0
+376,,,,Lake Guier,2.0
+377,,,,Thies (1449N/1652W),2.0
+378,,,,Tambacounda (1345N/1340W),2.0
+379,,,,Casamance as,2.0
+380,,,,Matam (1540N/1318W),2.0
+381,,,,east as Matam (1540N/1318W),2.0
+382,,,,Saraya (1250N/1146W),2.0
+383,,,,Fatick,2.0
+384,,,,the Senegal River Valley near Podor (1640N/1457W),2.0
+385,,,,southeast,2.0
+386,,,,Senegal River between Dagana (1631N/1530W) and Matam (1540N/1318W),2.0
+387,,,,south,2.0
+388,,,,Gambian border,2.0
+389,,,,Matam,2.0
+390,,,,Velingara (1310N/1410W),2.0
+391,,,,Mali,2.0
+392,,,,Dakar (1442N/1728W),2.0
+393,,,,Thies,2.0
+394,,,,Kolda (1256N/1455W),2.0
+395,,,,Mbake (1448N/1555W),2.0
+396,,,,Linguere (1524N/1507W),2.0
+397,,,,east,1.0
+398,MALI,Adrar des Iforas,165.0,Aguelhoc (1927N/0052E),37.0
+399,MALI,Tamesna,87.0,Kayes (1426N/1128W),29.0
+400,MALI,Tilemsi Valley,78.0,Kidal (1827N/0125E),28.0
+401,MALI,Timetrine,66.0,Nara (1510N/0717W),24.0
+402,MALI,Tombouctou,13.0,Timetrine,24.0
+403,MALI,Algeria,8.0,Ti-n,21.0
+404,MALI,north,7.0,Algerian border,21.0
+405,MALI,northwest,6.0,Tilemsi Valley,21.0
+406,MALI,Mauritania,6.0,Gao,17.0
+407,MALI,Araouane,4.0,Tin Essako (1826N/0229E),16.0
+408,MALI,Morocco,4.0,Nioro (1512N/0935W),16.0
+409,MALI,Senegal,4.0,Mopti (1430N/0415W),15.0
+410,MALI,Tilemsi,3.0,Tessalit,13.0
+411,MALI,ITCZ,3.0,Tombouctou,12.0
+412,MALI,Mauritanian border,3.0,Tombouctou (1649N/0259W),11.0
+413,MALI,northeast,3.0,Gao (1616N/0003W),11.0
+414,MALI,Nioro,3.0,Tessalit (2011N/0102E),11.0
+415,MALI,Gourma,2.0,Aguelhoc,10.0
+416,MALI,Gao,2.0,north,10.0
+417,MALI,Tilemsi Valley as,2.0,Tamesna,9.0
+418,MALI,locust,2.0,md,9.0
+419,MALI,Northwest Africa,2.0,Kidal,8.0
+420,MALI,Mali,2.0,Hombori (1516N/0140W),8.0
+421,MALI,Atlas Mountains,2.0,west,8.0
+422,MALI,north-west,2.0,Adrar des Iforas,7.0
+423,MALI,Algerian border,2.0,sq,7.0
+424,MALI,south-,2.0,Mauritanian border,7.0
+425,MALI,south,2.0,Niger border,6.0
+426,MALI,east inmid,1.0,0052E,6.0
+427,MALI,southern,1.0,Tin,6.0
+428,MALI,west,1.0,Niger River,6.0
+429,MALI,movefurther,1.0,Gourma (1653N/0155W),6.0
+430,MALI,Niger River,1.0,Mopti,6.0
+431,MALI,Mopti,1.0,south,6.0
+432,MALI,Menaka,1.0,sq m,6.0
+433,MALI,Sahel,1.0,the Adrar des Iforas near Aguelhoc (1927N/0052E),6.0
+434,MALI,Adrar,1.0,Aguelhok,5.0
+435,MALI,movefurther west,1.0,Adrar,5.0
+436,MALI,Guinea,1.0,sq mtre,5.0
+437,MALI,Aguelhoc,1.0,the Timetrine near Ti-n,4.0
+438,MALI,west near Tombouctou,1.0,Mauritania,4.0
+439,MALI,Nara,1.0,the Timetrine near Tinkar,4.0
+440,MALI,Hombori,1.0,mst,4.0
+441,MALI,Mediterranean,1.0,Segou,4.0
+442,MALI,Locust,1.0,southwest,4.0
+443,MALI,NorthWest Africa,1.0,Bymid,4.0
+444,,,,Desert Locust,4.0
+445,,,,rst,4.0
+446,,,,0022W,4.0
+447,,,,Adrar des Iforas near Aguelhoc (1927N/0052E),4.0
+448,,,,the Adrar des Iforas near Tessalit (2011N/0102E),4.0
+449,,,,Aguelhok (1927N/0052E),4.0
+450,,,,rm,3.0
+451,,,,W. Tahalt,3.0
+452,,,,Marcouba,3.0
+453,,,,Tin Aicha (1649N/0359W),3.0
+454,,,,Taoudenni (2240N/0358W),3.0
+455,,,,Mali,3.0
+456,,,,African Migratory Locust,2.0
+457,,,,W. Marat (1930N/0048E),2.0
+458,,,,Amsir (1959N/0145E),2.0
+459,,,,W. Inabsar (2013N/0014E),2.0
+460,,,,Tacharak (1932N/0016W),2.0
+461,,,,the Niger River near Ansongo (1539N/0030W),2.0
+462,,,,Tin Kar,2.0
+463,,,,Adjerakane (1831N/0208E) between Kidal (1827N/0125E) and Tin Essako (1826N/0229E),2.0
+464,,,,Bolrech (2046N/0107E),2.0
+465,,,,Wadi Ibrouladj,2.0
+466,,,,Aril (1910N/0005W),2.0
+467,,,,TinDjelaline (2059N/0018W),2.0
+468,,,,Wadi,2.0
+469,,,,Assamalmat (1905N/0024W),2.0
+470,,,,east of Gao near I-N,2.0
+471,,,,Marat (1929N/0042E),2.0
+472,,,,Tin Amazagh (1739N/0350E),2.0
+473,,,,N’Karba (1805N/0316W),2.0
+474,,,,Gourma Rharous,2.0
+475,,,,Tree Locust,2.0
+476,,,,In-Bolrech,2.0
+477,,,,Niono,2.0
+478,,,,Tessalit (2011N/0105E),2.0
+479,,,,Adrar des Iforas between Tissealine (1939N/0205E) and Tadjodjemet,2.0
+480,,,,Aneﬁ s,2.0
+481,,,,Araouane,2.0
+482,,,,Taouloust (1919N/0033E),2.0
+483,,,,bush,2.0
+484,,,,1850N/ 0039E,2.0
+485,,,,Kidal between Wadi Alkit (1811N/0113E) and Wadi Edjerer (1810N/0145E),2.0
+486,,,,0025E,2.0
+487,,,,InTillit (2050N/0112E),2.0
+488,,,,Adrar des Iforas between Kidal (1827N/0125E) and Aguelhoc (1927N/0052E),2.0
+489,,,,Inforaten (1730N/0154E),2.0
+490,,,,Telli (1622N/0251E),2.0
+491,,,,Bamako,2.0
+492,,,,Adrar des Iforas near Kidal,2.0
+493,,,,Desert Locusts,2.0
+494,,,,of the Adrar des Iforas near Aguelhok,2.0
+495,,,,Tilemsi Valley between Aguelhoc (1927N/0052E) and Ti-n,2.0
+496,,,,Timetrine near Erg Lahmar (1856N/0016E),2.0
+497,,,,Iforas Aguelhok (1927N/0052E),2.0
+498,,,,of the Adrar des Iforas near Aguelhoc (1927N/0052E ),2.0
+499,,,,Temedhe,2.0
+500,,,,instar,2.0
+501,,,,Timetrine between Aguelhoc (1927N/0052E) and Ti-n,2.0
+502,,,,Eridjane (1952N/0037E),2.0
+503,,,,Laya (1755N/0339E),2.0
+504,,,,Tilemsi,2.0
+505,,,,W.,2.0
+506,,,,Tidjalaline (1749N/0216E),2.0
+507,,,,W. Admar (1930N/0035W),2.0
+508,,,,16N as,2.0
+509,,,,the Adrar des Iforas near Aguelhok,2.0
+510,,,,Bolrech,2.0
+511,,,,Burkina Faso border,2.0
+512,,,,the Adrar des Iforas near Kidal (1827N/0125E),2.0
+513,,,,Adrar des Iforas near Tahort (1943N/0107E),2.0
+514,,,,Assikad (1924N/0001W),2.0
+515,,,,Bir Bou Mokhtar (2119N/0057E),2.0
+516,,,,Anoumallen,2.0
+517,,,,Egharghar (1944N/0037E),2.0
+518,,,,Mare Takadji,2.0
+519,,,,Dardar (1913N/0003W),2.0
+520,,,,W. Edjerer (1748N/0103W),2.0
+521,,,,Kayes,2.0
+522,,,,Ratai (1928N/0051E),2.0
+523,,,,Arkad (1738N/0022W),2.0
+524,,,,Checker (1943N/0015E),2.0
+525,,,,Tahalt (1912N/0052E),2.0
+526,,,,Tarlit,2.0
+527,,,,of the Adrar des Iforas near Etambar (1827N/0124E),2.0
+528,,,,Sahel,2.0
+529,,,,n-Zaouatene,2.0
+530,,,,swarm,2.0
+531,,,,west of Tombouctou near Lac Faguibine (1645N/0417W),2.0
+532,,,,ﬁ,2.0
+533,,,,Koulikoro,2.0
+534,,,,0102E,2.0
+535,,,,0025W,2.0
+536,,,,Amaka (1642N/0044W),2.0
+537,,,,m,2.0
+538,,,,W. Takorkat (2030N/0036E),2.0
+539,,,,Tilemsi (2035N/0055E),2.0
+540,,,,Ikadaouaten (2044N/0048E),2.0
+541,,,,Gossi (1549N/0109W),2.0
+542,,,,Akelo (1755N/0251E),2.0
+543,,,,southern,2.0
+544,,,,Adjar (1736N/0152E),2.0
+545,,,,00E,2.0
+546,,,,Iforas,2.0
+547,,,,W. Taouhouten,2.0
+548,,,,Azar (1627N/0022E),2.0
+549,,,,Laya (1759N/0325E),2.0
+550,,,,Lac Fate (1616N/0342W),2.0
+551,,,,Gossi,2.0
+552,,,,Assamamal (1905N/0023W),2.0
+553,,,,Adrar between Gao and Tabankort (1749N/0019E),2.0
+554,,,,-eastern Timetrine,2.0
+555,,,,Tibagaten (1934N/0044E),2.0
+556,,,,Amachach (2021N/0046E),2.0
+557,,,,Terchichout (1924N/0010W),2.0
+558,,,,Doro,2.0
+559,,,,Boureissa,2.0
+560,,,,Algomitane (1758N/0258E),2.0
+561,,,,Aguibar (1632N/0350W),2.0
+562,,,,Tirikfen,2.0
+563,,,,Tikardjaten,2.0
+564,,,,Tachalrhe (2020N/0043E),2.0
+565,,,,Inaouinass,2.0
+566,,,,Edjerer (1953N/0130E),2.0
+567,,,,Guinea,2.0
+568,,,,north near Tessalit,2.0
+569,,,,Assamamal (1906N/0024W),2.0
+570,,,,Edjerer,2.0
+571,,,,Tin Eridjane,2.0
+572,,,,3rd,2.0
+573,,,,0029W,2.0
+574,,,,"10,000/",2.0
+575,,,,Tarlit (1938N/0052E),2.0
+576,,,,4–12,2.0
+577,,,,Wadi Tinkar (1928N/0024W),2.0
+578,,,,1609N/,2.0
+579,,,,Adrar des Iforas near Tadjilit (1930N/0237E),2.0
+580,,,,Sikasso (1118N/0538W),2.0
+581,,,,Adrar Namel,2.0
+582,,,,Menaka (1554N/0218E),2.0
+583,,,,El Blod (1832N/0210W),2.0
+584,,,,Erherrher,2.0
+585,,,,Wadi Tinkar (1927N/0026W),2.0
+586,,,,Aguelhok (1929N/0052E),2.0
+587,,,,Burkina Faso,2.0
+588,,,,Tagmart,2.0
+589,,,,Timetrine (1927N/0026W),2.0
+590,,,,Araouane (1853N/0331W),2.0
+591,,,,Terchichout (1922N/0010W),2.0
+592,,,,Abser (2015N/0039E),2.0
+593,,,,Tinkar,2.0
+594,,,,Band,2.0
+595,,,,Amchach (2020N/0047E),2.0
+596,,,,Aslar (1852N/0016E),2.0
+597,,,,Algeria,2.0
+598,,,,the Timetrine near Inabag,2.0
+599,,,,Adrar des Iforas between Kidal (1827N/0125E) and Tessalit,2.0
+600,,,,Tadhak,2.0
+601,,,,Adrar des Iforas between Aguelhoc (1927N/0052E) and Ti-n,2.0
+602,,,,Nmadaden (1850N/0045E),2.0
+603,,,,Gao (1619N/0009W),2.0
+604,,,,Tombouctou (1649N/0259W) as,2.0
+605,,,,Adrar des Iforas near Tessalit (2011N/0102E),2.0
+606,,,,Boureissa Basin,2.0
+607,,,,the Tilemsi Valley near Tessalit,2.0
+608,,,,Timetrine near Ti-n,2.0
+609,,,,south near Aguelhoc,2.0
+610,,,,Tin Essako,2.0
+611,,,,Asler,2.0
+612,,,,Swarms,2.0
+613,,,,transien,2.0
+614,,,,Tahaka (1612N/0025W),2.0
+615,,,,Tilemsi Valley as,2.0
+616,,,,0128E,2.0
+617,,,,Taouloust (1920N/0040E),2.0
+618,,,,Tamesna Plains,2.0
+619,,,,Ifirdjane (2030N/0013W),2.0
+620,,,,Tirikfen (2042N/0002W),2.0
+621,,,,Timetrine near Tadhak (2032N/0005W),2.0
+622,,,,northeast,2.0
+623,,,,W. Igharghar (1944N/0037E),2.0
+624,,,,Anacridium sp,2.0
+625,,,,Afazo (1813N/0234E),2.0
+626,,,,south of the Mauritanian border near Kayes (1426N/1128W),2.0
+627,,,,Bolrech (2047N/0001E),2.0
+628,,,,Koufe (1856N/0025E),2.0
+629,,,,Essakane (1646N/0338W),2.0
+630,,,,0112E,2.0
+631,,,,Abser (2015N/0033E),2.0
+632,,,,African Migratory Locusts,2.0
+633,,,,W. Touloust,2.0
+634,,,,Segou (1326N/0616W),2.0
+635,,,,Tamesna near Menaka (1554N/0218E),2.0
+636,,,,Tin Aouanene,2.0
+637,,,,Amastaouas (1720N/0152E),2.0
+638,NIGER,Tamesna,78.0,Arlit (1843N/0721E),53.0
+639,NIGER,Air Mountains,72.0,Agadez (1700N/0756E),49.0
+640,NIGER,Tahoua,21.0,Abangharit (1754N/0559E),48.0
+641,NIGER,Air,17.0,Tamesna,45.0
+642,NIGER,Tanout,14.0,Abangharit,43.0
+643,NIGER,Tamesna Plains,12.0,Tamesna Plains,41.0
+644,NIGER,Algeria,9.0,Air Mountains,32.0
+645,NIGER,Aïr,6.0,Timia (1809N/0846E),30.0
+646,NIGER,Sahel,6.0,Agadez,27.0
+647,NIGER,Tamesna as,5.0,Tassara (1650N/0550E),24.0
+648,NIGER,Air as,4.0,Agadez (1658N/0759E),22.0
+649,NIGER,north,4.0,Air,19.0
+650,NIGER,Tillaberi,4.0,Gall (1651N/0701E),18.0
+651,NIGER,Termit,3.0,Filingué (1421N/0319E),18.0
+652,NIGER,Morocco,3.0,Tanout (1505N/0850E),17.0
+653,NIGER,Arlit,3.0,Iferouane (1905N/0824E),16.0
+654,NIGER,Agadez,3.0,Zinder (1346N/0858E),15.0
+655,NIGER,mst,3.0,Algerian border,15.0
+656,NIGER,northwest,2.0,Arlit,14.0
+657,NIGER,Air Mountains as,2.0,south,14.0
+658,NIGER,Abangharit,2.0,Diffa (1318N/1236E),13.0
+659,NIGER,south,2.0,Tazerzait Plateau (1832N/0449E),13.0
+660,NIGER,Filingué,2.0,Tahoua (1457N/0519E),13.0
+661,NIGER,bymid,2.0,md,12.0
+662,NIGER,Tadress,2.0,Tanout (1458N/0852E),12.0
+663,NIGER,Iferouane,2.0,bush,11.0
+664,NIGER,Tanout as,2.0,Tillaberi (1428N/0127E),11.0
+665,NIGER,northeast,2.0,north,10.0
+666,NIGER,north as,2.0,Malian border,9.0
+667,NIGER,Mali,2.0,Ténéré Desert,9.0
+668,NIGER,Burkina Faso,1.0,Chad border,8.0
+669,NIGER,Ténéré Desert,1.0,Talak,8.0
+670,NIGER,Tadres as,1.0,Aïr,8.0
+671,NIGER,Djado Plateau,1.0,south-,8.0
+672,NIGER,Ténéré,1.0,Fachi (1806N/1134E),7.0
+673,NIGER,locust,1.0,rst,7.0
+674,NIGER,south-,1.0,Agad,6.0
+675,NIGER,Tazerzait Plateau,1.0,west,6.0
+676,NIGER,inmid,1.0,Ngourti (1519N/1312E),6.0
+677,NIGER,Tillabery,1.0,mst,6.0
+678,NIGER,md,1.0,Termit Massif (1600N/1120E),5.0
+679,NIGER,aboutmid,1.0,Tafidet,5.0
+680,NIGER,east inmid,1.0,Tanout,5.0
+681,NIGER,Northwest Africa,1.0,northeast of Arlit near Agaliouk (1846N/0732E),4.0
+682,NIGER,west,1.0,Talak Plains,4.0
+683,NIGER,Mauritania,1.0,Gouré (1359N/1015E),4.0
+684,NIGER,-west,1.0,Sahel,4.0
+685,NIGER,Ngourti,1.0,ez (1700N/0756E),4.0
+686,NIGER,Termit Massif,1.0,Niamey,4.0
+687,NIGER,Locust,1.0,ﬁ rst,4.0
+688,NIGER,east,1.0,east,4.0
+689,NIGER,Taker,1.0,Tazerzait Plateau,4.0
+690,,,,Irhazer,4.0
+691,,,,northwest,4.0
+692,,,,Tillaberi,4.0
+693,,,,Mali border,4.0
+694,,,,Bilma (1846N/1304E),4.0
+695,,,,hoppers,4.0
+696,,,,Termit,4.0
+697,,,,instar,4.0
+698,,,,Tassara,4.0
+699,,,,Tadress,3.0
+700,,,,Anes Baraka (1831N/0552E),3.0
+701,,,,Filingué,3.0
+702,,,,Agaliouk (1846N/0731E),3.0
+703,,,,Tezerzait,3.0
+704,,,,1845N/ 0725E,3.0
+705,,,,Madaouela (1840N/0736E),2.0
+706,,,,the Tadress near Agadez (1700N/0756E),2.0
+707,,,,Tagora,2.0
+708,,,,Solitarious,2.0
+709,,,,wadi Tafidet,2.0
+710,,,,W. Baouet (1805N/0914E),2.0
+711,,,,Iguidi,2.0
+712,,,,east of the Air Mountains near Arishima (1930N/1030E),2.0
+713,,,,Iferouane,2.0
+714,,,,Metarhizium,2.0
+715,,,,Oued Tagora (1758N/0909E),2.0
+716,,,,Algerian and Malian borders,2.0
+717,,,,Fachi,2.0
+718,,,,Tadreck,2.0
+719,,,,Imouraren (1812N/0718E),2.0
+720,,,,Issaouane (1901N/0924E),2.0
+721,,,,Abangharit (1653N/0603E),2.0
+722,,,,i,2.0
+723,,,,second instar dominant,2.0
+724,,,,Termit (1602N/1112E),2.0
+725,,,,Wadi Anou Mekkerene (1806N/0736E),2.0
+726,,,,Tchibalaghlague (1730N/0917E),2.0
+727,,,,Tamesna Plains between Tahoua (1457N/0519E) and Agadez (1700N/0756E) as,2.0
+728,,,,Chad,2.0
+729,,,,Air near Timia (1809N/0846E),2.0
+730,,,,ﬁ,2.0
+731,,,,Azaouak Valley,2.0
+732,,,,sq,2.0
+733,,,,Benin border,2.0
+734,,,,Algerian and Malian border,2.0
+735,,,,Tamesna between Arlit (1843N/0721E) and Tassara (1650N/0550E),2.0
+736,,,,Tadrek (1801N/0615E),2.0
+737,,,,Timia,2.0
+738,,,,the Tenere Desert near Fachi,2.0
+739,,,,Tamesna between Tassara (1650N/0550E) and Arlit (1843N/0721E),2.0
+740,,,,Tamensa,2.0
+741,,,,Air Mountains between Iferouane (1905N/0824E) and Timia (1809N/0846E) as,2.0
+742,,,,Abangharit (1757N/0603E),2.0
+743,,,,W. Anou-n-Aguerouf,2.0
+744,,,,third instar,2.0
+745,,,,Agar,2.0
+746,,,,Bilma,2.0
+747,,,,northwest Tamesna near Anes Baraka (1815N/0548E),2.0
+748,,,,Iguidi (1750N/0558E),2.0
+749,,,,Burkina Faso border,2.0
+750,,,,Tabelot (1736N/0856E),2.0
+751,,,,Iko,2.0
+752,,,,mny,2.0
+753,,,,Tadrek Valley (1805N/0635E),2.0
+754,,,,Abdelajouad (1757N/0711E),2.0
+755,,,,southwest of Termit Massif near Talras (1630N/1013E),2.0
+756,,,,Arakaou (1858N/0940E),2.0
+757,,,,Locust,2.0
+758,,,,sq mtre,2.0
+759,,,,Tillabery (1413N/0126E),2.0
+760,,,,Air Mountains as,2.0
+761,,,,sq mwere,2.0
+762,,,,sq m,2.0
+763,,,,Talak Plains (1826N/0746E),2.0
+764,,,,southeast near Nguigmi (1415N/1307E),2.0
+765,,,,Inmid,2.0
+766,,,,Tasker (1507N/104140E),2.0
+767,,,,Takolokouzet,2.0
+768,,,,Termit Massif,2.0
+769,,,,Lake Chad,2.0
+770,,,,Abalak (1522N/0621E),2.0
+771,,,,south of the Algerian border near Tidounane (2021N/0848E),2.0
+772,,,,Tamesna between Agadez (1700N/0756E) and Arlit (1843N/0721E),2.0
+773,,,,Aïr near Assode (1825N/0838E),2.0
+774,,,,Diffa (1319N/1236E),2.0
+775,,,,mny wadis,2.0
+776,,,,Air near Iferouane (1905N/0824E),2.0
+777,,,,l’Irhazer,2.0
+778,,,,Aagar (1758N/0850E),2.0
+779,,,,Assamaka (1920N/0546E),2.0
+780,,,,Tagart (1818N/0556E),2.0
+781,,,,Mountains,2.0
+782,,,,Inbakaten (1659N/0754E),2.0
+783,,,,Termit Massif (1602N/1120E),2.0
+784,,,,Air Mountains near Timia (1809N/0846E),2.0
+785,,,,the Tamesna Plains near Tassara (1650N/0550E),2.0
+786,,,,Iferouane (1905N/0824E) as,2.0
+787,,,,-Abangharit,2.0
+788,,,,In Abangharit (1754N/0559E),2.0
+789,,,,Sahara,2.0
+790,,,,southeast Air Mountains,2.0
+791,,,,Air Mountains near Iferouane (1904N/0825E),2.0
+792,,,,Abangharit (1801N/0602E),2.0
+793,,,,Zinder near Tanout (1505N/0850E),2.0
+794,,,,Tassara (1651N/0542E),2.0
+795,,,,Oued Zilalet,2.0
+796,,,,Air Mountains between Arlit (1843N/0721E) and Timia (1809N/0846E),2.0
+797,,,,sq mElsewhere,2.0
+798,,,,Diffa (1320N/1237E),2.0
+799,,,,m2,2.0
+800,,,,Adrar Madet,2.0
+801,,,,Azangara (1705N/0854E),2.0
+802,,,,Tamesna Plains between Tassara (1650N/0550E) and Tazerzait Plateau (1832N/0449E),2.0
+803,,,,Iferouane (1904N/0823E),2.0
+804,,,,Afer (1746N/0548E),2.0
+805,,,,Abanrherit,2.0
+806,,,,Assode (1826N/0828E),2.0
+807,,,,0804E,2.0
+808,,,,central Aïr,2.0
+809,,,,of the Ténéré near Adrar Madet (1843N/1022E),2.0
+810,,,,Alleleka (1823N/0959E),2.0
+811,,,,Wadi Tassos (1941N/0815E),2.0
+812,,,,Tahoua,2.0
+813,,,,Gall,2.0
+814,,,,Southern Circuit,2.0
+815,,,,Ag,2.0
+816,,,,Ontololog (1738N/0545E),2.0
+817,,,,Irhazer Plains,2.0
+818,,,,Gaya (1152N/0328E),2.0
+819,,,,Tim Merghsoï,2.0
+820,,,,Areschima,2.0
+821,,,,Zinkad (1807N/0546E),2.0
+822,,,,Aghlan Niklen (1828N/0540E),2.0
+823,,,,0944E,2.0
+824,,,,Tadek (1914N/0826E),2.0
+825,,,,north of Tahoua (1457N/0519E) near Adehan,2.0
+826,,,,Aouguessess,2.0
+827,,,,African Migratory Locusts,2.0
+828,,,,Sud (1801N/0958E),2.0
+829,,,,Timia (1809N/0846E) as,2.0
+830,,,,Tamesna between Tahoua (1457N/0519E) and Tassara (1650N/0550E),2.0
+831,,,,adez (1700N/0756E),2.0
+832,,,,Djado Plateau,2.0
+833,,,,Tenere Desert,2.0
+834,,,,Sahel between Tanout (1505N/0850E) and Zinder (1346N/0858E),2.0
+835,,,,0604E,2.0
+836,,,,the Tamesna near Tassara (1650N/0550E),2.0
+837,,,,the Tenere Desert near Bilma (1846N/1304E),2.0
+838,,,,Dakoro (1430N/0645E),2.0
+839,,,,Tahoua near Agabar Gabar (1600N/0700E),2.0
+840,,,,Bymid,2.0
+841,,,,Arlit (1845N/0725E),2.0
+842,,,,Agadez (1700N/0756E) between Tassara (1650N/0550E) and Arlit (1843N/0721E),2.0
+843,,,,Tegguidda (1726N/0637E),2.0
+844,,,,mtre,2.0
+845,,,,Tamesna near Tassara (1650N/0550E),2.0
+846,,,,Arbre du Ténéré (1745N/1004E),2.0
+847,,,,Tasker (1507N/1041E) as,2.0
+848,,,,Arlit (1845N/0720E),2.0
+849,,,,Arlit (1844N/0722E),2.0
+850,,,,Filingue (1420N/0319E),2.0
+851,,,,Zinder,2.0
+852,,,,Inzinkad,2.0
+853,,,,Tadress (1541N/0740E),2.0
+854,,,,Sahel between Abalak (1522N/0621E) and Tanout (1505N/0850E),2.0
+855,,,,wadis,2.0
+856,,,,Abangharit (1754N/0559E) as,2.0
+857,,,,Air near Agadez (1700N/0756E),2.0
+858,,,,Libya,2.0
+859,,,,Ighazer Valley,2.0
+860,,,,the Air near Tchigzerine (1858N/0927E),2.0
+861,,,,1754N,2.0
+862,,,,Massif (1830N/0930E),2.0
+863,,,,Dirkou (1859N/1253E),2.0
+864,,,,Tadres,2.0
+865,,,,Afer (1748N/0541E),2.0
+866,,,,ez (1658N/0759E),2.0
+867,,,,Maradi (1329N/0710E),2.0
+868,,,,Ténéré near Fachi (1806N/1134E),2.0
+869,,,,Air on13,2.0
+870,,,,Northwest Africa,1.0
+871,CHAD,Biltine,37.0,Fada (1714N/2132E),59.0
+872,CHAD,Batha,26.0,Arada (1501N/2040E),39.0
+873,CHAD,Kanem,25.0,Kanem,32.0
+874,CHAD,Ennedi,20.0,Kalait (1550N/2054E),31.0
+875,CHAD,BET,18.0,Fada,27.0
+876,CHAD,Fada,17.0,Batha,26.0
+877,CHAD,northeast,13.0,Salal (1448N/1712E),19.0
+878,CHAD,Tibesti,11.0,Mao (1406N/1511E),14.0
+879,CHAD,Ouaddai,5.0,BET,13.0
+880,CHAD,Sudan,5.0,Abeche (1349N/2049E),13.0
+881,CHAD,northeast between Abeche and Fada,5.0,Kalait,11.0
+882,CHAD,Abeche,5.0,Beurkia (1523N/1800E),10.0
+883,CHAD,Biltine as,4.0,Wadi Fira,9.0
+884,CHAD,Sahel,4.0,Biltine,9.0
+885,CHAD,northeast as,2.0,Kanem near Salal (1448N/1712E),9.0
+886,CHAD,Bilthine,2.0,Djombo (1357N/1926E),8.0
+887,CHAD,Erdi,2.0,Nokou (1435N/1446E),6.0
+888,CHAD,B.E.T.,2.0,Lac,6.0
+889,CHAD,east,2.0,Haraz,6.0
+890,CHAD,Locust,2.0,Moussoro (1338N/1629E),6.0
+891,CHAD,Mourdi Depression,1.0,Djedaa (1331N/1834E),4.0
+892,CHAD,Ennedi as,1.0,northwest,4.0
+893,CHAD,north,1.0,south,4.0
+894,CHAD,Libya,1.0,Lake Chad,4.0
+895,CHAD,Kalait,1.0,Faya (1756N/1907E),4.0
+896,CHAD,ITCZ,1.0,Salal,4.0
+897,CHAD,Lac Chad,1.0,Sudan border,4.0
+898,CHAD,Air Mountains,1.0,southwest,4.0
+899,CHAD,Ennedi Hills,1.0,Mourdi Depression,4.0
+900,CHAD,Niger,1.0,BET near Fada (1714N/2132E),4.0
+901,,,,Egg,3.0
+902,,,,northeast,3.0
+903,,,,Sudanese border between Goz Beida (1242N/2125E) and Iriba (1507N/2215E),3.0
+904,,,,Iriba (1507N/2215E),3.0
+905,,,,northeast Kanem near Salal (1448N/1712E),3.0
+906,,,,Ennedi between Kalait (1550N/2054E) and Fada (1714N/2132E),3.0
+907,,,,southeast,2.0
+908,,,,north between Kalait (1550N/2054E) and Fada (1714N/2132E),2.0
+909,,,,Biltine near Guereda (1431N/2205E),2.0
+910,,,,of Ouaddai near Kalait (1550N/2054E),2.0
+911,,,,northeast between Salal (1448N/1712E) and Fada (1714N/2132E),2.0
+912,,,,Batha near Haraz,2.0
+913,,,,Gouro (1932N/1933E),2.0
+914,,,,north as Gouro (1932N/1933E),2.0
+915,,,,Adre (1328N/2212E),2.0
+916,,,,Bol (1327N/1440E),2.0
+917,,,,Faya (1756N/1906E),2.0
+918,,,,Biltine (1430N/2053E),2.0
+919,,,,Sahel between Mao and Fada,2.0
+920,,,,Kanem between Mao (1406N/1511E) and Salal (1448N/1712E),2.0
+921,,,,west of Fada near Faya (1756N/1907E),2.0
+922,,,,Lake,2.0
+923,,,,Batha between Ati (1311N/1820E) and Beurkia (1523N/1800E),2.0
+924,,,,Batha between Salal (1448N/1712E) and Djedaa (1331N/1834E),2.0
+925,,,,Hadjer-Lamis,2.0
+926,,,,Sahel between Fada and Mao (1406N/1511E),2.0
+927,,,,Bilthine,2.0
+928,,,,Arada,2.0
+929,,,,Sudanese border,2.0
+930,,,,Goz Beida (1242N/2125E),2.0
+931,,,,Mayo-Kebbi,2.0
+932,,,,Hatchlings,2.0
+933,,,,Ennedi,2.0
+934,,,,Ati,2.0
+935,,,,Biltine near Arada (1501N/2040E),2.0
+936,,,,Sahel,2.0
+937,,,,ﬁ,2.0
+938,,,,Kanem between Salal (1448N/1712E) and Beurkia (1523N/1800E),2.0
+939,,,,Ennedi-Tibesti,2.0
+940,,,,D,2.0
+941,,,,northeast of Beurkia near Kouba Oulanga (1545N/1818E),2.0
+942,,,,Borkou,2.0
+943,,,,N’Djamena (1206N/1504E),2.0
+944,,,,clariﬁ,2.0
+945,,,,south near Kalait (1550N/2054E) as,2.0
+946,,,,Ouaddai near Goz Beida (1242N/2125E),2.0
+947,,,,Ennedi between Arada (1501N/2040E) and Iriba (1507N/2215E),2.0
+948,,,,Dissé (1343N/2206E) near Adre (1328N/2212E),2.0
+949,,,,Batha near Ati (1311N/1820E),2.0
+950,,,,south near Abeche (1349N/2049E),2.0
+951,,,,west,2.0
+952,,,,Southern Circuit,2.0
+953,,,,Kanem near Nokou (1435N/1446E),2.0
+954,,,,Lac Chad between Mao (1406N/1511E) and Nokou (1435N/1446E),2.0
+955,,,,Du,2.0
+956,,,,Mahana (1339N/1524E),2.0
+957,,,,Wadi Edié (1648N/2143E),2.0
+958,,,,west near Arada (1501N/2040E),2.0
+959,,,,Chari-Baguirmi,2.0
+960,,,,Migratory Locusts,2.0
+961,,,,Batha near Salal (1448N/1712E),2.0
+962,,,,east,2.0
+963,,,,Biltine near Abeche (1349N/2049E),2.0
+964,,,,northeast Kanem,2.0
+965,,,,Iriba,2.0
+966,,,,Lac Chad,2.0
+967,,,,Desert Locusts,2.0
+968,,,,Adré (1326N/2214E),2.0
+969,,,,north as Kalait (1550N/2054E),2.0
+970,,,,Lac Tchad,2.0
+971,,,,northeast Kanem near Beurkia (1523N/1800E),2.0
+972,,,,Ennedi near Kalait (1550N/2054E),2.0
+973,,,,Guera,2.0
+974,,,,Abeche,2.0
+975,,,,Bahr El Ghazal,2.0
+976,,,,Biltine between Arada (1501N/2040E) and Kalait (1550N/2054E),2.0
+977,BURKINA FASO,north,4.0,Malian border,4.0
+978,BURKINA FASO,ITCZ,3.0,Mali,4.0
+979,BURKINA FASO,Desert Locust,1.0,Djibo (1409N/0138W),3.0
+980,BURKINA FASO,ATLANTIC OCEANThe,1.0,Dori (1403N/0002W),3.0
+981,BURKINA FASO,Western Sahara,1.0,Orodara (1059N/0455W),2.0
+982,BURKINA FASO,ATLANTIC,1.0,Sikasso,2.0
+983,BURKINA FASO,Bulletin No,1.0,Ouagadougou,2.0
+984,BURKINA FASO,Sahara,1.0,Niger,2.0
+985,BURKINA FASO,Convergence Zone,1.0,Seno,2.0
+986,BURKINA FASO,east inmid,1.0,m2,2.0
+987,,,,Kossi,2.0
+988,,,,Deou (1436N/0043W),2.0
+989,,,,Southern Circuit,2.0
+990,,,,Oudalan,2.0
+991,,,,Bani (1343N/0012W),2.0
+992,,,,Cote dʼIvoire,2.0
+993,,,,southwest,2.0
+994,,,,Guinea,2.0
+995,,,,Sourou,2.0
+996,CAPE VERDE,West Africa,3.0,Santiago,7.0
+997,CAPE VERDE,Desert Locust,1.0,Fogo,7.0
+998,CAPE VERDE,ATLANTIC OCEANThe,1.0,Maio,6.0
+999,CAPE VERDE,Western Sahara,1.0,Boa Vista,6.0
+1000,CAPE VERDE,Bulletin No,1.0,Santo Antao,5.0
+1001,CAPE VERDE,ATLANTIC,1.0,Fogo Island,4.0
+1002,CAPE VERDE,Sahara,1.0,Mauritania,4.0
+1003,,,,Sao Nicolau,4.0
+1004,,,,Sal,2.0
+1005,,,,Sto Antao,2.0
+1006,,,,Brava,2.0
+1007,,,,Western Sahara,2.0
+1008,,,,Bymid,2.0
+1009,,,,Africa coast,2.0
+1010,,,,Sao Vicente,2.0
+1011,,,,Senegal,2.0
+1012,,,,San Nicolau,2.0
+1013,GAMBIA,Convergence Zone,3.0,Lower River,2.0
+1014,GAMBIA,south,1.0,Lower River Divisions,2.0
+1015,GAMBIA,Desert Locust,1.0,Central River Division,2.0
+1016,GAMBIA,ATLANTIC OCEANThe,1.0,Njama Heluman,2.0
+1017,GAMBIA,Western Sahara,1.0,North Bank Division,2.0
+1018,GAMBIA,ATLANTIC,1.0,North Bank,2.0
+1019,GAMBIA,southeast,1.0,Gambia River,2.0
+1020,GAMBIA,east,1.0,Upper,2.0
+1021,GAMBIA,Bulletin No,1.0,Senegal River,2.0
+1022,GAMBIA,Senegal,1.0,,
+1023,GAMBIA,Sahara,1.0,,
+1024,GUINEA BISSAU,Convergence Zone,4.0,Farim (1230N/1509W),2.0
+1025,GUINEA BISSAU,Desert Locust,1.0,Bijagos,2.0
+1026,GUINEA BISSAU,ATLANTIC OCEANThe,1.0,Bafata (1209N/1438W),2.0
+1027,GUINEA BISSAU,Western Sahara,1.0,md,2.0
+1028,GUINEA BISSAU,ATLANTIC,1.0,m2,2.0
+1029,GUINEA BISSAU,east,1.0,Senegal,1.0
+1030,GUINEA BISSAU,Bulletin No,1.0,,
+1031,GUINEA BISSAU,Sahara,1.0,,
+1032,GUINEA BISSAU,Guinea,1.0,,
+1033,GUINEA CONAKRY,Bulletin No,1.0,,
+1034,GUINEA CONAKRY,Desert Locust,1.0,,
+1035,GUINEA CONAKRY,ATLANTIC OCEANThe,1.0,,
+1036,GUINEA CONAKRY,Sahara,1.0,,
+1037,GUINEA CONAKRY,Western Sahara,1.0,,
+1038,GUINEA CONAKRY,ATLANTIC,1.0,,
+1039,ALGERIA,Sahara,36.0,Tamanrasset (2250N/0528E),116.0
+1040,ALGERIA,south,31.0,Tamanrasset,93.0
+1041,ALGERIA,Mali,29.0,Djanet (2434N/0930E),87.0
+1042,ALGERIA,Sahel,26.0,Adrar (2753N/0017W),83.0
+1043,ALGERIA,Niger,20.0,Illizi (2630N/0825E),78.0
+1044,ALGERIA,Tindouf,16.0,Salah (2712N/0229E),77.0
+1045,ALGERIA,Hoggar Mountains,16.0,Sahara,67.0
+1046,ALGERIA,Illizi,16.0,Tindouf (2741N/0811W),62.0
+1047,ALGERIA,Djanet,12.0,Beni Abbes (3011N/0214W),50.0
+1048,ALGERIA,Adrar,11.0,Niger border,44.0
+1049,ALGERIA,Atlas Mountains,10.0,Guezzam (1937N/0552E),44.0
+1050,ALGERIA,Adrar Valley,9.0,south,43.0
+1051,ALGERIA,Beni Abbes,9.0,Bechar (3135N/0217W),39.0
+1052,ALGERIA,Bechar,7.0,Sahara near Adrar (2753N/0017W),38.0
+1053,ALGERIA,Mali border,7.0,Adrar,30.0
+1054,ALGERIA,Mauritania,6.0,bush,25.0
+1055,ALGERIA,Tamanrasset,6.0,Tindouf,24.0
+1056,ALGERIA,movesouth,6.0,Illizi,22.0
+1057,ALGERIA,Malian border,6.0,Mali,20.0
+1058,ALGERIA,West Africa,5.0,Malian border,19.0
+1059,ALGERIA,south of the Atlas Mountains near Bechar,5.0,Hoggar Mountains,18.0
+1060,ALGERIA,Salah,4.0,the Malian border near Bir Bou Mokhtar (2120N/0056E),17.0
+1061,ALGERIA,Niger border,4.0,Djanet,17.0
+1062,ALGERIA,Timiaouine,3.0,Niger,14.0
+1063,ALGERIA,North Africa,3.0,Libyan border,13.0
+1064,ALGERIA,north,3.0,Central Sahara,13.0
+1065,ALGERIA,the Malian border near Bordj Mokhtar,3.0,Salah,13.0
+1066,ALGERIA,Sahara as,3.0,rst,12.0
+1067,ALGERIA,west,3.0,Reggane (2643N/0010E),12.0
+1068,ALGERIA,of the Hoggar Mountains near Illizi,3.0,Sahara near Adrar,12.0
+1069,ALGERIA,east,3.0,Ghardaia (3225N/0337E),12.0
+1070,ALGERIA,Amenas,3.0,Beni Abbes,12.0
+1071,ALGERIA,Moroccan border,3.0,Ahnet,10.0
+1072,ALGERIA,Tassili,2.0,north,10.0
+1073,ALGERIA,Atlas Mountains between Beni Abbes and Ain Sefra,2.0,Timimoun (2916N/0014E),9.0
+1074,ALGERIA,Adrar des Iforas,2.0,Bir Bou Mokhtar (2120N/0056E),9.0
+1075,ALGERIA,Ahnet,2.0,A,9.0
+1076,ALGERIA,Morocco,2.0,Tindouf (2742N/0810W),9.0
+1077,ALGERIA,southeast,2.0,El Oued (3323N/0649E),9.0
+1078,ALGERIA,mst,2.0,Moroccan border,9.0
+1079,ALGERIA,Libya,2.0,valley,8.0
+1080,ALGERIA,Malian border between Bir Bou Mokhtar and Tin Zaouatene,2.0,Tunisia,8.0
+1081,ALGERIA,mch,2.0,El Oued,8.0
+1082,ALGERIA,Mouydir,2.0,Sahara near Tamanrasset (2250N/0528E),7.0
+1083,ALGERIA,Tin Zaouatene,1.0,Mauritanian border,7.0
+1084,ALGERIA,Adrar des Iforas as,1.0,Ghardaia,7.0
+1085,ALGERIA,Tunisia,1.0,mst,6.0
+1086,ALGERIA,Moroccan border between Tindouf and Bechar,1.0,Ouargla,6.0
+1087,ALGERIA,Western Sahara,1.0,Mali border,6.0
+1088,ALGERIA,south-west,1.0,Laghouat (3349N/0243E),6.0
+1089,ALGERIA,Sahara near Adrar,1.0,Salah (2712N/0229E) as,6.0
+1090,ALGERIA,Wadi,1.0,Bechar,6.0
+1091,ALGERIA,of the Hoggar Mountains near Tamanrasset,1.0,El Bayadh (3341N/0102E),6.0
+1092,ALGERIA,Hoggar Mountains as,1.0,Biskra (3448N/0549E),6.0
+1093,ALGERIA,Beni Abbes as,1.0,sq m,6.0
+1094,ALGERIA,Algerian border,1.0,Ain Sefra (3245N/0035W),6.0
+1095,ALGERIA,south as,1.0,Sahara as,6.0
+1096,ALGERIA,Guezzam,1.0,Timeiaouine (2026N/0148E),5.0
+1097,ALGERIA,mst a,1.0,south-east,5.0
+1098,ALGERIA,rst,1.0,Djelfa (3440N/0314E),5.0
+1099,ALGERIA,Sahara near Ahnet,1.0,Sahara near Bechar (3135N/0217W),5.0
+1100,ALGERIA,Adrar as,1.0,Khenchela,5.0
+1101,ALGERIA,of the Hoggar near Tamanrasset,1.0,Atlas Mountains,5.0
+1102,ALGERIA,southeast as,1.0,m2,4.0
+1103,ALGERIA,Moroccan and Tunisian borders,1.0,ﬁ,4.0
+1104,ALGERIA,south near Mali,1.0,hoppers,4.0
+1105,ALGERIA,Atlas Mountains between Tindouf and Ghardaia,1.0,mny,4.0
+1106,ALGERIA,El Oued,1.0,Morocco,4.0
+1107,ALGERIA,Central Sahara,1.0,Bir Bou Mokhtar,4.0
+1108,ALGERIA,Algeria,1.0,Tamanrasset (2247N/0531E),4.0
+1109,ALGERIA,south between Bordj Bou Mokhtar and Tamanrasset,1.0,Wadi Amded,4.0
+1110,ALGERIA,north near Bechar,1.0,Bordj El Haoues,4.0
+1111,ALGERIA,Tadmait Plateau,1.0,Tunisian border,4.0
+1112,ALGERIA,Hoggar,1.0,ﬁ rst,4.0
+1113,ALGERIA,Ouargla,1.0,ca,4.0
+1114,ALGERIA,Mediterranean,1.0,Bordj El Haoues (2452N/0826E),4.0
+1115,ALGERIA,Locust,1.0,El Bayadh,4.0
+1116,ALGERIA,north-west,1.0,Naama,4.0
+1117,,,,Hoggar,4.0
+1118,,,,west,4.0
+1119,,,,the Malian border near Timeiaouine (2026N/0148E),4.0
+1120,,,,El Golea (3034N/0252E),4.0
+1121,,,,Khenchla (3526N/0706E),4.0
+1122,,,,Mali border between Bordj Badji Mokhtar (2119N/0057E) and Timeiaouine (2026N/0148E),4.0
+1123,,,,Tin Zaouatene,4.0
+1124,,,,0810W,4.0
+1125,,,,Bordj Badji Mokhtar (2119N/0057E),4.0
+1126,,,,Ouargla (3157N/0520E),4.0
+1127,,,,Tassili,4.0
+1128,,,,Moroccan border between Bechar (3135N/0217W) and Ain Sefra (3245N/0035W),4.0
+1129,,,,Tin Zaouatene (1958N/0258E),4.0
+1130,,,,Adrar (2751N/0019W),4.0
+1131,,,,Naama (3318N/0200W),4.0
+1132,,,,Timeiaouine,4.0
+1133,,,,0434E,4.0
+1134,,,,Sahara between El Oued (3323N/0649E) and Biskra (3448N/0549E),3.0
+1135,,,,Sahara between Beni Abbes (3011N/0214W) and Bechar (3135N/0217W),3.0
+1136,,,,El Bayadh (3340N/0100E),3.0
+1137,,,,Tlemcen,3.0
+1138,,,,sq mtre,3.0
+1139,,,,Sahara between Timimoun (2915N/0014E) and Reggane (2643N/0010E),3.0
+1140,,,,Malian border between Bir Bou Mokhtar (2120N/0056E) and Tin Zaouatene (1958N/0258E),3.0
+1141,,,,Illizi (2630N/0830E),3.0
+1142,,,,Sidi Bel Abbes,3.0
+1143,,,,0930E,3.0
+1144,,,,D,3.0
+1145,,,,Sahara near Tamanrasset,3.0
+1146,,,,Guezzam,3.0
+1147,,,,Mali border between Bordj Badji Mokhtar (2119N/0057E) and Tin Zaouatene (1957N/0258E),3.0
+1148,,,,0017W,3.0
+1149,,,,Adrar (2753N/0016W),3.0
+1150,,,,sq,2.0
+1151,,,,mch,2.0
+1152,,,,Errachidia (3154N/0425W),2.0
+1153,,,,Sahel,2.0
+1154,,,,Khenchela (3526N/0706E),2.0
+1155,,,,southeast near Tamanrasset (2250N/0528E),2.0
+1156,,,,W,2.0
+1157,,,,Tamanrassat,2.0
+1158,,,,W. Saoura between Beni Abbes (3011N/0214W) and Adrar (2753N/0017W),2.0
+1159,,,,Mascara,2.0
+1160,,,,Wadi Saoura near Beni Abbes (3011N/0214W),2.0
+1161,,,,El Golea (3034N/0252E) as,2.0
+1162,,,,Oum Lassel (2837N/0634W),2.0
+1163,,,,east of Adrar near Matriouene (2749N/0116E),2.0
+1164,,,,Tassili Ajjer,2.0
+1165,,,,Libya border,2.0
+1166,,,,west of Tamanrasset near Adrar,2.0
+1167,,,,Touggourt (3308N/0604E),2.0
+1168,,,,0528E,2.0
+1169,,,,Abadla (3101N/0244W),2.0
+1170,,,,W. El Rharbi (3150N/0100E),2.0
+1171,,,,W. Agherfenou (2318N/0230E),2.0
+1172,,,,Abalissa,2.0
+1173,,,,north as,2.0
+1174,,,,of the Sahara near Adrar (2753N/0017W),2.0
+1175,,,,Central Algeria,2.0
+1176,,,,Locusta,2.0
+1177,,,,3011N/014W,2.0
+1178,,,,east,2.0
+1179,,,,p,2.0
+1180,,,,Tahihaouet,2.0
+1181,,,,W. Amded (2250N/0427E),2.0
+1182,,,,W. Tarat (2610N/0923E),2.0
+1183,,,,wadis,2.0
+1184,,,,Tamanrasset ( 2250N/0528E),2.0
+1185,,,,Mauritania,2.0
+1186,,,,instar,2.0
+1187,,,,Niger borders,2.0
+1188,,,,Moroccan border between Bechar (3135N/0217W) and Naama (3318N/0200W),2.0
+1189,,,,Timimoun,2.0
+1190,,,,the Saoura Valley near Beni Abbes (3011N/0214W),2.0
+1191,,,,north-east,2.0
+1192,,,,1–29 May.,2.0
+1193,,,,ar (2753N/0017W),2.0
+1194,,,,Ahnet Mouydir,2.0
+1195,,,,Tamanrassat (2247N/0531E),2.0
+1196,,,,Western Sahara,2.0
+1197,,,,Valley,2.0
+1198,,,,W.,2.0
+1199,,,,Ziza (2330N/0239E),2.0
+1200,,,,Nigerian border,2.0
+1201,,,,Amguiden,2.0
+1202,,,,instar hoppers,2.0
+1203,,,,Sahara between Reggane (2643N/0010E) and Timimoun (2916N/0014E),2.0
+1204,,,,Western Hoggar,2.0
+1205,,,,Oued Tamanrasset,2.0
+1206,,,,Tindouf (2742N/0809W),2.0
+1207,,,,Naama (3316N/0018W),2.0
+1208,,,,Daghout,2.0
+1209,,,,May. Similar,2.0
+1210,,,,north-west,2.0
+1211,,,,north of the Tassili-Ajjer Mountains near Illizi (2630N/0825E),2.0
+1212,,,,of Mali near Bir Bou Mokhtar (2119N/0057E),2.0
+1213,,,,Reggane,2.0
+1214,,,,Chikchi (2311N/0240E),2.0
+1215,,,,northwest,2.0
+1216,,,,west of Tamanrassat near Silet (2239N/0435E),2.0
+1217,,,,Sahara near Tindouf (2741N/0811W),2.0
+1218,,,,of the Atlas near Naama (3318N/0200W),2.0
+1219,,,,Silet (2201N/0409E),2.0
+1220,,,,Amguid (2638N/0535E),2.0
+1221,,,,the Sahara near Adrar (2753N/0017W),2.0
+1222,,,,Tin Zaouatene (1957N/0258E),2.0
+1223,,,,Tabelbala (3003N/0201W),2.0
+1224,,,,Libya,2.0
+1225,,,,Djelfa (3443N/0314E),2.0
+1226,,,,the Mali border near Bir Bou Mokhtar (2119N/0057E),2.0
+1227,,,,Sidi Bel Abbes (3617N/0056E),2.0
+1228,,,,Oued,2.0
+1229,,,,the Mauritanian border near Tindouf,2.0
+1230,,,,east near Illizi (2630N/0825E),2.0
+1231,,,,Sahara near Ad,2.0
+1232,,,,Chanachane (2601N/0412W),2.0
+1233,,,,Sidi-Bel Abbès,2.0
+1234,,,,the Malian border near Tin Zaouatene (1958N/0258E),2.0
+1235,,,,southeast,2.0
+1236,,,,Saida,2.0
+1237,,,,MʼSila (3541N/0431E),2.0
+1238,,,,Tassili N’Ajjer,2.0
+1239,,,,Algerian,2.0
+1240,,,,Salah near Arak (2517N/0340E),2.0
+1241,,,,Sahara between Timimoun (2916N/0014E) and El Golea (3034N/0252E),2.0
+1242,,,,Ameles (2035N/0246E),2.0
+1243,,,,W. Amded (2249N/0424E),2.0
+1244,,,,Tin Zaouatene (1957N/0258E) as,2.0
+1245,,,,Atlas Mountains between El Bayadh (3341N/0102E) and El Oued (3323N/0649E),2.0
+1246,,,,Sahara near Adr,2.0
+1247,,,,Tin Tarabine (2143N/0804E),2.0
+1248,,,,Amenas (2803N/0933E),2.0
+1249,,,,m,2.0
+1250,,,,the Libyan border near Djanet,2.0
+1251,,,,Malian border between Bordj Badji Mokhtar (2119N/0057E) and Timeiaouine (2026N/0148E),2.0
+1252,,,,Silet (2240N/0434E),2.0
+1253,,,,Silet,2.0
+1254,,,,Sahara near Adrar (2753N/0016W),2.0
+1255,,,,Wadi Saoura,2.0
+1256,,,,Laghouat (3349N/0255E),2.0
+1257,,,,Sabkhet El Maleh (2905N/0106W) between Beni Abbes (3011N/0214W) and Adrar (2753N/0017W),2.0
+1258,,,,-0741E,2.0
+1259,,,,Atlas Mountains between Morocco and Tunisia,2.0
+1260,,,,Algeria,2.0
+1261,,,,Sahara near Illizi (2630N/0825E),2.0
+1262,,,,south near Adrar (2753N/0017W),2.0
+1263,,,,north near El Bayadh (3341N/0102E),2.0
+1264,,,,20N 03E,2.0
+1265,,,,md,2.0
+1266,,,,southeast of the Hoggar Mountains near Djanet (2434N/0930E),2.0
+1267,,,,of Mali near Timeiaouine (2026N/0148E),2.0
+1268,,,,Adr,2.0
+1269,,,,Grand Erg Oriental,2.0
+1270,,,,Ain Sefra,2.0
+1271,,,,Oued Tamanrasset (2158N/0414E),2.0
+1272,,,,Moroccan border between Tindouf (2741N/0811W) and Beni Abbes,2.0
+1273,,,,Guezzam (1937N/0552E) as,2.0
+1274,,,,the Moroccan border near Ain Sefra (3245N/0035W),2.0
+1275,,,,Djelfa,2.0
+1276,,,,south-,2.0
+1277,,,,Sahara near Laghouat (3349N/0243E),2.0
+1278,,,,8W,2.0
+1279,,,,Bulletin,2.0
+1280,,,,Mali between Bordj Badji Mokhtar (2119N/0057E) and Timeiaouine (2026N/0148E),2.0
+1281,,,,the Mali border near Tin Zaouatene (1957N/0258E),2.0
+1282,,,,Wadi Amded (2250N/0424E),2.0
+1283,,,,the Central Sahara near Reggane,2.0
+1284,,,,1–18,2.0
+1285,,,,Ad,2.0
+1286,,,,Salah as,2.0
+1287,,,,W. El Botha (2628N/0330E),2.0
+1288,,,,Mouydir,2.0
+1289,,,,W. Amded,2.0
+1290,,,,the Central Sahara near Adrar (2753N/0017W),2.0
+1291,,,,Ghardaia (3220N/0340E),2.0
+1292,,,,Wadi Tarat (2618N/0919E),2.0
+1293,,,,northeast,2.0
+1294,,,,Tébessa,2.0
+1295,,,,the Malian border near Tin Zaouatene (1957N/0258E),2.0
+1296,,,,Adrar N’Ahnet,2.0
+1297,,,,MʼSila,2.0
+1298,,,,Bymid,2.0
+1299,,,,Tlemcen (3452N/0115W),2.0
+1300,,,,W. Saoura,1.0
+1301,MOROCCO,Western Sahara,46.0,Algerian border,58.0
+1302,MOROCCO,Atlas Mountains,25.0,Draa Valley,40.0
+1303,MOROCCO,south-west,22.0,Western Sahara,38.0
+1304,MOROCCO,Draa Valley,20.0,Figuig (3207N/0113W),29.0
+1305,MOROCCO,Mauritania,14.0,Erfoud (3128N/0410W),28.0
+1306,MOROCCO,Sahel,13.0,Tata (2944N/0758W),27.0
+1307,MOROCCO,Ziz-Ghris,12.0,Guelmim (2859N/1003W),26.0
+1308,MOROCCO,Sahara,10.0,Atlas Mountains,26.0
+1309,MOROCCO,Adrar Souttouf,8.0,Mauritanian border,25.0
+1310,MOROCCO,Oued Draa,7.0,Bir Gandouz (2136N/1628W),21.0
+1311,MOROCCO,Draa,6.0,Bouarfa (3232N/0159W),20.0
+1312,MOROCCO,south,6.0,Sahara,19.0
+1313,MOROCCO,West Africa,5.0,north,19.0
+1314,MOROCCO,east,4.0,Tichla (2137N/1453W),18.0
+1315,MOROCCO,northwest,4.0,Guelta Zemmur (2508N/1222W),17.0
+1316,MOROCCO,Smara,4.0,Oued Draa,15.0
+1317,MOROCCO,movesouth,3.0,Laayoune (2708N/1313W),15.0
+1318,MOROCCO,north,3.0,Aousserd (2233N/1419W),14.0
+1319,MOROCCO,Mali,3.0,B,13.0
+1320,MOROCCO,Sahara as,3.0,Bir Anzarane (2353N/1431W),13.0
+1321,MOROCCO,north as,3.0,Zagora (3019N/0550W),12.0
+1322,MOROCCO,southwest,3.0,south,12.0
+1323,MOROCCO,Morocco,3.0,tan (2827N/1109W),12.0
+1324,MOROCCO,W. Sakia El Hamra,2.0,Guelta Zemmur (2508N/1223W),11.0
+1325,MOROCCO,Tichla,2.0,Bir Gandouz,11.0
+1326,MOROCCO,mch,2.0,Haouza (2707N/1112W),11.0
+1327,MOROCCO,Mauritanian border,2.0,Zag (2800N/0920W),11.0
+1328,MOROCCO,Niger,2.0,Ma’Tallah (2223N/1502W),11.0
+1329,MOROCCO,Guelta Zemmur,2.0,northeast,10.0
+1330,MOROCCO,North Africa,2.0,Tan,10.0
+1331,MOROCCO,Wadi Draa,1.0,Foum El Hassan (2901N/0853W),10.0
+1332,MOROCCO,Guelta Zemmour,1.0,Smara (2644N/1140W),10.0
+1333,MOROCCO,Algeria,1.0,Bouarfa,10.0
+1334,MOROCCO,Erfoud,1.0,Guelmim,10.0
+1335,MOROCCO,mst a,1.0,Smara (2644N/1142W),9.0
+1336,MOROCCO,Atlas Mountains as,1.0,Awssard (2240N/1410W),9.0
+1337,MOROCCO,south as,1.0,Souss Valley,9.0
+1338,MOROCCO,Oued Draa as,1.0,Aousserd,8.0
+1339,MOROCCO,frommid,1.0,Tichla,8.0
+1340,MOROCCO,W. Ziz-Ghris,1.0,Awssard,8.0
+1341,MOROCCO,Bir Anzarane,1.0,Adrar Settouf,8.0
+1342,MOROCCO,Ziz,1.0,southwest,8.0
+1343,MOROCCO,Figuig,1.0,Anti-Atlas Mountains,8.0
+1344,MOROCCO,Mediterranean,1.0,Bouarfa (3230N/0159W),8.0
+1345,MOROCCO,W. Draa,1.0,Bir Lahlou (2619N/0933W),8.0
+1346,MOROCCO,south between Tichla and Laayoune,1.0,south of the Atlas Mountains near Guelmim (2859N/1003W),7.0
+1347,MOROCCO,south-east,1.0,Adrar Souttouf,7.0
+1348,MOROCCO,Bouarfa as,1.0,tan (2826N/1106W),7.0
+1349,MOROCCO,Algerian border,1.0,Dakhla (2342N/1555W),7.0
+1350,MOROCCO,north-,1.0,m2,7.0
+1351,MOROCCO,Mahbes,1.0,W. Sakia El Hamra,6.0
+1352,MOROCCO,Frommid,1.0,Tata,6.0
+1353,MOROCCO,Souss Valley,1.0,Algeria,6.0
+1354,MOROCCO,Merzouga,1.0,Atlantic coast,6.0
+1355,MOROCCO,south-west as,1.0,rst,6.0
+1356,MOROCCO,Bouarfa,1.0,southeast,6.0
+1357,MOROCCO,locust,1.0,Laayoune (2709N/1311W),6.0
+1358,MOROCCO,Sahara between Guelta Zemmur and Oum Dreyga,1.0,Ziz-Ghris Valley,6.0
+1359,MOROCCO,Ghris,1.0,Draa,6.0
+1360,MOROCCO,Algerian border as,1.0,Sidi Ifni (2924N/1012W),5.0
+1361,MOROCCO,Mijek,1.0,Ain Beni Mathar (3400N/0201W),5.0
+1362,MOROCCO,Sahara between Tichla and Guelta Zemmur,1.0,Tichla (2135N/1458W),5.0
+1363,MOROCCO,Aousserd,1.0,Erfoud,5.0
+1364,MOROCCO,Ma’Tallah,1.0,Ouarzazate (3057N/0650W),5.0
+1365,MOROCCO,Fask,1.0,Oujda (3441N/0145W),5.0
+1366,MOROCCO,mst,1.0,Sahara between Bir Gandouz (2136N/1628W) and Tichla (2137N/1453W),4.0
+1367,MOROCCO,mve,1.0,of the Atlas Mountains near Errachidia,4.0
+1368,,,,Ksar Chair (2908N/0758W),4.0
+1369,,,,md,4.0
+1370,,,,Smara,4.0
+1371,,,,Western Sahara near Ma’Tallah (2223N/1502W),4.0
+1372,,,,Essaouira (3126N/0958W),4.0
+1373,,,,Agadir,4.0
+1374,,,,Mauritania,4.0
+1375,,,,Ziz-Ghris,4.0
+1376,,,,Errachidia,4.0
+1377,,,,Algerian border between Erfoud (3128N/0410W) and Figuig (3207N/0113W),4.0
+1378,,,,Mauritania border,4.0
+1379,,,,Assa (2836N/0926W),4.0
+1380,,,,W. Sakia El Hamra near Haouza (2707N/1112W),4.0
+1381,,,,Oujda,4.0
+1382,,,,Figuig,4.0
+1383,,,,ﬁ,4.0
+1384,,,,Algerian border between Figuig (3207N/0113W) and Erfoud (3128N/0410W),4.0
+1385,,,,Dakhla (2343N/1557W),4.0
+1386,,,,Guenfouda (3428N/0159W),4.0
+1387,,,,Touissit (3429N/0146W),4.0
+1388,,,,Atlas,4.0
+1389,,,,Sahara between Tichla (2137N/1453W) and Bir Anzarane (2353N/1431W),4.0
+1390,,,,Sahara near Bir Lahlou (2619N/0933W),4.0
+1391,,,,Sahara near Tichla (2137N/1453W),4.0
+1392,,,,Boujdour (2607N/1429W),4.0
+1393,,,,Guelta Zemmur,4.0
+1394,,,,Smara (2644N/1140W) as,4.0
+1395,,,,Agadir (3030N/0940W),4.0
+1396,,,,Sahara near Smara (2644N/1140W),4.0
+1397,,,,Bourdim (3201N/0312W),4.0
+1398,,,,south near Bir Gandouz (2136N/1628W),4.0
+1399,,,,sq,4.0
+1400,,,,Tan-Tan,4.0
+1401,,,,ouarfa (3232N/0159W),4.0
+1402,,,,Sahara between Guelta Zemmur (2508N/1222W) and Oum Dreyga (2406N/1316W),3.0
+1403,,,,Hamada du Guir,3.0
+1404,,,,sq mtre,3.0
+1405,,,,Tichla (2138N/1453W),3.0
+1406,,,,the Mauritanian border near Ikniouen (2120N/1523W),3.0
+1407,,,,of the Atlas Mountains near Ouarzazate (3057N/0650W),3.0
+1408,,,,Algerian border between Zagora (3019N/0550W) and Figuig (3207N/0113W),3.0
+1409,,,,Taza (3416N/0401W),3.0
+1410,,,,Al Mahbes (2724N/0904W),3.0
+1411,,,,Errachidia (3154N/0425W),3.0
+1412,,,,Souss-Massa,3.0
+1413,,,,Anti-Atlas,3.0
+1414,,,,Bir Guendouz (2123N/1634W),2.0
+1415,,,,El Hassane (2859N/0855W),2.0
+1416,,,,Gueltat Zemmour,2.0
+1417,,,,Oued Tafraout (3150N/0440W),2.0
+1418,,,,Saguia Hamra,2.0
+1419,,,,south of the Atlas Mountains near Tan,2.0
+1420,,,,Middle Atlas,2.0
+1421,,,,Ouarzazate Province,2.0
+1422,,,,Tata (2947N/0800W),2.0
+1423,,,,W. Jalwa (2152N/1543W),2.0
+1424,,,,Merzouga (3102N/0400W),2.0
+1425,,,,the Draa Valley near Assa (2834N/0927W),2.0
+1426,,,,Tata (2944N/0758W) as,2.0
+1427,,,,south-west,2.0
+1428,,,,Missour (3303N/0400W),2.0
+1429,,,,Goulimime,2.0
+1430,,,,Bir Guendouz (2136N/1617W),2.0
+1431,,,,Aît Ali Ouhassou,2.0
+1432,,,,Marrakech (3149N/0800W),2.0
+1433,,,,Fask,2.0
+1434,,,,Tiniguir (2336N/1544W),2.0
+1435,,,,north near Galtat Zemmour,2.0
+1436,,,,north as Tbarkallah (2251N/1616W),2.0
+1437,,,,west,2.0
+1438,,,,Guelmim (2859N/1004W),2.0
+1439,,,,Western Sahara near Guelta Zemmur (2508N/1222W),2.0
+1440,,,,W. Draa between Assa (2836N/0926W) and Zag (2800N/0920W),2.0
+1441,,,,Laktit Rhiate,2.0
+1442,,,,north near Agadir (3030N/0940W),2.0
+1443,,,,the Middle Atlas near El Brouj (3243N/0405W),2.0
+1444,,,,southwest near Tichla (2135N/1458W),2.0
+1445,,,,Oujda between Touissit (3429N/0146W) and Guenfouda (3428N/0159W),2.0
+1446,,,,Ma’Tallah,2.0
+1447,,,,east,2.0
+1448,,,,Guelbeddine (2155N/1441W),2.0
+1449,,,,the Draa Valley near Foum Zguid (3005N/0652W),2.0
+1450,,,,Aousard,2.0
+1451,,,,Lafreina (2653N/1111W),2.0
+1452,,,,Tata (2944N/0756W),2.0
+1453,,,,Foum,2.0
+1454,,,,southwest of the Anti-Atlas Mountains near Guelmim (2859N/1003W),2.0
+1455,,,,Wadis Drâa,2.0
+1456,,,,of Western Sahara near Bir Anzarane (2353N/1431W),2.0
+1457,,,,Bouarfa (3232N/0159W) as,2.0
+1458,,,,Oum Dreyga (2416N/1325W) as,2.0
+1459,,,,Bir Guendouz (2124N/1634W),2.0
+1460,,,,Algerian border between Assa (2836N/0926W) and Zagora (3019N/0550W),2.0
+1461,,,,Chichawa (3135N/0847W),2.0
+1462,,,,Bouar,2.0
+1463,,,,Ksar Chair (2907N/0759W),2.0
+1464,,,,Dayat El Khadra (2119N/1609W),2.0
+1465,,,,Saﬁ,2.0
+1466,,,,sq m,2.0
+1467,,,,mny,2.0
+1468,,,,Fydat Albagra (2957N/0628W),2.0
+1469,,,,Wadi Saguia Al Hamra,2.0
+1470,,,,Msied (2801N/1049W),2.0
+1471,,,,Ziz Valley,2.0
+1472,,,,Boujdour,2.0
+1473,,,,Tiznit,2.0
+1474,,,,Zag (2801N/0918W),2.0
+1475,,,,Khamlia (3102N/0359W),2.0
+1476,,,,El Mahbas (2725N/0910W),2.0
+1477,,,,Agwanit (2212N/1309W),2.0
+1478,,,,Maader Ougalid (2903N/0937W),2.0
+1479,,,,Chyarate (2157N/1631W),2.0
+1480,,,,Sahara near Laayoune (2708N/1313W),2.0
+1481,,,,Algerian border between Bouanane (3202N/0303W) and Figuig (3207N/0113W),2.0
+1482,,,,Zag (2801N/0920W),2.0
+1483,,,,north of the Atlas near Essaouira (3126N/0958W),2.0
+1484,,,,the Haut Atlas near Beni Mathar (3400N/0201W),2.0
+1485,,,,Morocco,2.0
+1486,,,,south of the Atlas Mountains near Boumalne (3059N/0532W),2.0
+1487,,,,W. Draa,2.0
+1488,,,,mst,2.0
+1489,,,,Atlas Mountains between Errachidia (3154N/0425W) and Bouarfa (3232N/0159W),2.0
+1490,,,,Inmid,2.0
+1491,,,,km,2.0
+1492,,,,Sahara near Aousserd (2233N/1419W),2.0
+1493,,,,Taroudant (3031N/0855W),2.0
+1494,,,,of the Atlas Mountains near Goulmima (3102N/0500W),2.0
+1495,,,,Sahara near Ma’Tallah (2223N/1502W),2.0
+1496,,,,Atlas Mountains between Ouarzazate and Errachidia,2.0
+1497,,,,Oued Draa near Guelmim (2859N/1003W),2.0
+1498,,,,southwest near Bir Gandouz,2.0
+1499,,,,Sahara near Bir Gandouz,2.0
+1500,,,,the Atlantic coast near Saﬁ (3218N/0914W),2.0
+1501,,,,Oum Dreyga (2406N/1316W),2.0
+1502,,,,Irhrem,2.0
+1503,,,,Atlas Mountains between Tan-Tan and Errachidia,2.0
+1504,,,,Mahbes (2659N/0849W),2.0
+1505,,,,Bir Guendouz,2.0
+1506,,,,Aguejguel (2925N/0901W),2.0
+1507,,,,Assa-Zag,2.0
+1508,,,,the Draa Valley near Ksair Chair (2907N/0759W),2.0
+1509,,,,of the Atlas near Midelt (3241N/0443W),2.0
+1510,,,,Dayt Maader Basin (3045N/0446W),2.0
+1511,,,,Ait Ouassaih (3244N/0820W),2.0
+1512,,,,El Khraoua (3100N/0410W),2.0
+1513,,,,north between Bir Anzarane (2353N/1431W) and Oum Dreyga (2406N/1316W),2.0
+1514,,,,El Foussi (2920N/0817W),2.0
+1515,,,,Boulaadam (2907N/0802W),2.0
+1516,,,,Guelta Zemmour (2508N/1223W),2.0
+1517,,,,of the Atlas Mountains near Figuig (3207N/0113W),2.0
+1518,,,,the Atlas Mountains near Midelt (3241N/0443W),2.0
+1519,,,,Adrar Settouf between Aousserd (2233N/1419W) and Bir Gandouz (2136N/1628W),2.0
+1520,,,,south-west near Bir Guendouz,2.0
+1521,,,,High Atlas,2.0
+1522,,,,Bir Gandouz ﬂ,2.0
+1523,,,,Sahara near Bir Anzarane (2353N/1431W),2.0
+1524,,,,Sahara near Boujdour (2607N/1429W),2.0
+1525,,,,Saquia Al Hamra,2.0
+1526,,,,Gueltat Zemmour (2436N/1246W),2.0
+1527,,,,the Atlantic coast near Tan-tan,2.0
+1528,,,,W. Sakia Al Hamra,2.0
+1529,,,,uarfa (3232N/0159W),2.0
+1530,,,,Fask (2859N/0950W),2.0
+1531,,,,uig (3207N/0113W),2.0
+1532,,,,Sahara near Oum Dreyga (2406N/1316W),2.0
+1533,,,,Draa Valley between Foum Zguid (3005N/0652W) and Foum El Hassan (2901N/0853W),2.0
+1534,,,,Sahara near Bir Gandouz (2136N/1628W),2.0
+1535,,,,Atlas Mountains between Zagora (3019N/0550W) and Bouarfa (3232N/0159W),2.0
+1536,,,,Bour Khamlia,2.0
+1537,,,,the Mauritanian border near Afuidich (2119N/1528W),2.0
+1538,,,,Oujda (3440N/0155W),2.0
+1539,,,,Ksar Chair,2.0
+1540,,,,Bouanane (3202N/0303W),2.0
+1541,,,,m,2.0
+1542,,,,Bour Khamlia (3030N/0425W),2.0
+1543,,,,Sahara between Boucraa (2621N/1250W) and Haouza (2707N/1112W),2.0
+1544,,,,W. Draa between Zag (2800N/0920W) and Foum El Hassan (2901N/0853W),2.0
+1545,,,,Souss Valleys as,2.0
+1546,,,,Oued,2.0
+1547,,,,Taychoutine (3053N/0405W),2.0
+1548,,,,Errachidia Provinces,2.0
+1549,,,,Fig,2.0
+1550,,,,Bourdime (3201N/0312W),2.0
+1551,,,,0759W,2.0
+1552,,,,0600W,2.0
+1553,,,,Sahara between Tichla (2137N/1453W) and Aousserd (2233N/1419W),2.0
+1554,,,,Ksar Chair (2908N/0759W),2.0
+1555,,,,Bymid,2.0
+1556,,,,north near Guelta Zemmur (2508N/1222W),2.0
+1557,,,,south of the Souss Valley near Tiznit (2941N/0943W),2.0
+1558,,,,Bo,2.0
+1559,,,,Mehaires (2613N/1109W),2.0
+1560,,,,Gleib Houara (2130N/1619W),2.0
+1561,,,,Foum Zguid (3005N/0652W),2.0
+1562,,,,south of the Atlas Mountains near Wadi Ziz,2.0
+1563,,,,south of the Atlas Mountains near Erfoud (3128N/0410W),2.0
+1564,,,,Laayoune,2.0
+1565,,,,Draa Valley between Tata (2944N/0758W) and Tan,2.0
+1566,,,,2908N/ 0759W,2.0
+1567,,,,Dakhla,2.0
+1568,,,,South,2.0
+1569,,,,south of the Atlas Mountains near Guelmim,2.0
+1570,,,,Ourzazate (3057N/0650W),2.0
+1571,,,,Taltefraout (3146N/0505W),2.0
+1572,,,,W. Talghoumt (3059N/0358W),2.0
+1573,,,,Algerian border between Foum El Hassan (2901N/0853W) and B,2.0
+1574,,,,El Khat (3250N/0227W),2.0
+1575,,,,El Jadida (3308N/0835W) as,2.0
+1576,,,,Haouza (2635N/1024W),2.0
+1577,,,,Upper Plateau,2.0
+1578,,,,south of the Atlas Mountains near Bouarfa (3230N/0159W),2.0
+1579,,,,the Hamada du Draa near Farcia (2644N/0950W),2.0
+1580,,,,Atlas Mountains between Safi and El Jadida,2.0
+1581,,,,Atlas Mountains between Zag (2800N/0920W) and Zagora (3019N/0550W) as,2.0
+1582,,,,Foum Zguid,2.0
+1583,,,,ﬁ rst,2.0
+1584,,,,the Ziz-Ghris Valley near Erfoud (3128N/0410W),2.0
+1585,,,,Tinjdade,2.0
+1586,,,,Techla,2.0
+1587,,,,Merzouga,2.0
+1588,,,,Boujrad (3206N/0308W),2.0
+1589,,,,Haut Atlas,2.0
+1590,,,,Bir Anzarane (2353N/1431W) as,2.0
+1591,,,,southwest of Aousserd near Ma’Tallah (2223N/1502W),2.0
+1592,,,,Aerial,2.0
+1593,,,,the Draa Valley near Zag (2800N/0920W),2.0
+1594,,,,Khamlia El Khraoua (3100N/0410W),2.0
+1595,,,,Atlas Mountains between Guelmine (2859N/1003W) and Erfoud (3128N/0410W) as,2.0
+1596,,,,Jerada,2.0
+1597,,,,Atlas Mountains between Errachidia (3154N/0425W) and Ouarzazate (3057N/0650W),2.0
+1598,,,,Sahara near Smara (2644N/1142W),2.0
+1599,,,,Talekhnaﬁ,2.0
+1600,,,,W. Ziz-Ghris near Erfoud (3128N/0410W),2.0
+1601,,,,Goulmima (3102N/0500W),2.0
+1602,,,,north of Bo uarfa (3232N/0159W) near Naama (3318N/0200W),2.0
+1603,,,,Wadi Ziz,2.0
+1604,,,,Goulimime (2856N/1004W),2.0
+1605,,,,Fzou (3055N/0505W),2.0
+1606,,,,south of the Atlas Mountains near Merzouga (3105N/0400W),2.0
+1607,,,,Sahara between Dakhla (2342N/1555W) and Bir Anzarane (2353N/1431W),2.0
+1608,,,,0501W,2.0
+1609,LIBYA,Ghat,16.0,G,18.0
+1610,LIBYA,Ghadames,9.0,Al Hamada Al Hamra,8.0
+1611,LIBYA,Sahel,9.0,Ghat,8.0
+1612,LIBYA,north-west,4.0,Algerian border,7.0
+1613,LIBYA,West Africa,3.0,Ghadames (3010N/0930E),6.0
+1614,LIBYA,Sabha,3.0,rst,6.0
+1615,LIBYA,ow,2.0,south,4.0
+1616,LIBYA,southwest near Ghat,2.0,Sahel,4.0
+1617,LIBYA,Hatchlings,1.0,Ghat (2459N/1011E),4.0
+1618,LIBYA,Wadden,1.0,north,4.0
+1619,LIBYA,Al Hamada Al Hamra,1.0,Marzuq (2555N/1355E),3.0
+1620,LIBYA,interior,1.0,W. Tanzoft,2.0
+1621,LIBYA,southwest,1.0,inmid,2.0
+1622,LIBYA,Niger border,1.0,Desert Locust,2.0
+1623,LIBYA,May. Fledging,1.0,Gh,2.0
+1624,LIBYA,Libya,1.0,Tiji (3200N/1120E),2.0
+1625,LIBYA,Algerian border as,1.0,Algeria,2.0
+1626,,,,Mizda (3127N/1259E),2.0
+1627,,,,ﬁ,2.0
+1628,,,,west,2.0
+1629,,,,ﬁ rst,2.0
+1630,,,,t (2459N/1011E),2.0
+1631,,,,W. Titaghsin (2531N/1001E),2.0
+1632,,,,Bymid,2.0
+1633,,,,Jalu (2902N/2134E),2.0
+1634,,,,Mizdah (3125N/1302E),2.0
+1635,,,,Tmassah (2623N/1547E),2.0
+1636,,,,Egyptian border,2.0
+1637,,,,Jabal Nefusa as,2.0
+1638,,,,Sabha (2704N/1425E),2.0
+1639,,,,African Migratory Locust,2.0
+1640,,,,Barjouj Agricultural Project (2601N/1258E),2.0
+1641,,,,Nalut (3153N/1059E),2.0
+1642,,,,Majdol (2550N/1500E),2.0
+1643,,,,Oct ober,2.0
+1644,,,,Dirj (3009N/1027E),2.0
+1645,,,,W. Essyen,2.0
+1646,,,,Awbari Sand Sea,2.0
+1647,,,,Kufra,2.0
+1648,,,,bush,2.0
+1649,,,,Al Jagbub (2944N/2431E),2.0
+1650,,,,Tahala (2526N/1022E),2.0
+1651,,,,Algerian and Tunisian borders,2.0
+1652,,,,Gha,2.0
+1653,,,,Zawilah (2609N/1507E),2.0
+1654,,,,north near Ghadames (3010N/0930E),2.0
+1655,,,,Tunisian border between Ghadames (3010N/0930E) and Nalut (3152N/1058E),2.0
+1656,TUNISIA,south,3.0,Kebili,8.0
+1657,TUNISIA,Sahel,3.0,Tataouine,6.0
+1658,TUNISIA,Libya,2.0,Gafsa,4.0
+1659,TUNISIA,West Africa,2.0,Tozeur,4.0
+1660,TUNISIA,Algerian border,1.0,Kebili (3342N/0858E),4.0
+1661,TUNISIA,mch,1.0,Sfax,4.0
+1662,TUNISIA,movesouth,1.0,Sidi Bouzid,4.0
+1663,TUNISIA,Algeria,1.0,south,3.0
+1664,TUNISIA,mst a,1.0,Sfax (3444N/1045E),2.0
+1665,TUNISIA,locust,1.0,Tunisia,2.0
+1666,,,,Kairouan,2.0
+1667,,,,Libyan border,2.0
+1668,,,,Kasserine (3510N/0849E),2.0
+1669,,,,3340N/ 1001E,2.0
+1670,,,,Libyan and Algerian borders,2.0
+1671,,,,Kef,2.0
+1672,,,,Tataouine (3256N/1027E),2.0
+1673,,,,north,2.0
+1674,,,,Matmata El Jadida,2.0
+1675,,,,Algeria,2.0
+1676,,,,Sidi Bouzid (3501N/0930E),2.0
+1677,,,,Hezoua (3350N/0734E),2.0
+1678,,,,Medenine,2.0
+1679,,,,Medenine (3321N/1030E),2.0
+1680,,,,Gabes,2.0
+1681,,,,Kasserine,2.0
+1682,,,,Kairouan (3540N/1006E),2.0
+1683,,,,Algerian border,2.0
+1684,,,,southwest,2.0
+1685,,,,Libya,2.0
+1686,,,,Gafsa (3425N/0847E),2.0
+1687,,,,Siliana,2.0
+1688,,,,Bulletin,2.0
+1689,,,,md,2.0
+1690,,,,Tozeur (3355N/0808E),2.0
+1691,SUDAN,Kassala,52.0,Tokar Delta,92.0
+1692,SUDAN,White Nile,35.0,Red Sea coast,80.0
+1693,SUDAN,North Darfur,34.0,Eritrean border,60.0
+1694,SUDAN,Northern Kordofan,27.0,Egyptian border,59.0
+1695,SUDAN,Northern Darfur,27.0,Baiyuda Desert,59.0
+1696,SUDAN,Red Sea coast,27.0,Atbara River,55.0
+1697,SUDAN,Red Sea,24.0,Red Sea,52.0
+1698,SUDAN,North Kordofan,22.0,Wadi Oko,50.0
+1699,SUDAN,Darfur,21.0,Dongola (1910N/3027E),49.0
+1700,SUDAN,Diib,21.0,Khartoum,48.0
+1701,SUDAN,Northern,21.0,Wadi Diib,46.0
+1702,SUDAN,Wadi Oko,21.0,Red Sea Hills,46.0
+1703,SUDAN,Red Sea Hills,20.0,Port Sudan,40.0
+1704,SUDAN,Karora,16.0,Diib,39.0
+1705,SUDAN,River Nile,15.0,Abu Hamed (1932N/3320E),39.0
+1706,SUDAN,Khartoum,14.0,North Kordofan,37.0
+1707,SUDAN,Port Sudan,13.0,White Nile,36.0
+1708,SUDAN,West,13.0,Suakin,34.0
+1709,SUDAN,Nile Valley,12.0,Tokar,33.0
+1710,SUDAN,Atbara River,11.0,Nile Valley,32.0
+1711,SUDAN,Kordofan,10.0,north,31.0
+1712,SUDAN,Atbara,9.0,Aiterba (1753N/3819E),31.0
+1713,SUDAN,south,9.0,Tokar Delta (1827N/3741E),30.0
+1714,SUDAN,Suakin,9.0,Atbara (1742N/3400E),30.0
+1715,SUDAN,West Darfur,7.0,Tomala,29.0
+1716,SUDAN,Wadi Diib,7.0,Tomala (2002N/3551E),29.0
+1717,SUDAN,Saudi Arabia,7.0,Kassala (1527N/3623E),29.0
+1718,SUDAN,Ethiopia,7.0,Derudeb (1731N/3607E),28.0
+1719,SUDAN,Northern States,6.0,Shndi (1641N/3322E),27.0
+1720,SUDAN,Eritrea,6.0,Kordofan,24.0
+1721,SUDAN,east,6.0,Umm Saiyala (1426N/3112E),24.0
+1722,SUDAN,Tokar Delta,6.0,erowe (1830N/3149E),24.0
+1723,SUDAN,Eritrean border,6.0,Suakin (1906N/3719E),23.0
+1724,SUDAN,Egyptian border,5.0,Kassala,22.0
+1725,SUDAN,Nile,5.0,Nile,21.0
+1726,SUDAN,White Nile States,5.0,Port Sudan (1938N/3713E),21.0
+1727,SUDAN,Dongola,5.0,River Nile,21.0
+1728,SUDAN,north,5.0,Northern Kordofan,20.0
+1729,SUDAN,Northern Provinces,5.0,Karora (1745N/3820E),20.0
+1730,SUDAN,Eastern Region,4.0,Khartoum (1533N/3235E),20.0
+1731,SUDAN,River Nile States,4.0,Sodiri (1423N/2906E),20.0
+1732,SUDAN,west,4.0,Ed Damer (1734N/3358E),18.0
+1733,SUDAN,aboutmid,4.0,ﬁ,18.0
+1734,SUDAN,frommid,3.0,Atbara,17.0
+1735,SUDAN,Chad,3.0,Merowe (1830N/3149E),17.0
+1736,SUDAN,Egypt,3.0,Aqiq,17.0
+1737,SUDAN,bymid,3.0,Northern,17.0
+1738,SUDAN,Diib as,3.0,M,16.0
+1739,SUDAN,West Kordofan,2.0,Tokar (1827N/3741E),16.0
+1740,SUDAN,W. Diib,2.0,Ed Dueim (1400N/3220E),16.0
+1741,SUDAN,K. Baraka,2.0,Berber (1801N/3400E),15.0
+1742,SUDAN,Kassala as,2.0,rst,15.0
+1743,SUDAN,Derudeb,2.0,Dongola,15.0
+1744,SUDAN,Nile River,2.0,River Nile State,14.0
+1745,SUDAN,Oko,2.0,south,14.0
+1746,SUDAN,Suﬁ ya,2.0,Adobana (1810N/3816E),13.0
+1747,SUDAN,Sudan,2.0,Haiya (1820N/3621E),13.0
+1748,SUDAN,md,2.0,Eit (2009N/3706E),13.0
+1749,SUDAN,Northern Kordofan States,2.0,md,13.0
+1750,SUDAN,of the Red Sea Hills near Derudeb,2.0,Northern Darfur,12.0
+1751,SUDAN,Africa,2.0,Wadi Halfa (2147N/3122E),12.0
+1752,SUDAN,Abu Hamed,2.0,W. Diib,12.0
+1753,SUDAN,Tokar,2.0,Nile River,12.0
+1754,SUDAN,River Nile State,2.0,Egypt,11.0
+1755,SUDAN,El Obeid,2.0,Eritrea,11.0
+1756,SUDAN,Region,2.0,ya (2119N/3613E),11.0
+1757,SUDAN,Nile Valley between Berber and Wadi Halfa,2.0,Khor Baraka,11.0
+1758,SUDAN,Northwest Africa,2.0,Suakin (1908N/3717E),10.0
+1759,SUDAN,interior as,2.0,Wadi Muqaddam,10.0
+1760,SUDAN,Karora as,2.0,Haiya,10.0
+1761,SUDAN,Mohamed Qol,1.0,ﬁ rst,10.0
+1762,SUDAN,the Eastern Region near Gedaref,1.0,Derudeb,10.0
+1763,SUDAN,Northern State,1.0,En Nahud (1246N/2828E),9.0
+1764,SUDAN,Gasht Rivers,1.0,of the Red Sea Hills near Haiya (1820N/3621E),9.0
+1765,SUDAN,Gash,1.0,Suﬁ ya (2119N/3613E),9.0
+1766,SUDAN,Kassala States,1.0,east,9.0
+1767,SUDAN,Darfur as,1.0,Qol (2054N/3709E),8.0
+1768,SUDAN,En Nahud,1.0,Abu Uruq (1554N/3027E),8.0
+1769,SUDAN,Haiya,1.0,the Atbara River near Ed Damer (1734N/3358E),8.0
+1770,SUDAN,Khor Baraka,1.0,El Obeid,8.0
+1771,SUDAN,Geneina,1.0,El Fasher,8.0
+1772,SUDAN,Nahr El Nile States as,1.0,Hamed (1932N/3320E),7.0
+1773,SUDAN,south as,1.0,west,7.0
+1774,SUDAN,Nile between Khartoum and Dongola,1.0,Sudan,7.0
+1775,SUDAN,Abu Hamad,1.0,bu Hamed (1932N/3320E),7.0
+1776,SUDAN,mst,1.0,El Obeid (1311N/3010E),7.0
+1777,SUDAN,north as,1.0,Northern Province,7.0
+1778,SUDAN,Shendi,1.0,N3811E,7.0
+1779,SUDAN,Mohammed Qol,1.0,Ed Debba (1803N/3057E),6.0
+1780,SUDAN,Khartoum States,1.0,Selima Oasis (2122N/2119E),6.0
+1781,SUDAN,Gash River,1.0,Wadi Oko near Tomala,6.0
+1782,SUDAN,Ed Dueim,1.0,Ed Damer,6.0
+1783,SUDAN,Gash Rivers as,1.0,Darfur,6.0
+1784,SUDAN,Eritrean border as,1.0,Khartoum State,6.0
+1785,SUDAN,Tomala,1.0,Wadi Milk,6.0
+1786,SUDAN,Nile River between Shndi and Wadi Halfa,1.0,Northern State,6.0
+1787,SUDAN,Karima,1.0,Sinkat (1855N/3648E),6.0
+1788,SUDAN,Frommid,1.0,Tree Locust,6.0
+1789,SUDAN,South Kordofan,1.0,Northern Region,6.0
+1790,SUDAN,Aqiq,1.0,Northern Darfur near El Fasher (1337N/2522E),6.0
+1791,SUDAN,Red Sea Coast,1.0,North Kordofan near Umm Saiyala (1426N/3112E),6.0
+1792,SUDAN,Aiterba bymid,1.0,Chad border,6.0
+1793,SUDAN,southeast,1.0,Bir Salalah (2034N/3701E),6.0
+1794,SUDAN,Gasht,1.0,northwest,6.0
+1795,SUDAN,Wadi Diib as,1.0,Inmid,6.0
+1796,SUDAN,aftermid,1.0,mny,6.0
+1797,SUDAN,Egyptian and Eritrean borders,1.0,Khartoum States,6.0
+1798,SUDAN,West Africa,1.0,Nubian Desert,6.0
+1799,SUDAN,interior,1.0,seif (2146N/3651E),6.0
+1800,SUDAN,Port Sudan as,1.0,the Eritrean border near Karora (1745N/3820E),6.0
+1801,SUDAN,Arabian Peninsula,1.0,Ed Dueim,6.0
+1802,SUDAN,Agetai,1.0,O,6.0
+1803,SUDAN,Nile Valley as,1.0,northeast,6.0
+1804,SUDAN,central coast,1.0,inmid,6.0
+1805,SUDAN,Red Sea Hills as,1.0,North Kordofan near Sodiri (1423N/2906E),6.0
+1806,SUDAN,Atbara Rivers,1.0,Port Sudan (1938N/3707E),6.0
+1807,SUDAN,Nile River between Ed Damer and Dongola,1.0,Diib between Tomala (2002N/3551E) and Suﬁ ya (2119N/3613E),5.0
+1808,SUDAN,Shndi,1.0,River Nile States,5.0
+1809,SUDAN,Blue Nile,1.0,Adobana,5.0
+1810,SUDAN,Northern Darfur as,1.0,Karima (1832N/3148E),5.0
+1811,SUDAN,Baiyuda Desert,1.0,mla,5.0
+1812,SUDAN,Dongola as,1.0,Mohamed Qol (2054N/3709E),5.0
+1813,SUDAN,Sennar,1.0,Oko,5.0
+1814,SUDAN,W. Oko,1.0,Geneina,5.0
+1815,SUDAN,South Darfur,1.0,Eritrea border,5.0
+1816,SUDAN,May. Hatching,1.0,the Nile Valley near Ed Damer (1734N/3358E),4.0
+1817,SUDAN,16N,1.0,Karora,4.0
+1818,SUDAN,Tokar Delta as,1.0,Red Sea Hills between Derudeb (1731N/3607E) and Haiya (1820N/3621E),4.0
+1819,,,,Egg,4.0
+1820,,,,Atbara (1742N/3400E) as,4.0
+1821,,,,North Kordofan between Sodiri (1423N/2906E) and Umm Saiyala (1426N/3112E),4.0
+1822,,,,Wadi Oko near Tomala (2002N/3551E),4.0
+1823,,,,the Nile River near Atbara (1742N/3400E),4.0
+1824,,,,Shndi,4.0
+1825,,,,Bulletin,4.0
+1826,,,,W. Oko near Tomala,4.0
+1827,,,,Abu Hamed,4.0
+1828,,,,the Nile River near Dongola (1910N/3027E),4.0
+1829,,,,Mohamed Qol,4.0
+1830,,,,km2,4.0
+1831,,,,Wadi Halfa,4.0
+1832,,,,Kassala (1524N/3630E),4.0
+1833,,,,Wadi Muqqadam,4.0
+1834,,,,Mellit (1407N/2543E),4.0
+1835,,,,Sua kin (1906N/3719E),4.0
+1836,,,,Red Sea Hills between Kassala (1527N/3623E) and Haiya (1820N/3621E),4.0
+1837,,,,Kassala State,4.0
+1838,,,,Ed Duiem,4.0
+1839,,,,Jebel Uweinat (2154N/2458E),4.0
+1840,,,,El Geneina,4.0
+1841,,,,of the Red Sea Hills near Derudeb (1731N/3607E),4.0
+1842,,,,Arbaat,4.0
+1843,,,,Shendi (1641N/3322E),4.0
+1844,,,,Aiterba,4.0
+1845,,,,Red Sea State,4.0
+1846,,,,Sodiri,4.0
+1847,,,,Ed Debba,4.0
+1848,,,,Western Darfur,4.0
+1849,,,,m2,4.0
+1850,,,,sq,4.0
+1851,,,,of North Kordofan near Sodiri (1423N/2906E),4.0
+1852,,,,the Red Sea Hills near Tomala,4.0
+1853,,,,Oseif,4.0
+1854,,,,Baiyuda,4.0
+1855,,,,B U L,4.0
+1856,,,,swarm,4.0
+1857,,,,bush,4.0
+1858,,,,west of the Red Sea Hills near Haiya (1820N/3621E),4.0
+1859,,,,Red Sea Hills between Derudeb (1731N/3607E) and Sinkat (1855N/3648E),4.0
+1860,,,,Desert near Egypt,3.0
+1861,,,,Baiyuda Desert between Abu Uruq (1554N/3027E) and Berber (1801N/3400E),3.0
+1862,,,,3552E,3.0
+1863,,,,African Migratory Locust,3.0
+1864,,,,Chad,3.0
+1865,,,,Locusta,3.0
+1866,,,,Marob (2151N/3648E),3.0
+1867,,,,Fodukwan (2145N/3644E),3.0
+1868,,,,sq metre,3.0
+1869,,,,Western Darfur near Geneina,3.0
+1870,,,,Metarhizium,3.0
+1871,,,,Gabatit (2028N/3549E),3.0
+1872,,,,W. Oko near Tomala (2002N/3551E),3.0
+1873,,,,the Nile Valley near Dongola (1910N/3027E),3.0
+1874,,,,Agetai (1802N/3823E),3.0
+1875,,,,Umm Rimta (1451N/3204E),3.0
+1876,,,,Rahad,2.0
+1877,,,,North Darfur,2.0
+1878,,,,Northern Kordofan between Sodiri (1423N/2906E) and Umm Saiyala (1426N/3112E),2.0
+1879,,,,Beja (1958N/3035E),2.0
+1880,,,,north as Port Sudan (1938N/3713E),2.0
+1881,,,,W. Muqaddam,2.0
+1882,,,,Hamrat El Wuz (1501N/3008E),2.0
+1883,,,,south of the Egyptian border near Fodukwan (2145N/3644E),2.0
+1884,,,,Bir Salalah (2034N/3702E),2.0
+1885,,,,Umm Rimta (1450N/3202E),2.0
+1886,,,,W. Milk,2.0
+1887,,,,Habob (1818N/3535E),2.0
+1888,,,,Wadi Hawar,2.0
+1889,,,,Dambeil (1818N/3744E),2.0
+1890,,,,Khor Naama (1920N/3255E),2.0
+1891,,,,K. Gowb (1902N/3721E),2.0
+1892,,,,Baiyuda Desert between Khartoum and Dongola (1910N/3027E),2.0
+1893,,,,Balatat (1800N/3825E),2.0
+1894,,,,Khor Balatat,2.0
+1895,,,,of the Atbara River near Ed Damer (1737N/3359E) as,2.0
+1896,,,,north of Port Sudan near Mageit,2.0
+1897,,,,Tomala (2012N/3549E),2.0
+1898,,,,El Matema (1651N/3313E),2.0
+1899,,,,Gedaref (1401N/3524E),2.0
+1900,,,,River Nile State near Atbara (1742N/3400E),2.0
+1901,,,,Umm Saiyala (1425N/3110E),2.0
+1902,,,,Northern Darfur near Geneina,2.0
+1903,,,,Nile Valley between Dongola (1910N/3027E) and M,2.0
+1904,,,,Wadi Hamad,2.0
+1905,,,,Nile Valley between Berber (1801N/3400E) and Karima (1832N/3148E),2.0
+1906,,,,the Nile Valley near Karima,2.0
+1907,,,,Shgig (1737N/3313E),2.0
+1908,,,,north as,2.0
+1909,,,,the Red Sea coast near Suakin,2.0
+1910,,,,Delta,2.0
+1911,,,,Khors Aeit (1755N/3819E),2.0
+1912,,,,West Darfur near Zalingei,2.0
+1913,,,,Sitarab (1835N/3730E),2.0
+1914,,,,Saiyala (1425N/3111E),2.0
+1915,,,,Kosti,2.0
+1916,,,,Merow,2.0
+1917,,,,Se,2.0
+1918,,,,Egyptian border between Fodukwan (2145N/3644E) and Mohamed Qol (2054N/3709E),2.0
+1919,,,,Nile Valley between Ed Damer (1734N/3358E) and Dongola (1910N/3027E),2.0
+1920,,,,Kordofan between El Obeid (1311N/3010E) and En Nahud (1246N/2828E),2.0
+1921,,,,Um Sunta,2.0
+1922,,,,Umm Grain (1604N/2846E),2.0
+1923,,,,Tokar Delta Tokar (1827N/3741E),2.0
+1924,,,,Wadi Wahesh,2.0
+1925,,,,Gasht River,2.0
+1926,,,,Dambeil,2.0
+1927,,,,3711E,2.0
+1928,,,,Kordofan between Sodiri (1425N/2905E) and Saiyala (1425N/3105E),2.0
+1929,,,,Nile River between Shndi (1641N/3322E) and Atbara (1742N/3400E),2.0
+1930,,,,Kordofan between El Obeid (1311N/3010E) and Wadi Milk (1641N/2951E),2.0
+1931,,,,Northern Darfur Provinces,2.0
+1932,,,,Northern States,2.0
+1933,,,,River Nile State between Abu Hamed (1932N/3320E) and Ed Damer (1734N/3358E),2.0
+1934,,,,Shendi,2.0
+1935,,,,Abu Laha (1438N/2349E),2.0
+1936,,,,y Oseif (2146N/3651E),2.0
+1937,,,,14-,2.0
+1938,,,,Red Sea coast near Suakin (1845N/3724E),2.0
+1939,,,,Jebel Barkol (1738N/3201E),2.0
+1940,,,,Nagat (1609N/2943E),2.0
+1941,,,,Wadi Muharak (2009N/3549E),2.0
+1942,,,,North Kordofan between El Obeid (1311N/3010E) and Ed Dueim (1400N/3220E),2.0
+1943,,,,Red Sea coast between Bir Salalah (2034N/3701E) and Tokar (1827N/3741E),2.0
+1944,,,,Kass ala (1527N/3623E),2.0
+1945,,,,Wadi Gabaneit (2156N/3650E),2.0
+1946,,,,Wadi Almuhbes (1545N/2947E),2.0
+1947,,,,km,2.0
+1948,,,,Eritrean border as,2.0
+1949,,,,3717E,2.0
+1950,,,,Red Sea coast between Suakin (1906N/3719E) and Tokar (1827N/3741E),2.0
+1951,,,,Yoider,2.0
+1952,,,,Baiyuda Desert near Merowe (1830N/3149E),2.0
+1953,,,,west of the Red Sea Hills near Kassala,2.0
+1954,,,,the Nile near Dongola (1910N/3027E),2.0
+1955,,,,Umm Saiyala,2.0
+1956,,,,2816E,2.0
+1957,,,,the Red Sea coast near Su akin (1906N/3719E),2.0
+1958,,,,North Kordofan between Sodiri (1423N/2906E) and Abu Uruq (1554N/3027E),2.0
+1959,,,,Central Region,2.0
+1960,,,,Umm Sidir (1411N/3059E),2.0
+1961,,,,the Nile Valley near Shndi (1641N/3322E),2.0
+1962,,,,3607E,2.0
+1963,,,,north near Selima Oasis (2122N/2119E),2.0
+1964,,,,Khor Sitareb (1838N/3728E),2.0
+1965,,,,Halaib,2.0
+1966,,,,Galalema (1822N/3741E),2.0
+1967,,,,Northern Kordofan near Sodiri (1423N/2906E),2.0
+1968,,,,Nile Valley near Dongola (1910N/3027E),2.0
+1969,,,,1820N/ 3745E,2.0
+1970,,,,Sea,2.0
+1971,,,,Nile between Ed Debba (1803N/3057E) and Dongola (1910N/3027E),2.0
+1972,,,,Wadi Malik,2.0
+1973,,,,Umm,2.0
+1974,,,,Um Dura,2.0
+1975,,,,Darfur between Nyala (1201N/2450E) and El Fasher (1337N/2522E),2.0
+1976,,,,Nile between Wadi Halfa (2147N/3122E) and Ed Damer (1734N/3358E),2.0
+1977,,,,Su akin (1906N/3719E),2.0
+1978,,,,Merowe,2.0
+1979,,,,Kordofan near El Obeid (1311N/3010E),2.0
+1980,,,,mst,2.0
+1981,,,,Umm Ashuba,2.0
+1982,,,,Nile between Khartoum and Abu Hamed (1932N/3320E),2.0
+1983,,,,min wadis,2.0
+1984,,,,3110E,2.0
+1985,,,,Umm Saiyala (1426N/3112E) as,2.0
+1986,,,,Suﬁya,2.0
+1987,,,,Nile Valley between Ed Damer (1734N/3358E) and M,2.0
+1988,,,,Locust,2.0
+1989,,,,Baiyuda Desert between Khartoum (1533N/3235E) and M,2.0
+1990,,,,Khor Arbaat (1946N/3710E),2.0
+1991,,,,Red Sea Hills between Kassala (1424N/3630E) and Sinkat (1855N/3648E),2.0
+1992,,,,sq mtre,2.0
+1993,,,,Wadi Doshin (1621N/3343E),2.0
+1994,,,,Hoshiri (1925N/3716E),2.0
+1995,,,,River Nile State near Berber (1801N/3400E),2.0
+1996,,,,the Red Sea Hills near Khor Baraka,2.0
+1997,,,,sq m,2.0
+1998,,,,Os eif (2146N/3651E),2.0
+1999,,,,Sha El Din,2.0
+2000,,,,the Red Sea coast near Tokar Delta,2.0
+2001,,,,north near Fodukwan (2145N/3644E),2.0
+2002,,,,Hassaniya,2.0
+2003,,,,Omdurman,2.0
+2004,,,,ngola (1910N/3027E),2.0
+2005,,,,May. Similarly,2.0
+2006,,,,Jebel Kheirban (1333N/2301E),2.0
+2007,,,,Ed Dueim (1359N/3218E),2.0
+2008,,,,mtre,2.0
+2009,,,,Seteirab (1837N/3729E),2.0
+2010,,,,Wadi El Hawad,2.0
+2011,,,,Kassala (1424N/3630E),2.0
+2012,,,,White Nile State,2.0
+2013,,,,Debba (1821N/3057E),2.0
+2014,,,,of the Red Sea Hills near Haiya (1820N/3621E) as,2.0
+2015,,,,North Kordofan between El Obeid (1311N/3010E) and Umm Saiyala (1426N/3112E),2.0
+2016,,,,Ed Damer (1737N/3359E),2.0
+2017,,,,Northern Darfur near El Fasher,2.0
+2018,,,,south of Tokar Delta near Karora (1745N/3820E),2.0
+2019,,,,Shndi (1627N/3320E),2.0
+2020,,,,Northern State near M,2.0
+2021,,,,Nadults,2.0
+2022,,,,2013N/3712-3709E. Transient,2.0
+2023,,,,the Nile River near Abu Hamed (1932N/3320E),2.0
+2024,,,,Eritrea between Kassala (1527N/3623E) and Derudeb (1731N/3607E),2.0
+2025,,,,Bayuda Desert,2.0
+2026,,,,Nile Rive,2.0
+2027,,,,Khor Musa Pasha (2149N/3118E),2.0
+2028,,,,the Nile River near M,2.0
+2029,,,,e (1830N/3149E),2.0
+2030,,,,interior,2.0
+2031,,,,3200E,2.0
+2032,,,,the Nile River near Berber (1801N/3400E),2.0
+2033,,,,DESERT LOCUST BULLETINDESERT LOCUST,2.0
+2034,,,,Moh,2.0
+2035,,,,Qoz Abu Dulu,2.0
+2036,,,,Kordofan between El Obeid (1311N/3010E) and Sodiri (1423N/2906E),2.0
+2037,,,,Umm Razuga (1407N/3105E),2.0
+2038,,,,northwest of Khartoum near Wadi Muqaddam,2.0
+2039,,,,south of Tokar near Adobana (1810N/3816E),2.0
+2040,,,,1903N,2.0
+2041,,,,the Nile near Abu Hamed (1932N/3320E),2.0
+2042,,,,Kordofan between Hamrat Esh Shikh (1438N/2756E) and Umm Saiyala (1426N/3112E),2.0
+2043,,,,El Safya (1530N/3006E),2.0
+2044,,,,Nile Valley between Khartoum (1533N/3235E) and Dongola (1910N/3027E),2.0
+2045,,,,En Nahud,2.0
+2046,,,,Tomala (2002N/3552E),2.0
+2047,,,,Hosheri (1918N/3717E),2.0
+2048,,,,1803N73057E,2.0
+2049,,,,Kassala State between Kassala (1527N/3623E) and Derudeb (1731N/3607E),2.0
+2050,,,,the Nile Valley near M,2.0
+2051,,,,the River Nile State near Abu Hamed (1932N/3320E),2.0
+2052,,,,Karnoi (1503N/2337E),2.0
+2053,,,,Agetai,2.0
+2054,,,,W. Fotakwan (2128N/3532E),2.0
+2055,,,,Atbara River (1710N/3430E),2.0
+2056,,,,White Nile State between Ed Dueim (1400N/3220E) and Umm Saiyala (1426N/3112E),2.0
+2057,,,,Khor Gowb (1858N/3723E),2.0
+2058,,,,Karkur Talh,2.0
+2059,,,,north El Obeid (1311N/3010E),2.0
+2060,,,,Red Sea coast between Eit (2009N/3706E) and Suakin (1906N/3719E),2.0
+2061,,,,River Nile State near Abu Hamed (1932N/3320E),2.0
+2062,,,,Hamrat El Wuz (1500N/3010E),2.0
+2063,,,,Karima,2.0
+2064,,,,Kordofan as,2.0
+2065,,,,Oko (2031N/3547E),2.0
+2066,,,,Bara,2.0
+2067,,,,El Fasher (1337N/2522E),2.0
+2068,,,,Red Sea coast between Suakin (1906N/3719E) and Port Sudan (1938N/3713E),2.0
+2069,,,,Khor,2.0
+2070,,,,Um,2.0
+2071,,,,Nile Valley between Atbara (1742N/3400E) and Abu Hamed (1932N/3320E),2.0
+2072,,,,Shndeit (2143N/3607E),2.0
+2073,,,,the Northern State near Dongola (1910N/3027E),2.0
+2074,,,,Nile Valley between Ed Debba (1803N/3057E) and Dongola (1910N/3027E),2.0
+2075,,,,Abu Sunoon,2.0
+2076,,,,Handob (1914N/2716E),2.0
+2077,,,,Wadi Abu Kirmit (1755N/3330E),2.0
+2078,,,,Oseif (2146N/3651E),2.0
+2079,,,,Aiterba (1753N/3819E) as,2.0
+2080,,,,Baiyuda between Merowe and Shndi (1641N/3322E),2.0
+2081,,,,3728E,2.0
+2082,,,,Suﬁya (2119N/3613E),2.0
+2083,,,,the Nile River Valley near Abu Hamed (1932N/3320E),2.0
+2084,,,,Wadi Diib near Tomala (2002N/3551E),2.0
+2085,,,,W. Diib as,2.0
+2086,,,,Kordofan between El Obeid (1311N/3010E) and Ed Dueim (1400N/3220E),2.0
+2087,,,,the Nile Valley near Merowe,2.0
+2088,,,,Southern Darfur near Nyala (1201N/2450E),2.0
+2089,,,,Khor Balatat (1800N/3825E),2.0
+2090,,,,W. Artibat (2152N/3451E),2.0
+2091,,,,the Red Sea coast near Suakin (1906N/3719E),2.0
+2092,,,,Umm Badr (1413N/2758E),2.0
+2093,,,,Nile Valley between Khartoum (1533N/3235E) and Atbara (1742N/3400E),2.0
+2094,,,,Gabatit (2020N/3547E),2.0
+2095,,,,Kassala States,2.0
+2096,,,,Osaf (2146N/3641E),2.0
+2097,,,,Migratory Locust,2.0
+2098,,,,Hosheri,2.0
+2099,,,,Red,2.0
+2100,,,,the Red Sea coast near Karora (1745N/3820E),2.0
+2101,,,,Khartoum (1533N/3235E) as,2.0
+2102,,,,Ertirean border,2.0
+2103,,,,Tokar Valley,2.0
+2104,,,,Khor Gowb,2.0
+2105,,,,Wadi El Malk,2.0
+2106,,,,North Kordofan State,2.0
+2107,,,,the Red Sea coast near Aqiq,2.0
+2108,,,,Sayala,2.0
+2109,,,,Northern Kordofan between El Obeid (1311N/3010E) and Abu Uruq (1554N/3027E),2.0
+2110,,,,Ashat (1844N/3727E),2.0
+2111,,,,Northern Kordofan between Hamrat Esh Shikh (1436N/2759E) and Sodiri (1423N/2906E),2.0
+2112,,,,Darfur near Geneina,2.0
+2113,,,,Red Sea States,2.0
+2114,,,,River Nile States between Wadi Halfa (2147N/3122E) and Ed Damer,2.0
+2115,,,,Red Sea Hills between Kassala (1527N/3623E) and Sinkat (1855N/3648E),2.0
+2116,,,,west of the Nile River near Ed Duiem (1359N/3341E),2.0
+2117,,,,Do,2.0
+2118,,,,Scattered,2.0
+2119,,,,Abu Zaema (1835N/2814E),2.0
+2120,,,,Kagmer,2.0
+2121,,,,Nile River as,2.0
+2122,,,,North Kordofan near Abu Uruq (1554N/3027E),2.0
+2123,,,,3719E,2.0
+2124,,,,ITCZ,2.0
+2125,,,,Port Sudan(1938N/3707E,2.0
+2126,,,,instar hoppers,2.0
+2127,,,,Adobana (1811N/3816E),2.0
+2128,,,,Umm Sabiba (1415N/3109E),2.0
+2129,,,,W. Sinigeir (1800N/3327E),2.0
+2130,,,,Adrim,2.0
+2131,,,,El Metemma (1642N/3322E),2.0
+2132,,,,Farus (1706N/3230E),2.0
+2133,,,,Niger,2.0
+2134,,,,of the Red Sea Hills near Haiya,2.0
+2135,,,,Wadi Muqaddam (1653N/3139E),2.0
+2136,,,,Red Sea Hills between Kassala (1527N/3623E) and Derudeb (1731N/3607E),2.0
+2137,,,,Diib as,2.0
+2138,,,,Red Sea coast between Suakin and Tokar Delta,2.0
+2139,,,,Jebel Haleshtu,2.0
+2140,,,,Wadi,2.0
+2141,,,,south as Ed Damer (1734N/3358E),2.0
+2142,,,,3027E,2.0
+2143,,,,Korib (1607N/2947E),2.0
+2144,,,,Red Sea Hills between Tomala and Sinkat (1855N/3648E),2.0
+2145,,,,Umm Saiyala (1424N/3107E),2.0
+2146,,,,K. Ashat (1844N/3728E),2.0
+2147,,,,Karora (1745N/3820E) as,2.0
+2148,,,,Hoshiri (1924N/3717E),2.0
+2149,,,,mch,2.0
+2150,,,,Region,2.0
+2151,,,,Egypt border,2.0
+2152,,,,Southern Circuit,2.0
+2153,,,,Khor Ashat (1844N/3728E),2.0
+2154,,,,Desert Locust,2.0
+2155,,,,Nile Valley near M,2.0
+2156,,,,North Suakin,2.0
+2157,,,,Tomal a,2.0
+2158,,,,Joint Survey,2.0
+2159,,,,1850N/ 3720E,2.0
+2160,,,,Zalingei (1251N/2329E),2.0
+2161,,,,intensiﬁ ed,2.0
+2162,,,,Southern,2.0
+2163,,,,White Nile Province,2.0
+2164,,,,Khors Gowb (1903N/3720E),2.0
+2165,,,,3818E,2.0
+2166,,,,of the Nile Valley near Shndi (1641N/3322E),2.0
+2167,,,,Galelama (1820N/3744E),2.0
+2168,,,,Northern State near Dongola (1910N/3027E),2.0
+2169,,,,Red Sea Hills between Haiya (1820N/3621E) and Kassala (1527N/3623E),2.0
+2170,,,,the Nile Valley near D,2.0
+2171,,,,Tordame (1551N/2350E),2.0
+2172,,,,elds,2.0
+2173,,,,the Eastern Region near Umm Shdida (1627N/3425E),2.0
+2174,,,,River Nile State near Ed Damer (1734N/3358E),2.0
+2175,,,,Baiyuda Desert as,2.0
+2176,,,,1425N/ 3105E,2.0
+2177,,,,Nile Valley between Abu Hamed (1932N/3320E) and Wadi Halfa (2147N/3122E),2.0
+2178,,,,White Nile State near Ed Dueim (1400N/3220E),2.0
+2179,,,,Hills,2.0
+2180,,,,ptember,2.0
+2181,,,,River Nile States near M,2.0
+2182,,,,Dongola (1910N/3027E) as,2.0
+2183,,,,Hoshiri (2019N/3713E),2.0
+2184,,,,the Eastern Region near Suakin (1908N/3717E),2.0
+2185,,,,Zalingei (1251N/2329E) as,2.0
+2186,,,,north-east,2.0
+2187,,,,El Fasher (1337N/2522E) as,2.0
+2188,,,,Karkur Murr,2.0
+2189,,,,Nahr El Nile,2.0
+2190,,,,km2 swarm,2.0
+2191,,,,the River Nile near Abu Hamed (1932N/3320E),2.0
+2192,,,,Northern Kordofan near Abu Uruq (1554N/3027E),2.0
+2193,,,,Red Sea Hills between Berber (1801N/3400E) and Haiya (1820N/3621E),2.0
+2194,,,,Arbaat (1958N/3710E),2.0
+2195,,,,Nartite (1258N/2402E),2.0
+2196,,,,Hamrat El Wuz (1459N/3009E),2.0
+2197,,,,the Nile Valley near Wadi Halfa (2147N/3122E),2.0
+2198,,,,Handob (1914N/3716E),2.0
+2199,,,,Baiyuda Desert between Atbara (1742N/3400E) and Merowe (1830N/3149E),2.0
+2200,,,,the Nile River near Karima (1832N/3148E),2.0
+2201,,,,Kassala State near Kassala (1527N/3623E),1.0
+2202,,,,Nile Valley between Shndi and Dongola,1.0
+2203,,,,north of the South Sudan border near Rabak (1310N/3245E),1.0
+2204,,,,South,1.0
+2205,,,,Damazin (1148N/3421E),1.0
+2206,,,,South Kordofan,1.0
+2207,,,,West Kordofan,1.0
+2208,,,,W. Oko,1.0
+2209,,,,Eastern Region,1.0
+2210,SOMALIA,Boroma,22.0,Berbera (1028N/4502E),77.0
+2211,SOMALIA,Burao,20.0,Boroma (0956N/4313E),66.0
+2212,SOMALIA,Djibouti,15.0,Hargeisa,45.0
+2213,SOMALIA,Erigavo,12.0,Hargeisa (0931N/4402E),43.0
+2214,SOMALIA,Hargeisa,11.0,Berbera,34.0
+2215,SOMALIA,Las Koreh,10.0,Lughaye (1041N/4356E),33.0
+2216,SOMALIA,Berbera,10.0,Djibouti border,32.0
+2217,SOMALIA,north-west,8.0,Silil (1058N/4326E),31.0
+2218,SOMALIA,Borama,4.0,Burao (0931N/4533E),29.0
+2219,SOMALIA,Aden,4.0,Bulhar (1023N/4425E),23.0
+2220,SOMALIA,Djibouti border,3.0,H,22.0
+2221,SOMALIA,east as Las Koreh,3.0,argeisa (0931N/4402E),22.0
+2222,SOMALIA,Cyclone Sagar,3.0,Ethiopian border,21.0
+2223,SOMALIA,east,3.0,B,18.0
+2224,SOMALIA,Lughaye,3.0,Erigavo (1040N/4720E),18.0
+2225,SOMALIA,Eritrea,2.0,Ethiopia,15.0
+2226,SOMALIA,Ethiopia,2.0,Burao,13.0
+2227,SOMALIA,Ethiopian border,2.0,Erigavo,11.0
+2228,SOMALIA,Bossaso,1.0,Boroma,10.0
+2229,SOMALIA,Yemen,1.0,Las Koreh (1110N/4812E),10.0
+2230,SOMALIA,Arabian Peninsula,1.0,Bosaso (1118N/4910E),10.0
+2231,SOMALIA,eastern Ethiopia,1.0,east,10.0
+2232,SOMALIA,west,1.0,Garowe (0824N/4829E),10.0
+2233,SOMALIA,Maydh,1.0,Iskushuban (1017N/5014E),9.0
+2234,SOMALIA,Egg,1.0,Golis Mountains,8.0
+2235,SOMALIA,Garoe,1.0,Djibouti,8.0
+2236,SOMALIA,Swarm,1.0,Green Muscle,7.0
+2237,SOMALIA,Garowe,1.0,Gardo (0930N/4905E),7.0
+2238,SOMALIA,Bari,1.0,Las Anod (0828N/4721E),7.0
+2239,SOMALIA,Locusta,1.0,Sanaag,6.0
+2240,SOMALIA,Gardo,1.0,urao (0931N/4533E),6.0
+2241,SOMALIA,Las Anod,1.0,southwest,6.0
+2242,SOMALIA,interior,1.0,Djibouti border as,6.0
+2243,SOMALIA,Galkayo,1.0,Bari,6.0
+2244,SOMALIA,central coast,1.0,rst,6.0
+2245,SOMALIA,northwest,1.0,African Migratory Locusts,6.0
+2246,SOMALIA,south,1.0,Bulhar,6.0
+2247,,,,Bosaso,6.0
+2248,,,,Jidhi (1037N/4304E),5.0
+2249,,,,Belet Weyne (0444N/4512E),5.0
+2250,,,,south,5.0
+2251,,,,Lughaye,5.0
+2252,,,,ﬁ,4.0
+2253,,,,northeast,4.0
+2254,,,,Zeylac (1121N/4328E),4.0
+2255,,,,Tree Locusts,4.0
+2256,,,,coast,4.0
+2257,,,,Gerisa,4.0
+2258,,,,Burco,4.0
+2259,,,,inmid,4.0
+2260,,,,Galkayo (0646N/4725E),4.0
+2261,,,,Mogadishu (0202N/4520E),4.0
+2262,,,,Silil,4.0
+2263,,,,Gerisa (1036N/4325E),4.0
+2264,,,,west,4.0
+2265,,,,Garbahare (0320N/4213E),3.0
+2266,,,,Somalia near Gardo (0930N/4906E),3.0
+2267,,,,Dusa Mareb (0532N/4623E),3.0
+2268,,,,Borama,3.0
+2269,,,,Togdheer,2.0
+2270,,,,Ras Surud (1111N/4732E),2.0
+2271,,,,south between Garowe (0824N/4828E) and Galkayo (0642N/4725E),2.0
+2272,,,,Ethiopian,2.0
+2273,,,,Las Khoreh,2.0
+2274,,,,Maydh,2.0
+2275,,,,Dobo Valley (1021N/4322E),2.0
+2276,,,,Hirshabele,2.0
+2277,,,,1028N/,2.0
+2278,,,,Agriculture,2.0
+2279,,,,Kenyan border,2.0
+2280,,,,Bur,2.0
+2281,,,,Xingalool (0946N/4818E),2.0
+2282,,,,Bocane (0824N/4756E),2.0
+2283,,,,Ufeyn (1047N/4948E),2.0
+2284,,,,Surveys,2.0
+2285,,,,Wadi Hidid (1103N/4724E),2.0
+2286,,,,Ceel Xasan (1117N/4847E),2.0
+2287,,,,Abdulgadir (1039N/4257E),2.0
+2288,,,,Adado (0608N/4637E),2.0
+2289,,,,Iredame (1030N/4930E),2.0
+2290,,,,Erigavo (1039N/4722E),2.0
+2291,,,,Odweyne (0923N/4503E),2.0
+2292,,,,4350E,2.0
+2293,,,,Inmid,2.0
+2294,,,,Hadaaftimo (1056N/4807E),2.0
+2295,,,,Dobo Valley (1019N/4320E),2.0
+2296,,,,Abdigeedi (1031N/4402E),2.0
+2297,,,,Silil (1100N/4325E),2.0
+2298,,,,Faruur (1007N/4427E),2.0
+2299,,,,18–21,2.0
+2300,,,,instar,2.0
+2301,,,,Weeraar (1015N/4315E),2.0
+2302,,,,plateau,2.0
+2303,,,,Meit,2.0
+2304,,,,Bildhaley (1007N/4412E),2.0
+2305,,,,Gebiley (0942N/4337E),2.0
+2306,,,,Haleya (0926N/4410E),2.0
+2307,,,,Wadi Ukrood (1101N/4733E),2.0
+2308,,,,4356E,2.0
+2309,,,,Wadi Duudo,2.0
+2310,,,,Borama (0956N/4311E),2.0
+2311,,,,Gargaara (1016N/4348E),2.0
+2312,,,,Geerisa (1022N/4434E),2.0
+2313,,,,ﬁ rst,2.0
+2314,,,,Biji,2.0
+2315,,,,east of Berber near Hodmo,2.0
+2316,,,,Waraqadhigta (1010N/4337E),2.0
+2317,,,,Xalin,2.0
+2318,,,,Abdigeed (1031N/4403E),2.0
+2319,,,,Beledweyne (0444N/4512E),2.0
+2320,,,,Hodmo (1040N/4618E),2.0
+2321,,,,Biyodader (1024N/4527E),2.0
+2322,,,,east between Ceelaayo (1114N/4853E) and Lasqoray (1109N/4811E) as,2.0
+2323,,,,Gardo,2.0
+2324,,,,8–13,2.0
+2325,,,,east Hargeisa,2.0
+2326,,,,Boon (1012N/4305E),2.0
+2327,,,,Bakool,2.0
+2328,,,,Sool,2.0
+2329,,,,Aden,2.0
+2330,,,,Er igavo (1040N/4720E),2.0
+2331,,,,Qarxis (0829N/4934E),2.0
+2332,,,,4838E,2.0
+2333,,,,Galmudug near Galkayo (0646N/4725E),2.0
+2334,,,,Xidid (1104N/4725E),2.0
+2335,,,,Gabiley (0942N/4338E),2.0
+2336,,,,Wadi Togga Dhud,2.0
+2337,,,,Zeila,2.0
+2338,,,,Jiidale (1041N/4739E),2.0
+2339,,,,west of Berbera near Geerisa (1022N/4434E),2.0
+2340,,,,Shikh Abdaal (0957N/4441E),2.0
+2341,,,,northeast Berbera (1028N/4502E),2.0
+2342,,,,Ufeyn,2.0
+2343,,,,Celfweyne (0956N/4713E),2.0
+2344,,,,Qardho (0930N/4905E),2.0
+2345,,,,Berbera (1028N/4502E) as,2.0
+2346,,,,Wadi Osoli (1033N/4348E),2.0
+2347,,,,Bahadamal (0900N/4415E),2.0
+2348,,,,Mait,2.0
+2349,,,,Garoe (0817N/4820E),2.0
+2350,,,,Ruqi Valley (0958N/4325E),2.0
+2351,,,,Nogal Valley,2.0
+2352,,,,Bossaso,2.0
+2353,,,,Meit (1058N/4705E),2.0
+2354,,,,Biyo Dader (1020N/4522E),2.0
+2355,,,,Shikh Abdal (0957N/4442E),2.0
+2356,,,,Ethiopia as,2.0
+2357,,,,Wadi Darkaynle (1031N/4317E),2.0
+2358,,,,Agabar (1002N/4345E),2.0
+2359,,,,Hagal,2.0
+2360,,,,Xariirat,2.0
+2361,,,,Hargeisa inmid,2.0
+2362,,,,Awer Qalad (1050N/4327E),2.0
+2363,,,,Karure (1051N/4326E),2.0
+2364,,,,BULLETINDESERT LOCUST,2.0
+2365,,,,10/44E,2.0
+2366,,,,mature swarm,2.0
+2367,,,,southeast,2.0
+2368,,,,0931N/4533E).In,2.0
+2369,,,,Bu rao (0931N/4533E),2.0
+2370,,,,west of Berber near Sabawanak (1033N/4405E),2.0
+2371,,,,Las Koreh,2.0
+2372,,,,Maydh (1058N/4705E),2.0
+2373,,,,Gardo (0930N/4910E),2.0
+2374,,,,Isha Sugule,2.0
+2375,,,,central,2.0
+2376,,,,0930N/ 4906E,2.0
+2377,,,,urao (0931N/4533E) as,2.0
+2378,,,,Hosweyne (1023N/4322E),2.0
+2379,,,,Xamur (0713N/4851E),2.0
+2380,,,,Galguduud,2.0
+2381,,,,Wadi Durdure (1109N/4843E),2.0
+2382,,,,west of Berbera near Bulhar (1023N/4425E),2.0
+2383,,,,Bymid,2.0
+2384,,,,Lasqoray (1109N/4811E),2.0
+2385,,,,4321E,2.0
+2386,,,,Sanaag (0945N/4521E),2.0
+2387,,,,Gebi Valley,2.0
+2388,,,,Wadi Ukrooi (1101N/4733E),2.0
+2389,,,,Gedo,2.0
+2390,,,,Galkayo,2.0
+2391,,,,Galgaduud,2.0
+2392,,,,DESERT LOCUST BULLETINDESERT LOCUST,2.0
+2393,,,,Puntland between Gardo (0930N/4905E) and Garowe (0824N/4829E),2.0
+2394,,,,Baregid (1055N/4342E),2.0
+2395,,,,Shikh (0956N/4511E),2.0
+2396,,,,Bulletin,2.0
+2397,,,,Lasadawaco,2.0
+2398,,,,Las Khoreh (1110N/4812E),2.0
+2399,,,,Burco (0932N/4532E),2.0
+2400,,,,Onkhor (1046N/4610E),2.0
+2401,,,,Togochale (0936N/4320E),2.0
+2402,,,,Gebiley (0941N/4337E),2.0
+2403,,,,Cunaqabad (0931N/4402E),2.0
+2404,,,,0932N/ 4535E,2.0
+2405,,,,Kenya,2.0
+2406,,,,4533E,2.0
+2407,,,,wadis,2.0
+2408,,,,Meleden (1024N/4950E),2.0
+2409,,,,Berbera (1025N/4500E),2.0
+2410,,,,Hadaftimo (1044N/4807E),2.0
+2411,,,,north,2.0
+2412,,,,May. Fledging,2.0
+2413,,,,Laguxidh (1025N/4328E),2.0
+2414,,,,4707E,2.0
+2415,,,,Garowe (0824N/4828E),2.0
+2416,,,,Weeraar,2.0
+2417,,,,md,2.0
+2418,,,,Gabobe (0829N/4812E),2.0
+2419,,,,Jubaland,2.0
+2420,,,,Bay,2.0
+2421,,,,4314E,2.0
+2422,,,,Eleye (1056N/4707E),2.0
+2423,,,,west of Hargeisa near Boroma,2.0
+2424,,,,Meleden (1028N/4948E),2.0
+2425,,,,Somalia,1.0
+2426,,,,Galguduud between Galkayo (0646N/4725E) and Dusa Mareb (0532N/4623E),1.0
+2427,ERITREA,western lowlands,69.0,Red Sea,72.0
+2428,ERITREA,Massawa,29.0,Sudanese border,60.0
+2429,ERITREA,Red Sea,24.0,Red Sea coast,56.0
+2430,ERITREA,Karora,22.0,Massawa (1537N/3928E),48.0
+2431,ERITREA,Sudanese border,12.0,Mehimet (1723N/3833E),48.0
+2432,ERITREA,Red Sea coast,10.0,Karora (1745N/3820E),28.0
+2433,ERITREA,Tio,8.0,Tio (1441N/4057E),28.0
+2434,ERITREA,Mehimet,8.0,western lowlands,24.0
+2435,ERITREA,north,7.0,Massawa,24.0
+2436,ERITREA,Ethiopia,6.0,S,20.0
+2437,ERITREA,Khor Baraka,6.0,Mersa Gulbub (1633N/3908E),19.0
+2438,ERITREA,Gash Barka,5.0,Embere (1628N/3856E),18.0
+2439,ERITREA,south,4.0,Shib (1551N/3903E),17.0
+2440,ERITREA,Sudan,4.0,Wekiro (1548N/3918E),15.0
+2441,ERITREA,Somalia,4.0,Asmara,14.0
+2442,ERITREA,Sheib,4.0,Mersa Cuba (1616N/3911E),12.0
+2443,ERITREA,Teseney,3.0,Shlshela (1553N/3906E),11.0
+2444,ERITREA,Shlshela,3.0,Shlshela,11.0
+2445,ERITREA,Shib,3.0,north,11.0
+2446,ERITREA,Foro,3.0,south,11.0
+2447,ERITREA,Ibb,2.0,Afabet (1612N/3841E),10.0
+2448,ERITREA,north-,2.0,rst,10.0
+2449,ERITREA,Sudanese border as,2.0,Sudan border,10.0
+2450,ERITREA,western lowlands as,2.0,Ghelaelo (1507N/4004E),9.0
+2451,ERITREA,Shelshela,2.0,Assab (1301N/4247E),8.0
+2452,ERITREA,Ghelaelo,2.0,ﬁ,8.0
+2453,ERITREA,Region,2.0,Naro (1626N/3840E),8.0
+2454,ERITREA,Africa,2.0,Shelshela (1553N/3906E),8.0
+2455,ERITREA,Locust,2.0,Djibouti border,8.0
+2456,ERITREA,Khor Barka,2.0,Foro (1515N/3937E),7.0
+2457,ERITREA,Mersa Fatma,2.0,African Migratory Locusts,7.0
+2458,ERITREA,Red Sea coast between Mersa Cuba and Mersa Fatma as,1.0,Mehimet,7.0
+2459,ERITREA,Red Sea coast between Massawa and Karora,1.0,inmid,6.0
+2460,ERITREA,Sudan border,1.0,Shib,6.0
+2461,ERITREA,Highlands,1.0,Mersa Gulbub,6.0
+2462,ERITREA,south near Massawa,1.0,Plain (1555N/3910E),6.0
+2463,ERITREA,Red Sea coast between Mehimet and Karora,1.0,Wekiro,6.0
+2464,ERITREA,mst,1.0,Wakiro (1550N/3917E),6.0
+2465,ERITREA,mve,1.0,Sudan,6.0
+2466,ERITREA,Emberemi,1.0,Ethiopian border,6.0
+2467,ERITREA,Asmara,1.0,ﬁ rst,6.0
+2468,ERITREA,ed Sea coast near Shib,1.0,Akbanazouf Plain,6.0
+2469,ERITREA,northwest,1.0,Karora,5.0
+2470,ERITREA,Red Sea coast near Shib,1.0,Desert Locust,5.0
+2471,ERITREA,Assab,1.0,of the Red Sea near Mehimet (1723N/3833E),5.0
+2472,ERITREA,bymid,1.0,Sheib,4.0
+2473,ERITREA,Embere,1.0,mst,4.0
+2474,ERITREA,aboutmid,1.0,Sheb,4.0
+2475,ERITREA,Danakil,1.0,of the Red Sea near Tio (1441N/4057E),4.0
+2476,ERITREA,Eritrea,1.0,the Red Sea coast near Shib (1551N/3903E),4.0
+2477,ERITREA,south near Sheb,1.0,Teseney (1506N/3639E),4.0
+2478,ERITREA,west,1.0,Mersa Fatma (1454N/4018E),4.0
+2479,ERITREA,Western,1.0,md,4.0
+2480,ERITREA,Massawa as,1.0,Karora (1740N/3826E),4.0
+2481,ERITREA,Yemen,1.0,Mersa Teklay (1734N/3851E),4.0
+2482,ERITREA,md,1.0,Red Sea coast between Massawa (1537N/3928E) and Mehimet (1723N/3833E),4.0
+2483,ERITREA,Baraka River,1.0,Red Sea coast between Mehimet (1723N/3833E) and Karora (1745N/3820E),4.0
+2484,,,,instar,4.0
+2485,,,,Mahmimet,4.0
+2486,,,,Red Sea coast near Shlshela (1553N/3906E),4.0
+2487,,,,3832E,3.0
+2488,,,,African Migratory Locust,3.0
+2489,,,,Shbah,3.0
+2490,,,,Red Sea coast between Massawa (1537N/3928E) and Karora (1745N/3820E),3.0
+2491,,,,the Red Sea coast near Mersa Gulbub (1633N/3908E),3.0
+2492,,,,Meleet,3.0
+2493,,,,Meleet (1730N/3845E),3.0
+2494,,,,Irafayle,3.0
+2495,,,,Naro,3.0
+2496,,,,3949E,3.0
+2497,,,,Mersa Gulbub (1622N/3910E),3.0
+2498,,,,Naro Plains (1625N/3855E),3.0
+2499,,,,Mersa Teclai (1730N/3850E),3.0
+2500,,,,Wadi Gatmi (1752N/3830E),2.0
+2501,,,,Wekiro (1559N/3914E),2.0
+2502,,,,Red Sea coast between Assab (1301N/4247E) and Nakfa,2.0
+2503,,,,Sudanese border as,2.0
+2504,,,,the Red Sea coast near Shib,2.0
+2505,,,,Ghelaelo Peninsula between Inghel (1528N/3953E) and Ghelaelo (1507N/4004E),2.0
+2506,,,,Massawa between Inghel (1528N/3953E) and Tio (1441N/4057E),2.0
+2507,,,,Thio (1445N/4055E),2.0
+2508,,,,Adi,2.0
+2509,,,,the Red Sea coast near S,2.0
+2510,,,,Shbah (1542N/3903E),2.0
+2511,,,,3730E,2.0
+2512,,,,3842E,2.0
+2513,,,,Bada,2.0
+2514,,,,Afambo (1334N/4132E),2.0
+2515,,,,M,2.0
+2516,,,,Barka River,2.0
+2517,,,,Emberemi,2.0
+2518,,,,Meleet (17230N/3847E),2.0
+2519,,,,Kerkebet,2.0
+2520,,,,3855E,2.0
+2521,,,,Shakat (1715N/3843E),2.0
+2522,,,,the Red Sea coast near Mersa Cuba (1616N/3911E),2.0
+2523,,,,the Red Sea coast near Shlshela (1553N/3906E),2.0
+2524,,,,Karora (1745N/3820E) as,2.0
+2525,,,,Foro (1516N/3936E),2.0
+2526,,,,the western lowlands near Kerkebet (1618N/3724E),2.0
+2527,,,,Red Sea coast between Massawa (1537N/3928E) and Assab (1301N/4247E),2.0
+2528,,,,1545N,2.0
+2529,,,,Adirbabo Plains (1640N/3850E),2.0
+2530,,,,1640N/3828E).No,2.0
+2531,,,,Akbanazouf Plain (1555N/3910E),2.0
+2532,,,,Akbanazouf Plains (1557N/3912E),2.0
+2533,,,,Akbanazouf Plains (1555N/3910E),2.0
+2534,,,,Idd (1357N/4138E),2.0
+2535,,,,Hirgigo(1532N/3927E,2.0
+2536,,,,sq,2.0
+2537,,,,Mahmimet (1719N/3832E),2.0
+2538,,,,Sherbeck (1605N/3901E),2.0
+2539,,,,south-east,2.0
+2540,,,,Foro (1525N/39300E),2.0
+2541,,,,Assab,2.0
+2542,,,,coast t,2.0
+2543,,,,Red Sea coast near Mehimet (1723N/3833E),2.0
+2544,,,,Wadi Falkat,2.0
+2545,,,,Danakil,2.0
+2546,,,,Hasmet,2.0
+2547,,,,Wonfobo (1500N/3947E),2.0
+2548,,,,Foro (1519N/3933E),2.0
+2549,,,,Khor Baraka near Kerkebet (1618N/3724E),2.0
+2550,,,,Elsehwere,2.0
+2551,,,,Red Sea coast between Mersa Gulbub (1633N/3908E) and Mehimet (1723N/3833E),2.0
+2552,,,,Meleet (1730N/3846E),2.0
+2553,,,,Marsa Gulgub (1614N/3908E),2.0
+2554,,,,Akbanazouf Plains,2.0
+2555,,,,Keren (1546N/3827E),2.0
+2556,,,,Emberemi (1541N/3925E),2.0
+2557,,,,W. Falkat,2.0
+2558,,,,Asmara (1520N/3858E),2.0
+2559,,,,Mahmimet (1723N/3833E),2.0
+2560,,,,km2,2.0
+2561,,,,the Red Sea coast near Karora (1745N/3820E),2.0
+2562,,,,Western Lowlands,2.0
+2563,,,,Mahmimet (1740N/3832E),2.0
+2564,,,,Red Sea coast between Shib (1551N/3903E) and Afabet,2.0
+2565,,,,Ghirmayka,2.0
+2566,,,,Thio,2.0
+2567,,,,the Sudanese border near Karora (1745N/3820E),2.0
+2568,,,,Mersa Fatma (1452N/4018E),2.0
+2569,,,,Barentu (1508N/3736E),2.0
+2570,,,,Geleb Sagla (1707N/3853E),2.0
+2571,,,,Keyh (1451N/3922E),2.0
+2572,,,,Shrumkelib (1742N/3823E),2.0
+2573,,,,Wadi Barka,2.0
+2574,,,,Eritrea,2.0
+2575,,,,m,2.0
+2576,,,,Red Sea coast between Wekiro (1548N/3918E) and Embere (1628N/3856E),2.0
+2577,,,,Adi Kuala (1438N/3850E),2.0
+2578,,,,Bisses,2.0
+2579,,,,Marsa Fatima (1452N/4018E),2.0
+2580,,,,4217E,2.0
+2581,,,,1–18,2.0
+2582,,,,bush,2.0
+2583,,,,1–10,2.0
+2584,,,,Assab (1330N/4242E),2.0
+2585,,,,Foro,2.0
+2586,,,,south of Massawa near Emberemi (1540N/3923E),2.0
+2587,,,,south of Massawa near Badda (1433N/4005E),2.0
+2588,,,,Red Sea between Shlshela and Embere (1628N/3856E),2.0
+2589,,,,coast,2.0
+2590,,,,Shi,2.0
+2591,,,,om Tio (1441N/4057E),2.0
+2592,,,,assawa (1537N/3928E),2.0
+2593,,,,Dahlak Islands,2.0
+2594,,,,the western lowlands near Teseney (1506N/3639E),2.0
+2595,,,,Areza (1454N/3845E),2.0
+2596,,,,Embere,2.0
+2597,,,,south of Massawa near Shlshela,2.0
+2598,,,,Sh eib (1551N/3903E),2.0
+2599,,,,south near Eddi (1352N/4136E),2.0
+2600,,,,the western lowlands near Kerkebet,2.0
+2601,,,,western lowlands between Teseney (1506N/3639E) and Kerkebet (1604N/3725E),2.0
+2602,,,,Sheb (1551N/3903E),2.0
+2603,,,,A,2.0
+2604,,,,south of Massawa near Bada (1433N/4008E),2.0
+2605,,,,aboutmid,2.0
+2606,,,,south near Gheleb Sagla (1707N/3853E),2.0
+2607,,,,fr,2.0
+2608,,,,west,2.0
+2609,,,,Plains,2.0
+2610,,,,1542N/ 3902E,2.0
+2611,,,,3905E,2.0
+2612,,,,Red Sea Coast,2.0
+2613,,,,km,2.0
+2614,,,,Red Sea coast between Mehimet (1723N/3833E) and Tio (1441N/4057E),2.0
+2615,,,,western lowlands between Golj (1444N/3643E) and Akurdet (1532N/3753E),2.0
+2616,,,,Nacfa (1640N/3832E),2.0
+2617,,,,of the Red Sea near Karora (1745N/3820E),2.0
+2618,,,,3908E,2.0
+2619,,,,northeast Ethiopia,2.0
+2620,,,,Red Sea between Mehimet (1723N/3833E) and Karora (1745N/3820E),2.0
+2621,,,,Buri Peninsula,2.0
+2622,,,,Massawa (1536N/3927E),2.0
+2623,,,,Red Sea coast between Afabet (1612N/3841E) and Mehimet (1723N/3833E),2.0
+2624,,,,b (1551N/3903E),2.0
+2625,,,,Nakfa (1640N/3828E),2.0
+2626,,,,Kezan (1625N/3904E),2.0
+2627,,,,north near Afabet (1612N/3841E),2.0
+2628,,,,Mehimet (1723N/3833E) as,2.0
+2629,,,,Sheib (1551N/3903E),2.0
+2630,,,,Bulletin,2.0
+2631,,,,Red Sea coast between Shlshela (1553N/3906E) and Sheb (1551N/3903E),2.0
+2632,,,,W. Barka near Kerkebet (1618N/3724E),2.0
+2633,,,,Debaysima,2.0
+2634,,,,Wadi Teclai,2.0
+2635,,,,north as Mehimet (1723N/3833E),2.0
+2636,,,,Mersa Cuba,2.0
+2637,,,,Red Sea coast between Shib (1551N/3903E) and Afabet (1612N/3841E),2.0
+2638,ETHIOPIA,Dire Dawa,25.0,Dire Dawa (0935N/4150E),68.0
+2639,ETHIOPIA,Jijiga,18.0,Dire Dawa,49.0
+2640,ETHIOPIA,Ogaden,11.0,Jijiga (0922N/4250E),42.0
+2641,ETHIOPIA,Ayasha,9.0,Somali border,40.0
+2642,ETHIOPIA,Somalia,6.0,Tigray,29.0
+2643,ETHIOPIA,Amhara,6.0,Somalia,26.0
+2644,ETHIOPIA,Rift Valley,6.0,Ayasha (1045N/4234E),25.0
+2645,ETHIOPIA,Tigray,5.0,Djibouti,24.0
+2646,ETHIOPIA,Railway,5.0,Jijiga,20.0
+2647,ETHIOPIA,Kenya,4.0,Amhara,20.0
+2648,ETHIOPIA,Danakil,4.0,Jigjiga,16.0
+2649,ETHIOPIA,Harar Highlands,4.0,Oromiya,12.0
+2650,ETHIOPIA,Eritrea,4.0,Djibouti border,12.0
+2651,ETHIOPIA,Djibouti,4.0,Harar (0919N/4206E),11.0
+2652,ETHIOPIA,Locusta,4.0,northwest,10.0
+2653,ETHIOPIA,Somali border,3.0,Borena,9.0
+2654,ETHIOPIA,Oromiya,3.0,Warder (0658N/4520E),8.0
+2655,ETHIOPIA,Somalia border,3.0,north,8.0
+2656,ETHIOPIA,Sudan,3.0,Dawa,8.0
+2657,ETHIOPIA,Afar,3.0,Rift Valley,8.0
+2658,ETHIOPIA,north,2.0,Aysha (1045N/4234E),7.0
+2659,ETHIOPIA,SNNP,2.0,west,7.0
+2660,ETHIOPIA,Djibouti and Somali borders,2.0,K’efalo (0537N/4408E),7.0
+2661,ETHIOPIA,Railway Area,2.0,km2,7.0
+2662,ETHIOPIA,bymid,2.0,Somali,7.0
+2663,ETHIOPIA,Harar,2.0,Mekele (1329N/3928E),7.0
+2664,ETHIOPIA,east,1.0,Awash Valley,7.0
+2665,ETHIOPIA,Afder,1.0,Afar,6.0
+2666,ETHIOPIA,frommid,1.0,Degahbur,6.0
+2667,ETHIOPIA,Somali and Kenyan border,1.0,Bale,6.0
+2668,ETHIOPIA,Aysha,1.0,South Omo,6.0
+2669,ETHIOPIA,Eastern Region,1.0,Kebri Dehar (0644N/4416E),6.0
+2670,ETHIOPIA,northwest,1.0,Gode (0557N/4333E),6.0
+2671,ETHIOPIA,Jigjiga,1.0,Afar Region,6.0
+2672,ETHIOPIA,Awash Valley,1.0,ﬁ rst,6.0
+2673,ETHIOPIA,Frommid,1.0,Harar Highlands,5.0
+2674,ETHIOPIA,Red Sea coast,1.0,Bati (1111N/4001E),5.0
+2675,ETHIOPIA,Shebele,1.0,Degeh Bur (0813N/4333E),5.0
+2676,ETHIOPIA,inmid,1.0,Kenyan border,5.0
+2677,ETHIOPIA,Teru,1.0,Teltele (0504N/3723E),5.0
+2678,ETHIOPIA,May. Hoppers,1.0,Konso,5.0
+2679,ETHIOPIA,SNNPR Region,1.0,south as,4.0
+2680,ETHIOPIA,northeast,1.0,Axum (1407N/3843E),4.0
+2681,ETHIOPIA,west,1.0,Negele (0520N/3935E),4.0
+2682,ETHIOPIA,Denakil,1.0,southeast,4.0
+2683,,,,km2 swarm,4.0
+2684,,,,Ogaden,4.0
+2685,,,,Lake Tana,4.0
+2686,,,,Addis Ababa,4.0
+2687,,,,SNNPR,4.0
+2688,,,,Mega (0403N/3819E),4.0
+2689,,,,rst,4.0
+2690,,,,Somali Region,4.0
+2691,,,,Gode,3.0
+2692,,,,Arsi,3.0
+2693,,,,Sifani (1216N/4021E),3.0
+2694,,,,Kenya,3.0
+2695,,,,North Omo,3.0
+2696,,,,Jijiga (0916N/4246E),3.0
+2697,,,,Konso (0520N/3726E),3.0
+2698,,,,the Ogaden near Kebri Dehar (0644N/4416E),3.0
+2699,,,,Nazreth (0831N/3915E),3.0
+2700,,,,Harawa (0953N/3836E),3.0
+2701,,,,Awash Valley near Mile (1123N/4052E),3.0
+2702,,,,south,3.0
+2703,,,,Shbele River,3.0
+2704,,,,Dawa River,3.0
+2705,,,,Awasa (0703N/3829E),2.0
+2706,,,,Teru,2.0
+2707,,,,Warder,2.0
+2708,,,,Omo Valley,2.0
+2709,,,,Lefaisa (0936N/4258E),2.0
+2710,,,,Bulletin,2.0
+2711,,,,Bati,2.0
+2712,,,,Harerge,2.0
+2713,,,,Somalia near Jijiga (0922N/4250E),2.0
+2714,,,,Awbere (0947N/4311E),2.0
+2715,,,,Eastern Region,2.0
+2716,,,,Abdirkadi (1036N/4240E),2.0
+2717,,,,Arba Minch (0602N/3733E),2.0
+2718,,,,Degego (1029N/4233E),2.0
+2719,,,,South Wello,2.0
+2720,,,,the eastern lowlands near Aidara,2.0
+2721,,,,Somalia near Teferi Ber (0947N/4313E),2.0
+2722,,,,Serdo (1158N/4113E),2.0
+2723,,,,Zalanbessa (1431N/3923E),2.0
+2724,,,,Nazareth (0832N/3916E),2.0
+2725,,,,Liben Zone,2.0
+2726,,,,Fike,2.0
+2727,,,,Gode as,2.0
+2728,,,,Shebele River,2.0
+2729,,,,Chinhahsan (0930N/4242E),2.0
+2730,,,,eastern,2.0
+2731,,,,Jima,2.0
+2732,,,,Mego (1130N/4137E),2.0
+2733,,,,Harar,2.0
+2734,,,,El Kere (0550N/4205E),2.0
+2735,,,,Jijiga (0922N/4250E) as,2.0
+2736,,,,Aysha,2.0
+2737,,,,Harer,2.0
+2738,,,,Mekele (1330N/3929E),2.0
+2739,,,,Danakil Desert,2.0
+2740,,,,Arero (0445N/3849E),2.0
+2741,,,,the Somali border near Borama,2.0
+2742,,,,Dire,2.0
+2743,,,,swarm,2.0
+2744,,,,Somalia border,2.0
+2745,,,,Region between Dire Dawa (0935N/4150E) and Ayasha (1045N/4234E),2.0
+2746,,,,Korahe,2.0
+2747,,,,Danakil Plain,2.0
+2748,,,,Dewele (1102N/4237E),2.0
+2749,,,,41E,2.0
+2750,,,,the Shebele River near Gode (0557N/4333E),2.0
+2751,,,,northeast,2.0
+2752,,,,4300E,2.0
+2753,,,,southwest,2.0
+2754,,,,Unconﬁ,2.0
+2755,,,,Abu Beker (0722N/4013E),2.0
+2756,,,,Sudanese border,2.0
+2757,,,,Dawa (0935N/4150E),2.0
+2758,,,,of South Wello near Dessie (1107N/3938E),2.0
+2759,,,,Kenya border,2.0
+2760,,,,Eritrea,2.0
+2761,,,,Harmukale (0949N/4208E),2.0
+2762,,,,movesouth,2.0
+2763,,,,Djibouti and Somalia borders,2.0
+2764,,,,Bymid,2.0
+2765,,,,K.a.t,2.0
+2766,,,,Gamo Gofa near Konso (0520N/3726E),2.0
+2767,,,,Railway,2.0
+2768,,,,south-east,2.0
+2769,,,,Derashi,2.0
+2770,,,,Weldiya (1150N/3936E),2.0
+2771,,,,Ganta Afeshum,2.0
+2772,,,,Degehbur (0820N/4340E),2.0
+2773,,,,West Harerghe,2.0
+2774,,,,Durin g,2.0
+2775,,,,1st-2nd,2.0
+2776,,,,Fik,2.0
+2777,,,,the Somali Region near Ayasha (1045N/4234E),2.0
+2778,,,,Addis Ababa (0858N/3847E),2.0
+2779,,,,Gane Geb (1230N/3947E),2.0
+2780,,,,south-,2.0
+2781,,,,Deghabur,2.0
+2782,,,,Biye Gurgur (1022N/4239E),2.0
+2783,,,,Rama (0357N/4111E),2.0
+2784,,,,Harar Region,2.0
+2785,,,,Mile (1123N/4052E),2.0
+2786,,,,Gurage,2.0
+2787,,,,Buldugum (1155N/4129E),2.0
+2788,,,,Akwi (1350N/3653E),2.0
+2789,,,,Asebe,2.0
+2790,,,,Somali/ Djibouti border,2.0
+2791,,,,Aisha (1044N/4234E),2.0
+2792,,,,Eritrea border,2.0
+2793,,,,Welo,2.0
+2794,,,,May. Fledging,2.0
+2795,,,,Bombai,2.0
+2796,,,,Sudan,2.0
+2797,,,,south of Kebri Dehar (0644N/4416E) near Kelafo (0524N/4410E),2.0
+2798,,,,Ayasha (1045N/4234E) as,2.0
+2799,,,,Afder,2.0
+2800,,,,Turmi (0458N/3629E),2.0
+2801,,,,Asbuli (0958N/4110E),2.0
+2802,,,,Keﬁ cho,2.0
+2803,,,,Kombolcha (1107N/3944E),2.0
+2804,,,,of the Rift Valley near Konso (0520N/3726E),2.0
+2805,,,,Borena Zone,2.0
+2806,,,,SNNPR as,2.0
+2807,,,,Teferi,2.0
+2808,,,,Rift Valley near Konso (0520N/3726E),2.0
+2809,,,,Aysha (1045N/4237E),2.0
+2810,,,,Inmid,2.0
+2811,,,,east of Axum (1407N/3843E) near Eritrea,2.0
+2812,,,,md May.,2.0
+2813,,,,Dolo (0410N/4203E),2.0
+2814,,,,west of Addis Ababa near Jarso (0908N/3731E),2.0
+2815,,,,Hado,2.0
+2816,,,,AsbeTeferi (0903N/4043E),2.0
+2817,,,,Moyale,2.0
+2818,,,,Gambela,1.0
+2819,,,,Ayasha,1.0
+2820,,,,Bench,1.0
+2821,,,,South,1.0
+2822,DJIBOUTI,Somalia,9.0,Tadjourah (1147N/4253E),18.0
+2823,DJIBOUTI,Ethiopia,7.0,Djibouti,18.0
+2824,DJIBOUTI,Obock,5.0,Ali Sabieh (1109N/4242E),13.0
+2825,DJIBOUTI,Eritrean border,5.0,Somali border,12.0
+2826,DJIBOUTI,Somali border,4.0,Obock (1157N/4317E),10.0
+2827,DJIBOUTI,east,4.0,Ethiopian border,9.0
+2828,DJIBOUTI,northwest,3.0,Obock,5.0
+2829,DJIBOUTI,Djibouti,3.0,Somalia,4.0
+2830,DJIBOUTI,Gobaad,1.0,Tadjourah,4.0
+2831,DJIBOUTI,Henle,1.0,Eritrean border,4.0
+2832,DJIBOUTI,Yoboki,1.0,Obock (1154N/4317E),3.0
+2833,DJIBOUTI,eastern Ethiopia,1.0,Moudo (1218N/4226E),2.0
+2834,DJIBOUTI,As Eyla,1.0,northwest Somalia near Ali Sabieh (1109N/4242E),2.0
+2835,,,,Ali Adde (1108N/4253E),2.0
+2836,,,,Gobad Valley,2.0
+2837,,,,Ethiopia,2.0
+2838,,,,west,2.0
+2839,,,,Lake Abhé (1115N/4149E),2.0
+2840,,,,W. Beyadde,2.0
+2841,,,,Ethiopian border as,2.0
+2842,,,,W. Harrou (1105N/4223E) near Dikhil (1106N/4222E),2.0
+2843,,,,Tadjoura (1149N/4256E),2.0
+2844,,,,Tree Locust,2.0
+2845,,,,Obock (1157N/4317E) as,2.0
+2846,,,,Somali border between Holhol (1118N/4255E) and Ali Sabieh (1110N/4238E),2.0
+2847,,,,the Gobaad Plains near Kouta Bouyya (1101N/4157E),2.0
+2848,,,,Tadjourah coast,2.0
+2849,,,,Henle Plains,2.0
+2850,,,,Holhol (1118N/4255E),2.0
+2851,,,,Arta (1132N/4251E),2.0
+2852,,,,Arta (1131N/4251E),2.0
+2853,,,,Somali border between Ali Olou (1121N/4307E) and Holhol (1118N/4255E),2.0
+2854,,,,Kalaf,2.0
+2855,,,,Yoboki (1130N/4206E),2.0
+2856,,,,Khor Angar (1222N/4322E),2.0
+2857,,,,north-east Tadjoura (1145N/4250E),2.0
+2858,,,,Dikhil (1108N/4220E),2.0
+2859,,,,Orobar (1154N/4308E),2.0
+2860,,,,Ela (1100N/4206E),2.0
+2861,,,,Eyla (1100N/4206E),2.0
+2862,,,,west of Tadjourah (1147N/4253E) near Day (1146N/4238E),2.0
+2863,,,,Somalia border,2.0
+2864,KENYA,Ethiopia,4.0,Mandera (0356N/4151E),5.0
+2865,KENYA,Isiolo,2.0,ﬁ rst,4.0
+2866,KENYA,Marsabit,2.0,Somalia,4.0
+2867,KENYA,Samburu,2.0,Meru,3.0
+2868,KENYA,Somalia,1.0,Dawa River,3.0
+2869,KENYA,North Eastern Province,1.0,Laikipia,3.0
+2870,KENYA,Mandera,1.0,Mandera,3.0
+2871,KENYA,aftermid,1.0,North Eastern Province,2.0
+2872,KENYA,west as,1.0,Kopedo (0111N/3606E),2.0
+2873,KENYA,west,1.0,south as,2.0
+2874,KENYA,Turkana,1.0,west,2.0
+2875,KENYA,frommid,1.0,the Tanzanian border near Mt. Kilimanjaro,2.0
+2876,KENYA,Convergence Zone,1.0,Lake Turkana,2.0
+2877,KENYA,north,1.0,swarm,2.0
+2878,KENYA,Garissa,1.0,southwest,2.0
+2879,KENYA,md,1.0,ﬁ,2.0
+2880,KENYA,Turkana District,1.0,north,2.0
+2881,KENYA,Moyale,1.0,the Ethiopian border near Moyale (0331N/3903E),2.0
+2882,KENYA,south,1.0,Embu,2.0
+2883,,,,Uganda,2.0
+2884,,,,Tharaka,2.0
+2885,,,,Rift Valley,2.0
+2886,,,,Somalia border,2.0
+2887,,,,Mandera District,2.0
+2888,,,,m2,2.0
+2889,,,,Wajir (0145N/4003E),2.0
+2890,,,,southwest of Mandera near Karow (0353N/4141E),2.0
+2891,,,,northwest,2.0
+2892,,,,md,2.0
+2893,,,,Samburu,2.0
+2894,,,,Wajir (0144N/4003E),2.0
+2895,,,,east near Mandera (0356N/4151E),2.0
+2896,,,,Isiolo,2.0
+2897,,,,south near Elwak (0249N/4056E),2.0
+2898,,,,km2,2.0
+2899,,,,Nairobi,2.0
+2900,,,,El Wak (0248N/4056E),2.0
+2901,,,,rst,2.0
+2902,,,,Makueni,2.0
+2903,,,,Garissa,2.0
+2904,,,,Turkana,1.0
+2905,,,,Lodwar (0307N/3535E),1.0
+2906,,,,Marsabit,1.0
+2907,,,,Wajir,1.0
+2908,,,,south,1.0
+2909,,,,Kenya,2.0
+2910,,,,Moshi (0321S/3720E),2.0
+2911,,,,Arusa (0322S/3642E),2.0
+2912,UGANDA,Kenya,3.0,Kitgum (0318N/3253E),3.0
+2913,UGANDA,Ethiopia,2.0,South Sudan border,3.0
+2914,UGANDA,Frommid,1.0,Madi Opei,2.0
+2915,,,,Soroti (0143N/3336E),2.0
+2916,,,,Apoka (0344N/3344E),2.0
+2917,,,,Mbale (0105N/3411E),2.0
+2918,,,,north,2.0
+2919,,,,Kenyan border,2.0
+2920,,,,Lokung (0335N/3242E),2.0
+2921,,,,of Amudat near Moroto (0231N/3439E),2.0
+2922,,,,Moroto (0231N/3439E) as,2.0
+2923,,,,Moroto (0231N/3439E),2.0
+2924,,,,South Sudanese border,2.0
+2925,,,,Kidepo Valley National Park,1.0
+2926,,,,Karenga,1.0
+2927,SAUDI ARABIA,Jizan,48.0,Red Sea,78.0
+2928,SAUDI ARABIA,Red Sea,30.0,Jizan (1656N/4233E),69.0
+2929,SAUDI ARABIA,Yemen,18.0,Red Sea coast,62.0
+2930,SAUDI ARABIA,Sudan,13.0,Jeddah,42.0
+2931,SAUDI ARABIA,Hail,10.0,Yenbo (2405N/3802E),39.0
+2932,SAUDI ARABIA,Gassim,9.0,Hail (2731N/4141E),35.0
+2933,SAUDI ARABIA,Jeddah,9.0,Jeddah (2130N/3910E),35.0
+2934,SAUDI ARABIA,north,8.0,Lith (2008N/4016E),34.0
+2935,SAUDI ARABIA,Dawasir,7.0,Gassim (2621N/4358E),30.0
+2936,SAUDI ARABIA,Yenbo,7.0,Rabigh (2247N/3901E),30.0
+2937,SAUDI ARABIA,Najran,7.0,Umm Lajj (2501N/3716E),28.0
+2938,SAUDI ARABIA,south,7.0,ith (2008N/4016E),28.0
+2939,SAUDI ARABIA,Wadi Dawasir,6.0,Asir Mountains,27.0
+2940,SAUDI ARABIA,Empty,5.0,Jizan,27.0
+2941,SAUDI ARABIA,Qunﬁ dah,5.0,unﬁ,26.0
+2942,SAUDI ARABIA,Tabuk,5.0,Buraydah (2621N/4358E),26.0
+2943,SAUDI ARABIA,interior,5.0,Lith,25.0
+2944,SAUDI ARABIA,Duba,4.0,Qunﬁ dah (1909N/4107E),24.0
+2945,SAUDI ARABIA,Rabigh,4.0,north,24.0
+2946,SAUDI ARABIA,Qunfidah,4.0,L,23.0
+2947,SAUDI ARABIA,west,4.0,Wadi Dawasir (2028N/4747E),22.0
+2948,SAUDI ARABIA,Riyadh,4.0,Tabuk (2823N/3635E),22.0
+2949,SAUDI ARABIA,Umm Al Melh,3.0,Khaybar (2542N/3917E),22.0
+2950,SAUDI ARABIA,Red Sea between Qunﬁ dah and Jizan,3.0,Thuwal (2215N/3906E),21.0
+2951,SAUDI ARABIA,Lith,3.0,Yemeni border,21.0
+2952,SAUDI ARABIA,Yemen and Oman border,3.0,Q,20.0
+2953,SAUDI ARABIA,Umm Lajj,3.0,Medinah (2430N/3935E),19.0
+2954,SAUDI ARABIA,Tihama near Jizan,3.0,Najran (1729N/4408E),18.0
+2955,SAUDI ARABIA,Thabhloten,3.0,Mecca,17.0
+2956,SAUDI ARABIA,Africa,3.0,the Asir Mountains near Khamis Mushait (1819N/4245E),17.0
+2957,SAUDI ARABIA,Empty Quarter,3.0,Masturah (2309N/3851E),16.0
+2958,SAUDI ARABIA,Al-Wajh,3.0,south,16.0
+2959,SAUDI ARABIA,east,3.0,Al Wajh (2615N/3627E),16.0
+2960,SAUDI ARABIA,aboutmid,2.0,Qunfidah (1909N/4107E),15.0
+2961,SAUDI ARABIA,bymid,2.0,Yenbo,15.0
+2962,SAUDI ARABIA,north as,2.0,Qunfidah,15.0
+2963,SAUDI ARABIA,Jeddah as,2.0,Mecca (2125N/3949E),14.0
+2964,SAUDI ARABIA,Wadi Najran,2.0,Yemen,14.0
+2965,SAUDI ARABIA,md,2.0,Qunﬁ,14.0
+2966,SAUDI ARABIA,Red Sea coast between Jeddah and Jizan,2.0,Abha (1813N/4230E),13.0
+2967,SAUDI ARABIA,of the Red Sea near Jizan,2.0,Riyadh (2439N/4642E),13.0
+2968,SAUDI ARABIA,Indo-Pakistan,2.0,Riyadh,13.0
+2969,SAUDI ARABIA,Red Sea coast between Qunﬁ dah and Jizan,2.0,Yemen border,12.0
+2970,SAUDI ARABIA,Al Wajh,2.0,Empty Quarter,12.0
+2971,SAUDI ARABIA,Red Sea coast,2.0,Bader (2346N/3847E),11.0
+2972,SAUDI ARABIA,Al-Wejh,1.0,Al,10.0
+2973,SAUDI ARABIA,southwest,1.0,interior,10.0
+2974,SAUDI ARABIA,Yemen border,1.0,Al Jawf (2948N/3952E),10.0
+2975,SAUDI ARABIA,Red Sea coast near Jizan,1.0,the Red Sea coast near Rabigh (2247N/3901E),10.0
+2976,SAUDI ARABIA,Red Sea coast between Qunﬁ dah and Yenbo,1.0,rst,10.0
+2977,SAUDI ARABIA,Red Sea coast between Umm Lajj and Jizan,1.0,Rabigh,9.0
+2978,SAUDI ARABIA,Wadi Dawasir as,1.0,Riyadh (2439N/4646E),9.0
+2979,SAUDI ARABIA,northeast,1.0,Umm Lajj,8.0
+2980,SAUDI ARABIA,Wejh,1.0,the Asir Mountains near Taif (2115N/4021E),8.0
+2981,SAUDI ARABIA,asmid,1.0,Asir,8.0
+2982,SAUDI ARABIA,Gassim as,1.0,Qu nﬁ dah (1909N/4107E),8.0
+2983,SAUDI ARABIA,Persian Gulf,1.0,Zalim (2248N/4210E),8.0
+2984,SAUDI ARABIA,Qunﬁ,1.0,Jordan,8.0
+2985,SAUDI ARABIA,central,1.0,Al Hofuf (2523N/4935E),8.0
+2986,SAUDI ARABIA,rmed,1.0,Medinah,7.0
+2987,SAUDI ARABIA,north as Al-Wejh,1.0,sq,7.0
+2988,SAUDI ARABIA,Jizan as,1.0,Najran,7.0
+2989,SAUDI ARABIA,north-east,1.0,Hail,7.0
+2990,SAUDI ARABIA,Khaybar,1.0,Buraydah (2620N/4359E),6.0
+2991,SAUDI ARABIA,south near Jizan,1.0,Lith (2017N/4020E),6.0
+2992,SAUDI ARABIA,moveinto,1.0,Bisha (2000N/4236E),6.0
+2993,SAUDI ARABIA,Hoppers,1.0,Jordanian border,6.0
+2994,SAUDI ARABIA,Red Sea between Jeddah and Jizan,1.0,of the Red Sea near Jizan (1656N/4233E),6.0
+2995,SAUDI ARABIA,moveto,1.0,the Red Sea coast near Jizan (1656N/4233E),6.0
+2996,SAUDI ARABIA,Al Aﬂ ag,1.0,Persian Gulf,6.0
+2997,SAUDI ARABIA,Thuwal,1.0,Kuwait,6.0
+2998,SAUDI ARABIA,Masturah,1.0,Qunﬁ dah,6.0
+2999,SAUDI ARABIA,Shwalah,1.0,Khulais,6.0
+3000,SAUDI ARABIA,Wadis Najran,1.0,Jubail (2700N/4939E),6.0
+3001,SAUDI ARABIA,Al Ahsa,1.0,Red Sea coast between Jeddah (2130N/3910E) and Rabigh (2247N/3901E),6.0
+3002,SAUDI ARABIA,Nafud Desert,1.0,Hail (2731N/4141E) as,6.0
+3003,SAUDI ARABIA,Qunﬁ dah inmid,1.0,Taif (2115N/4021E),6.0
+3004,SAUDI ARABIA,Al Jawf,1.0,Tabuk,5.0
+3005,SAUDI ARABIA,Makkah,1.0,Bader,5.0
+3006,SAUDI ARABIA,md May.,1.0,Khamis Mushait (1819N/4245E),5.0
+3007,SAUDI ARABIA,mst,1.0,Duba (2719N/3546E),5.0
+3008,SAUDI ARABIA,Oman,1.0,Red Sea coast near Yenbo (2405N/3802E),5.0
+3009,SAUDI ARABIA,Yenbo as,1.0,Sudan,5.0
+3010,SAUDI ARABIA,the Red Sea near Rabigh,1.0,north of Jeddah near Masturah (2309N/3851E),4.0
+3011,SAUDI ARABIA,Badr,1.0,Empty,4.0
+3012,SAUDI ARABIA,movenorth,1.0,Lit,4.0
+3013,SAUDI ARABIA,Diba,1.0,Wadi Al,4.0
+3014,SAUDI ARABIA,Red Sea between Qunﬁ dah and Jizan as,1.0,km,4.0
+3015,,,,Al Hofuf (2519N/4937E),4.0
+3016,,,,Al Barzah (2157N/3942E),4.0
+3017,,,,Hafar Al Batin (2821N/4556E),4.0
+3018,,,,Red Sea coast near Umm Lajj (2501N/3716E),4.0
+3019,,,,Wadi Dawasir (2028N/4447E),4.0
+3020,,,,north of Jeddah near Thuwal (2215N/3906E),4.0
+3021,,,,Al Baha (2001N/4129E),4.0
+3022,,,,the Red Sea coast near Jeddah (2130N/3910E),4.0
+3023,,,,Saudi Arabia,4.0
+3024,,,,the Red Sea coast near Lith (2008N/4016E),4.0
+3025,,,,Gassim,4.0
+3026,,,,the Asir Mountains near Abha (1813N/4230E),4.0
+3027,,,,Iraqi border,4.0
+3028,,,,east,4.0
+3029,,,,m2,4.0
+3030,,,,1656N/ 4233E,4.0
+3031,,,,Khulais (2217N/3920E),4.0
+3032,,,,sq m,4.0
+3033,,,,the Red Sea coast near Qunﬁ dah (1909N/4107E),4.0
+3034,,,,Red Sea coast between Lith (2008N/4016E) and Q,4.0
+3035,,,,Al Jawf,4.0
+3036,,,,md,4.0
+3037,,,,Al Wajh,4.0
+3038,,,,Red Sea coast near Bader (2346N/3847E),4.0
+3039,,,,Thuwal,4.0
+3040,,,,the Asir Mountains near Al Baha (2001N/4129E),4.0
+3041,,,,ﬁ,4.0
+3042,,,,Egypt,4.0
+3043,,,,north between Al Hofuf (2523N/4935E) and Qaryat Al Ulya (2733N/4742E),3.0
+3044,,,,Bader (2347N/3847E),3.0
+3045,,,,of the Empty Quarter near Yabreen (2313N/4856E),3.0
+3046,,,,Red Sea coast near Thuwal (2215N/3906E),3.0
+3047,,,,the Red Sea coast near Q,3.0
+3048,,,,Qaryat Al Olaya (2733N/4742E),3.0
+3049,,,,Rabigh (2242N/3910E),3.0
+3050,,,,Qunfidah (1905N/4103E),3.0
+3051,,,,Red Sea coast between Jeddah and Umm Lajj (2501N/3716E),3.0
+3052,,,,Hail (2732N/4142E),3.0
+3053,,,,AlQunfidah,3.0
+3054,,,,Rabigh (2255N/3901E),3.0
+3055,,,,Al-Qunfidah,3.0
+3056,,,,Wadi Dawasir,3.0
+3057,,,,Red Sea coast between Lith (2008N/4016E) and Qunfidah (1909N/4107E),3.0
+3058,,,,the Asir Mountains near Al Barzah (2157N/3942E),3.0
+3059,,,,Duba,3.0
+3060,,,,Al-Lith,3.0
+3061,,,,Al-Mousim,2.0
+3062,,,,Al Jouf,2.0
+3063,,,,km2,2.0
+3064,,,,Red Sea coast between Qunﬁ dah (1909N/4107E) and Yenbo (2405N/3802E),2.0
+3065,,,,Al Lith,2.0
+3066,,,,Yabreen (2315N/4859E),2.0
+3067,,,,Nuaman (2120N/4004E),2.0
+3068,,,,Khayber (2548N/3912E),2.0
+3069,,,,Taif,2.0
+3070,,,,d,2.0
+3071,,,,Me,2.0
+3072,,,,Jawf (2950N/3954E),2.0
+3073,,,,the Red Sea coast near L,2.0
+3074,,,,Baysh (1725N/4230E),2.0
+3075,,,,Red Sea coast between Qunﬁ dah (1909N/4107E) and Lith (2008N/4016E),2.0
+3076,,,,of the Red Sea near Duba,2.0
+3077,,,,north of Gassim near Hail (2731N/4141E),2.0
+3078,,,,unf,2.0
+3079,,,,Mountains,2.0
+3080,,,,Al Badi,2.0
+3081,,,,Wadi Al Qahah,2.0
+3082,,,,Khaybar,2.0
+3083,,,,Red Sea coast between Lith (2008N/4016E) and Umm Lajj (2501N/3716E),2.0
+3084,,,,Al Birk (1814N/4133E),2.0
+3085,,,,Rubah (1649N/4255E),2.0
+3086,,,,Mecca (2126N/3949E),2.0
+3087,,,,Khulais (2202N/3919E),2.0
+3088,,,,Qunfidah (1915N/4110E),2.0
+3089,,,,4230E,2.0
+3090,,,,Hail (2731N/4145E),2.0
+3091,,,,Bader (2345N/3845E),2.0
+3092,,,,Yenbo (2407N/3804E),2.0
+3093,,,,sq mtre,2.0
+3094,,,,Red Sea coast between Umm Lajj (2501N/3716E) and Lith (2008N/4016E),2.0
+3095,,,,south of Jeddah near Lith (2008N/4016E),2.0
+3096,,,,Iraq,2.0
+3097,,,,the Red Sea coast near Jeddah,2.0
+3098,,,,Red Sea coast between Lith (2008N/4016E) and Qunﬁ dah (1909N/4107E),2.0
+3099,,,,Asir Mountains near Khamis Mushait (1819N/4245E),2.0
+3100,,,,mst,2.0
+3101,,,,Yenbo (2405N/3803E),2.0
+3102,,,,north of the Red Sea coast near Al Bad (2830N/3500E),2.0
+3103,,,,north near Me,2.0
+3104,,,,Qassim (2618N/4346E),2.0
+3105,,,,Al Hijaz Mountains,2.0
+3106,,,,2242N/ 3910E,2.0
+3107,,,,4408E,2.0
+3108,,,,Medina,2.0
+3109,,,,foothills,2.0
+3110,,,,Taif (2226N/4051E),2.0
+3111,,,,the Red Sea coast near Qunﬁ dah,2.0
+3112,,,,Mekunu,2.0
+3113,,,,Lith (2010N/4020E),2.0
+3114,,,,Al Aﬂ aj (2206N/4657E),2.0
+3115,,,,south near Qunﬁ dah (1909N/4107E),2.0
+3116,,,,Aqaba,2.0
+3117,,,,the Red Sea coast near Al Lith,2.0
+3118,,,,Red Sea coast near Lith,2.0
+3119,,,,nd,2.0
+3120,,,,Asir Mountains between Zalim (2248N/4210E) and Khaybar (2542N/3917E),2.0
+3121,,,,W. Terim (2750N/3519E),2.0
+3122,,,,Makkah Region (2157N/3933E),2.0
+3123,,,,mny,2.0
+3124,,,,south as Taif (2115N/4021E),2.0
+3125,,,,Saudi,2.0
+3126,,,,the Asir Mountains near Medinah (2430N/3935E),2.0
+3127,,,,Layla (2218N/4643E),2.0
+3128,,,,Lith (2017N/4008E),2.0
+3129,,,,min,2.0
+3130,,,,Red Sea coast near Q,2.0
+3131,,,,Yemen border between Najran (1729N/4408E) and Sharawrah (1729N/4706E),2.0
+3132,,,,Atmid,2.0
+3133,,,,1–28,2.0
+3134,,,,Red Sea coast between Rabigh (2247N/3901E) and Bader (2346N/3847E) as,2.0
+3135,,,,the Red Sea coast near Umm Lajj (2501N/3716E),2.0
+3136,,,,dah (1909N/4107E),2.0
+3137,,,,Oman,2.0
+3138,,,,Rafha (4331N/2938E),2.0
+3139,,,,instar,2.0
+3140,,,,Yemen ﬁ rst,2.0
+3141,,,,Africa,2.0
+3142,,,,Sharqiq (1747N/4148E),2.0
+3143,,,,9–17,2.0
+3144,,,,inmid,2.0
+3145,,,,Al Aﬂ,2.0
+3146,,,,Red Sea coast between Lith (2008N/4016E) and Yenbo (2405N/3802E),2.0
+3147,,,,south near Jizan (1656N/4233E),2.0
+3148,,,,3550E,2.0
+3149,,,,UAE,2.0
+3150,,,,Badr Hunayn (2343N/3850E),2.0
+3151,,,,3906E,2.0
+3152,,,,Qun,2.0
+3153,,,,southwest of Riyadh near Ash Shkrah (2315N/4640E),2.0
+3154,,,,Sulayel (2027N/4534E),2.0
+3155,,,,Red Sea between Lith (2008N/4016E) and Qunfidah (1909N/4107E),2.0
+3156,,,,Al-Wejh,2.0
+3157,,,,Interior,2.0
+3158,,,,Bishah,2.0
+3159,,,,Red Sea coast near L,2.0
+3160,,,,Qunﬁdah (1909N/4107E),2.0
+3161,,,,Farsan Islands,2.0
+3162,,,,south near Qunfidah (1909N/4107E),2.0
+3163,,,,Al-Baha,2.0
+3164,,,,Asir Mountains between Jeddah and Khamis Mushait (1819N/4245E),2.0
+3165,,,,Tafeal (2048N/3943E),2.0
+3166,,,,Yemen border between Najran (1729N/4408E) and Shrawrah (1729N/4706E),2.0
+3167,,,,Wadi Selah (1723N/4422E),2.0
+3168,,,,Al Shmeya (2149N/3932E),2.0
+3169,,,,Ar-Riyan,2.0
+3170,,,,Aqaba coast,2.0
+3171,,,,Kamel (2220N/3945E),2.0
+3172,,,,Wejh (2615N/3635E),2.0
+3173,,,,Umm Lajj (2515N/3720E),2.0
+3174,,,,Ad,2.0
+3175,,,,Red Sea coast between Masturah (2309N/3851E) and Umm Lajj (2501N/3716E),2.0
+3176,,,,Red Sea coast near Lith (2008N/4016E),2.0
+3177,,,,h (2008N/4016E) as,2.0
+3178,,,,Al Lith (2010N/4020E),2.0
+3179,,,,Buraydah,2.0
+3180,,,,Bymid,2.0
+3181,,,,h (2008N/4016E),2.0
+3182,,,,Red Sea coast between Jeddah (2130N/3910E) and Umm Lajj (2501N/3716E),2.0
+3183,,,,north near Gassim (2621N/4358E),2.0
+3184,,,,3rd,2.0
+3185,,,,Thoul,2.0
+3186,,,,Asir Mountains between Mecca (2125N/3949E) and Taif (2115N/4021E),2.0
+3187,,,,Red Sea coast between Rabigh (2247N/3901E) and Khamis Mushait (1819N/4245E),2.0
+3188,,,,north near Jordan,2.0
+3189,,,,Red Sea coast between Jeddah and Yenbo (2405N/3802E),2.0
+3190,,,,Mec ca (2125N/3949E),2.0
+3191,,,,Asir Mountains between Taif (2115N/4021E) and Al Baha (2001N/4129E),2.0
+3192,,,,Khamis Mushait (1819N/4245E) as,2.0
+3193,,,,Nafud Desert,2.0
+3194,,,,Hejaz Mountains,2.0
+3195,,,,Al Gassim,2.0
+3196,,,,the Red Sea coast near Yenbo (2405N/3802E),2.0
+3197,,,,Jizan (1656N/4233E) as,2.0
+3198,,,,swarm,2.0
+3199,,,,south near Rawdah (2115N/4252E),2.0
+3200,,,,Badr (2347N/3847E),2.0
+3201,,,,Red Sea coast between Yenbo (2405N/3802E) and Al Wajh (2615N/3627E),2.0
+3202,,,,Red Sea coast between Umm Lajj (2501N/3716E) and Al Wajh (2615N/3627E),2.0
+3203,,,,east of Taif (2115N/4021E) near Al Khurmah (2155N/4202E),2.0
+3204,,,,Masturah (2315N/3850E),2.0
+3205,,,,Asir Mountains between Abha (1813N/4230E) and Najran (1729N/4408E),2.0
+3206,,,,Wadi Dawasir (2027N/4534E),2.0
+3207,,,,Thual (2217N/3906E),2.0
+3208,,,,Al Ahsa (2523N/4941E),2.0
+3209,,,,Buraydah (2620N/4359E) as,2.0
+3210,,,,the Empty Quarter near Yebreen (2313N/4856E),2.0
+3211,,,,Badr Hunayn,2.0
+3212,,,,W. Dawasir (2024N/4605E),2.0
+3213,,,,Lith (2010N/4015E),2.0
+3214,,,,Gassim (2431N/4401E),2.0
+3215,,,,Nafud,2.0
+3216,,,,2017N/,2.0
+3217,,,,Luban,2.0
+3218,,,,of the Empty Quarter near Wadi Dawasir,2.0
+3219,,,,north near Umm Lajj (2515N/3720E),2.0
+3220,,,,e,2.0
+3221,,,,southwest,2.0
+3222,,,,Hail (2731N/4148E),2.0
+3223,,,,Al Safy (2347N/4906E),2.0
+3224,,,,Red Sea coast near Jizan (1656N/4233E),2.0
+3225,,,,Persian Gulf between Dammam (2625N/5003E) and Al Hofuf (2523N/4935E),1.0
+3226,,,,Yabreen,1.0
+3227,YEMEN,Red Sea,52.0,Aden,62.0
+3228,YEMEN,Marib,31.0,Aden (1250N/4503E),60.0
+3229,YEMEN,Aden,24.0,Hodeidah (1450N/4258E),59.0
+3230,YEMEN,Red Sea coast,22.0,Red Sea,42.0
+3231,YEMEN,Hadhramaut,20.0,Suq Abs (1600N/4312E),39.0
+3232,YEMEN,Shbwah,20.0,Bayhan (1452N/4545E),38.0
+3233,YEMEN,Tihama,16.0,Aden coast,38.0
+3234,YEMEN,Thamud,14.0,Midi (1619N/4248E),35.0
+3235,YEMEN,Wadi Hadhramaut,13.0,Wadi Hadhramaut,34.0
+3236,YEMEN,Ataq,10.0,Marib (1527N/4519E),34.0
+3237,YEMEN,Aden coast,7.0,Red Sea coast,33.0
+3238,YEMEN,Al Jawf,6.0,Al Zuhrah (1541N/4300E),30.0
+3239,YEMEN,Ramlat Sabatyn,6.0,Bajil (1458N/4314E),30.0
+3240,YEMEN,Chapala,5.0,Am Rija (1302N/4434E),27.0
+3241,YEMEN,Shabwah,5.0,Zinjibar (1306N/4523E),27.0
+3242,YEMEN,Megh,4.0,Zabid (1410N/4318E),25.0
+3243,YEMEN,Somalia,4.0,Ataq,24.0
+3244,YEMEN,Saudi Arabia,4.0,Al Abr (1608N/4714E),23.0
+3245,YEMEN,Bayhan,4.0,Saudi Arabian border,23.0
+3246,YEMEN,west,4.0,Bayt Al Faqih (1430N/4317E),22.0
+3247,YEMEN,Ramlat Sabatyn between Marib and Ataq,4.0,Ataq (1435N/4649E),21.0
+3248,YEMEN,interior,4.0,Thamud (1717N/4955E),21.0
+3249,YEMEN,Omani border,3.0,Ahwar (1333N/4644E),20.0
+3250,YEMEN,north,3.0,Shbwah,19.0
+3251,YEMEN,Zinjibar,3.0,Lahij (1303N/4453E),19.0
+3252,YEMEN,Indo-Pakistan,3.0,Marib,19.0
+3253,YEMEN,Zabid,3.0,md,18.0
+3254,YEMEN,Shbwa,3.0,Hodeidah,16.0
+3255,YEMEN,Saudi Arabian border,3.0,Sana’a (1521N/4412E),16.0
+3256,YEMEN,Al Abr,3.0,Al Hazm (1609N/4447E),15.0
+3257,YEMEN,Mekunu,3.0,Sana’a,15.0
+3258,YEMEN,Sagar,3.0,Hadhramaut,14.0
+3259,YEMEN,frommid,2.0,Bayt Al Faqih,14.0
+3260,YEMEN,md,2.0,Sayun (1559N/4844E),14.0
+3261,YEMEN,Bab El Mandeb,2.0,Shbwah (1522N/4700E),13.0
+3262,YEMEN,Oman border,2.0,Bayhan,13.0
+3263,YEMEN,Hazar,2.0,Bir Ali (1401N/4820E),12.0
+3264,YEMEN,Sayun,2.0,Al,12.0
+3265,YEMEN,Ramlat Sabatayn,2.0,interior,12.0
+3266,YEMEN,Al-Jawf,2.0,south,12.0
+3267,YEMEN,Tihama coast,2.0,sq,11.0
+3268,YEMEN,of Aden coast near Aden,2.0,north,11.0
+3269,YEMEN,Thamud as,2.0,Al Ghaydah (1612N/5210E),11.0
+3270,YEMEN,Mahara,2.0,east,11.0
+3271,YEMEN,Minwakh,2.0,west,11.0
+3272,YEMEN,east between Thamud and Hat,2.0,Bajil,11.0
+3273,YEMEN,Al Mahra,2.0,W. Hadhramaut,10.0
+3274,YEMEN,south,2.0,Mukalla (1431N/4908E),10.0
+3275,YEMEN,northeast,2.0,Suq Abs,10.0
+3276,YEMEN,Oman,2.0,Red Sea coast between Al Zuhrah (1541N/4300E) and Suq Abs (1600N/4312E),10.0
+3277,YEMEN,Midi,2.0,Tihama,10.0
+3278,YEMEN,Marib as,1.0,Al Baydha (1405N/4542E),9.0
+3279,YEMEN,Ataq as,1.0,Oman border,9.0
+3280,YEMEN,Ramlat Sabatayn between Marib and Al Abr,1.0,Remah (1727N/5034E),9.0
+3281,YEMEN,Wadi Hadhramaut as,1.0,Shabwah,9.0
+3282,YEMEN,Low,1.0,Red Sea coast between Al Zuhrah (1541N/4300E) and Midi (1619N/4248E),9.0
+3283,YEMEN,Al-Mahara,1.0,Midi,9.0
+3284,YEMEN,Mukalla,1.0,rst,8.0
+3285,YEMEN,Al Ghaydah,1.0,sq m,8.0
+3286,YEMEN,Wadi Hadhramaut between Minwakh and Thamud,1.0,Taiz (1335N/4401E),8.0
+3287,YEMEN,Eastern Region,1.0,Saudi Arabia,8.0
+3288,YEMEN,Hodeida as,1.0,Empty Quarter,8.0
+3289,YEMEN,Khabb,1.0,Al Qutai (1454N/4312E),8.0
+3290,YEMEN,AlJawf,1.0,Nisab (1430N/4629E),8.0
+3291,YEMEN,Lahij,1.0,Yemen,8.0
+3292,YEMEN,Sana'a,1.0,Wadi,8.0
+3293,YEMEN,aftermid,1.0,Thamud,8.0
+3294,YEMEN,Al Hazm,1.0,Marib (1525N/4521E),8.0
+3295,YEMEN,of Aden near Lahij,1.0,Al-Jawf,8.0
+3296,YEMEN,Mukalla coast,1.0,Al Jawf,7.0
+3297,YEMEN,W. Hadhramaut,1.0,Abyan,7.0
+3298,YEMEN,Sayhut,1.0,m2,7.0
+3299,YEMEN,interior as,1.0,Sayhut (1512N/5115E),7.0
+3300,YEMEN,inmid,1.0,instar,7.0
+3301,YEMEN,movesouth,1.0,Sada’a (1656N/4345E),6.0
+3302,YEMEN,Empty Quarter as,1.0,Dhamar (1433N/4424E),6.0
+3303,YEMEN,Hadramaut,1.0,Inmid,6.0
+3304,,,,Al Hazm,6.0
+3305,,,,Saudi Arabia border,6.0
+3306,,,,Hat (1719N/5205E),6.0
+3307,,,,Al Maharah,6.0
+3308,,,,northwest of Aden near Am Rija (1302N/4434E),6.0
+3309,,,,Ibb (1358N/4411E),6.0
+3310,,,,sq km,6.0
+3311,,,,east of Aden near Zinjibar (1306N/4523E),5.0
+3312,,,,Sayun,5.0
+3313,,,,Ad Dali (1341N/4443E),5.0
+3314,,,,Ramlat Sabatayn,5.0
+3315,,,,Minwakh (1650N/4812E),5.0
+3316,,,,north between Al Zuhrah (1541N/4300E) and Midi (1619N/4248E),4.0
+3317,,,,Zamakh,4.0
+3318,,,,the Red Sea coast near Hodeidah (1450N/4258E),4.0
+3319,,,,west of Aden near Am Rija (1302N/4434E),4.0
+3320,,,,Shabwah (1522N/4700E),4.0
+3321,,,,inmid,4.0
+3322,,,,Dar Al,4.0
+3323,,,,ﬁ rst,4.0
+3324,,,,Safer (1534N/4547E),4.0
+3325,,,,Bymid,4.0
+3326,,,,Seyhut (1512N/5115E),4.0
+3327,,,,Al Buqa (1720N/4436E),4.0
+3328,,,,Wadi Seaf (1618N/5100E),4.0
+3329,,,,Tihama coast,4.0
+3330,,,,ﬁ,4.0
+3331,,,,central coast,4.0
+3332,,,,Al Zuhrah,4.0
+3333,,,,the Red Sea coast near Midi (1619N/4248E),4.0
+3334,,,,Wadi Hadhramaut near Sayun (1559N/4844E),4.0
+3335,,,,m,4.0
+3336,,,,Hawra (1542N/4817E),4.0
+3337,,,,1458N/,4.0
+3338,,,,Taiz,4.0
+3339,,,,Oman,4.0
+3340,,,,Lahij,3.0
+3341,,,,1458N/ 4314E,3.0
+3342,,,,Red Sea between Al Zuhrah (1541N/4300E) and Midi (1619N/4248E),3.0
+3343,,,,Wadi Hayran (1615N/4300E),3.0
+3344,,,,Midi (1618N/4217E),3.0
+3345,,,,Wadi Hazar (1744N/4901E),3.0
+3346,,,,Red Sea coast between Midi (1619N/4248E) and Al Zuhrah (1541N/4300E),3.0
+3347,,,,Wadi Hairan (1617N/4300E),3.0
+3348,,,,coastal plains east,3.0
+3349,,,,Abs (1601N/4312E),3.0
+3350,,,,Arkha (1340N/4724E),3.0
+3351,,,,Shhan (1746N/5229E),3.0
+3352,,,,Al Hazm (1610N/4446E),3.0
+3353,,,,the Red Sea coast near Al Zuhrah (1541N/4300E),3.0
+3354,,,,Bayt Al Faqih (1431N/4319E),3.0
+3355,,,,Red Sea coast between Suq Abs (1600N/4312E) and Al Zuhrah (1541N/4300E),3.0
+3356,,,,Erqa (1347N/4729E),3.0
+3357,,,,Midi (1619N/4249E),3.0
+3358,,,,Red Sea coast near Bajil (1458N/4314E),2.0
+3359,,,,Sada’a (1656N/4345E) as,2.0
+3360,,,,Hazar (1744N/4901E) as,2.0
+3361,,,,Ramlat Sabatyn,2.0
+3362,,,,Ain (1550N/4737E),2.0
+3363,,,,Locusta,2.0
+3364,,,,Port Al Luhayyah (1542N/4241E),2.0
+3365,,,,of the Tihama near Bayt Al Faqih,2.0
+3366,,,,Al Hazm (1610N/4446E) as,2.0
+3367,,,,W. Hadhramaut between Minwakh (1650N/4812E) and Thamud (1717N/4955E),2.0
+3368,,,,Jebel Hadid (1433N/4636E),2.0
+3369,,,,Wadi Markhah (1453N/4633E),2.0
+3370,,,,mst,2.0
+3371,,,,Gudaimi (1250N/4418E),2.0
+3372,,,,Erga (1429N/4637E),2.0
+3373,,,,of Aden coast near Aden (1250N/4503E),2.0
+3374,,,,Omani border,2.0
+3375,,,,Wadi Khoudra (1746N/4904E),2.0
+3376,,,,Groups,2.0
+3377,,,,west of Aden near Bab El Mandeb,2.0
+3378,,,,Socotra Island,2.0
+3379,,,,Nisab (1431N/4630E),2.0
+3380,,,,Al Maglam,2.0
+3381,,,,west near Shehan (1746N/5229E),2.0
+3382,,,,Ayadh,2.0
+3383,,,,Arkha,2.0
+3384,,,,Ash Shbaykhah (1439N/4647E),2.0
+3385,,,,Rift Valley Fever,2.0
+3386,,,,instar solitary,2.0
+3387,,,,Thaouban (1436N/4631E),2.0
+3388,,,,4312E,2.0
+3389,,,,Red Sea coast between Zabid (1410N/4318E) and Suq Abs (1600N/4312E),2.0
+3390,,,,Al Wadiah (1656N/4700E),2.0
+3391,,,,Egg,2.0
+3392,,,,western,2.0
+3393,,,,Sahar,2.0
+3394,,,,Gudaimi (1302N/4423E),2.0
+3395,,,,Lahj Governorate,2.0
+3396,,,,mch,2.0
+3397,,,,Tihama between Al Zuhrah (1541N/4300E) and Suq Abs (1600N/4312E),2.0
+3398,,,,Minwakh,2.0
+3399,,,,Wadi Ketaf (1704N/4412E),2.0
+3400,,,,Ghashn (1525N/5140E),2.0
+3401,,,,Wadi Markhah (1459N/4548E),2.0
+3402,,,,W. Hadhramuat,2.0
+3403,,,,Minwakh (1647N/4807E),2.0
+3404,,,,Shbwah near Bayhan (1452N/4545E),2.0
+3405,,,,Bab El Mandab,2.0
+3406,,,,Mahwait (1529N/4334E),2.0
+3407,,,,Locust,2.0
+3408,,,,Wadi Jannah (1510N/4555E),2.0
+3409,,,,Bayhan (1448N/4543E),2.0
+3410,,,,Sabatayn between Ataq (1432N/4733E) and Bayhan,2.0
+3411,,,,sq m Fledging,2.0
+3412,,,,Arqa (1430N/4640E),2.0
+3413,,,,Desert Locust,2.0
+3414,,,,Oman border between Hat (1719N/5205E) and Shhan (1746N/5229E),2.0
+3415,,,,1658N/,2.0
+3416,,,,Jubah (1513N/4520E),2.0
+3417,,,,Zubbad (1415N/4553E),2.0
+3418,,,,1435N/ 4649E,2.0
+3419,,,,Wadi Zalimayn (1450N/4619E),2.0
+3420,,,,Wadi Al,2.0
+3421,,,,Khaf Al Awamer,2.0
+3422,,,,W. Hadhramaut between Al Abr (1608N/4714E) and Thamud (1717N/4955E),2.0
+3423,,,,Deer Al,2.0
+3424,,,,Al-Safra,2.0
+3425,,,,Lahej (1301N/4454E),2.0
+3426,,,,Yemeni border,2.0
+3427,,,,W. Jannah,2.0
+3428,,,,Deer Abdalla (1531N/4304E),2.0
+3429,,,,Zabid (1403N/4318E),2.0
+3430,,,,Am Rija,2.0
+3431,,,,Aden (1250N/4503E) between W. Am Shibi (1304N/4437E) and Am Rija (1302N/4434E),2.0
+3432,,,,Aden between Ahwar and Mukalla coast,2.0
+3433,,,,SaudiYemeni,2.0
+3434,,,,Tarim (1603N/4859E),2.0
+3435,,,,Shbwah near Ataq (1435N/4649E),2.0
+3436,,,,Governorates,2.0
+3437,,,,Red Sea between Al Zuhrah (1541N/4300E) and Suq Abs (1600N/4312E),2.0
+3438,,,,sq m Limited,2.0
+3439,,,,south of Sana’a near Al Radmah (1413N/4435E),2.0
+3440,,,,Red Sea coast near Suq Abs (1600N/4312E),2.0
+3441,,,,of Shbwah near Ataq (1435N/4649E),2.0
+3442,,,,of Aden coast near Am Rija (1302N/4434E),2.0
+3443,,,,Shbwa Governorate between Ataq (1433N/4649E) and Uqlah (1521N/4651E),2.0
+3444,,,,Jannah,2.0
+3445,,,,Tihama near Al Qutai (1454N/4312E),2.0
+3446,,,,Bab Al Mandab,2.0
+3447,,,,Raydah (1417N/4734E),2.0
+3448,,,,Wadi Abrain (1302N/4428E),2.0
+3449,,,,Ahdel (1453N/4310E),2.0
+3450,,,,northeast of Ataq near Shbwah (1522N/4700E),2.0
+3451,,,,Red Sea coast between Zabid (1410N/4318E) and Midi (1619N/4248E),2.0
+3452,,,,east of Hodeidah near Al Qutay,2.0
+3453,,,,Khabt Majbol (1441N/4312E),2.0
+3454,,,,W. Qirad,2.0
+3455,,,,interior ﬂ,2.0
+3456,,,,the Aden coast near Lahij (1303N/4453E),2.0
+3457,,,,Gabaleh (1253N/4447E),2.0
+3458,,,,of Shbwah near Ataq,2.0
+3459,,,,Wadi Hadhramaut near Al Abr (1608N/4714E),2.0
+3460,,,,Luban,2.0
+3461,,,,Ar,2.0
+3462,,,,Tihama near Suq Abs (1600N/4312E),2.0
+3463,,,,Red Sea coast near Al Qutai (1454N/4312E),2.0
+3464,,,,Al Wahad (1548N/4752E),2.0
+3465,,,,Al Ghaydah,2.0
+3466,,,,east Al Zuhrah (1541N/4300E),2.0
+3467,,,,W. Hadhramaut near Sayun (1559N/4844E),2.0
+3468,,,,Wadi Khabb (1640N/4519E),2.0
+3469,,,,Shbwa Governorate,2.0
+3470,,,,Ataq (1435N/4639E),2.0
+3471,,,,Mukiras (1355N/4540E),2.0
+3472,,,,Sayhut,2.0
+3473,,,,Minwakh (1650N/4812E) as,2.0
+3474,,,,Al Qutai,2.0
+3475,,,,Tihama between Bajil (1458N/4314E) and Zabid (1410N/4318E),2.0
+3476,,,,Saaed (1606N/4456E),2.0
+3477,,,,Saadah Governorate,2.0
+3478,,,,Wadi Haswein (1530N/5205E),2.0
+3479,,,,Al Abr,2.0
+3480,,,,Red Sea coast near Midi (1619N/4248E),2.0
+3481,,,,Humama,2.0
+3482,,,,of the Red Sea coast near Midi (1619N/4248E),2.0
+3483,,,,Remah (1727N/5034E) as,2.0
+3484,,,,Tihama between Zabid (1410N/4318E) and Bajil (1458N/4314E),2.0
+3485,,,,Maifa’ah (1418N/4733E),2.0
+3486,,,,Al Qutay,2.0
+3487,,,,Aden (1250N/4503E) as,2.0
+3488,,,,mwere,2.0
+3489,,,,Wadi Hadhramaut near Shbam (1553N/4838E),2.0
+3490,,,,Saudi Arabian,2.0
+3491,,,,Djibouti,2.0
+3492,,,,Red Sea coast between Bajil (1458N/4314E) and Zabid (1410N/4318E),2.0
+3493,,,,Aden as,2.0
+3494,,,,Wahet (1258N/4453E),2.0
+3495,,,,Irqah (1340N/4721E),2.0
+3496,,,,Tihama near Bajil (1458N/4314E),2.0
+3497,,,,sq mwere,2.0
+3498,,,,the Saudi Arabian border near Midi (1619N/4248E),2.0
+3499,,,,Am Rija (1301N/4435E),2.0
+3500,,,,of Aden coast near Lahij (1303N/4453E),2.0
+3501,,,,Ethiopia,2.0
+3502,,,,Metarhizium,2.0
+3503,,,,1–29,2.0
+3504,,,,Oman border between Shhan (1746N/5229E) and Hat (1719N/5205E),2.0
+3505,,,,Qisab (1452N/4545E),2.0
+3506,,,,W. Hazar (1744N/4901E),2.0
+3507,,,,Mekunu,2.0
+3508,,,,AlHazm (1609N/4446E),2.0
+3509,,,,km2,2.0
+3510,,,,of Al Maharah near Remah (1727N/5034E),2.0
+3511,,,,Red Sea between Hodeidah (1450N/4258E) and Al Qutai (1454N/4312E),2.0
+3512,,,,Komama (1440N/4618E),2.0
+3513,,,,Wadi Huraidha (1535N/4811E),2.0
+3514,,,,W. Hadhramaut between Thamud (1717N/4955E) and Minwakh (1650N/4812E),2.0
+3515,,,,Nuqub (1458N/4557E),2.0
+3516,,,,Am Mashrabah (1301N/4423E),2.0
+3517,,,,west of Shbwah near AshShubaykhah (1439N/4647E),2.0
+3518,,,,Bunniah (1442N/4312E),2.0
+3519,,,,Morais (1341N/4725E),2.0
+3520,,,,Ahwar,2.0
+3521,,,,wadis,2.0
+3522,,,,Al Qutay (1454N/4312E),2.0
+3523,,,,northwest,2.0
+3524,,,,Nisab,2.0
+3525,,,,Al Aber (1551N/4829E),2.0
+3526,,,,south near Al Qutai (1454N/4312E),2.0
+3527,,,,Red Sea coast between Zabid (1410N/4318E) and Hodeidah (1450N/4258E),2.0
+3528,,,,Al Harwan (1326N/4630E),2.0
+3529,,,,Hopper,2.0
+3530,,,,Wadi Jawf,2.0
+3531,,,,mtre,2.0
+3532,,,,Ataq (1432N/4733E),2.0
+3533,,,,of Aden near Am Rija (1302N/4434E),2.0
+3534,,,,Jahwa (1432N/4634E),2.0
+3535,,,,Bayhan Al,2.0
+3536,,,,Al-Mahara,2.0
+3537,,,,Al Jawf near Al Hazm (1609N/4447E),2.0
+3538,,,,Wadi Henen (1551N/4814E),2.0
+3539,,,,Wadi Hairan,2.0
+3540,,,,Shbam (1555N/4837E),2.0
+3541,,,,Al Mahrah,1.0
+3542,UAE,Fujayrah coast,10.0,Oman,5.0
+3543,UAE,Fujayrah,3.0,Omani border,4.0
+3544,UAE,Ras Al Khaimah,3.0,Al Ain (2413N/5545E),3.0
+3545,UAE,Al Ain,2.0,Saudi Arabian border,3.0
+3546,UAE,Yemen,1.0,UAE near Qatar,2.0
+3547,UAE,Ras Al Khaymah,1.0,Al Ain (2412N/5538E),2.0
+3548,UAE,Fujairah,1.0,Dubai (2516N/5518E),2.0
+3549,UAE,east,1.0,m2 ﬁ rst,2.0
+3550,UAE,Indo-Pakistan,1.0,Abu Dhabi (2427N/5421E),2.0
+3551,UAE,southwest,1.0,Inmid,2.0
+3552,UAE,west,1.0,Delma Island (2429N/5217E),2.0
+3553,UAE,Iran,1.0,Al Ain (2413N/5543E) between Al Araad (2348N/5525E) and Al Quo’a (2326N/5525E),2.0
+3554,UAE,Arabian Peninsula,1.0,Abu Dhabi,2.0
+3555,UAE,southeast,1.0,Al Shrjah,2.0
+3556,UAE,Al Fujayrah,1.0,Al Sila (2402N/5143E),2.0
+3557,UAE,Ras Ghumais,1.0,east,2.0
+3558,,,,Ras Ghumais (2421N/5136E),2.0
+3559,,,,Saudi Arabian border between Madinat Zayed (2339N/5342E) and Huwaylah (2307N/5347E),2.0
+3560,,,,Al Dhaid (2519N/5557E),2.0
+3561,,,,north,1.0
+3562,,,,Al Shwayb (2445N/5548E),1.0
+3563,,,,ew Dubai (2516N/5518E),1.0
+3564,KUWAIT,Saudi Arabia,8.0,Iraq,4.0
+3565,KUWAIT,Arabia,7.0,Al Abdali,2.0
+3566,KUWAIT,Red Sea coast,5.0,Saudi Arabia,2.0
+3567,KUWAIT,Indo-Pakistan,1.0,Kuwait near Safwan (3004N/4741E),2.0
+3568,KUWAIT,Arabian Peninsula,1.0,Al Salmi,2.0
+3569,KUWAIT,north-,1.0,Kuwait City,2.0
+3570,,,,Al Wafrah,2.0
+3571,,,,Al,2.0
+3572,,,,Failaka Island (2926N/4816E),2.0
+3573,,,,southeast,2.0
+3574,,,,Abdali,2.0
+3575,,,,Saudi Arabia border,2.0
+3576,,,,Wafra (2832N/4759E),2.0
+3577,EGYPT,Shlatyn,26.0,Lake Nasser,124.0
+3578,EGYPT,Red Sea,19.0,Red Sea coast,122.0
+3579,EGYPT,Sudanese border,15.0,Tushka (2247N/3126E),99.0
+3580,EGYPT,Halaib,12.0,Abu Simbel (2219N/3138E),95.0
+3581,EGYPT,Lake Nasser,8.0,Sudanese border,83.0
+3582,EGYPT,south,7.0,Western Desert,78.0
+3583,EGYPT,Desert Locust,6.0,Abu Ramad (2224N/3624E),61.0
+3584,EGYPT,Western Desert,6.0,Berenice (2359N/3524E),56.0
+3585,EGYPT,Berenice,5.0,Red Sea,56.0
+3586,EGYPT,Tushka,5.0,Red Sea Hills,48.0
+3587,EGYPT,Shalatyn,4.0,Sudan border,43.0
+3588,EGYPT,Aswan,3.0,Shlatyn (2308N/3535E),43.0
+3589,EGYPT,of the Red Sea near Abu Ramad,3.0,Sh Oweinat (2219N/2845E),39.0
+3590,EGYPT,movesouth,3.0,Allaqi,36.0
+3591,EGYPT,Jebel Uweinat,3.0,Marsa Alam (2504N/3454E),35.0
+3592,EGYPT,Sudan,3.0,Wadi Diib,33.0
+3593,EGYPT,Sh Oweinat,3.0,Garf Husein (2317N/3252E),33.0
+3594,EGYPT,Red Sea as,2.0,the Western Desert near Sh Oweinat (2219N/2845E),26.0
+3595,EGYPT,Allaqi,2.0,Salum (3131N/2509E),23.0
+3596,EGYPT,Shrq Oweinat,2.0,Aswan (2405N/3256E),23.0
+3597,EGYPT,Marsa Alam,2.0,Siwa (2912N/2531E),22.0
+3598,EGYPT,Halaib as,2.0,Halaib (2212N/3635E),19.0
+3599,EGYPT,Sinai Peninsula,2.0,north,16.0
+3600,EGYPT,east,2.0,Dakhla (2530N/2900E),15.0
+3601,EGYPT,W. Allaqi,2.0,of Lake Nasser near Tushka (2247N/3126E),15.0
+3602,EGYPT,Wadi Diib,2.0,Farafra (2710N/2818E),14.0
+3603,EGYPT,md,1.0,Lake Nasser between Abu Simbel (2219N/3138E) and Tushka (2247N/3126E),14.0
+3604,EGYPT,bymid,1.0,Halaib,14.0
+3605,EGYPT,Eritrean border,1.0,Shalatyn (2308N/3535E),13.0
+3606,EGYPT,Gilf Kebir Plateau,1.0,Sh Oweinat,12.0
+3607,EGYPT,the Western Desert near Jebel Uweinat,1.0,Baris (2448N/3035E),12.0
+3608,EGYPT,Red Sea between Shlatyn and Abu Ramad,1.0,El Shikh El Shzly,12.0
+3609,EGYPT,Delta,1.0,rst,10.0
+3610,EGYPT,Sudanese border as,1.0,Shlatyn,10.0
+3611,EGYPT,Upper Egypt,1.0,of Lake Nasser near Abu Simbel (2219N/3138E),10.0
+3612,EGYPT,Abu Ramad,1.0,El Shikh El Shazly,9.0
+3613,EGYPT,Red Sea between Shalatyn and Abu Ramad,1.0,Desert Locust,9.0
+3614,EGYPT,Nile River Valley,1.0,African Migratory Locusts,9.0
+3615,EGYPT,Israeli border,1.0,Halaib (2213N/3638E),9.0
+3616,EGYPT,south-east,1.0,Sinai Peninsula,9.0
+3617,EGYPT,of the Red Sea near Halaib,1.0,Arbain (2357N/3018E),9.0
+3618,EGYPT,Dakhla,1.0,African Migratory Locust,9.0
+3619,EGYPT,aboutmid,1.0,Aswan,9.0
+3620,EGYPT,El Shzly,1.0,Nile Valley,9.0
+3621,EGYPT,northeast,1.0,El Shikh El Shzly (2412N/3438E),9.0
+3622,EGYPT,Saudi Arabia,1.0,south,8.0
+3623,EGYPT,north,1.0,the Red Sea coast near Abu Ramad (2224N/3624E),8.0
+3624,EGYPT,Sh Oweinat as,1.0,Kharga (2525N/3034E),8.0
+3625,EGYPT,Kharga,1.0,Abu Mingar,8.0
+3626,EGYPT,Wadi Allaqi,1.0,Bahariya (2821N/2851E),8.0
+3627,EGYPT,Shalatein,1.0,Wadi Allaqi,8.0
+3628,EGYPT,Western Desert as,1.0,Wadi Diib (2205N/3555E),8.0
+3629,EGYPT,Sohag,1.0,Nile River Valley,7.0
+3630,EGYPT,Nile River,1.0,Marsa Alam,7.0
+3631,EGYPT,Nile Valley,1.0,Mediterranean coast,7.0
+3632,,,,east,7.0
+3633,,,,2212N/ 3635E,7.0
+3634,,,,W. Diib,7.0
+3635,,,,Husein (2317N/3252E),7.0
+3636,,,,sq,6.0
+3637,,,,Abraq (2323N/3451E),6.0
+3638,,,,Jebel Uweinat,6.0
+3639,,,,Hurghada (2717N/3347E),6.0
+3640,,,,Allaqi (2238N/3315E),6.0
+3641,,,,Sh,6.0
+3642,,,,Tushka,6.0
+3643,,,,Sh Oweinat (2240N/2845E),6.0
+3644,,,,Abu Simbel,6.0
+3645,,,,Darb Al,6.0
+3646,,,,Oweinat (2219N/2845E),6.0
+3647,,,,Shlatein,6.0
+3648,,,,Hurghada,6.0
+3649,,,,ﬁ,6.0
+3650,,,,the Mediterranean coast near Salum (3131N/2509E),6.0
+3651,,,,Cairo,6.0
+3652,,,,Abraaq,5.0
+3653,,,,Sinai,5.0
+3654,,,,the Western Desert near Bahariya (2821N/2851E),5.0
+3655,,,,Berenice,5.0
+3656,,,,Shlatein (2308N/3536E),5.0
+3657,,,,Allaqi (2240N/3255E),5.0
+3658,,,,A,5.0
+3659,,,,El Shzly,5.0
+3660,,,,Sudanese border as,5.0
+3661,,,,Lake Nasser between Abu Simbel (2219N/3138E) and Garf Husein (2317N/3252E),5.0
+3662,,,,m2,5.0
+3663,,,,the Western Desert near Sh Oweinat,5.0
+3664,,,,Lake Nasser near Tushka (2247N/3126E),5.0
+3665,,,,El Arish (3108N/3348E),4.0
+3666,,,,Migratory Locust,4.0
+3667,,,,the Red Sea coast near Halaib (2213N/3638E),4.0
+3668,,,,south-east,4.0
+3669,,,,Gar f Husein (2317N/3252E),4.0
+3670,,,,Kharga,4.0
+3671,,,,Garf,4.0
+3672,,,,Lake Nasser between Abu Simbel (2219N/3138E) and Tushka (2247N/3126E) as,4.0
+3673,,,,Jebel Uweinat (2154N/2458E),4.0
+3674,,,,Suez,4.0
+3675,,,,Salum,4.0
+3676,,,,Shlatein (2308N/3535E),4.0
+3677,,,,of the Mediterranean near Salum (3131N/2509E),4.0
+3678,,,,Desert Locusts,4.0
+3679,,,,Nuweiba (2902N/3440E),4.0
+3680,,,,Lake Nasser near Abu Simbel (2219N/3138E),4.0
+3681,,,,Libyan border,4.0
+3682,,,,ﬁ rst,4.0
+3683,,,,of Lake Nasser near Garf Husein (2317N/3252E),4.0
+3684,,,,the Red Sea coast near Shlatyn (2308N/3535E),4.0
+3685,,,,Bahariya,4.0
+3686,,,,Safaga,4.0
+3687,,,,Red Sea coast between Shlatyn (2308N/3535E) and Abu Ramad (2224N/3624E),4.0
+3688,,,,the Red Sea coast near Shalatyn (2308N/3535E),4.0
+3689,,,,Baris (2439N/3035E),4.0
+3690,,,,New Valley,4.0
+3691,,,,bush,4.0
+3692,,,,Red Sea coast between Abu Ramad (2224N/3624E) and Halaib (2213N/3638E),4.0
+3693,,,,the Red Sea coast near Abu Ramad,3.0
+3694,,,,Wadi Frukit,3.0
+3695,,,,2845E,3.0
+3696,,,,Shlatein (2310N/3532E),3.0
+3697,,,,Red Sea coast between Shalatyn (2308N/3535E) and Halaib (2213N/3638E),3.0
+3698,,,,Shniara (2340N/3231E),3.0
+3699,,,,the Nile River Valley near Lake Nasser,3.0
+3700,,,,Red Sea coast between Shlatyn (2308N/3535E) and Halaib (2213N/3638E),3.0
+3701,,,,the Western Desert near Darb Al,3.0
+3702,,,,Al Allaqi,3.0
+3703,,,,Tushka (2254N/3135E),3.0
+3704,,,,Sh Owainat,3.0
+3705,,,,Kalabasha (2328N/3232E),3.0
+3706,,,,3607E,3.0
+3707,,,,Red Sea coast between Shlatein (2308N/3535E) and Abu Ramad (2224N/3624E),3.0
+3708,,,,Desert,3.0
+3709,,,,Abu Ramad,2.0
+3710,,,,El Faioum,2.0
+3711,,,,3527E,2.0
+3712,,,,the Nokra Valley near Aswan,2.0
+3713,,,,Jebel Uweinat (2156N/2504E),2.0
+3714,,,,Wadi Diib between Abu Ramad and Halaib (2213N/3638E),2.0
+3715,,,,Wadi Diib between Abu Ramad (2224N/3624E) and Halaib (2213N/3638E),2.0
+3716,,,,Wadi Diib as,2.0
+3717,,,,of Lake Nasser near Garf,2.0
+3718,,,,W. Shallal (2210N/3635E),2.0
+3719,,,,Nile River between Sohag (2633N/3142E) and Minya (2806N/3045E),2.0
+3720,,,,the Red Sea Hills near W. Allaqi,2.0
+3721,,,,Port Said (3117N/3218E),2.0
+3722,,,,Oweinat,2.0
+3723,,,,Red Sea coast between Hurghada (2717N/3347E) and Marsa Alam (2504N/3454E),2.0
+3724,,,,May. Hopper,2.0
+3725,,,,Shrq Oweinat (2237N/2845E),2.0
+3726,,,,the Western Desert near Baris (2448N/3035E),2.0
+3727,,,,Red Sea coast between Halaib (2213N/3638E) and Shlatyn (2308N/3535E),2.0
+3728,,,,Western Desert between Farafra (2710N/2818E) and Dakhla (2530N/2900E),2.0
+3729,,,,Inmid,2.0
+3730,,,,Nile,2.0
+3731,,,,adults/10 m,2.0
+3732,,,,Wadi Hamra,2.0
+3733,,,,Adendad (2212N/3134E),2.0
+3734,,,,El Baharia,2.0
+3735,,,,Shrq Oweinat (2240N/2845E),2.0
+3736,,,,Bahariya Oasis,2.0
+3737,,,,Red Sea coast between Berenice (2359N/3524E) and Abu Ramad (2224N/3624E),2.0
+3738,,,,the Western Desert near Sh,2.0
+3739,,,,Lake Nasser between Garf Husein (2317N/3252E) and Tushka (2247N/3126E),2.0
+3740,,,,Red Sea between Halaib (2213N/3638E) and El Shikh El Shzly,2.0
+3741,,,,Sudanese border between Abu Simbel (2219N/3138E) and Tushka (2247N/3126E),2.0
+3742,,,,Shrm Esh Shikh (2752N/3413E),2.0
+3743,,,,Ismailia (3036N/3215E),2.0
+3744,,,,Mars a Alam (2504N/3454E),2.0
+3745,,,,3352E,2.0
+3746,,,,3256E,2.0
+3747,,,,Shalatyn,2.0
+3748,,,,instar,2.0
+3749,,,,Sinai between Abu Zenima (2903N/3306E) and Shrm Esh Shikh (2752N/3413E),2.0
+3750,,,,Allaqi (2256N/3300E),2.0
+3751,,,,Sinai Peninsula as,2.0
+3752,,,,the Red Sea coast near Berenice (2359N/3524E),2.0
+3753,,,,north of Aswan near Kom Ombo (2428N/3257E),2.0
+3754,,,,Tushka (2247N/3126E) as,2.0
+3755,,,,sq mtre,2.0
+3756,,,,Karkur Talh,2.0
+3757,,,,of the Red Sea Hills near Wadi Abraq,2.0
+3758,,,,Nile River,2.0
+3759,,,,El Heiz (2802N/2838E),2.0
+3760,,,,Bali (2723N/3330E),2.0
+3761,,,,Red Sea coast between Shlatyn (2308N/3535E) and Halaib (2212N/3635E),2.0
+3762,,,,Sinai near Abu Zenima (2903N/3306E),2.0
+3763,,,,Migratory Locusts,2.0
+3764,,,,Siwa,2.0
+3765,,,,the Nile Valley near Qena (2609N/3243E),2.0
+3766,,,,Shrq Al,2.0
+3767,,,,Farafra,2.0
+3768,,,,the Western Desert near Baris (2439N/3035E),2.0
+3769,,,,Zafaranah (2906N/3239E),2.0
+3770,,,,north between Berenice (2359N/3524E) and Marsa Alam (2504N/3454E),2.0
+3771,,,,Wadi Natrun (3025N/3013E),2.0
+3772,,,,El Shikh El Shazly (2412N/3438E),2.0
+3773,,,,Lake Nasser between Garf Husein (2317N/3252E) and Abu Simbel (2219N/3138E),2.0
+3774,,,,Owainat (2233N/2842E),2.0
+3775,,,,Kharga Oasis,2.0
+3776,,,,Fayoum (2918N/3050E),2.0
+3777,,,,Gilf Kebir Plateau,2.0
+3778,,,,Shlatein (2308N/3535E) between W. Ibib and W. Diib,2.0
+3779,,,,the Western Desert near Farafra (2710N/2818E),2.0
+3780,,,,Lake Nassar,2.0
+3781,,,,ShOweinat (2240N/2845E),2.0
+3782,,,,Wadi Boway (2217N/3546E),2.0
+3783,,,,of the Red Sea near Shlatyn (2308N/3535E),2.0
+3784,,,,W. Hamra,2.0
+3785,,,,Shikh Uweinat,2.0
+3786,,,,Mersa Matruh (3120N/2713E),2.0
+3787,,,,Baris,2.0
+3788,,,,Alexandria,2.0
+3789,,,,ElHeiz (2802N/2838E),2.0
+3790,,,,Hamat (2410N/3510E),2.0
+3791,,,,Tree Locust,2.0
+3792,,,,3158E,2.0
+3793,,,,west,2.0
+3794,,,,Sh Oweinat (2240N/2845E) as,2.0
+3795,,,,the Red Sea Hills near Wadi Allaqi,2.0
+3796,,,,north as Marsa Alam (2504N/3454E),2.0
+3797,,,,Aqaba coast,2.0
+3798,,,,Garb El,2.0
+3799,,,,El Baramia (2504N/3338E),2.0
+3800,,,,Red Sea Hills between Marsa Alam (2504N/3454E) and Shlatyn (2308N/3535E),2.0
+3801,,,,Abu Minkar (2633N/2742E),2.0
+3802,,,,Ga,2.0
+3803,,,,Nile Delta,2.0
+3804,,,,Qena (2609N/3243E),2.0
+3805,,,,f,2.0
+3806,,,,Qena,2.0
+3807,,,,W. Allaqi (2236N/3318E),2.0
+3808,,,,ca,2.0
+3809,,,,Ma,2.0
+3810,,,,the Nile Valley near Aswan (2405N/3256E),2.0
+3811,,,,the Western Desert near Dakhla Oasis (2530N/2900E),2.0
+3812,,,,Sohag (2633N/3142E),2.0
+3813,,,,of the Red Sea near Halaib (2213N/3638E),2.0
+3814,,,,W. Allaqi,2.0
+3815,,,,Abraq (2324N/3447E),2.0
+3816,,,,ShUweinat,2.0
+3817,,,,Mediterranean,2.0
+3818,,,,Libya,2.0
+3819,,,,Gilf Kebir,2.0
+3820,,,,Shrm Esh Sheikh (2752N/3413E),2.0
+3821,,,,Wadi Eikwau (2159N/3637E),2.0
+3822,,,,St. Catherine (2833N/3358E),2.0
+3823,,,,of the Western Desert near Sh Oweinat (2219N/2845E),2.0
+3824,,,,the Mediterranean coast near Matruh (3121N/2714E),2.0
+3825,,,,Nile Valley between Abu Simbel (2219N/3138E) and Sohag (2633N/3142E),2.0
+3826,,,,Red Sea coast near Berenice (2359N/3524E),2.0
+3827,,,,the Western Desert near Shrq Oweinat (2219N/2845E),2.0
+3828,,,,K. Murr,2.0
+3829,,,,Dakhla Oasis (2530N/2900E),2.0
+3830,,,,Sinai Peninsula between Bir El Abd (3101N/3300E) and El Arish (3108N/3348E),2.0
+3831,,,,Shrq Oweinat,2.0
+3832,,,,W. Bakht,2.0
+3833,,,,Khor Galal (2355N/3241E),2.0
+3834,,,,3536E,2.0
+3835,,,,Sinai near El Arish (3108N/3348E),2.0
+3836,,,,Shalatein,2.0
+3837,,,,Mawhoob (2546N/2837E),2.0
+3838,,,,Qena (2610N/3243E),2.0
+3839,,,,Wadi Abraq (2322N/3451E),2.0
+3840,,,,Lake Nasser near Garf Husein (2317N/3252E),2.0
+3841,,,,Jebel Al Halal,2.0
+3842,,,,Bulletin,2.0
+3843,,,,Alam (2504N/3454E),2.0
+3844,,,,Abraq,2.0
+3845,,,,May. Low,2.0
+3846,,,,Hu,2.0
+3847,,,,Shlateen,2.0
+3848,,,,Garf Husein (2246N/3225E),2.0
+3849,,,,Red Sea coast between Berenice (2359N/3524E) and Halaib (2213N/3638E),2.0
+3850,,,,Dakhla,1.0
+3851,,,,Sudan,1.0
+3852,,,,Nokra Valley,1.0
+3853,BAHRAIN,Arabian Peninsula,1.0,Manama (2610N/5032E),2.0
+3854,BAHRAIN,T,1.0,,
+3855,BAHRAIN,north-,1.0,,
+3856,IRAQ,Saudi Arabia,5.0,Nasiriyah (3103N/4616E),3.0
+3857,IRAQ,Arabia,5.0,Basrah (3031N/4749E),3.0
+3858,IRAQ,Red Sea coast,3.0,Karbala (3236N/4401E) between Al Diwaniyah (3158N/4453E) and Samawah (3117N/4516E),2.0
+3859,IRAQ,BAHRAIN,1.0,Samawah (3117N/4516E),2.0
+3860,IRAQ,D.R.,1.0,Basrah,2.0
+3861,IRAQ,Al Anbar,1.0,Karbala,2.0
+3862,IRAQ,Al Diwaniyah,1.0,Kuwait,2.0
+3863,IRAQ,Al Najaf,1.0,Thiqar,2.0
+3864,IRAQ,Al Muthanna,1.0,Al Basrah (3015N/4745E),2.0
+3865,,,,Karbala (3236N/4401E),1.0
+3866,,,,Al Muthanna,1.0
+3867,ISRAEL,south,3.0,Negev Desert,5.0
+3868,ISRAEL,Sudan,2.0,Eilat (2933N/3457E),4.0
+3869,ISRAEL,Sinai border,1.0,Haifa (3248N/3459E),4.0
+3870,ISRAEL,Negev,1.0,Negev,3.0
+3871,ISRAEL,Jordan,1.0,Sinai border,2.0
+3872,ISRAEL,Red Sea,1.0,north near Jerusalem,2.0
+3873,ISRAEL,T,1.0,Be’er Milka (3056N/3424E),2.0
+3874,,,,Nitzana,2.0
+3875,,,,the Arava Valley near Jordan,2.0
+3876,,,,Mitzpe Ramon (3036N/3448E),2.0
+3877,,,,Ein Gedi (3127N/3523E) as,2.0
+3878,,,,Arava,2.0
+3879,,,,Ze’elim (3112N/3432E),2.0
+3880,,,,Negev Desert between Nitzana (3053N/3425E) and Ze’elim (3112N/3432E),2.0
+3881,,,,Arad (3115N/3512E),2.0
+3882,,,,Jordanian border,2.0
+3883,,,,Nitzana (3053N/3425E),2.0
+3884,,,,Golan Heights,2.0
+3885,,,,south,2.0
+3886,,,,Swarms,2.0
+3887,,,,Tel Aviv (3204N/3446E),2.0
+3888,,,,Arava Valley,2.0
+3889,,,,Sinai Peninsula,2.0
+3890,,,,Dead Sea,2.0
+3891,,,,inmid,2.0
+3892,,,,Ashkelon (3139N/3432E),2.0
+3893,JORDAN,Saudi Arabia,4.0,Aqaba (2932N/3500E),3.0
+3894,JORDAN,Arabia,4.0,Saudi Arabia,3.0
+3895,JORDAN,Red Sea coast,3.0,Aqaba,3.0
+3896,JORDAN,D.R.,2.0,Arava Valley between Aqaba and Ghor Saﬁ (3023N/3510E),2.0
+3897,JORDAN,east,1.0,northwest,2.0
+3898,JORDAN,BAHRAIN,1.0,Israel,2.0
+3899,JORDAN,Aqaba,1.0,Araba Valley,2.0
+3900,JORDAN,Israel,1.0,ﬂ,2.0
+3901,JORDAN,south,1.0,Al Jafr (3019N/3610E),2.0
+3902,JORDAN,Red Sea,1.0,Taﬁ,2.0
+3903,,,,Aqaba (2937N/3500E),2.0
+3904,,,,Al Jafr,2.0
+3905,,,,southeast,2.0
+3906,,,,Amman (3157N/3554E),2.0
+3907,OMAN,Batinah coast,24.0,Musandam Peninsula,124.0
+3908,OMAN,Shrqiya,16.0,Batinah coast,65.0
+3909,OMAN,Sharqiya,6.0,Buraimi (2415N/5547E),59.0
+3910,OMAN,Sur,6.0,Adam (2223N/5731E),57.0
+3911,OMAN,Dhofar,6.0,Nizwa (2255N/5731E),42.0
+3912,OMAN,Dhahera,6.0,Musandam,39.0
+3913,OMAN,Indo-Pakistan,6.0,Dhofar,37.0
+3914,OMAN,Dakhliya,5.0,Thumrait (1736N/5401E),35.0
+3915,OMAN,Wahiba Sands,5.0,Batinah,34.0
+3916,OMAN,Shrkiya,4.0,Shrqiya,32.0
+3917,OMAN,Dhahira,4.0,Dakhliya,29.0
+3918,OMAN,Al Wusta,4.0,Ibri (2314N/5630E),26.0
+3919,OMAN,Salalah,3.0,Dhahera,25.0
+3920,OMAN,Yemen border,3.0,the Batinah coast near Jamma (2333N/5733E),20.0
+3921,OMAN,Muscat,3.0,Dhahira,20.0
+3922,OMAN,Musandam Peninsula,3.0,Buraimi,19.0
+3923,OMAN,Batinah,3.0,Yemen border,18.0
+3924,OMAN,Batinah coast between Seeb and Sohar,2.0,Sur (2234N/5930E),18.0
+3925,OMAN,Empty,2.0,Wahiba Sands,17.0
+3926,OMAN,Sur as,2.0,Dakhiliya,15.0
+3927,OMAN,Jazeer,2.0,Muscat,15.0
+3928,OMAN,Marmul,2.0,Ibra (2243N/5831E),14.0
+3929,OMAN,Somalia,2.0,Marmul (1808N/5516E),13.0
+3930,OMAN,south,2.0,Maziuna (1750N/5239E),12.0
+3931,OMAN,eastern coast,2.0,Yemen,11.0
+3932,OMAN,India,1.0,Jamma (2333N/5733E),11.0
+3933,OMAN,Jebel Akhdar between Al Dhahera and Al Shrqiya,1.0,Oman,10.0
+3934,OMAN,Pakistan,1.0,Muscat (2337N/5833E),10.0
+3935,OMAN,Al Wusta coast,1.0,Sinaw (2230N/5802E),10.0
+3936,OMAN,Yemeni border,1.0,UAE,10.0
+3937,OMAN,Yemen border as,1.0,Shhan (1746N/5229E),8.0
+3938,OMAN,Ibri,1.0,Sharqiya,8.0
+3939,OMAN,Dakhiliya,1.0,Sur,7.0
+3940,OMAN,Al Waste Governorate,1.0,Sohar (2421N/5644E),7.0
+3941,OMAN,Arabian Peninsula,1.0,north,7.0
+3942,OMAN,Hayma,1.0,Dakhalia,6.0
+3943,OMAN,north,1.0,Wusta,6.0
+3944,OMAN,Shrqiya as,1.0,Salalah (1700N/5405E),6.0
+3945,OMAN,Sohar,1.0,south near Maziuna (1750N/5239E),5.0
+3946,OMAN,interior,1.0,the Yemeni border near Maziuna (1750N/5239E),5.0
+3947,OMAN,Yemen,1.0,Ras Al Hadd (2232N/5948E),5.0
+3948,OMAN,Gonu,1.0,Bidiya (2222N/5856E),5.0
+3949,OMAN,movesouth,1.0,Empty Quarter,5.0
+3950,OMAN,Sharqiyah,1.0,Dhahera between Ibri (2314N/5630E) and Buraimi (2415N/5547E),5.0
+3951,OMAN,Dhahera as,1.0,Wadi Batha,4.0
+3952,OMAN,Hikka,1.0,m2,4.0
+3953,OMAN,brieﬂ y,1.0,Wahiba,4.0
+3954,OMAN,Africa,1.0,Yemeni border,4.0
+3955,OMAN,west,1.0,Dofar,4.0
+3956,OMAN,Al Hajar Mountains,1.0,Ras Al Hadd (2232N/5947E),4.0
+3957,OMAN,Kyarr,1.0,Saudi Arabian border,4.0
+3958,OMAN,northeast coast,1.0,Hayma (1957N/5616E),4.0
+3959,,,,Shrqiya Region,4.0
+3960,,,,Duqm (1939N/5743E),4.0
+3961,,,,Jamma,4.0
+3962,,,,Duqm,3.0
+3963,,,,Al Jazer (1835N/5635E),3.0
+3964,,,,coast,3.0
+3965,,,,Al Dakhliya,3.0
+3966,,,,Madha,3.0
+3967,,,,northeast,3.0
+3968,,,,the Batinah coast near Sohar (2421N/5644E),3.0
+3969,,,,Wadi Bath,2.0
+3970,,,,Batinah coast near Jamma (2333N/5733E),2.0
+3971,,,,Midha,2.0
+3972,,,,Rodha (2551N/5616E),2.0
+3973,,,,Al,2.0
+3974,,,,Cyclone Gonu,2.0
+3975,,,,Bureimi,2.0
+3976,,,,Maziuna,2.0
+3977,,,,Wasil (2230N/5845E),2.0
+3978,,,,Batinah coast between Sohar and Muscat,2.0
+3979,,,,Bymid,2.0
+3980,,,,of Dakhiliya near Nizwa (2255N/5731E),2.0
+3981,,,,Rustaq (2323N/5725E),2.0
+3982,,,,Batinah coast between Muscat (2337N/5833E) and Jamma (2333N/5733E),2.0
+3983,,,,Rub Al Khali,2.0
+3984,,,,the Yemen border near Sarfayt (1641N/5307E),2.0
+3985,,,,Marsawdad (1914N/5421E),2.0
+3986,,,,north near Qabat Al Nasr (1810N/5311E),2.0
+3987,,,,Al Qabel (2234N/5843E),2.0
+3988,,,,Dakhliya Region between Ibri (2314N/5630E) and Nizwa (2255N/5731E),2.0
+3989,,,,mst,2.0
+3990,,,,Shrkiya,2.0
+3991,,,,Wadi Shtal (2011N/5746E),2.0
+3992,,,,Bidiya (2226N/5848E),2.0
+3993,,,,Dahera,2.0
+3994,,,,Dhofar Hills,2.0
+3995,,,,ﬁ rst,2.0
+3996,,,,md,2.0
+3997,,,,of Dhofar near Shhan (1746N/5229E),2.0
+3998,,,,the Musandam coast near Midha (2517N/5619E),2.0
+3999,,,,Ibri,2.0
+4000,,,,Mawaleh (2332N/5812E),2.0
+4001,,,,Quriyat,2.0
+4002,,,,the Yemen border near Maziuna (1750N/5239E),2.0
+4003,,,,interior,2.0
+4004,,,,Shrqiya near Ibra,2.0
+4005,,,,of the Wahiba Sands near Bidiya (2226N/5848E),2.0
+4006,,,,Sarab,2.0
+4007,,,,Jebel Akhdar,2.0
+4008,,,,Jama (2332N/5737E),2.0
+4009,,,,Diba (2538N/5615E),2.0
+4010,,,,Adam,2.0
+4011,,,,hopperswere,2.0
+4012,,,,Shrqiyah,2.0
+4013,,,,Iran,2.0
+4014,,,,Dhahera Region,2.0
+4015,,,,coastal,2.0
+4016,,,,central,2.0
+4017,,,,of Dhofar near Thumrait (1736N/5401E),2.0
+4018,,,,south near Marmul (1808N/5516E),2.0
+4019,,,,5734E,2.0
+4020,,,,Wadi Al Ameiri (2141N/5613E),2.0
+4021,,,,Khasab,2.0
+4022,,,,north Thumrait (1736N/5401E),2.0
+4023,,,,North,2.0
+4024,,,,southwest,2.0
+4025,,,,Al Musanaah (2332N/5737E),2.0
+4026,,,,south-,2.0
+4027,,,,Ras Al Hadd,2.0
+4028,,,,Jummah,2.0
+4029,,,,Wadi Al Ain,2.0
+4030,,,,Hayma,2.0
+4031,,,,Wadi Bani Ghaﬁ r,2.0
+4032,,,,Al Jazar (1856N/5702E),2.0
+4033,,,,of Dhofar near Yemen,2.0
+4034,,,,Al Sahiya (2314N/5807E),2.0
+4035,,,,east,2.0
+4036,,,,Al-Dhahira,2.0
+4037,,,,Ibri (2314N/5630E) as,2.0
+4038,,,,Maqshan (1935N/5453E),2.0
+4039,,,,Wadi Al Khoudh (2338N/5809E),2.0
+4040,,,,Wadi Al Hamir,2.0
+4041,,,,Al Faleij (2334N/5800E),2.0
+4042,,,,Ras Al-Had,2.0
+4043,,,,Dakhliya between Adam (2223N/5731E) and Nizwa (2255N/5731E),2.0
+4044,,,,Wadi Sarab (2010N/5748E),2.0
+4045,,,,east near Ibra (2243N/5831E),2.0
+4046,,,,of Dhahirah near Buraimi (2415N/5547E),2.0
+4047,,,,Haﬁ t (2355N/5550E),2.0
+4048,,,,Mekunu,2.0
+4049,,,,Al Jazer (1833N/5634E),2.0
+4050,,,,South Shrqiya,2.0
+4051,,,,the Battinah coast near Jamma (2333N/5733E),2.0
+4052,,,,the Musandam Peninsula near Khasab,2.0
+4053,,,,Ras Al,1.0
+4054,,,,Mahda (2518N/5620E),1.0
+4055,,,,Wusta Region,1.0
+4056,,,,Batinah coast near Rustaq (2323N/5725E),1.0
+4057,QATAR,Arabian Peninsula,1.0,Doha (2517N/5131E),2.0
+4058,QATAR,north-,1.0,,
+4059,,,,Tartous (3453N/3555E),2.0
+4060,,,,Latakia (3531N/3547E),2.0
+4061,PAKISTAN,Baluchistan,83.0,Indian border,98.0
+4062,PAKISTAN,Tharparkar,65.0,Cholistan,72.0
+4063,PAKISTAN,Cholistan,49.0,Baluchistan,63.0
+4064,PAKISTAN,Indo-Pakistan,26.0,Rahimyar Khan (2822N/7020E),49.0
+4065,PAKISTAN,Nara,16.0,Karachi,46.0
+4066,PAKISTAN,Baluchistan coast,10.0,Tharparkar,45.0
+4067,PAKISTAN,Khipro,9.0,Uthal,33.0
+4068,PAKISTAN,Africa,7.0,Bahawalpur (2924N/7147E),31.0
+4069,PAKISTAN,Turbat,6.0,Cholistan Desert,30.0
+4070,PAKISTAN,Panjgur,6.0,Lasbela,30.0
+4071,PAKISTAN,Baluchistan as,5.0,Uthal (2548N/6637E),27.0
+4072,PAKISTAN,Pasni,5.0,Las Bela,26.0
+4073,PAKISTAN,Khairpur,5.0,Turbat,26.0
+4074,PAKISTAN,Indian border,5.0,Kharan (2832N/6526E),26.0
+4075,PAKISTAN,west,4.0,Turbat (2600N/6303E),23.0
+4076,PAKISTAN,Indus Valley,4.0,Khairpur,22.0
+4077,PAKISTAN,mst,4.0,Nara,21.0
+4078,PAKISTAN,Rajasthan,4.0,Pasni,20.0
+4079,PAKISTAN,Khaipur,3.0,Bahawalpur,20.0
+4080,PAKISTAN,Oman,3.0,rst,20.0
+4081,PAKISTAN,Iranian border,3.0,Tharparkar Desert,19.0
+4082,PAKISTAN,Nushki,3.0,Rahimyar Khan,19.0
+4083,PAKISTAN,Dalbandin,3.0,Khuzdar (2749N/6639E),18.0
+4084,PAKISTAN,Uthal,3.0,ﬁ,18.0
+4085,PAKISTAN,Kharan,3.0,Sukkur (2742N/6854E),18.0
+4086,PAKISTAN,Bahawalpur,3.0,Panjgur (2658N/6406E),17.0
+4087,PAKISTAN,Kharan Valley,2.0,India,16.0
+4088,PAKISTAN,Cholistan as,2.0,Gwadar,14.0
+4089,PAKISTAN,Iran,2.0,Khipro,14.0
+4090,PAKISTAN,Jiwani,2.0,Nara Desert,14.0
+4091,PAKISTAN,east,2.0,Nushki (2933N/6601E),13.0
+4092,PAKISTAN,Tharparkar Desert,2.0,west of Karachi near Uthal (2548N/6637E),13.0
+4093,PAKISTAN,Baluchistan between Jiwani and Ormara,2.0,Panjgur,13.0
+4094,PAKISTAN,Sholi,2.0,Indus Valley,12.0
+4095,PAKISTAN,Khairpur as,2.0,Sukkur,12.0
+4096,PAKISTAN,Lasbela,2.0,Rohri (2739N/6857E),12.0
+4097,PAKISTAN,Baluchistan between Iran and Lasbela,2.0,Dalbandin (2856N/6430E),12.0
+4098,PAKISTAN,swarm,1.0,Islamgarh (2751N/7048E),11.0
+4099,PAKISTAN,Tharpakar,1.0,Indo-Pakistan,11.0
+4100,PAKISTAN,East Africa,1.0,Karachi (2450N/6702E),11.0
+4101,PAKISTAN,Yemyin,1.0,Kharan,10.0
+4102,PAKISTAN,India,1.0,Nushki,10.0
+4103,PAKISTAN,May. Locust,1.0,Mirpurkhas,10.0
+4104,PAKISTAN,Las Bela as,1.0,Khuzdar,10.0
+4105,PAKISTAN,Arabian Peninsula,1.0,Pasni (2515N/6328E),10.0
+4106,PAKISTAN,Sindh,1.0,Ormara (2512N/6438E),9.0
+4107,PAKISTAN,Ormara,1.0,Bahawalapur,9.0
+4108,PAKISTAN,mve,1.0,Baluchistan coast,8.0
+4109,PAKISTAN,Khuzdar,1.0,Iran,8.0
+4110,PAKISTAN,the Baluchistan coast near Turbat,1.0,south,8.0
+4111,PAKISTAN,Gonu,1.0,Pasni (2513N/6330E),8.0
+4112,PAKISTAN,Locust,1.0,Mirpurkhas (2533N/6905E),8.0
+4113,PAKISTAN,moveto Cholistan,1.0,Gwadar (2508N/6219E),8.0
+4114,PAKISTAN,southwest,1.0,Ghotki,8.0
+4115,PAKISTAN,southeast,1.0,Lasbela (2614N/6619E),7.0
+4116,PAKISTAN,Kulanch Valley,1.0,Lasbela Valley,7.0
+4117,PAKISTAN,May. Fledging,1.0,west,7.0
+4118,PAKISTAN,Punjab,1.0,north,7.0
+4119,PAKISTAN,Cholistan Deserts,1.0,the Sholi Valley near Turbat (2600N/6303E),6.0
+4120,PAKISTAN,Cyclone Phet,1.0,Cholistan Deserts,6.0
+4121,PAKISTAN,Bahawalapur,1.0,wadar (2508N/6219E),6.0
+4122,PAKISTAN,Yemen,1.0,India border,6.0
+4123,PAKISTAN,Rahimyar Khan,1.0,Kharan Valley (2832N/6526E),6.0
+4124,PAKISTAN,Shooli,1.0,of Baluchistan near Panjgur (2658N/6406E),6.0
+4125,PAKISTAN,Nagarparkar,1.0,asni (2515N/6328E),6.0
+4126,PAKISTAN,inmid,1.0,bush,6.0
+4127,PAKISTAN,Arabian Sea,1.0,Cholistan near Islamgarh (2751N/7048E),5.0
+4128,PAKISTAN,Nokkundi,1.0,ﬁ rst,5.0
+4129,PAKISTAN,Tharparkar as,1.0,km,5.0
+4130,,,,Cholistan near Bahawalpur (2924N/7147E),4.0
+4131,,,,Mekran,4.0
+4132,,,,Chagai Hills,4.0
+4133,,,,Rohri,4.0
+4134,,,,of Baluchistan near P,4.0
+4135,,,,Valley,4.0
+4136,,,,Ormara,4.0
+4137,,,,Khipro Desert,4.0
+4138,,,,Khairpur Desert,4.0
+4139,,,,Tharparkar Deserts,4.0
+4140,,,,of Baluchistan near Uthal (2548N/6637E),4.0
+4141,,,,Quetta (3015N/6700E),4.0
+4142,,,,Pakistan,4.0
+4143,,,,Sulaika,4.0
+4144,,,,Kharan Valley,4.0
+4145,,,,Lasbela (2612N/6620E),4.0
+4146,,,,Baluchistan near Nushki (2933N/6601E),4.0
+4147,,,,G,4.0
+4148,,,,west of Karachi near Lasbela (2614N/6619E),4.0
+4149,,,,Baluchistan near Panjgur (2658N/6406E),4.0
+4150,,,,Iranian border,4.0
+4151,,,,Rajanpur,3.0
+4152,,,,Bymid,3.0
+4153,,,,Dera Bugti,3.0
+4154,,,,fortnight,3.0
+4155,,,,Indian border as,3.0
+4156,,,,Sholi Valley,3.0
+4157,,,,Salamsar (2758N/7149E),3.0
+4158,,,,Quetta,3.0
+4159,,,,Iran border,3.0
+4160,,,,Dera Ismail Khan (7055N/3150E),3.0
+4161,,,,Pakistan Joint Survey,3.0
+4162,,,,Afghan border,3.0
+4163,,,,Washuk (2744N/6448E),3.0
+4164,,,,Garh (2720N/6915E),2.0
+4165,,,,west of Karachi near Uthal,2.0
+4166,,,,adar (2508N/6219E),2.0
+4167,,,,Khokhropar (2542N/7012E),2.0
+4168,,,,Chalanwala (2801N/7152E),2.0
+4169,,,,Chachro (2509N/7018E),2.0
+4170,,,,Guft (2930N/6545E),2.0
+4171,,,,Islamkot (2437N/7014E),2.0
+4172,,,,Bela,2.0
+4173,,,,Virawah (2431N/7046E),2.0
+4174,,,,Fazilwala (2755N/7058E),2.0
+4175,,,,Uthal (2548N/6640E),2.0
+4176,,,,y,2.0
+4177,,,,of Baluchistan near Pasni,2.0
+4178,,,,6256E,2.0
+4179,,,,Salamsar,2.0
+4180,,,,the Indian border near Islamgarh (2751N/7048E),2.0
+4181,,,,Shooli,2.0
+4182,,,,of Baluchistan near Khuzdar,2.0
+4183,,,,Afghanistan border as,2.0
+4184,,,,southwest of Nushki near Mull (2920N/6545E),2.0
+4185,,,,Ismail Dhar (2750N/7109E),2.0
+4186,,,,Ismail Dahr (2750N/7109E) near Rahimyar Khan,2.0
+4187,,,,Gwadar Districts,2.0
+4188,,,,Birthwar (2627N/7009E),2.0
+4189,,,,Kandewari (2532N/6608E),2.0
+4190,,,,Locust,2.0
+4191,,,,west of Karachi near Las Bela,2.0
+4192,,,,Chachro,2.0
+4193,,,,Resham Tar (2501N/7049E),2.0
+4194,,,,6504E,2.0
+4195,,,,Tharparkar Desert as,2.0
+4196,,,,Desert Locust,2.0
+4197,,,,Rumra (2526N/6341E),2.0
+4198,,,,west of Karachi near Lasbela (2612N/6620E),2.0
+4199,,,,Borko (2817N/6542E),2.0
+4200,,,,Cholistan near Dhandwala (2818N/7207E),2.0
+4201,,,,Okara,2.0
+4202,,,,Baluchistan near Gwadar (2508N/6219E),2.0
+4203,,,,Sukkur Rahimyar Khan,2.0
+4204,,,,east near Lasbela (2612N/6620E),2.0
+4205,,,,swarm,2.0
+4206,,,,Chhore (2535N/6948E),2.0
+4207,,,,Indian border between Rahimyar Khan and Bahawalpur (2924N/7147E),2.0
+4208,,,,Lakki Marwat,2.0
+4209,,,,Mamai (2550N/6515E),2.0
+4210,,,,Baluchistan near Kharan (2832N/6526E),2.0
+4211,,,,Medium,2.0
+4212,,,,Baluchistan as,2.0
+4213,,,,Baluchistan between Gwadar (2508N/6219E) and Pasni (2513N/6330E),2.0
+4214,,,,Solitary,2.0
+4215,,,,Kakki (2855N/7114E),2.0
+4216,,,,Baluchistan coast between Pasni (2513N/6330E) and Jiwani (2502N/6150E),2.0
+4217,,,,Qila Saifullah,2.0
+4218,,,,Tharparkar Deserts as,2.0
+4219,,,,Baluchistan coast between Turbat (2600N/6303E) and Gwadar (2508N/6219E),2.0
+4220,,,,P,2.0
+4221,,,,Khyber Pakhtunkhwa near Dera Ismail Khan (3151N/7052E),2.0
+4222,,,,Baluchistan near Khuzdar,2.0
+4223,,,,Akra Band (2526N/6220E),2.0
+4224,,,,Nagarparkar (2421N/7045E),2.0
+4225,,,,Tharparkar Desert near Mirpurkhas (2533N/6905E),2.0
+4226,,,,Sholi (2536N/6215E),2.0
+4227,,,,Sulaika (2550N/6256E),2.0
+4228,,,,Gwadar (2509N/6221E),2.0
+4229,,,,Meerani (2607N/6625E),2.0
+4230,,,,Shooli (2542N/6237E),2.0
+4231,,,,Dalbandin,2.0
+4232,,,,km2 swarm,2.0
+4233,,,,km2,2.0
+4234,,,,16th-23rd,2.0
+4235,,,,Romra (2533N/6345E),2.0
+4236,,,,Afghanistan border,2.0
+4237,,,,Sindh,2.0
+4238,,,,Naro (2826N/6531E),2.0
+4239,,,,south near Lasbela (2614N/6619E),2.0
+4240,,,,interior,2.0
+4241,,,,1–27 May.,2.0
+4242,,,,Ziarat,2.0
+4243,,,,Hazar Gaft (2930N/6545E),2.0
+4244,,,,Turbat Valley,2.0
+4245,,,,Dera Ismail Khan,2.0
+4246,,,,the Indian border near Gopan Wari (2733N/6956E),2.0
+4247,,,,southwest,2.0
+4248,,,,Baluchistan coast between Suntsar (2529N/6201E) and Gorani (2521N/6322E),2.0
+4249,,,,Cholistan as,2.0
+4250,,,,Naro (2822N/6532E),2.0
+4251,,,,Pishin,2.0
+4252,,,,Indus River Valley,2.0
+4253,,,,Kashmore,2.0
+4254,,,,ew Karachi (2450N/6702E),2.0
+4255,,,,Jiwani (2502N/6150E),2.0
+4256,,,,Kulanch Valley,2.0
+4257,,,,Bidrang (2603N/6410E),2.0
+4258,,,,Gopan Wari (2733N/6956E),2.0
+4259,,,,Punjab Plains,2.0
+4260,,,,Ziarat (2809N/6535E),2.0
+4261,,,,Sadewala (2753N/7056E),2.0
+4262,,,,Bahawalnagar,2.0
+4263,,,,Tharparkar Desert near Chachro (2506N/7015E),2.0
+4264,,,,Dal Bandin (2856N/6430E),2.0
+4265,,,,Shmsi,2.0
+4266,,,,of Baluchistan near Turbat (2600N/6306E),2.0
+4267,,,,Ghotki District,2.0
+4268,,,,Mithi,2.0
+4269,,,,Gw,2.0
+4270,,,,Pir Jatmal (2726N/6948E),2.0
+4271,,,,Nokkundi (2849N/6244E),2.0
+4272,,,,Islamkot (2442N/7011E),2.0
+4273,,,,Punjab,2.0
+4274,,,,Las Bela (2612N/6620E),2.0
+4275,,,,Lucky Marwat,2.0
+4276,,,,Baluchistan between Panjgur (2658N/6406E) and Quetta (3015N/6700E),1.0
+4277,,,,east,1.0
+4278,,,,Indus Valley near Rohri (2739N/6857E),1.0
+4279,,,,6507E,1.0
+4280,,,,Sholi,1.0
+4281,,,,Rajasthan,1.0
+4282,INDIA,Rajasthan,24.0,Rajasthan,119.0
+4283,INDIA,Gujarat,13.0,Gujarat,96.0
+4284,INDIA,Jaisalmer,12.0,Bikaner (2801N/7322E),41.0
+4285,INDIA,Bikaner,7.0,Jaisalmer,37.0
+4286,INDIA,Barmer,7.0,Pakistani border,35.0
+4287,INDIA,Africa,6.0,Bikaner,33.0
+4288,INDIA,Pakistani border,4.0,Barmer,33.0
+4289,INDIA,Jodhpur,4.0,Jodhpur,27.0
+4290,INDIA,Pakistan,4.0,Jaisalmer (2652N/7055E),26.0
+4291,INDIA,Rajasthan as,4.0,Phalodi (2706N/7222E),18.0
+4292,INDIA,west,4.0,Barmer (2543N/7125E),18.0
+4293,INDIA,Pakistan border,3.0,rst,18.0
+4294,INDIA,Baluchistan,3.0,Pakistan border,15.0
+4295,INDIA,Oman,2.0,Jodhpur (2618N/7308E),13.0
+4296,INDIA,Indo-Pakistan,2.0,Kutch,11.0
+4297,INDIA,mst,2.0,Bikaner District,8.0
+4298,INDIA,Chhattisgarh,2.0,ﬁ,8.0
+4299,INDIA,Gujarat as,2.0,Sam (2649N/7030E),7.0
+4300,INDIA,Rajasthan Canal,2.0,northwest,6.0
+4301,INDIA,east,2.0,ﬁ rst,6.0
+4302,INDIA,states,1.0,Bhuj (2312N/6954E),6.0
+4303,INDIA,east as,1.0,Pakistan,6.0
+4304,INDIA,Arabian Peninsula,1.0,south,6.0
+4305,INDIA,Haryana,1.0,Suratgarh (2919N/7354E),5.0
+4306,INDIA,bymid,1.0,Banaskantha,5.0
+4307,INDIA,Punjab border,1.0,Rajasthan near Jaisalmer (2652N/7055E),5.0
+4308,INDIA,Madhya Pradesh,1.0,Rajasthan Canal,5.0
+4309,INDIA,Odisha,1.0,km,5.0
+4310,INDIA,Uttar Pradesh,1.0,Phalodi,5.0
+4311,INDIA,Delhi,1.0,Lunkaransar (2829N/7345E),4.0
+4312,INDIA,south,1.0,Churu,4.0
+4313,INDIA,Bihar,1.0,Desert Locust,4.0
+4314,INDIA,Cyclone Phet,1.0,Nagaur,4.0
+4315,INDIA,Yemen,1.0,am (2649N/7030E),4.0
+4316,INDIA,Rajasthan frommid,1.0,Jalore,4.0
+4317,INDIA,Punjab,1.0,Bulletin,4.0
+4318,INDIA,Arabian Sea,1.0,Sultana (2725N/7055E),4.0
+4319,INDIA,Maharashtra,1.0,Indo-Pakistan,4.0
+4320,INDIA,monsoon,1.0,southwest,4.0
+4321,,,,north,4.0
+4322,,,,S,4.0
+4323,,,,Sam,4.0
+4324,,,,Jaisalmer District,4.0
+4325,,,,Barmer District,4.0
+4326,,,,west,3.0
+4327,,,,Indira Gandhi Canal,3.0
+4328,,,,Jalor,3.0
+4329,,,,Sam (2640N/7011E),3.0
+4330,,,,Jodhpur between Phalodi (2706N/7222E) and Jaisalmer (2652N/7055E),3.0
+4331,,,,Rajasthan between Barmer and Bikaner,2.0
+4332,,,,Sam as,2.0
+4333,,,,J,2.0
+4334,,,,r (2652N/7055E),2.0
+4335,,,,Kupauria,2.0
+4336,,,,Nagaur District,2.0
+4337,,,,Nagpur (2712N/7345E),2.0
+4338,,,,West Rajasthan,2.0
+4339,,,,Rajasthan near Bikaner (2801N/7322E),2.0
+4340,,,,Rajasthan near Jalore,2.0
+4341,,,,Nagaur (2712N/7345E),2.0
+4342,,,,sq km,2.0
+4343,,,,instar,2.0
+4344,,,,-31,2.0
+4345,,,,Bhinmal (2500N/7215E),2.0
+4346,,,,Bikaner (2801N/7322E) as,2.0
+4347,,,,aisalmer (2652N/7055E),2.0
+4348,,,,Birloka (2658N/7303E),2.0
+4349,,,,Surjara (2804N/7249E),2.0
+4350,,,,Sundra,2.0
+4351,,,,Tharad (2424N/7138E),2.0
+4352,,,,West Rajasthan near Jaisalmer (2652N/7055E),2.0
+4353,,,,md,2.0
+4354,,,,m2,2.0
+4355,,,,7304E,2.0
+4356,,,,Sultana,2.0
+4357,,,,Sundra (2605N/7013E),2.0
+4358,,,,Ghotaru (2723N/7005E),2.0
+4359,,,,Jaisalme,2.0
+4360,,,,sq m,2.0
+4361,,,,Panchla (2559N/7010E),2.0
+4362,,,,Gujarat near Palanpur,2.0
+4363,,,,Bijawal (2554N/7024E),2.0
+4364,,,,Bhuj,2.0
+4365,,,,Sa m(2649N/7030E,2.0
+4366,,,,lmer (2652N/7055E),2.0
+4367,,,,west of Jaisalmer near Sam (2652N/7030E),2.0
+4368,,,,southeast,2.0
+4369,,,,Sanchore (2445N/7146E),2.0
+4370,,,,Dhanana (2640N/7027E),2.0
+4371,,,,Jalore (2520N/7237E),2.0
+4372,,,,Jatari (2711N/7157E),2.0
+4373,,,,west of Jodhpur near Phalodi,2.0
+4374,,,,Nagpur,2.0
+4375,,,,Singar,2.0
+4376,,,,Sewra (2732N/7218E),2.0
+4377,,,,Basti (2636N/7014E),2.0
+4378,,,,of Rajasthan near Jodhpur,2.0
+4379,,,,Palanpur (2410N/7226E),2.0
+4380,,,,Gunjangarh (2631N/7020E),2.0
+4381,,,,east near Nagaur (2712N/7348E),2.0
+4382,,,,south near Jaisalmer (2652N/7055E),2.0
+4383,,,,Egg,2.0
+4384,,,,Nagaur (2711N/7344E),2.0
+4385,,,,Jaisa,2.0
+4386,,,,Rajasthan between Barmer (2543N/7125E) and Phalodi (2706N/7222E),2.0
+4387,,,,Jais,2.0
+4388,,,,Pakistani border between Sri Ganganagar (2955N/7353E) and Fazilka (3024N/7402E),2.0
+4389,,,,West Rajasthan between Phalodi (2706N/7222E) and Barmer (2543N/7125E),2.0
+4390,,,,Udat (2733N/7244E),2.0
+4391,,,,Churu (2818N/7458E),2.0
+4392,,,,Jodhpur District,2.0
+4393,,,,Baldaderi,2.0
+4394,,,,Punjab as,2.0
+4395,,,,Rajasthan between Phalodi (2706N/7222E) and Bikaner (2801N/7322E),2.0
+4396,,,,Punjab,2.0
+4397,,,,east as Indore (2243N/7551E),1.0
+4398,,,,Madhya Pradesh as,1.0
+4399,,,,east as,1.0
+4400,,,,Jaipur (2654N/7548E),1.0
+4401,,,,Maharastra near Nagpur (2109N/7905E),1.0
+4402,,,,east,1.0
+4403,,,,Ajmer (2627N/7438E),1.0
+4404,,,,Nagod (2434N/8035E) near Uttar Pradesh,1.0
+4405,AFGHANISTAN,Locust,9.0,Zaranj,2.0
+4406,AFGHANISTAN,Madagascar,7.0,Nimruz,2.0
+4407,AFGHANISTAN,FAO,5.0,Khost,2.0
+4408,AFGHANISTAN,Red Locust,5.0,Charburjak,2.0
+4409,AFGHANISTAN,Migratory Locust,4.0,Chakhansor,2.0
+4410,AFGHANISTAN,md,3.0,Pakistan,2.0
+4411,AFGHANISTAN,Indo-Pakistan,3.0,Zaranj (3057N/6151E),2.0
+4412,AFGHANISTAN,Kazakhstan,3.0,Iran,2.0
+4413,AFGHANISTAN,Schistocerca,3.0,Helmand River,2.0
+4414,AFGHANISTAN,Malagasy Migratory Locust,3.0,Helmand,2.0
+4415,AFGHANISTAN,Locusta mgratoria capito,3.0,northwest,2.0
+4416,AFGHANISTAN,Peru,3.0,Lashkarga (3138N/6424E),1.0
+4417,AFGHANISTAN,African Migratory Locust,2.0,Nawi,1.0
+4418,AFGHANISTAN,Calliptamus,2.0,Nimroz,1.0
+4419,AFGHANISTAN,Italian Locust,2.0,,
+4420,AFGHANISTAN,Locusta,2.0,,
+4421,AFGHANISTAN,Helmand,2.0,,
+4422,AFGHANISTAN,south,2.0,,
+4423,AFGHANISTAN,EC,2.0,,
+4424,AFGHANISTAN,Antananarivo,1.0,,
+4425,AFGHANISTAN,Moroccan Locust,1.0,,
+4426,AFGHANISTAN,Tulear,1.0,,
+4427,AFGHANISTAN,Russia,1.0,,
+4428,AFGHANISTAN,FAO HQ,1.0,,
+4429,AFGHANISTAN,Antsirabe,1.0,,
+4430,AFGHANISTAN,Swarms,1.0,,
+4431,AFGHANISTAN,La Libertad,1.0,,
+4432,AFGHANISTAN,National Anti-Locust Centre,1.0,,
+4433,AFGHANISTAN,Tsiroanomandidy,1.0,,
+4434,AFGHANISTAN,Migratory,1.0,,
+4435,AFGHANISTAN,Kandahar,1.0,,
+4436,AFGHANISTAN,Swarm,1.0,,
+4437,AFGHANISTAN,Pakistan,1.0,,
+4438,AFGHANISTAN,African Migratory Locusts,1.0,,
+4439,AFGHANISTAN,Sby,1.0,,
+4440,AFGHANISTAN,Dry,1.0,,
+4441,AFGHANISTAN,Afghanistan,1.0,,
+4442,AFGHANISTAN,Highlands,1.0,,
+4443,AFGHANISTAN,Malagasy,1.0,,
+4444,AFGHANISTAN,Dociostaurus,1.0,,
+4445,AFGHANISTAN,Ankay,1.0,,
+4446,AFGHANISTAN,Samangan,1.0,,
+4447,AFGHANISTAN,south of Antsirabe near Ambositra,1.0,,
+4448,AFGHANISTAN,Central Asia,1.0,,
+4449,AFGHANISTAN,Chagai Hills,1.0,,
+4450,AFGHANISTAN,Morondava,1.0,,
+4451,AFGHANISTAN,south inmid,1.0,,
+4452,AFGHANISTAN,Gregarious Malagasy Migratory Locust,1.0,,
+4453,AFGHANISTAN,Manambien,1.0,,
+4454,AFGHANISTAN,UNDP,1.0,,
+4455,AFGHANISTAN,Cajamarca,1.0,,
+4456,AFGHANISTAN,sq min,1.0,,
+4457,AFGHANISTAN,sq m,1.0,,
+4458,AFGHANISTAN,southwest,1.0,,
+4459,AFGHANISTAN,Baghlan,1.0,,
+4460,AFGHANISTAN,Manja,1.0,,
+4461,AFGHANISTAN,Egg,1.0,,
+4462,AFGHANISTAN,Tsivory,1.0,,
+4463,AFGHANISTAN,Sakaraha,1.0,,
+4464,AFGHANISTAN,European Community,1.0,,
+4465,AFGHANISTAN,south-west,1.0,,
+4466,AFGHANISTAN,south-,1.0,,
+4467,AFGHANISTAN,Lambayeque,1.0,,
+4468,AFGHANISTAN,Nimruz,1.0,,
+4469,AFGHANISTAN,Eastern Coast,1.0,,
+4470,AFGHANISTAN,Kunduz,1.0,,
+4471,AFGHANISTAN,•,1.0,,
+4472,AFGHANISTAN,Nimroz,1.0,,
+4473,AFGHANISTAN,Madagascar Malagasy Migratory Locust,1.0,,
+4474,AFGHANISTAN,Nayunga,1.0,,
+4475,AFGHANISTAN,Ecuador,1.0,,
+4476,AFGHANISTAN,Locusta migratoria capito,1.0,,
+4477,AFGHANISTAN,China,1.0,,
+4478,AFGHANISTAN,Miandrivazo,1.0,,
+4479,AFGHANISTAN,mst,1.0,,
+4480,AFGHANISTAN,min,1.0,,
+4481,AFGHANISTAN,west,1.0,,
+4482,AFGHANISTAN,Mission,1.0,,
+4483,AFGHANISTAN,CNA,1.0,,
+4484,AFGHANISTAN,Red,1.0,,
+4485,AFGHANISTAN,Kazakh border,1.0,,
+4486,AFGHANISTAN,Tulear-Antananarivo,1.0,,
+4487,AFGHANISTAN,north-,1.0,,
+4488,IRAN,Indo-Pakistan,14.0,Jask (2540N/5746E),139.0
+4489,IRAN,Baluchistan,12.0,Chabahar (2517N/6036E),115.0
+4490,IRAN,Jaz Murian Basin,11.0,Hormozgan,47.0
+4491,IRAN,Chabahar,11.0,e Lengheh (2634N/5452E),40.0
+4492,IRAN,Saravan,10.0,Jaz Murian Basin,40.0
+4493,IRAN,Jaz Murian,9.0,Kerman,39.0
+4494,IRAN,Iranshahr,9.0,Jask,35.0
+4495,IRAN,Jask,8.0,Bander,31.0
+4496,IRAN,Minab,5.0,Chabahar,30.0
+4497,IRAN,Arabia,5.0,Sistan-Baluchistan,29.0
+4498,IRAN,Saudi Arabia,5.0,Bushehr,29.0
+4499,IRAN,Bushehr Province,5.0,Ghale Ganj (2731N/5752E),25.0
+4500,IRAN,Pakistan,4.0,Kahnuj (2757N/5742E),25.0
+4501,IRAN,southeast,4.0,Pakistani border,24.0
+4502,IRAN,east,4.0,Bampur (2711N/6028E),23.0
+4503,IRAN,Bampur,4.0,Bandar Abbas,16.0
+4504,IRAN,west,4.0,Bushehr (2854N/5050E),16.0
+4505,IRAN,Bandar Abbas,3.0,Iran,13.0
+4506,IRAN,Yemen,3.0,Minab (2708N/5705E),12.0
+4507,IRAN,Pakistani border,3.0,Iranshahr,11.0
+4508,IRAN,Red Sea coast,3.0,Chabahar (2518N/6038E),11.0
+4509,IRAN,Gwatar,3.0,Pakistan,10.0
+4510,IRAN,Sistan-Baluchistan,3.0,Jaz Murian,10.0
+4511,IRAN,Vashnum,2.0,Iranshahr (2715N/6141E),9.0
+4512,IRAN,Migratory Locust,2.0,Iranshahr (2712N/6042E),8.0
+4513,IRAN,Pakistan border,2.0,rst,8.0
+4514,IRAN,Madagascar,2.0,Vashnum Plains,7.0
+4515,IRAN,Kahnuj,2.0,Chabahar (2516N/6041E),7.0
+4516,IRAN,Arabian Peninsula,2.0,east,7.0
+4517,IRAN,south-,2.0,Fars,7.0
+4518,IRAN,FAO,2.0,Khuzestan,7.0
+4519,IRAN,Chabahar-Jask,2.0,the Jaz Murian Basin near Ghale Ganj (2731N/5752E),7.0
+4520,IRAN,Migratory,2.0,bush,7.0
+4521,IRAN,Kerman,2.0,Bampur,6.0
+4522,IRAN,Iran,2.0,of the Jaz Murian Basin near Ghale Ganj (2731N/5752E),6.0
+4523,IRAN,India,2.0,west,6.0
+4524,IRAN,Gonu,2.0,instar,5.0
+4525,IRAN,south,2.0,6038E,5.0
+4526,IRAN,Locust,2.0,Sistan Baluchistan,5.0
+4527,IRAN,Red Locust,2.0,Pakistan border,5.0
+4528,IRAN,Hormozgan,2.0,Bander-e Lengheh,5.0
+4529,IRAN,frommid,1.0,Zarabad (2534N/5923E),5.0
+4530,IRAN,Gwatar as,1.0,Ilam,5.0
+4531,IRAN,southeast coast,1.0,Bandar Abbas (2711N/5619E),4.0
+4532,IRAN,swarm,1.0,Zarabad,4.0
+4533,IRAN,Vashnum Plains,1.0,Saravan,4.0
+4534,IRAN,South Khorasan,1.0,Zahedan,4.0
+4535,IRAN,southwest,1.0,Kahnuj,4.0
+4536,IRAN,Bander-e Lengheh,1.0,north,4.0
+4537,IRAN,Yemyin,1.0,ﬁ,4.0
+4538,IRAN,Jaz Murian Basin between Kahnuj and Iranshahr,1.0,Suran (2717N/6159E),4.0
+4539,IRAN,delay,1.0,Iraq border,4.0
+4540,IRAN,aboutmid,1.0,Sowlan (2710N/5833E),4.0
+4541,,,,Iranshahr (2715N/6041E),4.0
+4542,,,,south-,4.0
+4543,,,,Iraqi border,4.0
+4544,,,,md,4.0
+4545,,,,Zaboli (2707N/6140E),4.0
+4546,,,,Dalgan (2728N/5926E),4.0
+4547,,,,Kong (2635N/5456E),3.0
+4548,,,,Pakistan Joint Survey,3.0
+4549,,,,Afghan border,3.0
+4550,,,,6041E,3.0
+4551,,,,Plains,3.0
+4552,,,,south-east coast,3.0
+4553,,,,Bande,3.0
+4554,,,,Nakhilou,3.0
+4555,,,,Baluchistan,3.0
+4556,,,,Saravan (2721N/6220E),3.0
+4557,,,,of Baluchistan near Iranshahr,3.0
+4558,,,,Hormozgan Province near Jask (2540N/5746E),3.0
+4559,,,,Vashnum,3.0
+4560,,,,Minab,3.0
+4561,,,,Poshty (2529N/5927E),3.0
+4562,,,,Chah Deraz (2657N/5526E),2.0
+4563,,,,Khuzestan Province,2.0
+4564,,,,nd,2.0
+4565,,,,Jaz Murain Basin near Kahnuj (2757N/5742E),2.0
+4566,,,,3–23,2.0
+4567,,,,e Lengeh (2634N/5452E),2.0
+4568,,,,i-Lut,2.0
+4569,,,,Hormozgan coast between Minab (2708N/5705E) and Jask (2540N/5746E),2.0
+4570,,,,Vashnam Plains as,2.0
+4571,,,,South Kerman,2.0
+4572,,,,the Vashnam Plains near Chabahar (2517N/6037E),2.0
+4573,,,,Jaz Murian Basin between Ghale Ganj (2731N/5752E) and Iranshahr (2712N/6042E),2.0
+4574,,,,5748E,2.0
+4575,,,,Vashnam Plains (2523N/6045E),2.0
+4576,,,,Chabahar as,2.0
+4577,,,,South Khorasan near Nehbandan (3132N/6002E),2.0
+4578,,,,Zaboli (6140N/2707E),2.0
+4579,,,,Zarabad (2534N/5922E),2.0
+4580,,,,Kerman Province near Shhr,2.0
+4581,,,,of Baluchistan near Chabahar,2.0
+4582,,,,the Vashnam Plains near Chabahar (2516N/6041E) as,2.0
+4583,,,,Chab Deraz (2657N/5527E),2.0
+4584,,,,Pakistan border as,2.0
+4585,,,,east near Saravan (2725N/6217E),2.0
+4586,,,,Jas k (2540N/5746E),2.0
+4587,,,,Vashnam Plains,2.0
+4588,,,,ﬁ rst,2.0
+4589,,,,2717N/ 5842E,2.0
+4590,,,,Jaz Murian Basin near Kahnuj (2757N/5742E),2.0
+4591,,,,Ramin (2515N/6049E) near Chabahar (2517N/6036E),2.0
+4592,,,,north as,2.0
+4593,,,,Desert Locust,2.0
+4594,,,,Pishin (2604N/6144E),2.0
+4595,,,,Empty,2.0
+4596,,,,Khash,2.0
+4597,,,,6050E,2.0
+4598,,,,Bulletin No,2.0
+4599,,,,Bandar Lengeh (2634N/5452E),2.0
+4600,,,,Chabahar (2517N/6036E) as,2.0
+4601,,,,Kahnoj,2.0
+4602,,,,Dasht,2.0
+4603,,,,Zahedan (2930N/6051E),2.0
+4604,,,,ﬁ rst instar,2.0
+4605,,,,Zaribad (2536N/5921E),2.0
+4606,,,,of Hormozgan Province near Jask (2540N/5746E),2.0
+4607,,,,Beris (2512N/6108E),2.0
+4608,,,,the Jaz Murian Basin near Sowlan (2710N/5833E),2.0
+4609,,,,Busheir,2.0
+4610,,,,km2,2.0
+4611,,,,of Sistan-Baluchistan near Bampur (2711N/6028E),2.0
+4612,,,,Bandar,2.0
+4613,,,,interior,2.0
+4614,,,,Nikshahr,2.0
+4615,,,,the Jaz Murian Basin near Bampur (2711N/6028E),2.0
+4616,,,,Zabili,2.0
+4617,,,,Persian Gulf coast,2.0
+4618,,,,Hormuz between Minab (2708N/5705E) and Jask (2540N/5746E),2.0
+4619,,,,Valley,2.0
+4620,,,,Jask (2540N/5746E) a,2.0
+4621,,,,Kerman Province,2.0
+4622,,,,Chab,2.0
+4623,,,,Roudar (2532N/5959E),2.0
+4624,,,,Ja sk (2540N/5746E),2.0
+4625,,,,Jiroft,2.0
+4626,,,,India,2.0
+4627,,,,South Khorasan,2.0
+4628,,,,e Babak (3008N/5504E),2.0
+4629,,,,Afghanistan,2.0
+4630,,,,Jaz Murian Basin between Ghale Ganj (2731N/5752E) and Bampur (2711N/6028E),2.0
+4631,,,,Hormozgan Province,2.0
+4632,,,,Bushehr Provinces,2.0
+4633,,,,Qaleh Ganj (2731N/5752E),2.0
+4634,,,,Jask (2504N/5746E),2.0
+4635,,,,Pishin,2.0
+4636,,,,Pishin (2605N/6145E),2.0
+4637,,,,Bam (2907N/5820E),2.0
+4638,,,,of Sistan-Baluchistan near Iranshahr,2.0
+4639,,,,Jask (2540N/5746E) o,2.0
+4640,,,,Mirjaveh (2901N/6127E),2.0
+4641,,,,Nehbandan (3133N/6002E),2.0
+4642,,,,Mousiyan (3231N/4722E),2.0
+4643,,,,Zabol (3102N/6130E),2.0
+4644,,,,Sarbisheh (3235N/5948E),1.0
+4645,LIBYAN ARAB JAMAHIRIYA,Ghat,29.0,Ghat (2459N/1011E),23.0
+4646,LIBYAN ARAB JAMAHIRIYA,Sahel,10.0,Ghadames (3010N/0930E),18.0
+4647,LIBYAN ARAB JAMAHIRIYA,Al Hamada Al Hamra,6.0,Kufra (2411N/2315E),13.0
+4648,LIBYAN ARAB JAMAHIRIYA,Ghadames,6.0,Ghadames,11.0
+4649,LIBYAN ARAB JAMAHIRIYA,West Africa,3.0,Algerian border,11.0
+4650,LIBYAN ARAB JAMAHIRIYA,Hamada al Hamra,3.0,Ghat,11.0
+4651,LIBYAN ARAB JAMAHIRIYA,Hamadat Al Hamrah,3.0,Jebel Uweinat (2154N/2458E),10.0
+4652,LIBYAN ARAB JAMAHIRIYA,movesouth,3.0,G,9.0
+4653,LIBYAN ARAB JAMAHIRIYA,Sabha,3.0,Al Hamada Al Hamra,9.0
+4654,LIBYAN ARAB JAMAHIRIYA,Algeria,3.0,Nalut (3152N/1058E),9.0
+4655,LIBYAN ARAB JAMAHIRIYA,south,2.0,Nalut,7.0
+4656,LIBYAN ARAB JAMAHIRIYA,Jebel Uweinat,2.0,Jebel Uweinat,7.0
+4657,LIBYAN ARAB JAMAHIRIYA,Sudan,2.0,Libya,6.0
+4658,LIBYAN ARAB JAMAHIRIYA,Nalut,2.0,Sabha (2704N/1425E),6.0
+4659,LIBYAN ARAB JAMAHIRIYA,Algerian border between Ghat and Ghadames,2.0,Jebel Arkenu (2215N/2445E),6.0
+4660,LIBYAN ARAB JAMAHIRIYA,north,1.0,Egypt,6.0
+4661,LIBYAN ARAB JAMAHIRIYA,J. Uweinat,1.0,Sudan,6.0
+4662,LIBYAN ARAB JAMAHIRIYA,Egypt,1.0,m2,5.0
+4663,LIBYAN ARAB JAMAHIRIYA,Al Haruj Al Aswad,1.0,sq metre,4.0
+4664,LIBYAN ARAB JAMAHIRIYA,Waddan as,1.0,Uweinat,4.0
+4665,LIBYAN ARAB JAMAHIRIYA,Hon,1.0,ﬁ,4.0
+4666,LIBYAN ARAB JAMAHIRIYA,md,1.0,Mizda,4.0
+4667,LIBYAN ARAB JAMAHIRIYA,southeast,1.0,Al,4.0
+4668,LIBYAN ARAB JAMAHIRIYA,Sebha,1.0,Algeria,4.0
+4669,LIBYAN ARAB JAMAHIRIYA,Algerian border,1.0,Hamada Al-Hamra,4.0
+4670,LIBYAN ARAB JAMAHIRIYA,Jebel Oweinat,1.0,sq,4.0
+4671,LIBYAN ARAB JAMAHIRIYA,east,1.0,Mizda (3127N/1259E),4.0
+4672,LIBYAN ARAB JAMAHIRIYA,Ghat as,1.0,Desert Locust,4.0
+4673,,,,Kufra,3.0
+4674,,,,Jebel Al Haruj Al Aswad,3.0
+4675,,,,Bani Waled (3143N/1401E),3.0
+4676,,,,Tubruk (3206N/2356E),3.0
+4677,,,,• SituationNo,2.0
+4678,,,,Wadi Tanezzuft (2500N/1014E),2.0
+4679,,,,Algerian and Tunisian borders,2.0
+4680,,,,bush,2.0
+4681,,,,Al Khums (3239N/1415E),2.0
+4682,,,,Qarat Ghadames (2956N/0940E),2.0
+4683,,,,Migratory Locusts,2.0
+4684,,,,W. Sayad (2745N/1738E),2.0
+4685,,,,Al Hamada Al Hamra between Ghadames (3010N/0930E) and Mizda (3127N/1259E),2.0
+4686,,,,east,2.0
+4687,,,,Agriculture Projects,2.0
+4688,,,,Wadi Taselet (2432N/1057E),2.0
+4689,,,,Tanazoft (2456N/1014E),2.0
+4690,,,,Gh,2.0
+4691,,,,south near Ghat (2459N/1011E),2.0
+4692,,,,the Al Hamada Al Hamra near Al Nahya (2841N/1122E),2.0
+4693,,,,Wadi Intalug (2607N/0932E),2.0
+4694,,,,West Africa,2.0
+4695,,,,Tunisia as,2.0
+4696,,,,Jebel Uweinat (2156N/2504E),2.0
+4697,,,,Wadi Ingall (2447N/1013E),2.0
+4698,,,,Tunisia,2.0
+4699,,,,south-west near Ghat,2.0
+4700,,,,W. Gazal (2144N/2430E),2.0
+4701,,,,J. Arkenu (2215N/2445E),2.0
+4702,,,,Mediterranean coast between Tripoli and Sirte (3110N/1639E),2.0
+4703,,,,south-east near Jebel Uweinat,2.0
+4704,,,,W. Gazal,2.0
+4705,,,,Jebel Waddan,2.0
+4706,,,,Tunisian border,2.0
+4707,,,,Wadi Bali (2253N/2438E),2.0
+4708,,,,0955E,2.0
+4709,,,,Alqraya (2638N/1321E),2.0
+4710,,,,south-east near Jebel Uweinat (2156N/2504E),2.0
+4711,,,,south,2.0
+4712,,,,Wadi Insika (2531N/0945E),2.0
+4713,,,,southwest,2.0
+4714,,,,Tripoli,2.0
+4715,,,,Waddan (2910N/1610E),2.0
+4716,,,,sq mtre,2.0
+4717,,,,Mizda (3125N/1302E),2.0
+4718,,,,Kufra Oasis (2411N/2315E),2.0
+4719,,,,Algerian,2.0
+4720,,,,ca,2.0
+4721,,,,Sudanese border,2.0
+4722,,,,Sirte (3110N/1639E),2.0
+4723,,,,west,2.0
+4724,,,,mtre,2.0
+4725,,,,Tunisia near Ghadames,2.0
+4726,,,,Algerian and Tunisian borders between Nalut (3152N/1058E) and Ghat (2459N/1011E),2.0
+4727,,,,Nalut (3153N/1059E),2.0
+4728,,,,Wadi Tetaghsin (2532N/0955E),2.0
+4729,,,,east of Sabha (2704N/1425E) near Al Harouj Al Aswad,2.0
+4730,,,,Ain,2.0
+4731,,,,Agricultural Project,2.0
+4732,,,,Irawin (2629N/1215E),2.0
+4733,,,,wadi Ghazah (2128N/2431E),2.0
+4734,,,,Nalut (3141N/1053E),2.0
+4735,,,,Kufra (2410N/2325E),2.0
+4736,,,,Tannezuft (2507N/1015E),2.0
+4737,,,,ﬁ rst,2.0
+4738,,,,Wadi Flazliz (2641N/1009E),2.0
+4739,,,,Al Haruj Al Aswad,2.0
+4740,,,,Wan Khalil (2911N/1003E),2.0
+4741,,,,Chad,2.0
+4742,,,,Maiduguri,2.0
+4743,,,,Cameroon,2.0
+4744,,,,north,2.0
+4745,,,,Desert Locust,2.0
+4746,,,,inmid,2.0
+4747,,,,Niger,2.0
+4748,,,,Tree Locust,2.0
+4749,GUINEA,Convergence Zone,3.0,Guinea Bissau,4.0
+4750,GUINEA,Atlantic OceanOn,1.0,Labe (1119N/1217W),4.0
+4751,GUINEA,Senegal border,1.0,Mamou (1024N/1205W),3.0
+4752,GUINEA,east,1.0,Kindia (1004N/1251W),2.0
+4753,GUINEA,Senegal,1.0,Boke (1056N/1418W),2.0
+4754,GUINEA,Mali,1.0,Boké (1056N/1418W),2.0
+4755,GUINEA,Southern Circuit,1.0,Gaoual (1144N/1314W),2.0
+4756,,,,Senegal,2.0
+4757,,,,Koundara (1229N/1317W),2.0
+4758,,,,Mali (1205N/1218W),2.0
+4759,,,,Conakry,2.0
+4760,,,,Gaoual (1145N/1311W),2.0
+4761,,,,Koundadra (1228N/1315W),2.0
+4762,,,,Telimele (1054N/1302W),2.0
+4763,,,,Sierra Leone border,2.0
+4764,,,,Lelouma (1129N/1241W),2.0
+4765,,,,south,2.0
+4766,,,,ha,2.0
+4767,,,,Dinguiraye (1118N/1043W),2.0
+4768,,,,east,2.0
+4769,,,,Yagoua (1020N/1514E),2.0
+4770,,,,Chad,2.0
+4771,,,,Southern Circuit,2.0
+4772,,,,north,2.0
+4773,,,,south,2.0
+4774,,,,Goulfey,2.0
+4775,,,,Logone River,2.0
+4776,COTE DʼIVOIRE,north,1.0,,
+4777,COTE DʼIVOIRE,Mali,1.0,,
+4778,COTE DʼIVOIRE,Burkina Faso,1.0,,
+4779,COTE DʼIVOIRE,Southern Circuit,1.0,,
+4780,SIERRA LEONE,ITCZ,2.0,,
+4781,,,,Beirut,2.0
+4782,,,,Tripoli,2.0
+4783,,,,Al Batrun (3415N/3539E),2.0
+4784,,,,Akar,2.0
+4785,,,,Tripoli (3426N/3549E),2.0
+4786,,,,Sidon (3333N/3522E),2.0
+4787,,,,Lebonon,2.0
+4788,,,,north of Beirut near Jbail (3401N/3540E),2.0
+4789,PALESTINE,Hebron,1.0,Gaza near Mwassi,2.0
+4790,PALESTINE,Israel,1.0,the West Bank near Jerusalem,2.0
+4791,PALESTINE,south,1.0,Gaza,2.0
+4792,PALESTINE,Red Sea,1.0,Khan Yunes (3121N/3418E),2.0
+4793,PALESTINE,West Bank,1.0,the West Bank near Hebron (3132N/3506E),2.0
+4794,PALESTINE,Gaza,1.0,Abu Dis,2.0
+4795,SPAIN,Canary Islands,1.0,,
+4796,PORTUGAL,Algarve,1.0,,
+4797,,,,Cyprus,1.0
+4798,SOUTH SUDAN,Kenya,4.0,Magwi (0408N/3218E),4.0
+4799,SOUTH SUDAN,Ethiopia,2.0,Torit (0424N/3234E),3.0
+4800,SOUTH SUDAN,Eastern Equatoria,2.0,Ethiopia,3.0
+4801,SOUTH SUDAN,Sudan,2.0,north,3.0
+4802,SOUTH SUDAN,Nile River,1.0,Uganda border,3.0
+4803,SOUTH SUDAN,Frommid,1.0,Loboni Payam (0350N/3244E),3.0
+4804,SOUTH SUDAN,northwest,1.0,Bor (0613N/3134E),2.0
+4805,SOUTH SUDAN,East Equatoria,1.0,southwest East Equatoria,2.0
+4806,,,,Magwi,2.0
+4807,,,,8–12,2.0
+4808,,,,Juba (0451N/3134E),2.0
+4809,,,,Loboni (0347N/3245E),2.0
+4810,,,,northeast,1.0
+4811,,,,East Kapoeta,1.0
+4812,,,,Kenya border,1.0
+4813,,,,Kapoeta (0446N/3335E),1.0
+4814,,,,Ituri,1.0
+4815,,,,Uganda,1.0
+4816,,,,northwest,1.0
+4817,,,,Aru (0251N/3050E),1.0
