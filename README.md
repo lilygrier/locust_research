@@ -23,6 +23,9 @@ forecasted predcitions. I used the spaCy NLP library to analyze the text and con
 `location_matching.py` - code used to produce dataframe of unmatched locations  
   
 `location_bank.py` - sample code used to show idea of possible location-matching technique
+
+### The Report
+`Locust Project Report.pdf` - a written report explaining the project
   
 ## How to Use
 If you were starting from scratch, running `scraping.py` in the command line will scrape the web for the locust bulletins and save them on your machine. To extract text into a csv, 
