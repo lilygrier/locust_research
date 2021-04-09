@@ -1,5 +1,5 @@
 # locust_research
-This project examined monthly locust bulletins produced by the UN. Each bulletin contains a country-level situation report and 
+As part of the Energy Policy Institute at the University of Chicago's efforts to better understand and prevent locust infestations, this project examined monthly locust bulletins produced by the UN. Each bulletin contains a country-level situation report and 
 forecasted predcitions. I used the spaCy NLP library to analyze the text and confirm the the accuracy of the UN predictions based on varying definitions of correctness.
 ## Guide to files  
 ### Getting the Data
@@ -25,8 +25,8 @@ forecasted predcitions. I used the spaCy NLP library to analyze the text and con
 `location_bank.py` - sample code used to show idea of possible location-matching technique
   
 ## How to Use
-If you were starting from scratch, running scraping.py in the command line will scrape the web for the locust bulletins and save them on your machine. To extract text into a csv, 
-you would run run make_df.py in the command line. However, I saved the resulting CSV from these steps as report_text.csv.  
+If you were starting from scratch, running `scraping.py` in the command line will scrape the web for the locust bulletins and save them on your machine. To extract text into a csv, 
+you would run `make_df.py` in the command line. However, I saved the resulting CSV from these steps as `report_text.csv`.  
 
 Running `analyze_results.df_with_validated_results()` will call files needed to extract information and validate predictions through natural language processing. To generate the graphs used in my report, I ran the following functions, where df was the result of calling `analyze_results.df_with_validated_results()`:  
   
